@@ -58,6 +58,8 @@ public class GameManagerScript : MonoBehaviour
             board_cells[7, i] = row8[i];
     }
 
+    public GameObject[,] GetBoardCells() { return this.board_cells; }
+
     private void ShowWhitePerspective()
 	{
         /// -----------------------------------------WHITE PIECES-----------------------------------------
@@ -68,11 +70,12 @@ public class GameManagerScript : MonoBehaviour
         Vector3 globalPosition = new Vector3();
 
         // setting up the white pawns
-        foreach (GameObject cell in row7)
+        for (int i = 0; i < 8; i++)
 		{
-            globalPosition = cell.transform.position;
+            globalPosition = row7[i].transform.position;
             globalPosition.y += 0.1f;
-            Instantiate(Pawn_White, globalPosition, Quaternion.identity);
+            GameObject go = Instantiate(Pawn_White, globalPosition, Quaternion.identity);
+            go.GetComponent<PawnWhite_MovementScript>().SetCoordinates(i, 1, false);
 		}
 
         globalPosition = row8[0].transform.position;
