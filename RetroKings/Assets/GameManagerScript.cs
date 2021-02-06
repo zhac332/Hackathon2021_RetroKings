@@ -37,6 +37,7 @@ public class GameManagerScript : MonoBehaviour
     [SerializeField] private GameObject Knight_Black;
     [SerializeField] private GameObject Rook_Black;
 
+    private CellScript[,] board_cells = new CellScript[8, 8];
     private GameObject selectedPiece;
     private CellScript selectedCell;
 
@@ -51,21 +52,45 @@ public class GameManagerScript : MonoBehaviour
     private void InitBoard()
 	{
         for (int i = 0; i < row1.Count; i++)
-            row1[i].GetComponent<CellScript>().SetCoordinates(0, i);
+        {
+            board_cells[0, i] = row1[i].GetComponent<CellScript>();
+            board_cells[0, i].SetCoordinates(0, i);
+        }
         for (int i = 0; i < row2.Count; i++)
-            row2[i].GetComponent<CellScript>().SetCoordinates(1, i);
+        {
+            board_cells[1, i] = row2[i].GetComponent<CellScript>();
+            board_cells[1, i].SetCoordinates(1, i);
+        }
         for (int i = 0; i < row3.Count; i++)
-            row3[i].GetComponent<CellScript>().SetCoordinates(2, i);
+        {
+            board_cells[2, i] = row3[i].GetComponent<CellScript>();
+            board_cells[2, i].SetCoordinates(2, i);
+        }
         for (int i = 0; i < row4.Count; i++)
-            row4[i].GetComponent<CellScript>().SetCoordinates(3, i);
+        {
+            board_cells[3, i] = row4[i].GetComponent<CellScript>();
+            board_cells[3, i].SetCoordinates(3, i);
+        }
         for (int i = 0; i < row5.Count; i++)
-            row5[i].GetComponent<CellScript>().SetCoordinates(4, i);
+        {
+            board_cells[4, i] = row5[i].GetComponent<CellScript>();
+            board_cells[4, i].SetCoordinates(4, i);
+        }
         for (int i = 0; i < row6.Count; i++)
-            row6[i].GetComponent<CellScript>().SetCoordinates(5, i);
+        {
+            board_cells[5, i] = row6[i].GetComponent<CellScript>();
+            board_cells[5, i].SetCoordinates(5, i);
+        }
         for (int i = 0; i < row7.Count; i++)
-            row7[i].GetComponent<CellScript>().SetCoordinates(6, i);
+        {
+            board_cells[6, i] = row7[i].GetComponent<CellScript>();
+            board_cells[6, i].SetCoordinates(6, i);
+        }
         for (int i = 0; i < row8.Count; i++)
-            row8[i].GetComponent<CellScript>().SetCoordinates(7, i);
+        {
+            board_cells[7, i] = row8[i].GetComponent<CellScript>();
+            board_cells[7, i].SetCoordinates(7, i);
+        }
     }
 
     private void ShowWhitePerspective()
@@ -190,7 +215,7 @@ public class GameManagerScript : MonoBehaviour
         /// -----------------------------------------WHITE PIECES-----------------------------------------
 
         Vector3 globalPosition = new Vector3();
-        GameObject go = new GameObject;
+        GameObject go = new GameObject();
 
         // setting up the white pawns
         for (int i = 0; i < 8; i++)
