@@ -39,14 +39,15 @@ public class GameManagerScript : MonoBehaviour
 
     private CellScript[,] board_cells = new CellScript[8, 8];
     private GameObject selectedPiece;
+    private GameObject selectedPiece2; // used mainly to detect any capturing.
     private CellScript selectedCell;
 
     // Start is called before the first frame update
     void Start()
     {
         InitBoard();
-        //ShowWhitePerspective();
-        ShowBlackPerspective();
+        ShowWhitePerspective();
+        //ShowBlackPerspective();
     }
 
     private void InitBoard()
@@ -445,6 +446,12 @@ public class GameManagerScript : MonoBehaviour
 			selectedPiece.GetComponent<Pawn_MovementScript>().MoveToCell(selectedCell.gameObject.transform.position, cellCoord);
 			selectedCell = null;
 			selectedPiece = null;
+		}
+        else
+		{
+            selectedCell = null;
+            selectedPiece.GetComponent<Pawn_MovementScript>().Deselect();
+            selectedPiece = null;
 		}
 	}
 }

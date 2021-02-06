@@ -33,7 +33,7 @@ public class CellScript : MonoBehaviour
 	{
 		this.pieceOccuping = piece;
 		this.occupied = true;
-	}
+	}	
 
 	public bool IsOccupied() { return this.occupied; }
 }
