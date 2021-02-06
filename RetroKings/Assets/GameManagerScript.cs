@@ -45,8 +45,8 @@ public class GameManagerScript : MonoBehaviour
     void Start()
     {
         InitBoard();
-        //ShowWhitePerspective();
-        ShowBlackPerspective();
+        ShowWhitePerspective();
+        //ShowBlackPerspective();
     }
 
     private void InitBoard()
@@ -342,6 +342,11 @@ public class GameManagerScript : MonoBehaviour
             CheckValidMove();
 	}
 
+    private bool IsCellOccupied(int x, int y)
+	{
+        return board_cells[x, y].IsOccupied();
+    }
+
     private void CheckValidMove()
 	{
         // it is guaranteed to be called when a piece is actually selected.
@@ -392,15 +397,17 @@ public class GameManagerScript : MonoBehaviour
                 possibleCoord[0] = Pawn_XCoord;
                 possibleCoord[1] = Pawn_YCoord + 1;
 
-                possibleCoordinates.Add(possibleCoord);
-			}
+                if (!IsCellOccupied(possibleCoord[0], possibleCoord[1]))
+                    possibleCoordinates.Add(possibleCoord);
+            }
             else
 			{
                 int[] possibleCoord = new int[2];
                 possibleCoord[0] = Pawn_XCoord;
                 possibleCoord[1] = Pawn_YCoord - 1;
 
-                possibleCoordinates.Add(possibleCoord);
+                if (!IsCellOccupied(possibleCoord[0], possibleCoord[1]))
+                    possibleCoordinates.Add(possibleCoord);
             }
 		    
             // I also need to check if the pawn can attack on the diagonal --  TO BE DONE LATER.
@@ -414,14 +421,16 @@ public class GameManagerScript : MonoBehaviour
                 possibleCoord[0] = Pawn_XCoord;
                 possibleCoord[1] = Pawn_YCoord + 1;
 
-                possibleCoordinates.Add(possibleCoord);
+                if (!IsCellOccupied(possibleCoord[0], possibleCoord[1]))
+                    possibleCoordinates.Add(possibleCoord);
 
                 // second cell forward
                 int[] possibleCoord2 = new int[2];
                 possibleCoord2[0] = Pawn_XCoord;
                 possibleCoord2[1] = Pawn_YCoord + 2;
 
-                possibleCoordinates.Add(possibleCoord2);
+                if (!IsCellOccupied(possibleCoord2[0], possibleCoord2[1]))
+                    possibleCoordinates.Add(possibleCoord2);
             }
             else
             {
@@ -430,14 +439,16 @@ public class GameManagerScript : MonoBehaviour
                 possibleCoord[0] = Pawn_XCoord;
                 possibleCoord[1] = Pawn_YCoord - 1;
 
-                possibleCoordinates.Add(possibleCoord);
+                if (!IsCellOccupied(possibleCoord[0], possibleCoord[1]))
+                    possibleCoordinates.Add(possibleCoord);
 
                 // second cell forward
                 int[] possibleCoord2 = new int[2];
                 possibleCoord2[0] = Pawn_XCoord;
                 possibleCoord2[1] = Pawn_YCoord - 2;
 
-                possibleCoordinates.Add(possibleCoord2);
+                if (!IsCellOccupied(possibleCoord2[0], possibleCoord2[1]))
+                    possibleCoordinates.Add(possibleCoord2);
             }
         }
 

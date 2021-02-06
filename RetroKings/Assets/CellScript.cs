@@ -6,6 +6,7 @@ public class CellScript : MonoBehaviour
 {
 	private GameManagerScript GameManager;
 	private GameObject pieceOccuping;
+	private bool occupied = false;
 	private int X_Coord, Y_Coord;
 
 	private void Start()
@@ -31,5 +32,8 @@ public class CellScript : MonoBehaviour
 	public void OccupiedBy(GameObject piece)
 	{
 		this.pieceOccuping = piece;
+		this.occupied = true;
 	}
+
+	public bool IsOccupied() { return this.occupied; }
 }
