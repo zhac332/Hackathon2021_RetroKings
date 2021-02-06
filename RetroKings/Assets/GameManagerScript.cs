@@ -73,15 +73,15 @@ public class GameManagerScript : MonoBehaviour
         Instantiate(King_White, globalPosition, Quaternion.identity);
 
         /// -----------------------------------------BLACK PIECES-----------------------------------------
-        
-        // setting up the Black pawns.
+
+        // setting up the white pawns
         foreach (GameObject cell in row2)
-		{
+        {
             globalPosition = cell.transform.position;
             globalPosition.y += 0.1f;
             Instantiate(Pawn_Black, globalPosition, Quaternion.identity);
-		}
-        
+        }
+
         globalPosition = row1[0].transform.position;
         Instantiate(Rook_Black, globalPosition, Quaternion.identity);
         globalPosition = row1[7].transform.position;
@@ -171,10 +171,4 @@ public class GameManagerScript : MonoBehaviour
 		globalPosition = row8[4].transform.position;
 		Instantiate(King_Black, globalPosition, Quaternion.identity);
 	}
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
