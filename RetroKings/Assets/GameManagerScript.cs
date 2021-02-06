@@ -27,11 +27,35 @@ public class GameManagerScript : MonoBehaviour
     [SerializeField] private GameObject Knight_Black;
     [SerializeField] private GameObject Rook_Black;
 
+
+    private GameObject[,] board_cells = new GameObject[8, 8];
+
     // Start is called before the first frame update
     void Start()
     {
-        //ShowWhitePerspective();
-        ShowBlackPerspective();
+        InitBoard();
+        ShowWhitePerspective();
+        //ShowBlackPerspective();
+    }
+
+    private void InitBoard()
+	{
+        for (int i = 0; i < row1.Count; i++)
+            board_cells[0, i] = row1[i];
+        for (int i = 0; i < row2.Count; i++)
+            board_cells[1, i] = row2[i];
+        for (int i = 0; i < row3.Count; i++)
+            board_cells[2, i] = row3[i];
+        for (int i = 0; i < row4.Count; i++)
+            board_cells[3, i] = row4[i];
+        for (int i = 0; i < row5.Count; i++)
+            board_cells[4, i] = row5[i];
+        for (int i = 0; i < row6.Count; i++)
+            board_cells[5, i] = row6[i];
+        for (int i = 0; i < row7.Count; i++)
+            board_cells[6, i] = row7[i];
+        for (int i = 0; i < row8.Count; i++)
+            board_cells[7, i] = row8[i];
     }
 
     private void ShowWhitePerspective()
