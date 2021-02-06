@@ -14,14 +14,14 @@ using UnityEngine;
 /// </summary>
 public class GameManagerScript : MonoBehaviour
 {
-    [SerializeField] private List<GameObject> row1 = new List<GameObject>();
-    [SerializeField] private List<GameObject> row2 = new List<GameObject>();
-    [SerializeField] private List<GameObject> row3 = new List<GameObject>();
-    [SerializeField] private List<GameObject> row4 = new List<GameObject>();
-    [SerializeField] private List<GameObject> row5 = new List<GameObject>();
-    [SerializeField] private List<GameObject> row6 = new List<GameObject>();
-    [SerializeField] private List<GameObject> row7 = new List<GameObject>();
-    [SerializeField] private List<GameObject> row8 = new List<GameObject>();
+    //[SerializeField] private List<GameObject> row1 = new List<GameObject>();
+    //[SerializeField] private List<GameObject> row2 = new List<GameObject>();
+    //[SerializeField] private List<GameObject> row3 = new List<GameObject>();
+    //[SerializeField] private List<GameObject> row4 = new List<GameObject>();
+    //[SerializeField] private List<GameObject> row5 = new List<GameObject>();
+    //[SerializeField] private List<GameObject> row6 = new List<GameObject>();
+    //[SerializeField] private List<GameObject> row7 = new List<GameObject>();
+    //[SerializeField] private List<GameObject> row8 = new List<GameObject>();
     [Header("White pieces")]
     [SerializeField] private GameObject Pawn_White;
     [SerializeField] private GameObject King_White;
@@ -45,52 +45,59 @@ public class GameManagerScript : MonoBehaviour
     void Start()
     {
         InitBoard();
-        ShowWhitePerspective();
-        //ShowBlackPerspective();
+        //ShowWhitePerspective();
+        ShowBlackPerspective();
     }
 
     private void InitBoard()
 	{
-        for (int i = 0; i < row1.Count; i++)
-        {
-            board_cells[7, i] = row1[i].GetComponent<CellScript>();
-            board_cells[7, i].SetCoordinates(i, 7);
-        }
-        for (int i = 0; i < row2.Count; i++)
-        {
-            board_cells[6, i] = row2[i].GetComponent<CellScript>();
-            board_cells[6, i].SetCoordinates(i, 6);
-        }
-        for (int i = 0; i < row3.Count; i++)
-        {
-            board_cells[5, i] = row3[i].GetComponent<CellScript>();
-            board_cells[5, i].SetCoordinates(i, 5);
-        }
-        for (int i = 0; i < row4.Count; i++)
-        {
-            board_cells[4, i] = row4[i].GetComponent<CellScript>();
-            board_cells[4, i].SetCoordinates(i, 4);
-        }
-        for (int i = 0; i < row5.Count; i++)
-        {
-            board_cells[3, i] = row5[i].GetComponent<CellScript>();
-            board_cells[3, i].SetCoordinates(i, 3);
-        }
-        for (int i = 0; i < row6.Count; i++)
-        {
-            board_cells[2, i] = row6[i].GetComponent<CellScript>();
-            board_cells[2, i].SetCoordinates(i, 2);
-        }
-        for (int i = 0; i < row7.Count; i++)
-        {
-            board_cells[1, i] = row7[i].GetComponent<CellScript>();
-            board_cells[1, i].SetCoordinates(i, 1);
-        }
-        for (int i = 0; i < row8.Count; i++)
-        {
-            board_cells[0, i] = row8[i].GetComponent<CellScript>();
-            board_cells[0, i].SetCoordinates(i, 0);
-        }
+        for (int i = 0; i < 8; i++)
+            for (int j = 0; j < 8; j++)
+			{
+                board_cells[i, j] = GameObject.Find("Cell_" + (7 - i) + j).GetComponent<CellScript>();
+                board_cells[i, j].SetCoordinates(7 - i, j);
+			}
+
+        //for (int i = 0; i < row1.Count; i++)
+        //{
+        //    board_cells[7, i] = row1[i].GetComponent<CellScript>();
+        //    board_cells[7, i].SetCoordinates(i, 7);
+        //}
+        //for (int i = 0; i < row2.Count; i++)
+        //{
+        //    board_cells[6, i] = row2[i].GetComponent<CellScript>();
+        //    board_cells[6, i].SetCoordinates(i, 6);
+        //}
+        //for (int i = 0; i < row3.Count; i++)
+        //{
+        //    board_cells[5, i] = row3[i].GetComponent<CellScript>();
+        //    board_cells[5, i].SetCoordinates(i, 5);
+        //}
+        //for (int i = 0; i < row4.Count; i++)
+        //{
+        //    board_cells[4, i] = row4[i].GetComponent<CellScript>();
+        //    board_cells[4, i].SetCoordinates(i, 4);
+        //}
+        //for (int i = 0; i < row5.Count; i++)
+        //{
+        //    board_cells[3, i] = row5[i].GetComponent<CellScript>();
+        //    board_cells[3, i].SetCoordinates(i, 3);
+        //}
+        //for (int i = 0; i < row6.Count; i++)
+        //{
+        //    board_cells[2, i] = row6[i].GetComponent<CellScript>();
+        //    board_cells[2, i].SetCoordinates(i, 2);
+        //}
+        //for (int i = 0; i < row7.Count; i++)
+        //{
+        //    board_cells[1, i] = row7[i].GetComponent<CellScript>();
+        //    board_cells[1, i].SetCoordinates(i, 1);
+        //}
+        //for (int i = 0; i < row8.Count; i++)
+        //{
+        //    board_cells[0, i] = row8[i].GetComponent<CellScript>();
+        //    board_cells[0, i].SetCoordinates(i, 0);
+        //}
     }
 
     private void ShowWhitePerspective()
@@ -107,108 +114,108 @@ public class GameManagerScript : MonoBehaviour
         for (int i = 0; i < 8; i++)
 		{
             // calculating the position
-            globalPosition = row7[i].transform.position;
+            globalPosition = board_cells[6, i].transform.position;
             globalPosition.y += 0.1f;
 
             // instantiating the object at that position
             go = Instantiate(Pawn_White, globalPosition, Quaternion.identity);
-            go.GetComponent<Pawn_MovementScript>().SetCoordinates(i, 1, false);
+            go.GetComponent<Pawn_MovementScript>().SetCoordinates(1, i, false);
 
             // occupying the cell
-            row7[i].GetComponent<CellScript>().OccupiedBy(go);
+            board_cells[6, i].GetComponent<CellScript>().OccupiedBy(go);
 		}
 
         // first rook 
-        globalPosition = row8[0].transform.position;
+        globalPosition = board_cells[7, 0].transform.position;
         go = Instantiate(Rook_White, globalPosition, Quaternion.identity);
-        row8[0].GetComponent<CellScript>().OccupiedBy(go);
+        board_cells[7, 0].GetComponent<CellScript>().OccupiedBy(go);
 
         // second rook
-        globalPosition = row8[7].transform.position;
+        globalPosition = board_cells[7, 7].transform.position;
         go = Instantiate(Rook_White, globalPosition, Quaternion.identity);
-        row8[7].GetComponent<CellScript>().OccupiedBy(go);
+        board_cells[7, 7].GetComponent<CellScript>().OccupiedBy(go);
 
         // first knight
-        globalPosition = row8[1].transform.position;
+        globalPosition = board_cells[7, 1].transform.position;
         go = Instantiate(Knight_White, globalPosition, Quaternion.identity);
-        row8[1].GetComponent<CellScript>().OccupiedBy(go);
+        board_cells[7, 1].GetComponent<CellScript>().OccupiedBy(go);
 
         // second knight
-        globalPosition = row8[6].transform.position;
+        globalPosition = board_cells[7, 6].transform.position;
         go = Instantiate(Knight_White, globalPosition, Quaternion.identity);
-        row8[6].GetComponent<CellScript>().OccupiedBy(go);
+        board_cells[7, 6].GetComponent<CellScript>().OccupiedBy(go);
 
         // first bishop
-        globalPosition = row8[2].transform.position;
+        globalPosition = board_cells[7, 2].transform.position;
         go = Instantiate(Bishop_White, globalPosition, Quaternion.identity);
-        row8[2].GetComponent<CellScript>().OccupiedBy(go);
+        board_cells[7, 2].GetComponent<CellScript>().OccupiedBy(go);
 
         // second bishop
-        globalPosition = row8[5].transform.position;
+        globalPosition = board_cells[7, 5].transform.position;
         go = Instantiate(Bishop_White, globalPosition, Quaternion.identity);
-        row8[5].GetComponent<CellScript>().OccupiedBy(go);
+        board_cells[7, 5].GetComponent<CellScript>().OccupiedBy(go);
 
         // queen
-        globalPosition = row8[3].transform.position;
+        globalPosition = board_cells[7, 3].transform.position;
         go = Instantiate(Queen_White, globalPosition, Quaternion.identity);
-        row8[3].GetComponent<CellScript>().OccupiedBy(go);
+        board_cells[7, 3].GetComponent<CellScript>().OccupiedBy(go);
 
         // king
-        globalPosition = row8[4].transform.position;
+        globalPosition = board_cells[7, 4].transform.position;
         go = Instantiate(King_White, globalPosition, Quaternion.identity);
-        row8[4].GetComponent<CellScript>().OccupiedBy(go);
+        board_cells[7, 4].GetComponent<CellScript>().OccupiedBy(go);
 
         /// -----------------------------------------BLACK PIECES-----------------------------------------
 
         // setting up the black pawns
         for (int i = 0; i < 8; i++)
         {
-            globalPosition = row2[i].transform.position;
+            globalPosition = board_cells[1, i].transform.position;
             globalPosition.y += 0.1f;
             go = Instantiate(Pawn_Black, globalPosition, Quaternion.identity);
-            go.GetComponent<Pawn_MovementScript>().SetCoordinates(i, 6, true);
-            row2[i].GetComponent<CellScript>().OccupiedBy(go);
+            go.GetComponent<Pawn_MovementScript>().SetCoordinates(6, i, true);
+            board_cells[1, i].GetComponent<CellScript>().OccupiedBy(go);
         }
 
         // first rook
-        globalPosition = row1[0].transform.position;
+        globalPosition = board_cells[0, 0].transform.position;
         go = Instantiate(Rook_Black, globalPosition, Quaternion.identity);
-        row1[0].GetComponent<CellScript>().OccupiedBy(go);
+        board_cells[0, 0].GetComponent<CellScript>().OccupiedBy(go);
 
         // second rook
-        globalPosition = row1[7].transform.position;
+        globalPosition = board_cells[0, 7].transform.position;
         go = Instantiate(Rook_Black, globalPosition, Quaternion.identity);
-        row1[7].GetComponent<CellScript>().OccupiedBy(go);
+        board_cells[0, 7].GetComponent<CellScript>().OccupiedBy(go);
 
         // first knight
-        globalPosition = row1[1].transform.position;
+        globalPosition = board_cells[0, 1].transform.position;
         go = Instantiate(Knight_Black, globalPosition, Quaternion.identity);
-        row1[1].GetComponent<CellScript>().OccupiedBy(go);
+        board_cells[0, 1].GetComponent<CellScript>().OccupiedBy(go);
 
         // second knight
-        globalPosition = row1[6].transform.position;
+        globalPosition = board_cells[0, 6].transform.position;
         go = Instantiate(Knight_Black, globalPosition, Quaternion.identity);
-        row1[6].GetComponent<CellScript>().OccupiedBy(go);
+        board_cells[0, 6].GetComponent<CellScript>().OccupiedBy(go);
 
         // first bishop
-        globalPosition = row1[2].transform.position;
+        globalPosition = board_cells[0, 2].transform.position;
         go = Instantiate(Bishop_Black, globalPosition, Quaternion.identity);
-        row1[2].GetComponent<CellScript>().OccupiedBy(go);
+        board_cells[0, 2].GetComponent<CellScript>().OccupiedBy(go);
 
         // second bishop
-        globalPosition = row1[5].transform.position;
+        globalPosition = board_cells[0, 5].transform.position;
         go = Instantiate(Bishop_Black, globalPosition, Quaternion.identity);
-        row1[5].GetComponent<CellScript>().OccupiedBy(go);
+        board_cells[0, 5].GetComponent<CellScript>().OccupiedBy(go);
 
         // queen
-        globalPosition = row1[3].transform.position;
+        globalPosition = board_cells[0, 3].transform.position;
         go = Instantiate(Queen_Black, globalPosition, Quaternion.identity);
-        row1[3].GetComponent<CellScript>().OccupiedBy(go);
+        board_cells[0, 3].GetComponent<CellScript>().OccupiedBy(go);
 
         // king
-        globalPosition = row1[4].transform.position;
+        globalPosition = board_cells[0, 4].transform.position;
         go = Instantiate(King_Black, globalPosition, Quaternion.identity);
-        row1[4].GetComponent<CellScript>().OccupiedBy(go);
+        board_cells[0, 4].GetComponent<CellScript>().OccupiedBy(go);
     }
 
     private void ShowBlackPerspective()
@@ -221,52 +228,52 @@ public class GameManagerScript : MonoBehaviour
         // setting up the white pawns
         for (int i = 0; i < 8; i++)
         {
-            globalPosition = row2[i].transform.position;
+            globalPosition = board_cells[1, i].transform.position;
             globalPosition.y += 0.1f;
             go = Instantiate(Pawn_White, globalPosition, Quaternion.identity);
-            go.GetComponent<Pawn_MovementScript>().SetCoordinates(i, 6, true);
-            row2[i].GetComponent<CellScript>().OccupiedBy(go);
+            go.GetComponent<Pawn_MovementScript>().SetCoordinates(6, i, true);
+            board_cells[1, i].GetComponent<CellScript>().OccupiedBy(go);
         }
 
         // First Rook.
-        globalPosition = row1[0].transform.position;
+        globalPosition = board_cells[0, 0].transform.position;
         go = Instantiate(Rook_White, globalPosition, Quaternion.identity);
-        row1[0].GetComponent<CellScript>().OccupiedBy(go);
+        board_cells[0, 0].GetComponent<CellScript>().OccupiedBy(go);
 
         // Second Rook.
-        globalPosition = row1[7].transform.position;
+        globalPosition = board_cells[0, 7].transform.position;
         go = Instantiate(Rook_White, globalPosition, Quaternion.identity);
-        row1[7].GetComponent<CellScript>().OccupiedBy(go);
+        board_cells[0, 7].GetComponent<CellScript>().OccupiedBy(go);
 
         // First Knight.
-        globalPosition = row1[1].transform.position;
+        globalPosition = board_cells[0, 1].transform.position;
         go = Instantiate(Knight_White, globalPosition, Quaternion.identity);
-        row1[1].GetComponent<CellScript>().OccupiedBy(go);
+        board_cells[0, 1].GetComponent<CellScript>().OccupiedBy(go);
 
         // Second Knight.
-        globalPosition = row1[6].transform.position;
+        globalPosition = board_cells[0, 6].transform.position;
         go = Instantiate(Knight_White, globalPosition, Quaternion.identity);
-        row1[6].GetComponent<CellScript>().OccupiedBy(go);
+        board_cells[0, 6].GetComponent<CellScript>().OccupiedBy(go);
 
         // First Bishop.
-        globalPosition = row1[2].transform.position;
+        globalPosition = board_cells[0, 2].transform.position;
         go = Instantiate(Bishop_White, globalPosition, Quaternion.identity);
-        row1[2].GetComponent<CellScript>().OccupiedBy(go);
+        board_cells[0, 2].GetComponent<CellScript>().OccupiedBy(go);
 
         // Second Bishop.
-        globalPosition = row1[5].transform.position;
+        globalPosition = board_cells[0, 5].transform.position;
         go = Instantiate(Bishop_White, globalPosition, Quaternion.identity);
-        row1[5].GetComponent<CellScript>().OccupiedBy(go);
+        board_cells[0, 5].GetComponent<CellScript>().OccupiedBy(go);
 
         // Queen.
-        globalPosition = row1[3].transform.position;
+        globalPosition = board_cells[0, 3].transform.position;
         go = Instantiate(Queen_White, globalPosition, Quaternion.identity);
-        row1[3].GetComponent<CellScript>().OccupiedBy(go);
+        board_cells[0, 3].GetComponent<CellScript>().OccupiedBy(go);
 
         // King.
-        globalPosition = row1[4].transform.position;
+        globalPosition = board_cells[0, 4].transform.position;
         go = Instantiate(King_White, globalPosition, Quaternion.identity);
-        row1[4].GetComponent<CellScript>().OccupiedBy(go);
+        board_cells[0, 4].GetComponent<CellScript>().OccupiedBy(go);
 
 
         /// -----------------------------------------BLACK PIECES-----------------------------------------
@@ -274,52 +281,52 @@ public class GameManagerScript : MonoBehaviour
         // setting up the white pawns
         for (int i = 0; i < 8; i++)
         {
-            globalPosition = row7[i].transform.position;
+            globalPosition = board_cells[6, i].transform.position;
             globalPosition.y += 0.1f;
             go = Instantiate(Pawn_Black, globalPosition, Quaternion.identity);
-            go.GetComponent<Pawn_MovementScript>().SetCoordinates(i, 1, false);
-            row7[i].GetComponent<CellScript>().OccupiedBy(go);
+            go.GetComponent<Pawn_MovementScript>().SetCoordinates(1, i, false);
+            board_cells[6, 0].GetComponent<CellScript>().OccupiedBy(go);
         }
 
         // First Rook.
-		globalPosition = row8[0].transform.position;
+		globalPosition = board_cells[7, 0].transform.position;
 		go = Instantiate(Rook_Black, globalPosition, Quaternion.identity);
-        row8[0].GetComponent<CellScript>().OccupiedBy(go);
+        board_cells[7, 0].GetComponent<CellScript>().OccupiedBy(go);
 
         // Second Rook.
-		globalPosition = row8[7].transform.position;
+		globalPosition = board_cells[7, 7].transform.position;
 		go = Instantiate(Rook_Black, globalPosition, Quaternion.identity);
-        row8[7].GetComponent<CellScript>().OccupiedBy(go);
+        board_cells[7, 7].GetComponent<CellScript>().OccupiedBy(go);
 
         // First Knight.
-		globalPosition = row8[1].transform.position;
+		globalPosition = board_cells[7, 1].transform.position;
 		go = Instantiate(Knight_Black, globalPosition, Quaternion.identity);
-        row8[1].GetComponent<CellScript>().OccupiedBy(go);
+        board_cells[7, 1].GetComponent<CellScript>().OccupiedBy(go);
 
         // Second Knight.
-		globalPosition = row8[6].transform.position;
+		globalPosition = board_cells[7, 6].transform.position;
 		go = Instantiate(Knight_Black, globalPosition, Quaternion.identity);
-        row8[6].GetComponent<CellScript>().OccupiedBy(go);
+        board_cells[7, 6].GetComponent<CellScript>().OccupiedBy(go);
 
         // First Bishop.
-		globalPosition = row8[2].transform.position;
+		globalPosition = board_cells[7, 2].transform.position;
 		go = Instantiate(Bishop_Black, globalPosition, Quaternion.identity);
-        row8[2].GetComponent<CellScript>().OccupiedBy(go);
+        board_cells[7, 2].GetComponent<CellScript>().OccupiedBy(go);
 
         // Second Bishop.
-		globalPosition = row8[5].transform.position;
+		globalPosition = board_cells[7, 5].transform.position;
 		go = Instantiate(Bishop_Black, globalPosition, Quaternion.identity);
-        row8[5].GetComponent<CellScript>().OccupiedBy(go);
+        board_cells[7, 5].GetComponent<CellScript>().OccupiedBy(go);
 
         // Queen.
-		globalPosition = row8[3].transform.position;
+		globalPosition = board_cells[7, 3].transform.position;
 		go = Instantiate(Queen_Black, globalPosition, Quaternion.identity);
-        row8[3].GetComponent<CellScript>().OccupiedBy(go);
+        board_cells[7, 3].GetComponent<CellScript>().OccupiedBy(go);
 
         // King.
-		globalPosition = row8[4].transform.position;
+		globalPosition = board_cells[7, 4].transform.position;
 		go = Instantiate(King_Black, globalPosition, Quaternion.identity);
-        row8[4].GetComponent<CellScript>().OccupiedBy(go);
+        board_cells[7, 4].GetComponent<CellScript>().OccupiedBy(go);
 	}
 
     public void GetSelectedPiece(GameObject go)
@@ -342,8 +349,10 @@ public class GameManagerScript : MonoBehaviour
             CheckValidMove();
 	}
 
-    private bool IsCellOccupied(int x, int y)
+    private bool IsCellOccupied(int[] a)
 	{
+        int x = a[0];
+        int y = a[1];
         return board_cells[x, y].IsOccupied();
     }
 
@@ -360,121 +369,82 @@ public class GameManagerScript : MonoBehaviour
 
     private void CheckMovePawn()
 	{
-        int Pawn_XCoord, Pawn_YCoord; // for the piece
+        int Pawn_XCoord, Pawn_YCoord;
         bool direction, firstMove;
+        int directionModifier;
 
         // I am guaranteed that the piece selected is a pawn
         // I have the selected cell, but not the coordinates
-
         // I need the coordinates of the pawn
         Pawn_XCoord = selectedPiece.GetComponent<Pawn_MovementScript>().GetXCoordinate();
         Pawn_YCoord = selectedPiece.GetComponent<Pawn_MovementScript>().GetYCoordinate();
-
         // I need the direction of the pawn
         direction = selectedPiece.GetComponent<Pawn_MovementScript>().GetDirection(); // false = Upwards, true = Downwards
-
         // I need to know if the pawn has ever been moved before
         firstMove = selectedPiece.GetComponent<Pawn_MovementScript>().GetFirstMove();
-
         // I need to find the coordinates of the cell that was clicked in the board_cells matrix.
         int Cell_xcoord, Cell_ycoord; // for the cell
-        Cell_xcoord = 7 - selectedCell.GetXCoordinate();
+        Cell_xcoord = selectedCell.GetXCoordinate();
         Cell_ycoord = selectedCell.GetYCoordinate();
 
         // Then, I need to calculate a list of all the possible movements for that pawn. If the clicked cell
         // is within that list, that's totally correct.
         List<int[]> possibleCoordinates = new List<int[]>();
-
+        
+        if (direction) directionModifier = -1;
+        else directionModifier = 1;
 
         // we need to also check in advance if the cells are valid (or un-occupied)
 
-		if (!firstMove) // the pawn DID make the first move
+        Debug.Log("Pawn coordinates:" + Pawn_XCoord + " " + Pawn_YCoord);
+
 		{
-            //Debug.Log("can move only one cell");
-            if (!direction) // if it is upwards
-			{
-                int[] possibleCoord = new int[2];
-                possibleCoord[0] = Pawn_XCoord;
-                possibleCoord[1] = Pawn_YCoord + 1;
+            // Obviously, this will be the first thing to check.
 
-                if (!IsCellOccupied(possibleCoord[0], possibleCoord[1]))
-                    possibleCoordinates.Add(possibleCoord);
-            }
-            else
-			{
-                int[] possibleCoord = new int[2];
-                possibleCoord[0] = Pawn_XCoord;
-                possibleCoord[1] = Pawn_YCoord - 1;
+            int[] forward_cell = new int[2];
 
-                if (!IsCellOccupied(possibleCoord[0], possibleCoord[1]))
-                    possibleCoordinates.Add(possibleCoord);
-            }
-		    
-            // I also need to check if the pawn can attack on the diagonal --  TO BE DONE LATER.
-        }
-		else
-		{
-            if (!direction) // if it is upwards
-            {
-                // first cell forward
-                int[] possibleCoord = new int[2];
-                possibleCoord[0] = Pawn_XCoord;
-                possibleCoord[1] = Pawn_YCoord + 1;
+            forward_cell[0] = Pawn_XCoord + 1 * directionModifier;
+            forward_cell[1] = Pawn_YCoord;
 
-                if (!IsCellOccupied(possibleCoord[0], possibleCoord[1]))
-                    possibleCoordinates.Add(possibleCoord);
-                //Debug.Log(possibleCoord[0] + " " + possibleCoord[1]);
+            if (!IsCellOccupied(forward_cell))
+                possibleCoordinates.Add(forward_cell);
 
-                // second cell forward
-                int[] possibleCoord2 = new int[2];
-                possibleCoord2[0] = Pawn_XCoord;
-                possibleCoord2[1] = Pawn_YCoord + 2;
-
-                if (!IsCellOccupied(possibleCoord2[0], possibleCoord2[1]))
-                    possibleCoordinates.Add(possibleCoord2);
-                //Debug.Log(possibleCoord2[0] + " " + possibleCoord2[1]);
-            }
-            else
-            {
-                // first cell forward
-                int[] possibleCoord = new int[2];
-                possibleCoord[0] = Pawn_XCoord;
-                possibleCoord[1] = Pawn_YCoord - 1;
-
-                if (!IsCellOccupied(possibleCoord[0], possibleCoord[1]))
-                    possibleCoordinates.Add(possibleCoord);
-
-                // second cell forward
-                int[] possibleCoord2 = new int[2];
-                possibleCoord2[0] = Pawn_XCoord;
-                possibleCoord2[1] = Pawn_YCoord - 2;
-
-                if (!IsCellOccupied(possibleCoord2[0], possibleCoord2[1]))
-                    possibleCoordinates.Add(possibleCoord2);
-            }
+           // Debug.Log(forward_cell[0] + " " + forward_cell[1]);
         }
 
-
-        // now, we need to check if the coordinates of the cell exist in the list
-        bool canMove = false;
-
-        int[] cellCoord = new int[2];
-        cellCoord[0] = Cell_xcoord;
-        cellCoord[1] = Cell_ycoord;
-
-        for (int i = 0; i < possibleCoordinates.Count; i++)
+        if (firstMove) // that means that the pawn DIDN'T move at all
 		{
-            Debug.Log(possibleCoordinates[i][0] + " " + possibleCoordinates[i][1]);
-            if (possibleCoordinates[i][0] == cellCoord[0] && possibleCoordinates[i][1] == cellCoord[1]) canMove = true;
+            int[] double_forward_cell = new int[2];
+
+            double_forward_cell[0] = Pawn_XCoord + 2 * directionModifier;
+            double_forward_cell[1] = Pawn_YCoord;
+
+            if (!IsCellOccupied(double_forward_cell))
+                possibleCoordinates.Add(double_forward_cell);
+
+            //Debug.Log(double_forward_cell[0] + " " + double_forward_cell[1]);
         }
 
-        Debug.Log("Coordinates of the pawn: " + Pawn_XCoord + "," + Pawn_YCoord + ". Coordinates of the cell: " + cellCoord[0] + "," + cellCoord[1] + ". Can Move: " + canMove);
+		// now, we need to check if the coordinates of the cell exist in the list
+		bool canMove = false;
 
-        if (canMove)
+		int[] cellCoord = new int[2];
+		cellCoord[0] = Cell_xcoord;
+		cellCoord[1] = Cell_ycoord;
+
+		for (int i = 0; i < possibleCoordinates.Count; i++)
 		{
-            selectedPiece.GetComponent<Pawn_MovementScript>().MoveToCell(selectedCell.gameObject.transform.position, cellCoord);
-            selectedCell = null;
-            selectedPiece = null;
-        }
+			Debug.Log(possibleCoordinates[i][0] + " " + possibleCoordinates[i][1]);
+			if (possibleCoordinates[i][0] == cellCoord[0] && possibleCoordinates[i][1] == cellCoord[1]) canMove = true;
+		}
+
+		Debug.Log("Coordinates of the pawn: " + Pawn_XCoord + "," + Pawn_YCoord + ". Coordinates of the cell: " + cellCoord[0] + "," + cellCoord[1] + ". Can Move: " + canMove);
+
+		if (canMove)
+		{
+			selectedPiece.GetComponent<Pawn_MovementScript>().MoveToCell(selectedCell.gameObject.transform.position, cellCoord);
+			selectedCell = null;
+			selectedPiece = null;
+		}
 	}
 }

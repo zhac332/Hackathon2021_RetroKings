@@ -26,7 +26,6 @@ public class CellScript : MonoBehaviour
 
 	private void OnMouseDown()
 	{
-		Debug.Log("cell clicked.");
 		GameManager.SetSelectedCell(this.gameObject);
 	}
 
