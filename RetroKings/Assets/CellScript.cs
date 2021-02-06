@@ -5,6 +5,7 @@ using UnityEngine;
 public class CellScript : MonoBehaviour
 {
 	private GameManagerScript GameManager;
+	private GameObject pieceOccuping;
 	private int X_Coord, Y_Coord;
 
 	private void Start()
