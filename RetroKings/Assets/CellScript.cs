@@ -12,6 +12,7 @@ public class CellScript : MonoBehaviour
 	private void Start()
 	{
 		GameManager = GameObject.Find("GameManager").GetComponent<GameManagerScript>();
+		this.occupied = false;
 	}
 
 	public void SetCoordinates(int i, int j)

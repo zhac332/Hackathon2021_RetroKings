@@ -53,43 +53,43 @@ public class GameManagerScript : MonoBehaviour
 	{
         for (int i = 0; i < row1.Count; i++)
         {
-            board_cells[0, i] = row1[i].GetComponent<CellScript>();
-            board_cells[0, i].SetCoordinates(0, i);
+            board_cells[7, i] = row1[i].GetComponent<CellScript>();
+            board_cells[7, i].SetCoordinates(i, 7);
         }
         for (int i = 0; i < row2.Count; i++)
         {
-            board_cells[1, i] = row2[i].GetComponent<CellScript>();
-            board_cells[1, i].SetCoordinates(1, i);
+            board_cells[6, i] = row2[i].GetComponent<CellScript>();
+            board_cells[6, i].SetCoordinates(i, 6);
         }
         for (int i = 0; i < row3.Count; i++)
         {
-            board_cells[2, i] = row3[i].GetComponent<CellScript>();
-            board_cells[2, i].SetCoordinates(2, i);
+            board_cells[5, i] = row3[i].GetComponent<CellScript>();
+            board_cells[5, i].SetCoordinates(i, 5);
         }
         for (int i = 0; i < row4.Count; i++)
         {
-            board_cells[3, i] = row4[i].GetComponent<CellScript>();
-            board_cells[3, i].SetCoordinates(3, i);
+            board_cells[4, i] = row4[i].GetComponent<CellScript>();
+            board_cells[4, i].SetCoordinates(i, 4);
         }
         for (int i = 0; i < row5.Count; i++)
         {
-            board_cells[4, i] = row5[i].GetComponent<CellScript>();
-            board_cells[4, i].SetCoordinates(4, i);
+            board_cells[3, i] = row5[i].GetComponent<CellScript>();
+            board_cells[3, i].SetCoordinates(i, 3);
         }
         for (int i = 0; i < row6.Count; i++)
         {
-            board_cells[5, i] = row6[i].GetComponent<CellScript>();
-            board_cells[5, i].SetCoordinates(5, i);
+            board_cells[2, i] = row6[i].GetComponent<CellScript>();
+            board_cells[2, i].SetCoordinates(i, 2);
         }
         for (int i = 0; i < row7.Count; i++)
         {
-            board_cells[6, i] = row7[i].GetComponent<CellScript>();
-            board_cells[6, i].SetCoordinates(6, i);
+            board_cells[1, i] = row7[i].GetComponent<CellScript>();
+            board_cells[1, i].SetCoordinates(i, 1);
         }
         for (int i = 0; i < row8.Count; i++)
         {
-            board_cells[7, i] = row8[i].GetComponent<CellScript>();
-            board_cells[7, i].SetCoordinates(7, i);
+            board_cells[0, i] = row8[i].GetComponent<CellScript>();
+            board_cells[0, i].SetCoordinates(i, 0);
         }
     }
 
@@ -423,6 +423,7 @@ public class GameManagerScript : MonoBehaviour
 
                 if (!IsCellOccupied(possibleCoord[0], possibleCoord[1]))
                     possibleCoordinates.Add(possibleCoord);
+                //Debug.Log(possibleCoord[0] + " " + possibleCoord[1]);
 
                 // second cell forward
                 int[] possibleCoord2 = new int[2];
@@ -431,6 +432,7 @@ public class GameManagerScript : MonoBehaviour
 
                 if (!IsCellOccupied(possibleCoord2[0], possibleCoord2[1]))
                     possibleCoordinates.Add(possibleCoord2);
+                //Debug.Log(possibleCoord2[0] + " " + possibleCoord2[1]);
             }
             else
             {
@@ -457,10 +459,10 @@ public class GameManagerScript : MonoBehaviour
         bool canMove = false;
 
         int[] cellCoord = new int[2];
-        cellCoord[0] = Cell_ycoord;
-        cellCoord[1] = Cell_xcoord;
+        cellCoord[0] = Cell_xcoord;
+        cellCoord[1] = Cell_ycoord;
 
-        for (int i = 0; i < possibleCoordinates.Count && !canMove; i++)
+        for (int i = 0; i < possibleCoordinates.Count; i++)
 		{
             Debug.Log(possibleCoordinates[i][0] + " " + possibleCoordinates[i][1]);
             if (possibleCoordinates[i][0] == cellCoord[0] && possibleCoordinates[i][1] == cellCoord[1]) canMove = true;
