@@ -45,8 +45,8 @@ public class GameManagerScript : MonoBehaviour
     void Start()
     {
         InitBoard();
-        ShowWhitePerspective();
-        //ShowBlackPerspective();
+        //ShowWhitePerspective();
+        ShowBlackPerspective();
     }
 
     private void InitBoard()
@@ -224,7 +224,7 @@ public class GameManagerScript : MonoBehaviour
             globalPosition = row2[i].transform.position;
             globalPosition.y += 0.1f;
             go = Instantiate(Pawn_White, globalPosition, Quaternion.identity);
-            go.GetComponent<Pawn_MovementScript>().SetCoordinates(i, 1, true);
+            go.GetComponent<Pawn_MovementScript>().SetCoordinates(i, 6, true);
             row2[i].GetComponent<CellScript>().OccupiedBy(go);
         }
 
@@ -277,7 +277,7 @@ public class GameManagerScript : MonoBehaviour
             globalPosition = row7[i].transform.position;
             globalPosition.y += 0.1f;
             go = Instantiate(Pawn_Black, globalPosition, Quaternion.identity);
-            go.GetComponent<Pawn_MovementScript>().SetCoordinates(i, 6, false);
+            go.GetComponent<Pawn_MovementScript>().SetCoordinates(i, 1, false);
             row7[i].GetComponent<CellScript>().OccupiedBy(go);
         }
 
