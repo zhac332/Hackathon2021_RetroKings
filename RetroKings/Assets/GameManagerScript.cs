@@ -30,11 +30,14 @@ public class GameManagerScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        ShowWhitePerspective();
+        //ShowWhitePerspective();
+        ShowBlackPerspective();
     }
 
     private void ShowWhitePerspective()
 	{
+        /// -----------------------------------------WHITE PIECES-----------------------------------------
+        
         // the white pawns will be on row 7
         // the other white pieces will be on row 8
 
@@ -69,6 +72,74 @@ public class GameManagerScript : MonoBehaviour
         globalPosition = row8[4].transform.position;
         Instantiate(King_White, globalPosition, Quaternion.identity);
     }
+
+    private void ShowBlackPerspective()
+	{
+        /// -----------------------------------------WHITE PIECES-----------------------------------------
+
+        Vector3 globalPosition = new Vector3();
+
+        // setting up the white pawns
+        foreach (GameObject cell in row2)
+        {
+            globalPosition = cell.transform.position;
+            globalPosition.y += 0.1f;
+            Instantiate(Pawn_White, globalPosition, Quaternion.identity);
+        }
+
+        globalPosition = row1[0].transform.position;
+        Instantiate(Rook_White, globalPosition, Quaternion.identity);
+        globalPosition = row1[7].transform.position;
+        Instantiate(Rook_White, globalPosition, Quaternion.identity);
+
+        globalPosition = row1[1].transform.position;
+        Instantiate(Knight_White, globalPosition, Quaternion.identity);
+        globalPosition = row1[6].transform.position;
+        Instantiate(Knight_White, globalPosition, Quaternion.identity);
+
+        globalPosition = row1[2].transform.position;
+        Instantiate(Bishop_White, globalPosition, Quaternion.identity);
+        globalPosition = row1[5].transform.position;
+        Instantiate(Bishop_White, globalPosition, Quaternion.identity);
+
+        globalPosition = row1[3].transform.position;
+        Instantiate(Queen_White, globalPosition, Quaternion.identity);
+
+        globalPosition = row1[4].transform.position;
+        Instantiate(King_White, globalPosition, Quaternion.identity);
+
+
+        /// -----------------------------------------BLACK PIECES-----------------------------------------
+
+        // setting up the white pawns
+        foreach (GameObject cell in row7)
+        {
+            globalPosition = cell.transform.position;
+            globalPosition.y += 0.1f;
+            Instantiate(Pawn_Black, globalPosition, Quaternion.identity);
+        }
+
+		globalPosition = row8[0].transform.position;
+		Instantiate(Rook_Black, globalPosition, Quaternion.identity);
+		globalPosition = row8[7].transform.position;
+		Instantiate(Rook_Black, globalPosition, Quaternion.identity);
+
+		globalPosition = row8[1].transform.position;
+		Instantiate(Knight_Black, globalPosition, Quaternion.identity);
+		globalPosition = row8[6].transform.position;
+		Instantiate(Knight_Black, globalPosition, Quaternion.identity);
+
+		globalPosition = row8[2].transform.position;
+		Instantiate(Bishop_Black, globalPosition, Quaternion.identity);
+		globalPosition = row8[5].transform.position;
+		Instantiate(Bishop_Black, globalPosition, Quaternion.identity);
+
+		globalPosition = row8[3].transform.position;
+		Instantiate(Queen_Black, globalPosition, Quaternion.identity);
+
+		globalPosition = row8[4].transform.position;
+		Instantiate(King_Black, globalPosition, Quaternion.identity);
+	}
 
     // Update is called once per frame
     void Update()
