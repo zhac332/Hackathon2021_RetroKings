@@ -103,7 +103,7 @@ public class GameManagerScript : MonoBehaviour
             globalPosition = row7[i].transform.position;
             globalPosition.y += 0.1f;
             GameObject go = Instantiate(Pawn_White, globalPosition, Quaternion.identity);
-            go.GetComponent<PawnWhite_MovementScript>().SetCoordinates(i, 1, false);
+            go.GetComponent<Pawn_MovementScript>().SetCoordinates(i, 1, false);
 		}
 
         globalPosition = row8[0].transform.position;
@@ -259,14 +259,14 @@ public class GameManagerScript : MonoBehaviour
         // I have the selected cell, but not the coordinates
 
         // I need the coordinates of the pawn
-        Pawn_XCoord = selectedPiece.GetComponent<PawnWhite_MovementScript>().GetXCoordinate();
-        Pawn_YCoord = selectedPiece.GetComponent<PawnWhite_MovementScript>().GetYCoordinate();
+        Pawn_XCoord = selectedPiece.GetComponent<Pawn_MovementScript>().GetXCoordinate();
+        Pawn_YCoord = selectedPiece.GetComponent<Pawn_MovementScript>().GetYCoordinate();
 
         // I need the direction of the pawn
-        direction = selectedPiece.GetComponent<PawnWhite_MovementScript>().GetDirection(); // false = Upwards, true = Downwards
+        direction = selectedPiece.GetComponent<Pawn_MovementScript>().GetDirection(); // false = Upwards, true = Downwards
 
         // I need to know if the pawn has ever been moved before
-        firstMove = selectedPiece.GetComponent<PawnWhite_MovementScript>().GetFirstMove();
+        firstMove = selectedPiece.GetComponent<Pawn_MovementScript>().GetFirstMove();
 
         // I need to find the coordinates of the cell that was clicked in the board_cells matrix.
         int Cell_xcoord, Cell_ycoord; // for the cell
@@ -355,7 +355,7 @@ public class GameManagerScript : MonoBehaviour
 
         if (canMove)
 		{
-            selectedPiece.GetComponent<PawnWhite_MovementScript>().MoveToCell(selectedCell.gameObject.transform.position, cellCoord);
+            selectedPiece.GetComponent<Pawn_MovementScript>().MoveToCell(selectedCell.gameObject.transform.position, cellCoord);
             selectedCell = null;
             selectedPiece = null;
         }

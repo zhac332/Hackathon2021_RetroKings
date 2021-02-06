@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PawnWhite_MovementScript : MonoBehaviour, PieceInterface
+public class Pawn_MovementScript : MonoBehaviour, PieceInterface
 {
 	private GameManagerScript GameManager;
 	private int X_Coord = 0, Y_Coord = 0;
