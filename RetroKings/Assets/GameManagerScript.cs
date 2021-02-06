@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// The main GameObject that allows the movement of pieces to be made.
+/// </summary>
 public class GameManagerScript : MonoBehaviour
 {
     [SerializeField] private List<GameObject> row1 = new List<GameObject>();
@@ -29,6 +32,7 @@ public class GameManagerScript : MonoBehaviour
 
 
     private GameObject[,] board_cells = new GameObject[8, 8];
+    private GameObject selectedPiece;
 
     // Start is called before the first frame update
     void Start()
@@ -197,5 +201,10 @@ public class GameManagerScript : MonoBehaviour
 
 		globalPosition = row8[4].transform.position;
 		Instantiate(King_Black, globalPosition, Quaternion.identity);
+	}
+
+    public void GetSelectedPiece(GameObject go)
+	{
+        this.selectedPiece = go;
 	}
 }
