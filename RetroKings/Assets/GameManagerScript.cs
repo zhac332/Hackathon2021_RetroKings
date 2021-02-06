@@ -70,6 +70,7 @@ public class GameManagerScript : MonoBehaviour
         // the other white pieces will be on row 8
 
         Vector3 globalPosition = new Vector3();
+        GameObject go = new GameObject();
 
         // setting up the white pawns
         for (int i = 0; i < 8; i++)
@@ -79,64 +80,103 @@ public class GameManagerScript : MonoBehaviour
             globalPosition.y += 0.1f;
 
             // instantiating the object at that position
-            GameObject go = Instantiate(Pawn_White, globalPosition, Quaternion.identity);
+            go = Instantiate(Pawn_White, globalPosition, Quaternion.identity);
             go.GetComponent<Pawn_MovementScript>().SetCoordinates(i, 1, false);
 
             // occupying the cell
             row7[i].GetComponent<CellScript>().OccupiedBy(go);
 		}
 
+        // first rook 
         globalPosition = row8[0].transform.position;
-        Instantiate(Rook_White, globalPosition, Quaternion.identity);
+        go = Instantiate(Rook_White, globalPosition, Quaternion.identity);
+        row8[0].GetComponent<CellScript>().OccupiedBy(go);
+
+        // second rook
         globalPosition = row8[7].transform.position;
-        Instantiate(Rook_White, globalPosition, Quaternion.identity);
+        go = Instantiate(Rook_White, globalPosition, Quaternion.identity);
+        row8[7].GetComponent<CellScript>().OccupiedBy(go);
 
+        // first knight
         globalPosition = row8[1].transform.position;
-        Instantiate(Knight_White, globalPosition, Quaternion.identity);
+        go = Instantiate(Knight_White, globalPosition, Quaternion.identity);
+        row8[1].GetComponent<CellScript>().OccupiedBy(go);
+
+        // second knight
         globalPosition = row8[6].transform.position;
-        Instantiate(Knight_White, globalPosition, Quaternion.identity);
+        go = Instantiate(Knight_White, globalPosition, Quaternion.identity);
+        row8[6].GetComponent<CellScript>().OccupiedBy(go);
 
+        // first bishop
         globalPosition = row8[2].transform.position;
-        Instantiate(Bishop_White, globalPosition, Quaternion.identity);
+        go = Instantiate(Bishop_White, globalPosition, Quaternion.identity);
+        row8[2].GetComponent<CellScript>().OccupiedBy(go);
+
+        // second bishop
         globalPosition = row8[5].transform.position;
-        Instantiate(Bishop_White, globalPosition, Quaternion.identity);
+        go = Instantiate(Bishop_White, globalPosition, Quaternion.identity);
+        row8[5].GetComponent<CellScript>().OccupiedBy(go);
 
+        // queen
         globalPosition = row8[3].transform.position;
-        Instantiate(Queen_White, globalPosition, Quaternion.identity);
+        go = Instantiate(Queen_White, globalPosition, Quaternion.identity);
+        row8[3].GetComponent<CellScript>().OccupiedBy(go);
 
+        // king
         globalPosition = row8[4].transform.position;
-        Instantiate(King_White, globalPosition, Quaternion.identity);
+        go = Instantiate(King_White, globalPosition, Quaternion.identity);
+        row8[4].GetComponent<CellScript>().OccupiedBy(go);
 
         /// -----------------------------------------BLACK PIECES-----------------------------------------
 
         // setting up the white pawns
-        foreach (GameObject cell in row2)
+        for (int i = 0; i < 8; i++)
         {
-            globalPosition = cell.transform.position;
+            globalPosition = row2[i].transform.position;
             globalPosition.y += 0.1f;
-            Instantiate(Pawn_Black, globalPosition, Quaternion.identity);
+            go = Instantiate(Pawn_Black, globalPosition, Quaternion.identity);
+            row2[i].GetComponent<CellScript>().OccupiedBy(go);
         }
 
+        // first rook
         globalPosition = row1[0].transform.position;
-        Instantiate(Rook_Black, globalPosition, Quaternion.identity);
+        go = Instantiate(Rook_Black, globalPosition, Quaternion.identity);
+        row1[0].GetComponent<CellScript>().OccupiedBy(go);
+
+        // second rook
         globalPosition = row1[7].transform.position;
-        Instantiate(Rook_Black, globalPosition, Quaternion.identity);
+        go = Instantiate(Rook_Black, globalPosition, Quaternion.identity);
+        row1[7].GetComponent<CellScript>().OccupiedBy(go);
 
+        // first knight
         globalPosition = row1[1].transform.position;
-        Instantiate(Knight_Black, globalPosition, Quaternion.identity);
+        go = Instantiate(Knight_Black, globalPosition, Quaternion.identity);
+        row1[1].GetComponent<CellScript>().OccupiedBy(go);
+
+        // second knight
         globalPosition = row1[6].transform.position;
-        Instantiate(Knight_Black, globalPosition, Quaternion.identity);
+        go = Instantiate(Knight_Black, globalPosition, Quaternion.identity);
+        row1[6].GetComponent<CellScript>().OccupiedBy(go);
 
+        // first bishop
         globalPosition = row1[2].transform.position;
-        Instantiate(Bishop_Black, globalPosition, Quaternion.identity);
+        go = Instantiate(Bishop_Black, globalPosition, Quaternion.identity);
+        row1[2].GetComponent<CellScript>().OccupiedBy(go);
+
+        // second bishop
         globalPosition = row1[5].transform.position;
-        Instantiate(Bishop_Black, globalPosition, Quaternion.identity);
+        go = Instantiate(Bishop_Black, globalPosition, Quaternion.identity);
+        row1[5].GetComponent<CellScript>().OccupiedBy(go);
 
+        // queen
         globalPosition = row1[3].transform.position;
-        Instantiate(Queen_Black, globalPosition, Quaternion.identity);
+        go = Instantiate(Queen_Black, globalPosition, Quaternion.identity);
+        row1[3].GetComponent<CellScript>().OccupiedBy(go);
 
+        // king
         globalPosition = row1[4].transform.position;
-        Instantiate(King_Black, globalPosition, Quaternion.identity);
+        go = Instantiate(King_Black, globalPosition, Quaternion.identity);
+        row1[4].GetComponent<CellScript>().OccupiedBy(go);
     }
 
     private void ShowBlackPerspective()
