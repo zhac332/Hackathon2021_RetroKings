@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -31,8 +32,9 @@ public class GameManagerScript : MonoBehaviour
     [SerializeField] private GameObject Rook_Black;
 
 
-    private GameObject[,] board_cells = new GameObject[8, 8];
+    private CellScript[,] board_cells = new CellScript[8, 8];
     private GameObject selectedPiece;
+    private CellScript selectedCell;
 
     // Start is called before the first frame update
     void Start()
@@ -45,24 +47,46 @@ public class GameManagerScript : MonoBehaviour
     private void InitBoard()
 	{
         for (int i = 0; i < row1.Count; i++)
-            board_cells[0, i] = row1[i];
+		{
+            board_cells[0, i] = row1[i].GetComponent<CellScript>();
+            board_cells[0, i].SetCoordinates(0, i);
+        }
         for (int i = 0; i < row2.Count; i++)
-            board_cells[1, i] = row2[i];
+		{
+            board_cells[1, i] = row2[i].GetComponent<CellScript>();
+            board_cells[1, i].SetCoordinates(1, i);
+        }
         for (int i = 0; i < row3.Count; i++)
-            board_cells[2, i] = row3[i];
+		{
+            board_cells[2, i] = row3[i].GetComponent<CellScript>();
+            board_cells[2, i].SetCoordinates(2, i);
+        }
         for (int i = 0; i < row4.Count; i++)
-            board_cells[3, i] = row4[i];
+		{
+            board_cells[3, i] = row4[i].GetComponent<CellScript>();
+            board_cells[3, i].SetCoordinates(3, i);
+        }
         for (int i = 0; i < row5.Count; i++)
-            board_cells[4, i] = row5[i];
+		{
+            board_cells[4, i] = row5[i].GetComponent<CellScript>();
+            board_cells[4, i].SetCoordinates(4, i);
+        }
         for (int i = 0; i < row6.Count; i++)
-            board_cells[5, i] = row6[i];
+		{
+            board_cells[5, i] = row6[i].GetComponent<CellScript>();
+            board_cells[5, i].SetCoordinates(5, i);
+        }
         for (int i = 0; i < row7.Count; i++)
-            board_cells[6, i] = row7[i];
+		{
+            board_cells[6, i] = row7[i].GetComponent<CellScript>();
+            board_cells[6, i].SetCoordinates(6, i);
+        }
         for (int i = 0; i < row8.Count; i++)
-            board_cells[7, i] = row8[i];
+		{
+            board_cells[7, i] = row8[i].GetComponent<CellScript>();
+            board_cells[7, i].SetCoordinates(7, i);
+        }
     }
-
-    public GameObject[,] GetBoardCells() { return this.board_cells; }
 
     private void ShowWhitePerspective()
 	{
@@ -206,5 +230,134 @@ public class GameManagerScript : MonoBehaviour
     public void GetSelectedPiece(GameObject go)
 	{
         this.selectedPiece = go;
+	}
+
+    public void SetSelectedCell(GameObject go)
+	{
+        this.selectedCell = go.GetComponent<CellScript>();
+        if (selectedPiece != null)
+            CheckValidMove();
+	}
+
+    private void CheckValidMove()
+	{
+        // it is guaranteed to be called when a piece is actually selected.
+        // I need to know what kind of piece it is. --> need to check the tag of the object
+        if (selectedPiece != null)
+		{
+            Debug.Log("check if the pawn can be moved");
+            if (selectedPiece.tag == "Pawn") CheckMovePawn();
+        }
+	}
+
+    private void CheckMovePawn()
+	{
+        int Pawn_XCoord, Pawn_YCoord; // for the piece
+        bool direction, firstMove;
+
+        // I am guaranteed that the piece selected is a pawn
+        // I have the selected cell, but not the coordinates
+
+        // I need the coordinates of the pawn
+        Pawn_XCoord = selectedPiece.GetComponent<PawnWhite_MovementScript>().GetXCoordinate();
+        Pawn_YCoord = selectedPiece.GetComponent<PawnWhite_MovementScript>().GetYCoordinate();
+
+        // I need the direction of the pawn
+        direction = selectedPiece.GetComponent<PawnWhite_MovementScript>().GetDirection(); // false = Upwards, true = Downwards
+
+        // I need to know if the pawn has ever been moved before
+        firstMove = selectedPiece.GetComponent<PawnWhite_MovementScript>().GetFirstMove();
+
+        // I need to find the coordinates of the cell that was clicked in the board_cells matrix.
+        int Cell_xcoord, Cell_ycoord; // for the cell
+        Cell_xcoord = 7 - selectedCell.GetXCoordinate();
+        Cell_ycoord = selectedCell.GetYCoordinate();
+
+        // Then, I need to calculate a list of all the possible movements for that pawn. If the clicked cell
+        // is within that list, that's totally correct.
+        List<int[]> possibleCoordinates = new List<int[]>();
+
+
+        // we need to also check in advance if the cells are valid (or un-occupied)
+
+		if (!firstMove) // the pawn DID make the first move
+		{
+            if (!direction) // if it is upwards
+			{
+                int[] possibleCoord = new int[2];
+                possibleCoord[0] = Pawn_XCoord + 1;
+                possibleCoord[1] = Pawn_YCoord;
+
+                possibleCoordinates.Add(possibleCoord);
+			}
+            else
+			{
+                int[] possibleCoord = new int[2];
+                possibleCoord[0] = Pawn_XCoord - 1;
+                possibleCoord[1] = Pawn_YCoord;
+
+                possibleCoordinates.Add(possibleCoord);
+            }
+		    
+            // I also need to check if the pawn can attack on the diagonal --  TO BE DONE LATER.
+        }
+		else
+		{
+            if (!direction) // if it is upwards
+            {
+                // first cell forward
+                int[] possibleCoord = new int[2];
+                possibleCoord[0] = Pawn_XCoord;
+                possibleCoord[1] = Pawn_YCoord + 1;
+
+                possibleCoordinates.Add(possibleCoord);
+
+                // second cell forward
+                int[] possibleCoord2 = new int[2];
+                possibleCoord2[0] = Pawn_XCoord;
+                possibleCoord2[1] = Pawn_YCoord + 2;
+
+                possibleCoordinates.Add(possibleCoord2);
+            }
+            else
+            {
+                // first cell forward
+                int[] possibleCoord = new int[2];
+                possibleCoord[0] = Pawn_XCoord;
+                possibleCoord[1] = Pawn_YCoord - 1;
+
+                possibleCoordinates.Add(possibleCoord);
+
+                // second cell forward
+                int[] possibleCoord2 = new int[2];
+                possibleCoord2[0] = Pawn_XCoord;
+                possibleCoord2[1] = Pawn_YCoord - 2;
+
+                possibleCoordinates.Add(possibleCoord2);
+            }
+        }
+
+
+        // now, we need to check if the coordinates of the cell exist in the list
+        bool canMove = false;
+
+        int[] cellCoord = new int[2];
+        cellCoord[0] = Cell_ycoord;
+        cellCoord[1] = Cell_xcoord;
+
+        for (int i = 0; i < possibleCoordinates.Count && !canMove; i++)
+		{
+            Debug.Log(possibleCoordinates[i][0] + " " + possibleCoordinates[i][1]);
+            if (possibleCoordinates[i][0] == cellCoord[0] && possibleCoordinates[i][1] == cellCoord[1]) canMove = true;
+        }
+
+        Debug.Log("Coordinates of the pawn: " + Pawn_XCoord + "," + Pawn_YCoord + ". Coordinates of the cell: " + cellCoord[0] + "," + cellCoord[1] + ". Can Move: " + canMove);
+
+        if (canMove)
+		{
+            selectedPiece.GetComponent<PawnWhite_MovementScript>().MoveToCell(selectedCell.gameObject.transform.position, cellCoord);
+            selectedCell = null;
+            selectedPiece = null;
+        }
 	}
 }
