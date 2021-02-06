@@ -35,13 +35,13 @@ public class Pawn_MovementScript : MonoBehaviour, PieceInterface
 		{
 			Debug.Log("piece is selected");
 			selected = true;
-			GameManager.GetSelectedPiece(this.gameObject);
+			GameManager.SetSelectedPiece(this.gameObject);
 		}
 		else
 		{
 			Debug.Log("piece is not selected");
 			selected = false;
-			GameManager.GetSelectedPiece(null);
+			GameManager.SetSelectedPiece(null);
 		}
 	}	
 

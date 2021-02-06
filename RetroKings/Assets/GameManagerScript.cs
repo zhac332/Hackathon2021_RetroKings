@@ -14,14 +14,19 @@ using UnityEngine;
 /// </summary>
 public class GameManagerScript : MonoBehaviour
 {
-    //[SerializeField] private List<GameObject> row1 = new List<GameObject>();
-    //[SerializeField] private List<GameObject> row2 = new List<GameObject>();
-    //[SerializeField] private List<GameObject> row3 = new List<GameObject>();
-    //[SerializeField] private List<GameObject> row4 = new List<GameObject>();
-    //[SerializeField] private List<GameObject> row5 = new List<GameObject>();
-    //[SerializeField] private List<GameObject> row6 = new List<GameObject>();
-    //[SerializeField] private List<GameObject> row7 = new List<GameObject>();
-    //[SerializeField] private List<GameObject> row8 = new List<GameObject>();
+    /**
+     * When considering attacking, I think it would be best to implement the turn system.
+     * Because otherwise, the mechanism of attacking will be different.
+     * 
+     * For example, we could do two players and each player has a list of the pieces that belong to him.
+     * We also need to assign to each piece the player it belongs to.
+     * 
+     * This way will be a lot easier when checking an attack.
+     * And also, it will be easier to detect an attack, because if we select a piece
+     * that is not ours, that means we will attack it straight away.
+     * **/
+
+
     [Header("White pieces")]
     [SerializeField] private GameObject Pawn_White;
     [SerializeField] private GameObject King_White;
@@ -41,6 +46,7 @@ public class GameManagerScript : MonoBehaviour
     private GameObject selectedPiece;
     private GameObject selectedPiece2; // used mainly to detect any capturing.
     private CellScript selectedCell;
+    private bool attacking = false;
 
     // Start is called before the first frame update
     void Start()
@@ -330,17 +336,42 @@ public class GameManagerScript : MonoBehaviour
         board_cells[7, 4].GetComponent<CellScript>().OccupiedBy(go);
 	}
 
-    public void GetSelectedPiece(GameObject go)
+    public void SetSelectedPiece(GameObject go)
 	{
         if (selectedPiece != null)
-		{
-            // I need to de-select the object inside its script
-            if (selectedPiece.tag == "Pawn") selectedPiece.GetComponent<Pawn_MovementScript>().Deselect();
+        {
+            // checking if the go is the same with selected piece
 
-
-            
+            if (go == selectedPiece)
+            {
+                Debug.Log("deselecting.");
+                selectedPiece.GetComponent<Pawn_MovementScript>().Deselect();
+                selectedCell = null;
+                selectedPiece = null;
+                selectedPiece2 = null;
+            }
+            else
+            {
+                // check if there is any potential attack happening
+                // if there isn't, that means the player selected another piece
+                if (!IsAttacking(selectedPiece, go))
+				{
+                    Debug.Log("selected the first piece");
+                    selectedPiece = go;
+                }
+                else
+				{
+                    Debug.Log("selected the second piece");
+                    selectedPiece2 = go;
+                    attacking = true;
+                }
+            }
         }
-        this.selectedPiece = go;
+        else
+		{
+            Debug.Log("selected piece 1.");
+            selectedPiece = go;
+        }
     }
 
     public void SetSelectedCell(GameObject go)
@@ -357,13 +388,20 @@ public class GameManagerScript : MonoBehaviour
         return board_cells[x, y].IsOccupied();
     }
 
+    private bool IsAttacking(GameObject go1, GameObject go2)
+	{
+        if (go1.name.Contains("White") && go2.name.Contains("Black")) return true;
+        if (go1.name.Contains("Black") && go2.name.Contains("White")) return true;
+        return false;
+    }
+
     private void CheckValidMove()
 	{
         // it is guaranteed to be called when a piece is actually selected.
         // I need to know what kind of piece it is. --> need to check the tag of the object
-        if (selectedPiece != null)
+        if (selectedPiece != null || attacking)
 		{
-            //Debug.Log("check if the pawn can be moved");
+            Debug.Log("check if the pawn can be moved");
             if (selectedPiece.tag == "Pawn") CheckMovePawn();
         }
 	}
@@ -409,8 +447,6 @@ public class GameManagerScript : MonoBehaviour
 
             if (!IsCellOccupied(forward_cell))
                 possibleCoordinates.Add(forward_cell);
-
-           // Debug.Log(forward_cell[0] + " " + forward_cell[1]);
         }
 
         if (firstMove) // that means that the pawn DIDN'T move at all
@@ -423,8 +459,28 @@ public class GameManagerScript : MonoBehaviour
             if (!IsCellOccupied(double_forward_cell))
                 possibleCoordinates.Add(double_forward_cell);
 
-            //Debug.Log(double_forward_cell[0] + " " + double_forward_cell[1]);
         }
+
+        if (attacking)
+		{
+            // If I can attack on the left, it is a possible move.
+            int[] left_diagonal = new int[2];
+
+            left_diagonal[0] = Pawn_XCoord + 1 * directionModifier;
+            left_diagonal[1] = Pawn_YCoord - 1;
+
+            if (IsCellOccupied(left_diagonal))
+                possibleCoordinates.Add(left_diagonal);
+
+
+            // If I can attack on the right, that is a possible move as well.
+            int[] right_diagonal = new int[2];
+            right_diagonal[0] = Pawn_XCoord + 1 * directionModifier;
+            right_diagonal[1] = Pawn_YCoord + 1;
+
+            if (IsCellOccupied(right_diagonal))
+                possibleCoordinates.Add(right_diagonal);
+		}
 
 		// now, we need to check if the coordinates of the cell exist in the list
 		bool canMove = false;
