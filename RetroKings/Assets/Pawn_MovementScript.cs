@@ -50,8 +50,14 @@ public class Pawn_MovementScript : MonoBehaviour, PieceInterface
 		this.X_Coord = newCoords[0];
 		this.Y_Coord = newCoords[1];
 		this.selected = false;
+		if (firstMove) firstMove = false;
 		position.y += 0.1f;
 		position.z = -5f;
 		this.transform.position = position;
+	}
+
+	public void Deselect()
+	{
+		this.selected = false;
 	}
 }

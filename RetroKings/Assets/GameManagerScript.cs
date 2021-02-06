@@ -229,8 +229,16 @@ public class GameManagerScript : MonoBehaviour
 
     public void GetSelectedPiece(GameObject go)
 	{
+        if (selectedPiece != null)
+		{
+            // I need to de-select the object inside its script
+            if (selectedPiece.tag == "Pawn") selectedPiece.GetComponent<Pawn_MovementScript>().Deselect();
+
+
+            
+        }
         this.selectedPiece = go;
-	}
+    }
 
     public void SetSelectedCell(GameObject go)
 	{
@@ -245,7 +253,7 @@ public class GameManagerScript : MonoBehaviour
         // I need to know what kind of piece it is. --> need to check the tag of the object
         if (selectedPiece != null)
 		{
-            Debug.Log("check if the pawn can be moved");
+            //Debug.Log("check if the pawn can be moved");
             if (selectedPiece.tag == "Pawn") CheckMovePawn();
         }
 	}
@@ -282,19 +290,20 @@ public class GameManagerScript : MonoBehaviour
 
 		if (!firstMove) // the pawn DID make the first move
 		{
+            //Debug.Log("can move only one cell");
             if (!direction) // if it is upwards
 			{
                 int[] possibleCoord = new int[2];
-                possibleCoord[0] = Pawn_XCoord + 1;
-                possibleCoord[1] = Pawn_YCoord;
+                possibleCoord[0] = Pawn_XCoord;
+                possibleCoord[1] = Pawn_YCoord + 1;
 
                 possibleCoordinates.Add(possibleCoord);
 			}
             else
 			{
                 int[] possibleCoord = new int[2];
-                possibleCoord[0] = Pawn_XCoord - 1;
-                possibleCoord[1] = Pawn_YCoord;
+                possibleCoord[0] = Pawn_XCoord;
+                possibleCoord[1] = Pawn_YCoord - 1;
 
                 possibleCoordinates.Add(possibleCoord);
             }
