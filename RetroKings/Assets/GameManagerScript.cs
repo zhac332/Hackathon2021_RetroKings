@@ -74,10 +74,16 @@ public class GameManagerScript : MonoBehaviour
         // setting up the white pawns
         for (int i = 0; i < 8; i++)
 		{
+            // calculating the position
             globalPosition = row7[i].transform.position;
             globalPosition.y += 0.1f;
+
+            // instantiating the object at that position
             GameObject go = Instantiate(Pawn_White, globalPosition, Quaternion.identity);
             go.GetComponent<Pawn_MovementScript>().SetCoordinates(i, 1, false);
+
+            // occupying the cell
+            row7[i].GetComponent<CellScript>().OccupiedBy(go);
 		}
 
         globalPosition = row8[0].transform.position;

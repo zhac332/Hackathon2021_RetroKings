@@ -27,4 +27,9 @@ public class CellScript : MonoBehaviour
 		Debug.Log("cell clicked.");
 		GameManager.SetSelectedCell(this.gameObject);
 	}
+
+	public void OccupiedBy(GameObject piece)
+	{
+		this.pieceOccuping = piece;
+	}
 }
