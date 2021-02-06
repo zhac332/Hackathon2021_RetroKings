@@ -1,4 +1,10 @@
-﻿using System;
+﻿/*
+Authors:
+    Stefan Tanasa
+    Haaris Iqbal
+*/
+
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
