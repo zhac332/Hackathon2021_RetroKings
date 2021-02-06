@@ -71,6 +71,37 @@ public class GameManagerScript : MonoBehaviour
 
         globalPosition = row8[4].transform.position;
         Instantiate(King_White, globalPosition, Quaternion.identity);
+
+        /// -----------------------------------------BLACK PIECES-----------------------------------------
+        
+        // setting up the Black pawns.
+        foreach (GameObject cell in row2)
+		{
+            globalPosition = cell.transform.position;
+            globalPosition.y += 0.1f;
+            Instantiate(Pawn_Black, globalPosition, Quaternion.identity);
+		}
+        
+        globalPosition = row1[0].transform.position;
+        Instantiate(Rook_Black, globalPosition, Quaternion.identity);
+        globalPosition = row1[7].transform.position;
+        Instantiate(Rook_Black, globalPosition, Quaternion.identity);
+
+        globalPosition = row1[1].transform.position;
+        Instantiate(Knight_Black, globalPosition, Quaternion.identity);
+        globalPosition = row1[6].transform.position;
+        Instantiate(Knight_Black, globalPosition, Quaternion.identity);
+
+        globalPosition = row1[2].transform.position;
+        Instantiate(Bishop_Black, globalPosition, Quaternion.identity);
+        globalPosition = row1[5].transform.position;
+        Instantiate(Bishop_Black, globalPosition, Quaternion.identity);
+
+        globalPosition = row1[3].transform.position;
+        Instantiate(Queen_Black, globalPosition, Quaternion.identity);
+
+        globalPosition = row1[4].transform.position;
+        Instantiate(King_Black, globalPosition, Quaternion.identity);
     }
 
     private void ShowBlackPerspective()
