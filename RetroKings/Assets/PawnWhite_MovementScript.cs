@@ -43,14 +43,15 @@ public class PawnWhite_MovementScript : MonoBehaviour, PieceInterface
 			selected = false;
 			GameManager.GetSelectedPiece(null);
 		}
-	}
+	}	
 
 	public void MoveToCell(Vector3 position, int[] newCoords)
 	{
 		this.X_Coord = newCoords[0];
 		this.Y_Coord = newCoords[1];
+		this.selected = false;
 		position.y += 0.1f;
-		position.z = 0f;
+		position.z = -5f;
 		this.transform.position = position;
 	}
 }
