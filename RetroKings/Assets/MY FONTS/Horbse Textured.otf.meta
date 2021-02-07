@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: 2f47eab5f4d8a2a4ea2759319e12be45
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Horbse
+  fontNames:
+  - Horbse
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: b4889a88cf7e2284c931a000c8568553, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
