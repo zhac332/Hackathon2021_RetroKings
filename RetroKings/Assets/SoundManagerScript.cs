@@ -35,4 +35,18 @@ public class SoundManagerScript : MonoBehaviour
         audioSource.clip = Piece_Checkmate;
         audioSource.Play();
     }
+
+    public void PieceSelect()
+	{
+        AudioSource audioSource = GetComponent<AudioSource>();
+        audioSource.clip = Piece_Select;
+        audioSource.Play();
+    }
+
+    public void PieceStuck()
+	{
+        AudioSource audioSource = GetComponent<AudioSource>();
+        audioSource.clip = Piece_Stuck;
+        audioSource.Play();
+    }
 }
