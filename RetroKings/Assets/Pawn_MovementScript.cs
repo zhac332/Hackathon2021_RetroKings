@@ -87,6 +87,7 @@ public class Pawn_MovementScript : MonoBehaviour, PieceInterface
 		{
 			Debug.Log("occupied new cell");
 			cell.OccupiedBy(this.gameObject);
+			//SoundManagerScript.PieceCapture();
 		}
 		this.gameObject.GetComponent<Renderer>().material.color = Color.white;
 	}
