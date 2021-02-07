@@ -222,7 +222,6 @@ public class GameManagerScript : MonoBehaviour
 
             if (go == selectedPiece)
             {
-                Debug.Log("deselecting.");
                 if (selectedPiece.tag == "Pawn") selectedPiece.GetComponent<Pawn_MovementScript>().Deselect();
                 else if (selectedPiece.tag == "Knight") selectedPiece.GetComponent<Knight_MovementScript>().Deselect();
                 else if (selectedPiece.tag == "Bishop") selectedPiece.GetComponent<Bishop_MovementScript>().Deselect();
@@ -242,11 +241,7 @@ public class GameManagerScript : MonoBehaviour
                 selectedPiece = go;
             }
         }
-        else
-		{
-            Debug.Log("selected piece 1.");
-            selectedPiece = go;
-        }
+        else selectedPiece = go;
     }
 
     public bool GetSelectedPiece()
@@ -1639,55 +1634,64 @@ public class GameManagerScript : MonoBehaviour
             a[0] = King_XCoord + xCoordinates[k];
             a[1] = King_YCoord + yCoordinates[k];
 
-            if (IsWithinBorders(a) && !IsCellAttacked(a[0], a[1]))
+            
+   //         if (IsWithinBorders(a))
+			//{
+   //             Debug.Log("Cell " + a[0] + " " + a[1] + " is attacked: ");
+   //             Debug.Log(IsCellAttacked(a[0], a[1]));
+   //         }
+            if (IsWithinBorders(a) && !IsCellOccupied(a) && !IsCellAttacked(a[0], a[1]))
 			{
+                Debug.Log("Added " + a[0] + " " + a[1]);
                 possibleCoordinates.Add(a);
-                Debug.Log(a[0] + " " + a[1]);
             }
+        }
+
+		bool canMove = false;
+
+		int[] cellCoord = new int[2];
+		cellCoord[0] = Cell_xcoord;
+		cellCoord[1] = Cell_ycoord;
+
+		if (!IsCellAttacked(Cell_xcoord, Cell_ycoord))
+			possibleCoordinates.Add(cellCoord);
+
+		for (int i = 0; i < possibleCoordinates.Count; i++)
+			if (possibleCoordinates[i][0] == cellCoord[0] && possibleCoordinates[i][1] == cellCoord[1])
+				canMove = true;
+
+		Debug.Log("Coordinates of the King: " + King_XCoord + "," + King_YCoord + ". Coordinates of the cell: " + cellCoord[0] + "," + cellCoord[1] + ". Can Move: " + canMove);
+
+		if (canMove)
+		{
+			UnOccupyCell(King_XCoord, King_YCoord);
+			selectedPiece.GetComponent<King_MovementScript>().MoveToCell(cellCoord, board_cells[7 - cellCoord[0], cellCoord[1]]);
+			selectedCell = null;
+			selectedPiece = null;
+			selectedPiece2 = null;
+			attacking = false;
+
+			// changing turns
+			if (!extraTurn)
+			{
+				if (turn == "White")
+				{
+					turn = "Black";
+					Debug.Log("Black's turn.");
+				}
+				else
+				{
+					turn = "White";
+					Debug.Log("White's turn.");
+				}
+			}
+			else extraTurn = false;
 		}
-
-        bool canMove = false;
-
-        int[] cellCoord = new int[2];
-        cellCoord[0] = Cell_xcoord;
-        cellCoord[1] = Cell_ycoord;
-
-        for (int i = 0; i < possibleCoordinates.Count; i++)
-            if (possibleCoordinates[i][0] == cellCoord[0] && possibleCoordinates[i][1] == cellCoord[1])
-                canMove = true;
-
-        Debug.Log("Coordinates of the King: " + King_XCoord + "," + King_YCoord + ". Coordinates of the cell: " + cellCoord[0] + "," + cellCoord[1] + ". Can Move: " + canMove);
-
-        if (canMove)
-        {
-            UnOccupyCell(King_XCoord, King_YCoord);
-            selectedPiece.GetComponent<King_MovementScript>().MoveToCell(cellCoord, board_cells[7 - cellCoord[0], cellCoord[1]]);
-            selectedCell = null;
-            selectedPiece = null;
-            selectedPiece2 = null;
-            attacking = false;
-
-            // changing turns
-            if (!extraTurn)
-            {
-                if (turn == "White")
-                {
-                    turn = "Black";
-                    Debug.Log("Black's turn.");
-                }
-                else
-                {
-                    turn = "White";
-                    Debug.Log("White's turn.");
-                }
-            }
-            else extraTurn = false;
-        }
-        else
-        {
-            selectedCell = null;
-            selectedPiece.GetComponent<King_MovementScript>().Deselect();
-            selectedPiece = null;
-        }
-    }
+		else
+		{
+			selectedCell = null;
+			selectedPiece.GetComponent<King_MovementScript>().Deselect();
+			selectedPiece = null;
+		}
+	}
 }

@@ -85,7 +85,6 @@ public class King_MovementScript : MonoBehaviour, PieceInterface
 		}
 		else
 		{
-			Debug.Log("occupied new cell");
 			cell.OccupiedBy(this.gameObject);
 			SoundManager.PieceMove();
 		}
