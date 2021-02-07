@@ -470,6 +470,39 @@ public class GameManagerScript : MonoBehaviour
 			}
 
             //-------------------checking if there is a king nearby------------------
+            xCoordinates = new int[8];
+            xCoordinates[0] = 1;
+            xCoordinates[1] = 1;
+            xCoordinates[2] = 0;
+            xCoordinates[3] = -1;
+            xCoordinates[4] = -1;
+            xCoordinates[5] = -1;
+            xCoordinates[6] = 0;
+            xCoordinates[7] = 1;
+            yCoordinates = new int[8];
+            yCoordinates[0] = 0;
+            yCoordinates[1] = 1;
+            yCoordinates[2] = 1;
+            yCoordinates[3] = 1;
+            yCoordinates[4] = 0;
+            yCoordinates[5] = -1;
+            yCoordinates[6] = -1;
+            yCoordinates[7] = -1;
+
+            for (int i = 0; i < 8; i++)
+			{
+                int[] a = new int[2];
+                a[0] = x + xCoordinates[i];
+                a[1] = y + yCoordinates[i];
+
+                if (IsWithinBorders(a))
+				{
+                    cell1 = board_cells[7 - a[0], a[1]];
+                    if (cell1.IsOccupied() && cell1.IsKing() && cell1.IsPieceBlack()) return true;
+                }
+			}
+
+            return false;
         }
         return false;
 	}
