@@ -82,14 +82,13 @@ public class Pawn_MovementScript : MonoBehaviour, PieceInterface
 		{
 			// that means that I am capturing that piece
 			cell.Captured(this.gameObject);
-			this.gameObject.GetComponent<Renderer>().material.color = Color.white;
 		}
 		else
 		{
 			Debug.Log("occupied new cell");
 			cell.OccupiedBy(this.gameObject);
-			this.gameObject.GetComponent<Renderer>().material.color = Color.white;
 		}
+		this.gameObject.GetComponent<Renderer>().material.color = Color.white;
 	}
 
 	public void Deselect()

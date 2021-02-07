@@ -35,12 +35,14 @@ public class Rook_MovementScript : MonoBehaviour, PieceInterface
 				Debug.Log("piece is selected");
 				selected = true;
 				GameManager.SetSelectedPiece(this.gameObject);
+				this.gameObject.GetComponent<Renderer>().material.color = Color.green;
 			}
 			else
 			{
 				Debug.Log("piece is not selected");
 				selected = false;
 				GameManager.SetSelectedPiece(null);
+				this.gameObject.GetComponent<Renderer>().material.color = Color.white;
 			}
 		}
 		else
@@ -76,6 +78,7 @@ public class Rook_MovementScript : MonoBehaviour, PieceInterface
 			Debug.Log("occupied new cell");
 			cell.OccupiedBy(this.gameObject);
 		}
+		this.gameObject.GetComponent<Renderer>().material.color = Color.white;
 	}
 
 	public void Deselect()
