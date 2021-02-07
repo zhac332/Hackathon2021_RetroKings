@@ -349,18 +349,25 @@ public class GameManagerScript : MonoBehaviour
                     return true;
 			    }
 
-			//---------------check if there are any rooks on the row or column--------------------
+			//---------------check if there are any rooks or queens on the row or column--------------------
 
 			// checking for up direction
 			for (int i = x + 1; i < 8; i++)
 			{
 				CellScript cell = board_cells[7 - i, y];
 				if (cell.IsOccupied())
+				{
                     if (cell.IsRook() && cell.IsPieceBlack())
                     {
                         Debug.Log("King is attacked! By a black rook! On " + (i) + " " + (y));
                         return true;
                     }
+                    else if (cell.IsQueen() && cell.IsPieceBlack())
+                    {
+                        Debug.Log("King is attacked! By a black queen! On " + (i) + " " + (y));
+                        return true;
+                    }
+                }
             }
 
             // checking for down direction
@@ -368,11 +375,18 @@ public class GameManagerScript : MonoBehaviour
             {
                 CellScript cell = board_cells[7 - i, y];
                 if (cell.IsOccupied())
+				{
                     if (cell.IsRook() && cell.IsPieceBlack())
                     {
                         Debug.Log("King is attacked! By a black rook! On " + (i) + " " + (y));
                         return true;
                     }
+                    else if (cell.IsQueen() && cell.IsPieceBlack())
+                    {
+                        Debug.Log("King is attacked! By a black queen! On " + (i) + " " + (y));
+                        return true;
+                    }
+                }
             }
 
             // checking for left direction
@@ -380,11 +394,18 @@ public class GameManagerScript : MonoBehaviour
             {
                 CellScript cell = board_cells[7 - x, j];
                 if (cell.IsOccupied())
+				{
                     if (cell.IsRook() && cell.IsPieceBlack())
                     {
                         Debug.Log("King is attacked! By a black rook! On " + (x) + " " + (j));
                         return true;
                     }
+                    else if (cell.IsQueen() && cell.IsPieceBlack())
+					{
+                        Debug.Log("King is attacked! By a black queen! On " + (x) + " " + (j));
+                        return true;
+                    }
+                }
             }
 
             // checking for right direction
@@ -392,12 +413,21 @@ public class GameManagerScript : MonoBehaviour
             {
                 CellScript cell = board_cells[7 - x, j];
                 if (cell.IsOccupied())
+				{
                     if (cell.IsRook() && cell.IsPieceBlack())
                     {
                         Debug.Log("King is attacked! By a black rook! On " + (x) + " " + (j));
                         return true;
                     }
+                    else if (cell.IsQueen() && cell.IsPieceBlack())
+                    {
+                        Debug.Log("King is attacked! By a black queen! On " + (x) + " " + (j));
+                        return true;
+                    }
+                }
             }
+
+            //---------------check if there are any bishops or queens on the row or column--------------------
         }
         return false;
 	}
