@@ -333,40 +333,26 @@ public class GameManagerScript : MonoBehaviour
             upperLeftDiag[0] = x + 1;
             upperLeftDiag[1] = y - 1;
             if (IsWithinBorders(upperLeftDiag) && IsCellOccupied(upperLeftDiag))
-                    if (board_cells[7 - (x + 1), y - 1].IsPawn() && board_cells[7 - (x + 1), y - 1].IsPieceBlack())
-			        {
-                        Debug.Log("King is attacked! By a black pawn! On " + (x + 1) + " " + (y - 1));
-                        return true;
-                    }
+                if (board_cells[7 - (x + 1), y - 1].IsPawn() && board_cells[7 - (x + 1), y - 1].IsPieceBlack())
+                    return true;
 
-			int[] upperRightDiag = new int[2];
+            int[] upperRightDiag = new int[2];
 			upperRightDiag[0] = x + 1;
 			upperRightDiag[1] = y + 1;
 			if (IsWithinBorders(upperLeftDiag) && IsCellOccupied(upperRightDiag))
                 if (board_cells[7 - (x + 1), y + 1].IsPawn() && board_cells[7 - (x + 1), y + 1].IsPieceBlack())
-			    {
-                    Debug.Log("King is attacked! By a black pawn! On " + (x + 1) + " " + (y + 1));
                     return true;
-			    }
 
-			//---------------check if there are any rooks or queens on the row or column--------------------
+            //---------------check if there are any rooks or queens on the row or column--------------------
 
-			// checking for up direction
-			for (int i = x + 1; i < 8; i++)
+            // checking for up direction
+            for (int i = x + 1; i < 8; i++)
 			{
 				CellScript cell = board_cells[7 - i, y];
 				if (cell.IsOccupied())
 				{
-                    if (cell.IsRook() && cell.IsPieceBlack())
-                    {
-                        Debug.Log("King is attacked! By a black rook! On " + (i) + " " + (y));
-                        return true;
-                    }
-                    else if (cell.IsQueen() && cell.IsPieceBlack())
-                    {
-                        Debug.Log("King is attacked! By a black queen! On " + (i) + " " + (y));
-                        return true;
-                    }
+                    if (cell.IsRook() && cell.IsPieceBlack()) return true;
+                    else if (cell.IsQueen() && cell.IsPieceBlack()) return true;
                 }
             }
 
@@ -376,16 +362,8 @@ public class GameManagerScript : MonoBehaviour
                 CellScript cell = board_cells[7 - i, y];
                 if (cell.IsOccupied())
 				{
-                    if (cell.IsRook() && cell.IsPieceBlack())
-                    {
-                        Debug.Log("King is attacked! By a black rook! On " + (i) + " " + (y));
-                        return true;
-                    }
-                    else if (cell.IsQueen() && cell.IsPieceBlack())
-                    {
-                        Debug.Log("King is attacked! By a black queen! On " + (i) + " " + (y));
-                        return true;
-                    }
+                    if (cell.IsRook() && cell.IsPieceBlack()) return true;
+                    else if (cell.IsQueen() && cell.IsPieceBlack()) return true;
                 }
             }
 
@@ -395,16 +373,8 @@ public class GameManagerScript : MonoBehaviour
                 CellScript cell = board_cells[7 - x, j];
                 if (cell.IsOccupied())
 				{
-                    if (cell.IsRook() && cell.IsPieceBlack())
-                    {
-                        Debug.Log("King is attacked! By a black rook! On " + (x) + " " + (j));
-                        return true;
-                    }
-                    else if (cell.IsQueen() && cell.IsPieceBlack())
-					{
-                        Debug.Log("King is attacked! By a black queen! On " + (x) + " " + (j));
-                        return true;
-                    }
+                    if (cell.IsRook() && cell.IsPieceBlack()) return true;
+                    else if (cell.IsQueen() && cell.IsPieceBlack()) return true;
                 }
             }
 
@@ -414,20 +384,55 @@ public class GameManagerScript : MonoBehaviour
                 CellScript cell = board_cells[7 - x, j];
                 if (cell.IsOccupied())
 				{
-                    if (cell.IsRook() && cell.IsPieceBlack())
-                    {
-                        Debug.Log("King is attacked! By a black rook! On " + (x) + " " + (j));
-                        return true;
-                    }
-                    else if (cell.IsQueen() && cell.IsPieceBlack())
-                    {
-                        Debug.Log("King is attacked! By a black queen! On " + (x) + " " + (j));
-                        return true;
-                    }
+                    if (cell.IsRook() && cell.IsPieceBlack()) return true;
+                    else if (cell.IsQueen() && cell.IsPieceBlack()) return true;
                 }
             }
 
             //---------------check if there are any bishops or queens on the row or column--------------------
+            // direction up-right
+            for (int i = x + 1, j = y + 1; i < 8 && j < 8; i++, j++)
+			{
+                CellScript cell = board_cells[7 - i, j];
+                if (cell.IsOccupied())
+                {
+                    if (cell.IsBishop() && cell.IsPieceBlack()) return true;
+                    else if (cell.IsQueen() && cell.IsPieceBlack()) return true;
+                }
+            }
+
+            // direction lower-right
+            for (int i = x - 1, j = y - 1; i >= 0 && j >= 0; i--, j--)
+            {
+                CellScript cell = board_cells[7 - i, j];
+                if (cell.IsOccupied())
+                {
+                    if (cell.IsBishop() && cell.IsPieceBlack()) return true;
+                    else if (cell.IsQueen() && cell.IsPieceBlack()) return true;
+                }
+            }
+
+            // direction lower-left
+            for (int i = x - 1, j = y - 1; i >= 0 && j >= 0; i--, j--)
+            {
+                CellScript cell = board_cells[7 - i, j];
+                if (cell.IsOccupied())
+                {
+                    if (cell.IsBishop() && cell.IsPieceBlack()) return true;
+                    else if (cell.IsQueen() && cell.IsPieceBlack()) return true;
+                }
+            }
+
+            // direction upper-left
+            for (int i = x + 1, j = y - 1; i < 8 && j >= 0; i++, j--)
+            {
+                CellScript cell = board_cells[7 - i, j];
+                if (cell.IsOccupied())
+                {
+                    if (cell.IsBishop() && cell.IsPieceBlack()) return true;
+                    else if (cell.IsQueen() && cell.IsPieceBlack()) return true;
+                }
+            }
         }
         return false;
 	}
@@ -1308,6 +1313,9 @@ public class GameManagerScript : MonoBehaviour
         King_XCoord = selectedPiece.GetComponent<King_MovementScript>().GetXCoordinate();
         King_YCoord = selectedPiece.GetComponent<King_MovementScript>().GetYCoordinate();
 
-        IsCellAttacked(King_XCoord, King_YCoord);
+        if (IsCellAttacked(King_XCoord, King_YCoord))
+		{
+            Debug.Log("King is being attacked!");
+		}
 	}
 }
