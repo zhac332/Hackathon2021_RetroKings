@@ -1633,13 +1633,7 @@ public class GameManagerScript : MonoBehaviour
 
             a[0] = King_XCoord + xCoordinates[k];
             a[1] = King_YCoord + yCoordinates[k];
-
-            
-   //         if (IsWithinBorders(a))
-			//{
-   //             Debug.Log("Cell " + a[0] + " " + a[1] + " is attacked: ");
-   //             Debug.Log(IsCellAttacked(a[0], a[1]));
-   //         }
+      
             if (IsWithinBorders(a) && !IsCellOccupied(a) && !IsCellAttacked(a[0], a[1]))
 			{
                 Debug.Log("Added " + a[0] + " " + a[1]);
