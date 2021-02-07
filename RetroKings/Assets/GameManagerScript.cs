@@ -328,16 +328,362 @@ public class GameManagerScript : MonoBehaviour
 		{
             // NEED TO CHECK FOR BLACK PIECES
 
-            // firstly, I need to check if there are any pawns on the upper-left and right diagonal
+            //---------------check if there are any pawns on the upper-left and right diagonal-------------------
             int[] upperLeftDiag = new int[2];
             upperLeftDiag[0] = x + 1;
             upperLeftDiag[1] = y - 1;
-            if (IsWithinBorders(upperLeftDiag) && board_cells[x + 1, y - 1].IsPawn())
+            if (IsWithinBorders(upperLeftDiag) && IsCellOccupied(upperLeftDiag))
+                if (board_cells[7 - (x + 1), y - 1].IsPawn() && board_cells[7 - (x + 1), y - 1].IsPieceBlack())
+                    return true;
+
+            int[] upperRightDiag = new int[2];
+			upperRightDiag[0] = x + 1;
+			upperRightDiag[1] = y + 1;
+			if (IsWithinBorders(upperLeftDiag) && IsCellOccupied(upperRightDiag))
+                if (board_cells[7 - (x + 1), y + 1].IsPawn() && board_cells[7 - (x + 1), y + 1].IsPieceBlack())
+                    return true;
+
+            //---------------check if there are any rooks or queens on the row or column--------------------
+
+            // checking for up direction
+            for (int i = x + 1; i < 8; i++)
 			{
-                Debug.Log("King is attacked!");
-                return true;
+				CellScript cell = board_cells[7 - i, y];
+				if (cell.IsOccupied())
+				{
+                    if (cell.IsRook() && cell.IsPieceBlack()) return true;
+                    else if (cell.IsQueen() && cell.IsPieceBlack()) return true;
+                }
             }
-		}
+
+            // checking for down direction
+            for (int i = x - 1; i >= 0; i--)
+            {
+                CellScript cell = board_cells[7 - i, y];
+                if (cell.IsOccupied())
+				{
+                    if (cell.IsRook() && cell.IsPieceBlack()) return true;
+                    else if (cell.IsQueen() && cell.IsPieceBlack()) return true;
+                }
+            }
+
+            // checking for left direction
+            for (int j = y - 1; j >= 0; j--)
+            {
+                CellScript cell = board_cells[7 - x, j];
+                if (cell.IsOccupied())
+				{
+                    if (cell.IsRook() && cell.IsPieceBlack()) return true;
+                    else if (cell.IsQueen() && cell.IsPieceBlack()) return true;
+                }
+            }
+
+            // checking for right direction
+            for (int j = y + 1; j < 8; j++)
+            {
+                CellScript cell = board_cells[7 - x, j];
+                if (cell.IsOccupied())
+				{
+                    if (cell.IsRook() && cell.IsPieceBlack()) return true;
+                    else if (cell.IsQueen() && cell.IsPieceBlack()) return true;
+                }
+            }
+
+            //---------------check if there are any bishops or queens on the row or column--------------------
+            // direction up-right
+            for (int i = x + 1, j = y + 1; i < 8 && j < 8; i++, j++)
+			{
+                CellScript cell = board_cells[7 - i, j];
+                if (cell.IsOccupied())
+                {
+                    if (cell.IsBishop() && cell.IsPieceBlack()) return true;
+                    else if (cell.IsQueen() && cell.IsPieceBlack()) return true;
+                }
+            }
+
+            // direction lower-right
+            for (int i = x - 1, j = y - 1; i >= 0 && j >= 0; i--, j--)
+            {
+                CellScript cell = board_cells[7 - i, j];
+                if (cell.IsOccupied())
+                {
+                    if (cell.IsBishop() && cell.IsPieceBlack()) return true;
+                    else if (cell.IsQueen() && cell.IsPieceBlack()) return true;
+                }
+            }
+
+            // direction lower-left
+            for (int i = x - 1, j = y - 1; i >= 0 && j >= 0; i--, j--)
+            {
+                CellScript cell = board_cells[7 - i, j];
+                if (cell.IsOccupied())
+                {
+                    if (cell.IsBishop() && cell.IsPieceBlack()) return true;
+                    else if (cell.IsQueen() && cell.IsPieceBlack()) return true;
+                }
+            }
+
+            // direction upper-left
+            for (int i = x + 1, j = y - 1; i < 8 && j >= 0; i++, j--)
+            {
+                CellScript cell = board_cells[7 - i, j];
+                if (cell.IsOccupied())
+                {
+                    if (cell.IsBishop() && cell.IsPieceBlack()) return true;
+                    else if (cell.IsQueen() && cell.IsPieceBlack()) return true;
+                }
+            }
+
+            //---------------check if there are any knights-------------------------
+            CellScript cell1;
+
+            // L facing up
+            int[] xCoordinates = new int[8];
+            xCoordinates[0] = x + 2;
+            xCoordinates[1] = x + 2;
+            xCoordinates[2] = x + 1;
+            xCoordinates[3] = x - 1;
+            xCoordinates[4] = x - 2;
+            xCoordinates[5] = x - 2;
+            xCoordinates[6] = x + 1;
+            xCoordinates[7] = x - 1;
+            int[] yCoordinates = new int[8];
+            yCoordinates[0] = y - 1;
+            yCoordinates[1] = y + 1;
+            yCoordinates[2] = y + 2;
+            yCoordinates[3] = y + 2;
+            yCoordinates[4] = y - 1;
+            yCoordinates[5] = y - 1;
+            yCoordinates[6] = y - 2;
+            yCoordinates[7] = y - 2;
+
+            for (int i = 0; i < 8; i++)
+			{
+                int[] a = new int[2];
+                a[0] = xCoordinates[i];
+                a[1] = yCoordinates[i];
+                if (IsWithinBorders(a))
+				{
+                    cell1 = board_cells[7 - a[0], a[1]];
+                    if (cell1.IsOccupied() && cell1.IsKnight() && cell1.IsPieceBlack()) return true;
+                }
+			}
+
+            //-------------------checking if there is a king nearby------------------
+            xCoordinates = new int[8];
+            xCoordinates[0] = 1;
+            xCoordinates[1] = 1;
+            xCoordinates[2] = 0;
+            xCoordinates[3] = -1;
+            xCoordinates[4] = -1;
+            xCoordinates[5] = -1;
+            xCoordinates[6] = 0;
+            xCoordinates[7] = 1;
+            yCoordinates = new int[8];
+            yCoordinates[0] = 0;
+            yCoordinates[1] = 1;
+            yCoordinates[2] = 1;
+            yCoordinates[3] = 1;
+            yCoordinates[4] = 0;
+            yCoordinates[5] = -1;
+            yCoordinates[6] = -1;
+            yCoordinates[7] = -1;
+
+            for (int i = 0; i < 8; i++)
+			{
+                int[] a = new int[2];
+                a[0] = x + xCoordinates[i];
+                a[1] = y + yCoordinates[i];
+
+                if (IsWithinBorders(a))
+				{
+                    cell1 = board_cells[7 - a[0], a[1]];
+                    if (cell1.IsOccupied() && cell1.IsKing() && cell1.IsPieceBlack()) return true;
+                }
+			}
+
+            return false;
+        }
+        else
+		{
+            // NEED TO CHECK FOR BLACK PIECES
+
+            //---------------check if there are any pawns on the upper-left and right diagonal-------------------
+            int[] upperLeftDiag = new int[2];
+            upperLeftDiag[0] = x - 1;
+            upperLeftDiag[1] = y - 1;
+            if (IsWithinBorders(upperLeftDiag) && IsCellOccupied(upperLeftDiag))
+                if (board_cells[7 - (x - 1), y - 1].IsPawn() && board_cells[7 - (x - 1), y - 1].IsPieceWhite())
+                    return true;
+
+            int[] upperRightDiag = new int[2];
+            upperRightDiag[0] = x - 1;
+            upperRightDiag[1] = y + 1;
+            if (IsWithinBorders(upperLeftDiag) && IsCellOccupied(upperRightDiag))
+                if (board_cells[7 - (x - 1), y + 1].IsPawn() && board_cells[7 - (x - 1), y + 1].IsPieceWhite())
+                    return true;
+
+            //---------------check if there are any rooks or queens on the row or column--------------------
+
+            // checking for up direction
+            for (int i = x + 1; i < 8; i++)
+            {
+                CellScript cell = board_cells[7 - i, y];
+                if (cell.IsOccupied())
+                {
+                    if (cell.IsRook() && cell.IsPieceWhite()) return true;
+                    else if (cell.IsQueen() && cell.IsPieceWhite()) return true;
+                }
+            }
+
+            // checking for down direction
+            for (int i = x - 1; i >= 0; i--)
+            {
+                CellScript cell = board_cells[7 - i, y];
+                if (cell.IsOccupied())
+                {
+                    if (cell.IsRook() && cell.IsPieceWhite()) return true;
+                    else if (cell.IsQueen() && cell.IsPieceWhite()) return true;
+                }
+            }
+
+            // checking for left direction
+            for (int j = y - 1; j >= 0; j--)
+            {
+                CellScript cell = board_cells[7 - x, j];
+                if (cell.IsOccupied())
+                {
+                    if (cell.IsRook() && cell.IsPieceWhite()) return true;
+                    else if (cell.IsQueen() && cell.IsPieceWhite()) return true;
+                }
+            }
+
+            // checking for right direction
+            for (int j = y + 1; j < 8; j++)
+            {
+                CellScript cell = board_cells[7 - x, j];
+                if (cell.IsOccupied())
+                {
+                    if (cell.IsRook() && cell.IsPieceWhite()) return true;
+                    else if (cell.IsQueen() && cell.IsPieceWhite()) return true;
+                }
+            }
+
+            //---------------check if there are any bishops or queens on the row or column--------------------
+            // direction up-right
+            for (int i = x + 1, j = y + 1; i < 8 && j < 8; i++, j++)
+            {
+                CellScript cell = board_cells[7 - i, j];
+                if (cell.IsOccupied())
+                {
+                    if (cell.IsBishop() && cell.IsPieceWhite()) return true;
+                    else if (cell.IsQueen() && cell.IsPieceWhite()) return true;
+                }
+            }
+
+            // direction lower-right
+            for (int i = x - 1, j = y - 1; i >= 0 && j >= 0; i--, j--)
+            {
+                CellScript cell = board_cells[7 - i, j];
+                if (cell.IsOccupied())
+                {
+                    if (cell.IsBishop() && cell.IsPieceWhite()) return true;
+                    else if (cell.IsQueen() && cell.IsPieceWhite()) return true;
+                }
+            }
+
+            // direction lower-left
+            for (int i = x - 1, j = y - 1; i >= 0 && j >= 0; i--, j--)
+            {
+                CellScript cell = board_cells[7 - i, j];
+                if (cell.IsOccupied())
+                {
+                    if (cell.IsBishop() && cell.IsPieceWhite()) return true;
+                    else if (cell.IsQueen() && cell.IsPieceWhite()) return true;
+                }
+            }
+
+            // direction upper-left
+            for (int i = x + 1, j = y - 1; i < 8 && j >= 0; i++, j--)
+            {
+                CellScript cell = board_cells[7 - i, j];
+                if (cell.IsOccupied())
+                {
+                    if (cell.IsBishop() && cell.IsPieceWhite()) return true;
+                    else if (cell.IsQueen() && cell.IsPieceWhite()) return true;
+                }
+            }
+
+            //---------------check if there are any knights-------------------------
+            CellScript cell1;
+
+            // L facing up
+            int[] xCoordinates = new int[8];
+            xCoordinates[0] = x + 2;
+            xCoordinates[1] = x + 2;
+            xCoordinates[2] = x + 1;
+            xCoordinates[3] = x - 1;
+            xCoordinates[4] = x - 2;
+            xCoordinates[5] = x - 2;
+            xCoordinates[6] = x + 1;
+            xCoordinates[7] = x - 1;
+            int[] yCoordinates = new int[8];
+            yCoordinates[0] = y - 1;
+            yCoordinates[1] = y + 1;
+            yCoordinates[2] = y + 2;
+            yCoordinates[3] = y + 2;
+            yCoordinates[4] = y - 1;
+            yCoordinates[5] = y - 1;
+            yCoordinates[6] = y - 2;
+            yCoordinates[7] = y - 2;
+
+            for (int i = 0; i < 8; i++)
+            {
+                int[] a = new int[2];
+                a[0] = xCoordinates[i];
+                a[1] = yCoordinates[i];
+                if (IsWithinBorders(a))
+                {
+                    cell1 = board_cells[7 - a[0], a[1]];
+                    if (cell1.IsOccupied() && cell1.IsKnight() && cell1.IsPieceWhite()) return true;
+                }
+            }
+
+            //-------------------checking if there is a king nearby------------------
+            xCoordinates = new int[8];
+            xCoordinates[0] = 1;
+            xCoordinates[1] = 1;
+            xCoordinates[2] = 0;
+            xCoordinates[3] = -1;
+            xCoordinates[4] = -1;
+            xCoordinates[5] = -1;
+            xCoordinates[6] = 0;
+            xCoordinates[7] = 1;
+            yCoordinates = new int[8];
+            yCoordinates[0] = 0;
+            yCoordinates[1] = 1;
+            yCoordinates[2] = 1;
+            yCoordinates[3] = 1;
+            yCoordinates[4] = 0;
+            yCoordinates[5] = -1;
+            yCoordinates[6] = -1;
+            yCoordinates[7] = -1;
+
+            for (int i = 0; i < 8; i++)
+            {
+                int[] a = new int[2];
+                a[0] = x + xCoordinates[i];
+                a[1] = y + yCoordinates[i];
+
+                if (IsWithinBorders(a))
+                {
+                    cell1 = board_cells[7 - a[0], a[1]];
+                    if (cell1.IsOccupied() && cell1.IsKing() && cell1.IsPieceWhite()) return true;
+                }
+            }
+
+            return false;
+        }
         return false;
 	}
 
@@ -1217,6 +1563,9 @@ public class GameManagerScript : MonoBehaviour
         King_XCoord = selectedPiece.GetComponent<King_MovementScript>().GetXCoordinate();
         King_YCoord = selectedPiece.GetComponent<King_MovementScript>().GetYCoordinate();
 
-        IsCellAttacked(King_XCoord, King_YCoord);
+        if (IsCellAttacked(King_XCoord, King_YCoord))
+		{
+            Debug.Log("King is being attacked!");
+		}
 	}
 }

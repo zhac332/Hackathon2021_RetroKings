@@ -31,6 +31,9 @@ public class CellScript : MonoBehaviour
 	public bool IsRook() { return pieceOccuping.tag == "Rook"; }
 	public bool IsPawn() { return pieceOccuping.tag == "Pawn"; }
 
+	public bool IsPieceBlack() { return pieceOccuping.name.Contains("Black"); }
+	public bool IsPieceWhite() { return pieceOccuping.name.Contains("White"); }
+
 	private void OnMouseDown()
 	{
 		GameManager.SetSelectedCell(this.gameObject);
