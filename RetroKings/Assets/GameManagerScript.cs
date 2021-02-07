@@ -48,6 +48,9 @@ public class GameManagerScript : MonoBehaviour
     private CellScript selectedCell;
     private bool attacking = false;
 
+    private string turn = "White"; // white will always start first. I am writing White like this so that it
+                                   // will be easier to check which piece has been selected
+
     // Start is called before the first frame update
     void Start()
     {
@@ -336,6 +339,11 @@ public class GameManagerScript : MonoBehaviour
         board_cells[7, 4].GetComponent<CellScript>().OccupiedBy(go);
 	}
 
+    public string GetTurn()
+	{
+        return this.turn;
+	}
+
     public void SetSelectedPiece(GameObject go)
 	{
         if (selectedPiece != null)
@@ -502,6 +510,18 @@ public class GameManagerScript : MonoBehaviour
 			selectedPiece.GetComponent<Pawn_MovementScript>().MoveToCell(selectedCell.gameObject.transform.position, cellCoord);
 			selectedCell = null;
 			selectedPiece = null;
+
+            // changing turns
+            if (turn == "White")
+			{
+                turn = "Black";
+                Debug.Log("Black's turn.");
+            }
+            else
+			{
+                turn = "White";
+                Debug.Log("White's turn.");
+			}
 		}
         else
 		{

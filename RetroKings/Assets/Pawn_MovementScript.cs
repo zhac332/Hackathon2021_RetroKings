@@ -12,9 +12,13 @@ public class Pawn_MovementScript : MonoBehaviour, PieceInterface
 	private bool selected = false; // to send this information to the GameManagerScript
 	private bool firstMove = true;
 
+	private string color = "";
+
 	private void Start()
 	{
 		GameManager = GameObject.Find("GameManager").GetComponent<GameManagerScript>();
+		if (name.Contains("White")) color = "White";
+		else if (name.Contains("Black")) color = "Black";
 	}
 
 	public void SetCoordinates(int i, int j, bool direction)
@@ -31,18 +35,22 @@ public class Pawn_MovementScript : MonoBehaviour, PieceInterface
 
 	private void OnMouseDown()
 	{
-		if (!selected)
+		if (GameManager.GetTurn() == color) // that means, if the selected piece belongs to the player.
 		{
-			Debug.Log("piece is selected");
-			selected = true;
-			GameManager.SetSelectedPiece(this.gameObject);
+			if (!selected)
+			{
+				Debug.Log("piece is selected");
+				selected = true;
+				GameManager.SetSelectedPiece(this.gameObject);
+			}
+			else
+			{
+				Debug.Log("piece is not selected");
+				selected = false;
+				GameManager.SetSelectedPiece(null);
+			}
 		}
-		else
-		{
-			Debug.Log("piece is not selected");
-			selected = false;
-			GameManager.SetSelectedPiece(null);
-		}
+		else Debug.Log("Not your piece!!");
 	}	
 
 	public void MoveToCell(Vector3 position, int[] newCoords)
