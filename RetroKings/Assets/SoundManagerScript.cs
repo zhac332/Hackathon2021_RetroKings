@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class SoundManagerScript : MonoBehaviour
 {
+    [SerializeField] private AudioClip IntroClip;
+
     [SerializeField] private AudioClip Piece_Move;
     [SerializeField] private AudioClip Piece_Capture;
     [SerializeField] private AudioClip Piece_Check;
@@ -12,41 +14,48 @@ public class SoundManagerScript : MonoBehaviour
     [SerializeField] private AudioClip Piece_Deselect;
     [SerializeField] private AudioClip Piece_Stuck;
 
-    public void PieceMove() {
-        AudioSource audioSource = GetComponent<AudioSource>();
-        audioSource.clip = Piece_Move;
-        audioSource.Play();
+    private AudioSource AS;
+
+	private void Start()
+	{
+        AS = GetComponent<AudioSource>();
+        AS.clip = IntroClip;
+        AS.Play();
+	}
+
+	public void PieceMove() {
+
+        AS.clip = Piece_Move;
+        AS.Play();
     }
 
     public void PieceCapture() {
-        AudioSource audioSource = GetComponent<AudioSource>();
-        audioSource.clip = Piece_Capture;
-        audioSource.Play();
+
+        AS.clip = Piece_Capture;
+        AS.Play();
     }
 
     public void PieceCheck() {
-        AudioSource audioSource = GetComponent<AudioSource>();
-        audioSource.clip = Piece_Check;
-        audioSource.Play();
+
+        AS.clip = Piece_Check;
+        AS.Play();
     }
 
     public void PieceCheckmate() {
-        AudioSource audioSource = GetComponent<AudioSource>();
-        audioSource.clip = Piece_Checkmate;
-        audioSource.Play();
+
+        AS.clip = Piece_Checkmate;
+        AS.Play();
     }
 
     public void PieceSelect()
 	{
-        AudioSource audioSource = GetComponent<AudioSource>();
-        audioSource.clip = Piece_Select;
-        audioSource.Play();
+        AS.clip = Piece_Select;
+        AS.Play();
     }
 
     public void PieceStuck()
 	{
-        AudioSource audioSource = GetComponent<AudioSource>();
-        audioSource.clip = Piece_Stuck;
-        audioSource.Play();
+        AS.clip = Piece_Stuck;
+        AS.Play();
     }
 }

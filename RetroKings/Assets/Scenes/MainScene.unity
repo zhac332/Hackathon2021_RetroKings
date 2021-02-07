@@ -4190,6 +4190,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8db3d46cd4f734de4b477797889a0b0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IntroClip: {fileID: 8300000, guid: 6f3953f2309c404489727f8162ab0323, type: 3}
   Piece_Move: {fileID: 8300000, guid: 76f79b4fa6ad34c31a8fe50468cca2a3, type: 3}
   Piece_Capture: {fileID: 8300000, guid: a025bfdf965444a6392f8873ca6d226f, type: 3}
   Piece_Check: {fileID: 8300000, guid: d88b33b7f535e48babb686602e940a48, type: 3}
