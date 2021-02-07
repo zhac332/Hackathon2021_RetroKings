@@ -14,19 +14,6 @@ using UnityEngine;
 /// </summary>
 public class GameManagerScript : MonoBehaviour
 {
-    /**
-     * When considering attacking, I think it would be best to implement the turn system.
-     * Because otherwise, the mechanism of attacking will be different.
-     * 
-     * For example, we could do two players and each player has a list of the pieces that belong to him.
-     * We also need to assign to each piece the player it belongs to.
-     * 
-     * This way will be a lot easier when checking an attack.
-     * And also, it will be easier to detect an attack, because if we select a piece
-     * that is not ours, that means we will attack it straight away.
-     * **/
-
-
     [Header("White pieces")]
     [SerializeField] private GameObject Pawn_White;
     [SerializeField] private GameObject King_White;
@@ -50,6 +37,8 @@ public class GameManagerScript : MonoBehaviour
 
     private string turn = "White"; // white will always start first. I am writing White like this so that it
                                    // will be easier to check which piece has been selected
+
+    private bool extraTurn = false;
 
     // Start is called before the first frame update
     void Start()
@@ -686,6 +675,11 @@ public class GameManagerScript : MonoBehaviour
         }
 	}
 
+    public void ExtraTurn()
+	{
+        extraTurn = true;
+	}
+
     /// <summary>
     /// Adds points to a specified player.
     /// 
@@ -854,16 +848,20 @@ public class GameManagerScript : MonoBehaviour
             attacking = false;
 
             // changing turns
-            if (turn == "White")
-			{
-                turn = "Black";
-                Debug.Log("Black's turn.");
+            if (!extraTurn)
+            {
+                if (turn == "White")
+                {
+                    turn = "Black";
+                    Debug.Log("Black's turn.");
+                }
+                else
+                {
+                    turn = "White";
+                    Debug.Log("White's turn.");
+                }
             }
-            else
-			{
-                turn = "White";
-                Debug.Log("White's turn.");
-			}
+            else extraTurn = false;
 		}
         else
 		{
@@ -1010,16 +1008,20 @@ public class GameManagerScript : MonoBehaviour
             attacking = false;
 
             // changing turns
-            if (turn == "White")
+            if (!extraTurn)
             {
-                turn = "Black";
-                Debug.Log("Black's turn.");
+                if (turn == "White")
+                {
+                    turn = "Black";
+                    Debug.Log("Black's turn.");
+                }
+                else
+                {
+                    turn = "White";
+                    Debug.Log("White's turn.");
+                }
             }
-            else
-            {
-                turn = "White";
-                Debug.Log("White's turn.");
-            }
+            else extraTurn = false;
         }
         else
         {
@@ -1172,16 +1174,20 @@ public class GameManagerScript : MonoBehaviour
             attacking = false;
 
             // changing turns
-            if (turn == "White")
+            if (!extraTurn)
             {
-                turn = "Black";
-                Debug.Log("Black's turn.");
+                if (turn == "White")
+                {
+                    turn = "Black";
+                    Debug.Log("Black's turn.");
+                }
+                else
+                {
+                    turn = "White";
+                    Debug.Log("White's turn.");
+                }
             }
-            else
-            {
-                turn = "White";
-                Debug.Log("White's turn.");
-            }
+            else extraTurn = false;
         }
         else
         {
@@ -1309,16 +1315,20 @@ public class GameManagerScript : MonoBehaviour
             attacking = false;
 
             // changing turns
-            if (turn == "White")
+            if (!extraTurn)
             {
-                turn = "Black";
-                Debug.Log("Black's turn.");
+                if (turn == "White")
+                {
+                    turn = "Black";
+                    Debug.Log("Black's turn.");
+                }
+                else
+                {
+                    turn = "White";
+                    Debug.Log("White's turn.");
+                }
             }
-            else
-            {
-                turn = "White";
-                Debug.Log("White's turn.");
-            }
+            else extraTurn = false;
         }
         else
         {
@@ -1337,7 +1347,6 @@ public class GameManagerScript : MonoBehaviour
         // the rook can move horizontally and vertically. Don't need direction, nor firstMove.
 
         int Cell_xcoord = 0, Cell_ycoord = 0; // for the cell
-
 
         if (!attacking) // because otherwise, I'm not selecting a cell
         {
@@ -1534,16 +1543,20 @@ public class GameManagerScript : MonoBehaviour
             attacking = false;
 
             // changing turns
-            if (turn == "White")
+            if (!extraTurn)
             {
-                turn = "Black";
-                Debug.Log("Black's turn.");
+                if (turn == "White")
+                {
+                    turn = "Black";
+                    Debug.Log("Black's turn.");
+                }
+                else
+                {
+                    turn = "White";
+                    Debug.Log("White's turn.");
+                }
             }
-            else
-            {
-                turn = "White";
-                Debug.Log("White's turn.");
-            }
+            else extraTurn = false;
         }
         else
         {
@@ -1562,9 +1575,119 @@ public class GameManagerScript : MonoBehaviour
         King_XCoord = selectedPiece.GetComponent<King_MovementScript>().GetXCoordinate();
         King_YCoord = selectedPiece.GetComponent<King_MovementScript>().GetYCoordinate();
 
-        if (IsCellAttacked(King_XCoord, King_YCoord))
+        int Cell_xcoord = 0, Cell_ycoord = 0; // for the cell
+
+        if (!attacking) // because otherwise, I'm not selecting a cell
+        {
+            Cell_xcoord = selectedCell.GetXCoordinate();
+            Cell_ycoord = selectedCell.GetYCoordinate();
+        }
+        else // I need to get the coordinates of that piece
+        {
+            if (selectedPiece2.tag == "Pawn")
+            {
+                Cell_xcoord = selectedPiece2.GetComponent<Pawn_MovementScript>().GetXCoordinate();
+                Cell_ycoord = selectedPiece2.GetComponent<Pawn_MovementScript>().GetYCoordinate();
+            }
+            else if (selectedPiece2.tag == "Rook")
+            {
+                Cell_xcoord = selectedPiece2.GetComponent<Rook_MovementScript>().GetXCoordinate();
+                Cell_ycoord = selectedPiece2.GetComponent<Rook_MovementScript>().GetYCoordinate();
+            }
+            else if (selectedPiece2.tag == "Bishop")
+            {
+                Cell_xcoord = selectedPiece2.GetComponent<Bishop_MovementScript>().GetXCoordinate();
+                Cell_ycoord = selectedPiece2.GetComponent<Bishop_MovementScript>().GetYCoordinate();
+            }
+            else if (selectedPiece2.tag == "Knight")
+            {
+                Cell_xcoord = selectedPiece2.GetComponent<Knight_MovementScript>().GetXCoordinate();
+                Cell_ycoord = selectedPiece2.GetComponent<Knight_MovementScript>().GetYCoordinate();
+            }
+            else if (selectedPiece2.tag == "Queen")
+            {
+                Cell_xcoord = selectedPiece2.GetComponent<Queen_MovementScript>().GetXCoordinate();
+                Cell_ycoord = selectedPiece2.GetComponent<Queen_MovementScript>().GetYCoordinate();
+            }
+        }
+
+        List<int[]> possibleCoordinates = new List<int[]>();
+
+        int[] xCoordinates = new int[8];
+        xCoordinates[0] = 1;
+        xCoordinates[1] = 1;
+        xCoordinates[2] = 0;
+        xCoordinates[3] = -1;
+        xCoordinates[4] = -1;
+        xCoordinates[5] = -1;
+        xCoordinates[6] = 0;
+        xCoordinates[7] = 1;
+        int[] yCoordinates = new int[8];
+        yCoordinates[0] = 0;
+        yCoordinates[1] = 1;
+        yCoordinates[2] = 1;
+        yCoordinates[3] = 1;
+        yCoordinates[4] = 0;
+        yCoordinates[5] = -1;
+        yCoordinates[6] = -1;
+        yCoordinates[7] = -1;
+
+        for (int k = 0; k < 8; k++)
 		{
-            Debug.Log("King is being attacked!");
+            int[] a = new int[2];
+
+            a[0] = King_XCoord + xCoordinates[k];
+            a[1] = King_YCoord + yCoordinates[k];
+
+            if (IsWithinBorders(a) && !IsCellAttacked(a[0], a[1]))
+			{
+                possibleCoordinates.Add(a);
+                Debug.Log(a[0] + " " + a[1]);
+            }
 		}
-	}
+
+        bool canMove = false;
+
+        int[] cellCoord = new int[2];
+        cellCoord[0] = Cell_xcoord;
+        cellCoord[1] = Cell_ycoord;
+
+        for (int i = 0; i < possibleCoordinates.Count; i++)
+            if (possibleCoordinates[i][0] == cellCoord[0] && possibleCoordinates[i][1] == cellCoord[1])
+                canMove = true;
+
+        Debug.Log("Coordinates of the King: " + King_XCoord + "," + King_YCoord + ". Coordinates of the cell: " + cellCoord[0] + "," + cellCoord[1] + ". Can Move: " + canMove);
+
+        if (canMove)
+        {
+            UnOccupyCell(King_XCoord, King_YCoord);
+            selectedPiece.GetComponent<King_MovementScript>().MoveToCell(cellCoord, board_cells[7 - cellCoord[0], cellCoord[1]]);
+            selectedCell = null;
+            selectedPiece = null;
+            selectedPiece2 = null;
+            attacking = false;
+
+            // changing turns
+            if (!extraTurn)
+            {
+                if (turn == "White")
+                {
+                    turn = "Black";
+                    Debug.Log("Black's turn.");
+                }
+                else
+                {
+                    turn = "White";
+                    Debug.Log("White's turn.");
+                }
+            }
+            else extraTurn = false;
+        }
+        else
+        {
+            selectedCell = null;
+            selectedPiece.GetComponent<King_MovementScript>().Deselect();
+            selectedPiece = null;
+        }
+    }
 }
