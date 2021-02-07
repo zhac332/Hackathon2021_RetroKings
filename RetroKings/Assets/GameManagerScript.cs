@@ -332,10 +332,35 @@ public class GameManagerScript : MonoBehaviour
             int[] upperLeftDiag = new int[2];
             upperLeftDiag[0] = x + 1;
             upperLeftDiag[1] = y - 1;
-            if (IsWithinBorders(upperLeftDiag) && board_cells[x + 1, y - 1].IsPawn())
+            if (IsWithinBorders(upperLeftDiag) && IsCellOccupied(upperLeftDiag))
+                    if (board_cells[7 - (x + 1), y - 1].IsPawn() && board_cells[7 - (x + 1), y - 1].IsPieceBlack())
+			        {
+                        Debug.Log("King is attacked! By a black pawn! On " + (x + 1) + " " + (y - 1));
+                        return true;
+                    }
+
+			int[] upperRightDiag = new int[2];
+			upperRightDiag[0] = x + 1;
+			upperRightDiag[1] = y + 1;
+			if (IsWithinBorders(upperLeftDiag) && IsCellOccupied(upperRightDiag))
+                if (board_cells[7 - (x + 1), y + 1].IsPawn() && board_cells[7 - (x + 1), y + 1].IsPieceBlack())
+			    {
+                    Debug.Log("King is attacked! By a black pawn! On " + (x + 1) + " " + (y + 1));
+                    return true;
+			    }
+
+			// then, I need to check if there are any rooks on the row or column
+
+			// checking for up direction
+			for (int i = x + 1; i < 8; i++)
 			{
-                Debug.Log("King is attacked!");
-                return true;
+				CellScript cell = board_cells[7 - i, y];
+				if (cell.IsOccupied())
+                    if (cell.IsRook() && cell.IsPieceBlack())
+                    {
+                        Debug.Log("King is attacked! By a black rook! On " + (i) + " " + (y));
+                        return true;
+                    }
             }
 		}
         return false;
