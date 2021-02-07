@@ -20,6 +20,7 @@ public class SoundManagerScript : MonoBehaviour
 	{
         AS = GetComponent<AudioSource>();
         AS.clip = IntroClip;
+        AS.volume = 0.3f;
         AS.Play();
 	}
 
