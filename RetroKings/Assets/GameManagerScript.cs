@@ -85,6 +85,7 @@ public class GameManagerScript : MonoBehaviour
             // calculating the position
             globalPosition = board_cells[6, i].transform.position;
             globalPosition.y += 0.1f;
+            globalPosition.z = -5f;
 
             // instantiating the object at that position
             go = Instantiate(Pawn_White, globalPosition, Quaternion.identity);
@@ -96,48 +97,56 @@ public class GameManagerScript : MonoBehaviour
 
         // first rook 
         globalPosition = board_cells[7, 0].transform.position;
+        globalPosition.z = -5f;
         go = Instantiate(Rook_White, globalPosition, Quaternion.identity);
         board_cells[7, 0].GetComponent<CellScript>().OccupiedBy(go);
         go.GetComponent<Rook_MovementScript>().SetCoordinates(0, 0);
 
         // second rook
         globalPosition = board_cells[7, 7].transform.position;
+        globalPosition.z = -5f;
         go = Instantiate(Rook_White, globalPosition, Quaternion.identity);
         board_cells[7, 7].GetComponent<CellScript>().OccupiedBy(go);
         go.GetComponent<Rook_MovementScript>().SetCoordinates(0, 7);
 
         // first knight
         globalPosition = board_cells[7, 1].transform.position;
+        globalPosition.z = -5f;
         go = Instantiate(Knight_White, globalPosition, Quaternion.identity);
         board_cells[7, 1].GetComponent<CellScript>().OccupiedBy(go);
         go.GetComponent<Knight_MovementScript>().SetCoordinates(0, 1);
 
         // second knight
         globalPosition = board_cells[7, 6].transform.position;
+        globalPosition.z = -5f;
         go = Instantiate(Knight_White, globalPosition, Quaternion.identity);
         board_cells[7, 6].GetComponent<CellScript>().OccupiedBy(go);
         go.GetComponent<Knight_MovementScript>().SetCoordinates(0, 6);
 
         // first bishop
         globalPosition = board_cells[7, 2].transform.position;
+        globalPosition.z = -5f;
         go = Instantiate(Bishop_White, globalPosition, Quaternion.identity);
         board_cells[7, 2].GetComponent<CellScript>().OccupiedBy(go);
         go.GetComponent<Bishop_MovementScript>().SetCoordinates(0, 2);
 
         // second bishop
         globalPosition = board_cells[7, 5].transform.position;
+        globalPosition.z = -5f;
         go = Instantiate(Bishop_White, globalPosition, Quaternion.identity);
         board_cells[7, 5].GetComponent<CellScript>().OccupiedBy(go);
         go.GetComponent<Bishop_MovementScript>().SetCoordinates(0, 5);
 
         // queen
         globalPosition = board_cells[7, 3].transform.position;
+        globalPosition.z = -5f;
         go = Instantiate(Queen_White, globalPosition, Quaternion.identity);
         board_cells[7, 3].GetComponent<CellScript>().OccupiedBy(go);
         go.GetComponent<Queen_MovementScript>().SetCoordinates(0, 3);
 
         // king
         globalPosition = board_cells[7, 4].transform.position;
+        globalPosition.z = -5f;
         go = Instantiate(King_White, globalPosition, Quaternion.identity);
         board_cells[7, 4].GetComponent<CellScript>().OccupiedBy(go);
 
@@ -148,6 +157,7 @@ public class GameManagerScript : MonoBehaviour
         {
             globalPosition = board_cells[1, i].transform.position;
             globalPosition.y += 0.1f;
+            globalPosition.z = -5f;
             go = Instantiate(Pawn_Black, globalPosition, Quaternion.identity);
             go.GetComponent<Pawn_MovementScript>().SetCoordinates(6, i, true);
             board_cells[1, i].GetComponent<CellScript>().OccupiedBy(go);
@@ -155,48 +165,56 @@ public class GameManagerScript : MonoBehaviour
 
         // first rook
         globalPosition = board_cells[0, 0].transform.position;
+        globalPosition.z = -5f;
         go = Instantiate(Rook_Black, globalPosition, Quaternion.identity);
         board_cells[0, 0].GetComponent<CellScript>().OccupiedBy(go);
         go.GetComponent<Rook_MovementScript>().SetCoordinates(7, 0);
 
         // second rook
         globalPosition = board_cells[0, 7].transform.position;
+        globalPosition.z = -5f;
         go = Instantiate(Rook_Black, globalPosition, Quaternion.identity);
         board_cells[0, 7].GetComponent<CellScript>().OccupiedBy(go);
         go.GetComponent<Rook_MovementScript>().SetCoordinates(7, 7);
 
         // first knight
         globalPosition = board_cells[0, 1].transform.position;
+        globalPosition.z = -5f;
         go = Instantiate(Knight_Black, globalPosition, Quaternion.identity);
         board_cells[0, 1].GetComponent<CellScript>().OccupiedBy(go);
         go.GetComponent<Knight_MovementScript>().SetCoordinates(7, 1);
 
         // second knight
         globalPosition = board_cells[0, 6].transform.position;
+        globalPosition.z = -5f;
         go = Instantiate(Knight_Black, globalPosition, Quaternion.identity);
         board_cells[0, 6].GetComponent<CellScript>().OccupiedBy(go);
         go.GetComponent<Knight_MovementScript>().SetCoordinates(7, 1);
 
         // first bishop
         globalPosition = board_cells[0, 2].transform.position;
+        globalPosition.z = -5f;
         go = Instantiate(Bishop_Black, globalPosition, Quaternion.identity);
         board_cells[0, 2].GetComponent<CellScript>().OccupiedBy(go);
         go.GetComponent<Bishop_MovementScript>().SetCoordinates(7, 2);
 
         // second bishop
         globalPosition = board_cells[0, 5].transform.position;
+        globalPosition.z = -5f;
         go = Instantiate(Bishop_Black, globalPosition, Quaternion.identity);
         board_cells[0, 5].GetComponent<CellScript>().OccupiedBy(go);
         go.GetComponent<Bishop_MovementScript>().SetCoordinates(7, 5);
 
         // queen
         globalPosition = board_cells[0, 3].transform.position;
+        globalPosition.z = -5f;
         go = Instantiate(Queen_Black, globalPosition, Quaternion.identity);
         board_cells[0, 3].GetComponent<CellScript>().OccupiedBy(go);
         go.GetComponent<Queen_MovementScript>().SetCoordinates(7, 3);
 
         // king
         globalPosition = board_cells[0, 4].transform.position;
+        globalPosition.z = -5f;
         go = Instantiate(King_Black, globalPosition, Quaternion.identity);
         board_cells[0, 4].GetComponent<CellScript>().OccupiedBy(go);
     }
@@ -331,32 +349,23 @@ public class GameManagerScript : MonoBehaviour
             if (go == selectedPiece)
             {
                 Debug.Log("deselecting.");
-                selectedPiece.GetComponent<Pawn_MovementScript>().Deselect();
+                if (selectedPiece.tag == "Pawn") selectedPiece.GetComponent<Pawn_MovementScript>().Deselect();
+                else if (selectedPiece.tag == "Knight") selectedPiece.GetComponent<Knight_MovementScript>().Deselect();
+                else if (selectedPiece.tag == "Bishop") selectedPiece.GetComponent<Bishop_MovementScript>().Deselect();
+                else if (selectedPiece.tag == "Rook") selectedPiece.GetComponent<Rook_MovementScript>().Deselect();
+                else if (selectedPiece.tag == "Queen") selectedPiece.GetComponent<Queen_MovementScript>().Deselect();
                 selectedCell = null;
                 selectedPiece = null;
                 selectedPiece2 = null;
             }
             else
             {
-                selectedPiece.GetComponent<Pawn_MovementScript>().Deselect();
+                if (selectedPiece.tag == "Pawn") selectedPiece.GetComponent<Pawn_MovementScript>().Deselect();
+                else if (selectedPiece.tag == "Knight") selectedPiece.GetComponent<Knight_MovementScript>().Deselect();
+                else if (selectedPiece.tag == "Bishop") selectedPiece.GetComponent<Bishop_MovementScript>().Deselect();
+                else if (selectedPiece.tag == "Rook") selectedPiece.GetComponent<Rook_MovementScript>().Deselect();
+                else if (selectedPiece.tag == "Queen") selectedPiece.GetComponent<Queen_MovementScript>().Deselect();
                 selectedPiece = go;
-                /**
-                 * I won't be checking for attacks here.
-                 * 
-                 * // check if there is any potential attack happening
-                // if there isn't, that means the player selected another piece
-                if (!IsAttacking(selectedPiece, go))
-				{
-                    Debug.Log("selected the first piece");
-                    selectedPiece = go;
-                }
-                else
-				{
-                    Debug.Log("selected the second piece");
-                    selectedPiece2 = go;
-                    attacking = true;
-                }
-                 * **/
             }
         }
         else

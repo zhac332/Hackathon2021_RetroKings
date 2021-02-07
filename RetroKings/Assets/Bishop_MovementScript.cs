@@ -29,6 +29,7 @@ public class Bishop_MovementScript : MonoBehaviour, PieceInterface
 
 	private void OnMouseDown()
 	{
+		Debug.Log("clicked Bishop");
 		if (GameManager.GetTurn() == color) // that means, if the selected piece belongs to the player.
 		{
 			if (!selected)
@@ -67,13 +68,11 @@ public class Bishop_MovementScript : MonoBehaviour, PieceInterface
 		this.X_Coord = newCoords[0];
 		this.Y_Coord = newCoords[1];
 		this.selected = false;
+		position.z = -5f;
 		this.transform.position = position;
 
-		if (cell.IsOccupied())
-		{
-			// that means that I am capturing that piece
-			cell.Captured(this.gameObject);
-		}
+		// that means that I am capturing that piece
+		if (cell.IsOccupied()) cell.Captured(this.gameObject);
 		else
 		{
 			Debug.Log("occupied new cell");

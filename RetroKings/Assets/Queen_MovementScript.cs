@@ -66,6 +66,7 @@ public class Queen_MovementScript : MonoBehaviour, PieceInterface
 		this.X_Coord = newCoords[0];
 		this.Y_Coord = newCoords[1];
 		this.selected = false;
+		position.z = -5f;
 		this.transform.position = position;
 
 		if (cell.IsOccupied())
