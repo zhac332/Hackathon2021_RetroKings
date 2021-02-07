@@ -4,6 +4,9 @@ Our repository for Royal Hackaway 2021.
 
 Team: RetroKings
 
+# Disclaimer
+Only the Windows version works.
+
 # Authors
   Haaris Iqbal (haaris.n.iqbal@gmail.com)
   Stefan Tanasa (stefantanasa13@gmail.com)
