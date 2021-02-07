@@ -14,11 +14,15 @@ public class Pawn_MovementScript : MonoBehaviour, PieceInterface
 
 	private string color = "";
 
+	private SoundManagerScript SoundManager;
+
 	private void Start()
 	{
 		GameManager = GameObject.Find("GameManager").GetComponent<GameManagerScript>();
 		if (name.Contains("White")) color = "White";
 		else if (name.Contains("Black")) color = "Black";
+
+		SoundManager = GameObject.Find("SoundManager").GetComponent<SoundManagerScript>();
 	}
 
 	public void SetCoordinates(int i, int j, bool direction)
@@ -43,6 +47,7 @@ public class Pawn_MovementScript : MonoBehaviour, PieceInterface
 				selected = true;
 				GameManager.SetSelectedPiece(this.gameObject);
 				this.gameObject.GetComponent<Renderer>().material.color = Color.green;
+				SoundManager.PieceSelect();
 			}
 			else
 			{
@@ -50,6 +55,7 @@ public class Pawn_MovementScript : MonoBehaviour, PieceInterface
 				selected = false;
 				GameManager.SetSelectedPiece(null);
 				this.gameObject.GetComponent<Renderer>().material.color = Color.white;
+				SoundManager.PieceSelect();
 			}
 		}
 		else
@@ -62,6 +68,7 @@ public class Pawn_MovementScript : MonoBehaviour, PieceInterface
 			else
 			{
 				Debug.Log("Not your piece!!");
+				SoundManager.PieceStuck();
 			}
 		}
 	}	
@@ -82,12 +89,13 @@ public class Pawn_MovementScript : MonoBehaviour, PieceInterface
 		{
 			// that means that I am capturing that piece
 			cell.Captured(this.gameObject);
+			SoundManager.PieceCapture();
 		}
 		else
 		{
 			Debug.Log("occupied new cell");
 			cell.OccupiedBy(this.gameObject);
-			//SoundManagerScript.PieceCapture();
+			SoundManager.PieceMove();
 		}
 		this.gameObject.GetComponent<Renderer>().material.color = Color.white;
 	}

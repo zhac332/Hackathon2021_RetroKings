@@ -684,7 +684,6 @@ public class GameManagerScript : MonoBehaviour
 
             return false;
         }
-        return false;
 	}
 
     /// <summary>
