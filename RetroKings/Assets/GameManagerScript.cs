@@ -432,7 +432,7 @@ public class GameManagerScript : MonoBehaviour
 	{
         int x = a[0];
         int y = a[1];
-        return board_cells[x, y].IsOccupied();
+        return board_cells[7 - x, y].IsOccupied();
     }
 
     private bool IsAttacking(GameObject go1, GameObject go2)
@@ -501,13 +501,9 @@ public class GameManagerScript : MonoBehaviour
         // Then, I need to calculate a list of all the possible movements for that pawn. If the clicked cell
         // is within that list, that's totally correct.
         List<int[]> possibleCoordinates = new List<int[]>();
-        
+
         if (direction) directionModifier = -1;
         else directionModifier = 1;
-
-        // we need to also check in advance if the cells are valid (or un-occupied)
-
-        Debug.Log("Pawn coordinates:" + Pawn_XCoord + " " + Pawn_YCoord);
 
 		{
             // Obviously, this will be the first thing to check.
@@ -543,7 +539,10 @@ public class GameManagerScript : MonoBehaviour
             left_diagonal[1] = Pawn_YCoord - 1;
 
             if (IsCellOccupied(left_diagonal))
+			{
+                Debug.Log("yes");
                 possibleCoordinates.Add(left_diagonal);
+            }
 
 
             // If I can attack on the right, that is a possible move as well.
@@ -552,7 +551,10 @@ public class GameManagerScript : MonoBehaviour
             right_diagonal[1] = Pawn_YCoord + 1;
 
             if (IsCellOccupied(right_diagonal))
+			{
+                Debug.Log("no");
                 possibleCoordinates.Add(right_diagonal);
+            }
 		}
 
 		// now, we need to check if the coordinates of the cell exist in the list
@@ -573,7 +575,7 @@ public class GameManagerScript : MonoBehaviour
 		if (canMove)
 		{
             UnOccupyCell(Pawn_XCoord, Pawn_YCoord);
-			selectedPiece.GetComponent<Pawn_MovementScript>().MoveToCell(selectedCell.gameObject.transform.position, cellCoord, board_cells[7 - cellCoord[0], cellCoord[1]]);
+			selectedPiece.GetComponent<Pawn_MovementScript>().MoveToCell(cellCoord, board_cells[7 - cellCoord[0], cellCoord[1]]);
 			selectedCell = null;
 			selectedPiece = null;
             selectedPiece2 = null;

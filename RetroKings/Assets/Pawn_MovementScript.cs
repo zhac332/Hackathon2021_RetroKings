@@ -64,8 +64,10 @@ public class Pawn_MovementScript : MonoBehaviour, PieceInterface
 		}
 	}	
 
-	public void MoveToCell(Vector3 position, int[] newCoords, CellScript cell)
+	public void MoveToCell(int[] newCoords, CellScript cell)
 	{
+		Vector3 position = cell.transform.position;
+
 		this.X_Coord = newCoords[0];
 		this.Y_Coord = newCoords[1];
 		this.selected = false;
