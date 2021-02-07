@@ -24,6 +24,13 @@ public class CellScript : MonoBehaviour
 	public int GetXCoordinate() { return this.X_Coord; }
 	public int GetYCoordinate() { return this.Y_Coord; }
 
+	public bool IsKing() { return pieceOccuping.tag == "King"; }
+	public bool IsQueen() { return pieceOccuping.tag == "Queen"; }
+	public bool IsBishop() { return pieceOccuping.tag == "Bishop"; }
+	public bool IsKnight() { return pieceOccuping.tag == "Knight"; }
+	public bool IsRook() { return pieceOccuping.tag == "Rook"; }
+	public bool IsPawn() { return pieceOccuping.tag == "Pawn"; }
+
 	private void OnMouseDown()
 	{
 		GameManager.SetSelectedCell(this.gameObject);
