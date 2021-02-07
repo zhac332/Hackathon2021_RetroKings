@@ -189,7 +189,7 @@ public class GameManagerScript : MonoBehaviour
         globalPosition.z = -5f;
         go = Instantiate(Knight_Black, globalPosition, Quaternion.identity);
         board_cells[0, 6].GetComponent<CellScript>().OccupiedBy(go);
-        go.GetComponent<Knight_MovementScript>().SetCoordinates(7, 1);
+        go.GetComponent<Knight_MovementScript>().SetCoordinates(7, 6);
 
         // first bishop
         globalPosition = board_cells[0, 2].transform.position;
@@ -1302,9 +1302,4 @@ public class GameManagerScript : MonoBehaviour
             selectedPiece = null;
         }
     }
-
-    private void CheckMoveKing()
-	{
-
-	}
 }
