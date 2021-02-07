@@ -50,10 +50,21 @@ public class Pawn_MovementScript : MonoBehaviour, PieceInterface
 				GameManager.SetSelectedPiece(null);
 			}
 		}
-		else Debug.Log("Not your piece!!");
+		else
+		{
+			if (GameManager.GetSelectedPiece()) // if I DID select a first piece
+			{
+				selected = true;
+				GameManager.SetSelectedPiece2(this.gameObject);
+			}
+			else
+			{
+				Debug.Log("Not your piece!!");
+			}
+		}
 	}	
 
-	public void MoveToCell(Vector3 position, int[] newCoords)
+	public void MoveToCell(Vector3 position, int[] newCoords, CellScript cell)
 	{
 		this.X_Coord = newCoords[0];
 		this.Y_Coord = newCoords[1];
@@ -62,6 +73,17 @@ public class Pawn_MovementScript : MonoBehaviour, PieceInterface
 		position.y += 0.1f;
 		position.z = -5f;
 		this.transform.position = position;
+
+		if (cell.IsOccupied())
+		{
+			// that means that I am capturing that piece
+			cell.Captured(this.gameObject);
+		}
+		else
+		{
+			Debug.Log("occupied new cell");
+			cell.OccupiedBy(this.gameObject);
+		}
 	}
 
 	public void Deselect()

@@ -360,7 +360,12 @@ public class GameManagerScript : MonoBehaviour
             }
             else
             {
-                // check if there is any potential attack happening
+                selectedPiece.GetComponent<Pawn_MovementScript>().Deselect();
+                selectedPiece = go;
+                /**
+                 * I won't be checking for attacks here.
+                 * 
+                 * // check if there is any potential attack happening
                 // if there isn't, that means the player selected another piece
                 if (!IsAttacking(selectedPiece, go))
 				{
@@ -373,12 +378,46 @@ public class GameManagerScript : MonoBehaviour
                     selectedPiece2 = go;
                     attacking = true;
                 }
+                 * **/
             }
         }
         else
 		{
             Debug.Log("selected piece 1.");
             selectedPiece = go;
+        }
+    }
+
+    public bool GetSelectedPiece()
+	{
+        return !(selectedPiece == null);
+	}
+
+    public void SetSelectedPiece2(GameObject go)
+	{
+        if (selectedPiece2 != null)
+        {
+            // checking if the go is the same with selected piece
+
+            if (go == selectedPiece2)
+            {
+                Debug.Log("deselecting.");
+                selectedPiece2.GetComponent<Pawn_MovementScript>().Deselect();
+                selectedPiece2 = null;
+            }
+            else
+            {
+                Debug.Log("selected 2nd piece");
+                selectedPiece2.GetComponent<Pawn_MovementScript>().Deselect();
+                selectedPiece2 = go;
+            }
+        }
+        else
+        {
+            Debug.Log("selected piece 2");
+            selectedPiece2 = go;
+            attacking = true;
+            CheckValidMove();
         }
     }
 
@@ -403,6 +442,16 @@ public class GameManagerScript : MonoBehaviour
         return false;
     }
 
+    /// <summary>
+    /// Adds points to a specified player.
+    /// 
+    /// TO BE IMPLEMENTED.
+    /// </summary>
+    public void AddPoints()
+	{
+
+	}
+
     private void CheckValidMove()
 	{
         // it is guaranteed to be called when a piece is actually selected.
@@ -413,6 +462,11 @@ public class GameManagerScript : MonoBehaviour
             if (selectedPiece.tag == "Pawn") CheckMovePawn();
         }
 	}
+
+    private void UnOccupyCell(int x, int y)
+	{
+        board_cells[7 - x, y].UnOccupy();
+    }
 
     private void CheckMovePawn()
 	{
@@ -430,9 +484,19 @@ public class GameManagerScript : MonoBehaviour
         // I need to know if the pawn has ever been moved before
         firstMove = selectedPiece.GetComponent<Pawn_MovementScript>().GetFirstMove();
         // I need to find the coordinates of the cell that was clicked in the board_cells matrix.
-        int Cell_xcoord, Cell_ycoord; // for the cell
-        Cell_xcoord = selectedCell.GetXCoordinate();
-        Cell_ycoord = selectedCell.GetYCoordinate();
+        int Cell_xcoord = 0, Cell_ycoord = 0; // for the cell
+        
+        
+        if (!attacking) // because otherwise, I'm not selecting a cell
+		{
+            Cell_xcoord = selectedCell.GetXCoordinate();
+            Cell_ycoord = selectedCell.GetYCoordinate();
+        }
+        else // I need to get the coordinates of that piece
+		{
+            Cell_xcoord = selectedPiece2.GetComponent<Pawn_MovementScript>().GetXCoordinate();
+            Cell_ycoord = selectedPiece2.GetComponent<Pawn_MovementScript>().GetYCoordinate();
+        }
 
         // Then, I need to calculate a list of all the possible movements for that pawn. If the clicked cell
         // is within that list, that's totally correct.
@@ -471,6 +535,7 @@ public class GameManagerScript : MonoBehaviour
 
         if (attacking)
 		{
+			Debug.Log("I am attacking");
             // If I can attack on the left, it is a possible move.
             int[] left_diagonal = new int[2];
 
@@ -507,9 +572,12 @@ public class GameManagerScript : MonoBehaviour
 
 		if (canMove)
 		{
-			selectedPiece.GetComponent<Pawn_MovementScript>().MoveToCell(selectedCell.gameObject.transform.position, cellCoord);
+            UnOccupyCell(Pawn_XCoord, Pawn_YCoord);
+			selectedPiece.GetComponent<Pawn_MovementScript>().MoveToCell(selectedCell.gameObject.transform.position, cellCoord, board_cells[7 - cellCoord[0], cellCoord[1]]);
 			selectedCell = null;
 			selectedPiece = null;
+            selectedPiece2 = null;
+            attacking = false;
 
             // changing turns
             if (turn == "White")

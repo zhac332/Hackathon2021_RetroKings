@@ -35,5 +35,22 @@ public class CellScript : MonoBehaviour
 		this.occupied = true;
 	}	
 
+	public void UnOccupy()
+	{
+		pieceOccuping = null;
+		occupied = false;
+	}
+
 	public bool IsOccupied() { return this.occupied; }
+
+	public void Captured(GameObject newPiece)
+	{
+		Debug.Log("captured piece");
+
+		Destroy(pieceOccuping);
+		GameManager.AddPoints();
+
+		// replacing the piece that was occupying the cell with the new piece
+		pieceOccuping = newPiece;
+	}
 }
