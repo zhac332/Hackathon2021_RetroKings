@@ -240,11 +240,14 @@ public class GameManagerScript : MonoBehaviour
                 else if (selectedPiece.tag == "Rook") selectedPiece.GetComponent<Rook_MovementScript>().Deselect();
                 else if (selectedPiece.tag == "Queen") selectedPiece.GetComponent<Queen_MovementScript>().Deselect();
 
-                if (selectedPiece2.tag == "Pawn") selectedPiece2.GetComponent<Pawn_MovementScript>().Deselect();
-                else if (selectedPiece2.tag == "Knight") selectedPiece2.GetComponent<Knight_MovementScript>().Deselect();
-                else if (selectedPiece2.tag == "Bishop") selectedPiece2.GetComponent<Bishop_MovementScript>().Deselect();
-                else if (selectedPiece2.tag == "Rook") selectedPiece2.GetComponent<Rook_MovementScript>().Deselect();
-                else if (selectedPiece2.tag == "Queen") selectedPiece2.GetComponent<Queen_MovementScript>().Deselect();
+                if (selectedPiece2 != null)
+                {
+                    if (selectedPiece2.tag == "Pawn") selectedPiece2.GetComponent<Pawn_MovementScript>().Deselect();
+                    else if (selectedPiece2.tag == "Knight") selectedPiece2.GetComponent<Knight_MovementScript>().Deselect();
+                    else if (selectedPiece2.tag == "Bishop") selectedPiece2.GetComponent<Bishop_MovementScript>().Deselect();
+                    else if (selectedPiece2.tag == "Rook") selectedPiece2.GetComponent<Rook_MovementScript>().Deselect();
+                    else if (selectedPiece2.tag == "Queen") selectedPiece2.GetComponent<Queen_MovementScript>().Deselect();
+                }
 
                 selectedCell = null;
                 selectedPiece = null;
@@ -258,11 +261,14 @@ public class GameManagerScript : MonoBehaviour
                 else if (selectedPiece.tag == "Rook") selectedPiece.GetComponent<Rook_MovementScript>().Deselect();
                 else if (selectedPiece.tag == "Queen") selectedPiece.GetComponent<Queen_MovementScript>().Deselect();
 
-                if (selectedPiece2.tag == "Pawn") selectedPiece2.GetComponent<Pawn_MovementScript>().Deselect();
-                else if (selectedPiece2.tag == "Knight") selectedPiece2.GetComponent<Knight_MovementScript>().Deselect();
-                else if (selectedPiece2.tag == "Bishop") selectedPiece2.GetComponent<Bishop_MovementScript>().Deselect();
-                else if (selectedPiece2.tag == "Rook") selectedPiece2.GetComponent<Rook_MovementScript>().Deselect();
-                else if (selectedPiece2.tag == "Queen") selectedPiece2.GetComponent<Queen_MovementScript>().Deselect();
+                if (selectedPiece2 != null)
+				{
+                    if (selectedPiece2.tag == "Pawn") selectedPiece2.GetComponent<Pawn_MovementScript>().Deselect();
+                    else if (selectedPiece2.tag == "Knight") selectedPiece2.GetComponent<Knight_MovementScript>().Deselect();
+                    else if (selectedPiece2.tag == "Bishop") selectedPiece2.GetComponent<Bishop_MovementScript>().Deselect();
+                    else if (selectedPiece2.tag == "Rook") selectedPiece2.GetComponent<Rook_MovementScript>().Deselect();
+                    else if (selectedPiece2.tag == "Queen") selectedPiece2.GetComponent<Queen_MovementScript>().Deselect();
+                }
 
                 selectedPiece = go;
             }
@@ -888,6 +894,7 @@ public class GameManagerScript : MonoBehaviour
             double_forward_cell[0] = Pawn_XCoord + 2 * directionModifier;
             double_forward_cell[1] = Pawn_YCoord;
 
+            Debug.Log("1");
             if (!IsCellOccupied(double_forward_cell))
                 possibleCoordinates.Add(double_forward_cell);
 
@@ -902,7 +909,7 @@ public class GameManagerScript : MonoBehaviour
             left_diagonal[0] = Pawn_XCoord + 1 * directionModifier;
             left_diagonal[1] = Pawn_YCoord - 1;
 
-            if (IsCellOccupied(left_diagonal))
+            if (IsWithinBorders(left_diagonal) && IsCellOccupied(left_diagonal))
 			{
                 Debug.Log("yes");
                 possibleCoordinates.Add(left_diagonal);
@@ -914,7 +921,7 @@ public class GameManagerScript : MonoBehaviour
             right_diagonal[0] = Pawn_XCoord + 1 * directionModifier;
             right_diagonal[1] = Pawn_YCoord + 1;
 
-            if (IsCellOccupied(right_diagonal))
+            if (IsWithinBorders(right_diagonal) && IsCellOccupied(right_diagonal))
 			{
                 Debug.Log("no");
                 possibleCoordinates.Add(right_diagonal);
