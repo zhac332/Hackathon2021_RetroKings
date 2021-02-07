@@ -110,11 +110,13 @@ public class GameManagerScript : MonoBehaviour
         globalPosition = board_cells[7, 1].transform.position;
         go = Instantiate(Knight_White, globalPosition, Quaternion.identity);
         board_cells[7, 1].GetComponent<CellScript>().OccupiedBy(go);
+        go.GetComponent<Knight_MovementScript>().SetCoordinates(0, 1);
 
         // second knight
         globalPosition = board_cells[7, 6].transform.position;
         go = Instantiate(Knight_White, globalPosition, Quaternion.identity);
         board_cells[7, 6].GetComponent<CellScript>().OccupiedBy(go);
+        go.GetComponent<Knight_MovementScript>().SetCoordinates(0, 6);
 
         // first bishop
         globalPosition = board_cells[7, 2].transform.position;
@@ -166,11 +168,13 @@ public class GameManagerScript : MonoBehaviour
         globalPosition = board_cells[0, 1].transform.position;
         go = Instantiate(Knight_Black, globalPosition, Quaternion.identity);
         board_cells[0, 1].GetComponent<CellScript>().OccupiedBy(go);
+        go.GetComponent<Knight_MovementScript>().SetCoordinates(7, 1);
 
         // second knight
         globalPosition = board_cells[0, 6].transform.position;
         go = Instantiate(Knight_Black, globalPosition, Quaternion.identity);
         board_cells[0, 6].GetComponent<CellScript>().OccupiedBy(go);
+        go.GetComponent<Knight_MovementScript>().SetCoordinates(7, 1);
 
         // first bishop
         globalPosition = board_cells[0, 2].transform.position;
@@ -407,6 +411,14 @@ public class GameManagerScript : MonoBehaviour
         return board_cells[7 - x, y].IsOccupied();
     }
 
+    private bool IsWithinBorders(int[] a)
+	{
+        int x = a[0];
+        int y = a[1];
+        if ((0 <= x && x < 8) && (0 <= y && y < 8)) return true;
+        return false;
+	}
+
     private bool IsAttacking(GameObject go1, GameObject go2)
 	{
         if (go1.name.Contains("White") && go2.name.Contains("Black")) return true;
@@ -483,6 +495,11 @@ public class GameManagerScript : MonoBehaviour
             {
                 Cell_xcoord = selectedPiece2.GetComponent<Bishop_MovementScript>().GetXCoordinate();
                 Cell_ycoord = selectedPiece2.GetComponent<Bishop_MovementScript>().GetYCoordinate();
+            }
+            else if (selectedPiece2.tag == "Knight")
+            {
+                Cell_xcoord = selectedPiece2.GetComponent<Knight_MovementScript>().GetXCoordinate();
+                Cell_ycoord = selectedPiece2.GetComponent<Knight_MovementScript>().GetYCoordinate();
             }
         }
 
@@ -621,6 +638,11 @@ public class GameManagerScript : MonoBehaviour
             {
                 Cell_xcoord = selectedPiece2.GetComponent<Bishop_MovementScript>().GetXCoordinate();
                 Cell_ycoord = selectedPiece2.GetComponent<Bishop_MovementScript>().GetYCoordinate();
+            }
+            else if (selectedPiece2.tag == "Knight")
+            {
+                Cell_xcoord = selectedPiece2.GetComponent<Knight_MovementScript>().GetXCoordinate();
+                Cell_ycoord = selectedPiece2.GetComponent<Knight_MovementScript>().GetYCoordinate();
             }
         }
 
@@ -768,6 +790,11 @@ public class GameManagerScript : MonoBehaviour
                 Cell_xcoord = selectedPiece2.GetComponent<Bishop_MovementScript>().GetXCoordinate();
                 Cell_ycoord = selectedPiece2.GetComponent<Bishop_MovementScript>().GetYCoordinate();
             }
+            else if (selectedPiece2.tag == "Knight")
+            {
+                Cell_xcoord = selectedPiece2.GetComponent<Knight_MovementScript>().GetXCoordinate();
+                Cell_ycoord = selectedPiece2.GetComponent<Knight_MovementScript>().GetYCoordinate();
+            }
         }
 
         List<int[]> possibleCoordinates = new List<int[]>();
@@ -893,6 +920,133 @@ public class GameManagerScript : MonoBehaviour
 
     private void CheckMoveKnight()
 	{
+        int Knight_XCoord = 0, Knight_YCoord = 0;
 
-	}
+        Knight_XCoord = selectedPiece.GetComponent<Knight_MovementScript>().GetXCoordinate();
+        Knight_YCoord = selectedPiece.GetComponent<Knight_MovementScript>().GetYCoordinate();
+        // the rook can move horizontally and vertically. Don't need direction, nor firstMove.
+
+        int Cell_xcoord = 0, Cell_ycoord = 0; // for the cell
+
+
+        if (!attacking) // because otherwise, I'm not selecting a cell
+        {
+            Cell_xcoord = selectedCell.GetXCoordinate();
+            Cell_ycoord = selectedCell.GetYCoordinate();
+        }
+        else // I need to get the coordinates of that piece
+        {
+            if (selectedPiece2.tag == "Pawn")
+            {
+                Cell_xcoord = selectedPiece2.GetComponent<Pawn_MovementScript>().GetXCoordinate();
+                Cell_ycoord = selectedPiece2.GetComponent<Pawn_MovementScript>().GetYCoordinate();
+            }
+            else if (selectedPiece2.tag == "Rook")
+            {
+                Cell_xcoord = selectedPiece2.GetComponent<Rook_MovementScript>().GetXCoordinate();
+                Cell_ycoord = selectedPiece2.GetComponent<Rook_MovementScript>().GetYCoordinate();
+            }
+            else if (selectedPiece2.tag == "Bishop")
+            {
+                Cell_xcoord = selectedPiece2.GetComponent<Bishop_MovementScript>().GetXCoordinate();
+                Cell_ycoord = selectedPiece2.GetComponent<Bishop_MovementScript>().GetYCoordinate();
+            }
+            else if (selectedPiece2.tag == "Knight")
+            {
+                Cell_xcoord = selectedPiece2.GetComponent<Knight_MovementScript>().GetXCoordinate();
+                Cell_ycoord = selectedPiece2.GetComponent<Knight_MovementScript>().GetYCoordinate();
+            }
+        }
+
+        List<int[]> possibleCoordinates = new List<int[]>();
+
+        // the knight moves in L-shape
+        int[] left = new int[2];
+        int[] right = new int[2];
+
+        // L facing up
+        left[0] = Knight_XCoord + 2;
+        left[1] = Knight_YCoord - 1;
+        right[0] = Knight_XCoord + 2;
+        right[1] = Knight_YCoord + 1;
+
+        if (IsWithinBorders(left)) possibleCoordinates.Add(left);
+        if (IsWithinBorders(right)) possibleCoordinates.Add(right);
+
+        // L facing right
+        int[] left1 = new int[2];
+        int[] right1 = new int[2];
+		left1[0] = Knight_XCoord + 1;
+		left1[1] = Knight_YCoord + 2;
+		right1[0] = Knight_XCoord - 1;
+		right1[1] = Knight_YCoord + 2;
+
+		if (IsWithinBorders(left1)) possibleCoordinates.Add(left1);
+		if (IsWithinBorders(right1)) possibleCoordinates.Add(right1);
+
+        // L facing down
+        int[] left2 = new int[2];
+        int[] right2 = new int[2];
+		left2[0] = Knight_XCoord - 2;
+		left2[1] = Knight_YCoord - 1;
+		right2[0] = Knight_XCoord - 2;
+		right2[1] = Knight_YCoord + 1;
+
+		if (IsWithinBorders(left2)) possibleCoordinates.Add(left2);
+		if (IsWithinBorders(right2)) possibleCoordinates.Add(right2);
+
+        // L facing left
+        int[] left3 = new int[2];
+        int[] right3 = new int[2];
+		left3[0] = Knight_XCoord + 1;
+		left3[1] = Knight_YCoord - 2;
+		right3[0] = Knight_XCoord - 1;
+		right3[1] = Knight_YCoord - 2;
+
+		if (IsWithinBorders(left3)) possibleCoordinates.Add(left3);
+		if (IsWithinBorders(right3)) possibleCoordinates.Add(right3);
+
+		//------------------Calculated the cells I can move to--------------------
+		bool canMove = false;
+
+        int[] cellCoord = new int[2];
+        cellCoord[0] = Cell_xcoord;
+        cellCoord[1] = Cell_ycoord;
+
+        for (int i = 0; i < possibleCoordinates.Count; i++)
+        {
+            Debug.Log(possibleCoordinates[i][0] + " " + possibleCoordinates[i][1]);
+            if (possibleCoordinates[i][0] == cellCoord[0] && possibleCoordinates[i][1] == cellCoord[1]) canMove = true;
+        }
+
+        Debug.Log("Coordinates of the Knight: " + Knight_XCoord + "," + Knight_YCoord + ". Coordinates of the cell: " + cellCoord[0] + "," + cellCoord[1] + ". Can Move: " + canMove);
+
+        if (canMove)
+        {
+            UnOccupyCell(Knight_XCoord, Knight_YCoord);
+            selectedPiece.GetComponent<Knight_MovementScript>().MoveToCell(cellCoord, board_cells[7 - cellCoord[0], cellCoord[1]]);
+            selectedCell = null;
+            selectedPiece = null;
+            selectedPiece2 = null;
+            attacking = false;
+
+            // changing turns
+            if (turn == "White")
+            {
+                turn = "Black";
+                Debug.Log("Black's turn.");
+            }
+            else
+            {
+                turn = "White";
+                Debug.Log("White's turn.");
+            }
+        }
+        else
+        {
+            selectedCell = null;
+            selectedPiece.GetComponent<Knight_MovementScript>().Deselect();
+            selectedPiece = null;
+        }
+    }
 }
