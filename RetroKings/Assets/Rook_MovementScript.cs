@@ -109,6 +109,16 @@ public class Rook_MovementScript : MonoBehaviour, PieceInterface
 		this.selected = false;
 	}
 
+	public void MakeImmune()
+	{
+		this.immune = true;
+	}
+
+	public void MakeNotImmune()
+	{
+		this.immune = false;
+	}
+
 	public bool IsImmune()
 	{
 		return this.immune;

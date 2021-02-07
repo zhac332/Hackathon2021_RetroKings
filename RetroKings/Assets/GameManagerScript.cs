@@ -268,6 +268,19 @@ public class GameManagerScript : MonoBehaviour
             }
         }
         else selectedPiece = go;
+
+
+        if (selectedPiece != null)
+		{
+            if (immunity)
+			{
+                if (selectedPiece.tag == "Pawn") selectedPiece.GetComponent<Pawn_MovementScript>().MakeImmune();
+                else if (selectedPiece.tag == "Knight") selectedPiece.GetComponent<Knight_MovementScript>().MakeImmune();
+                else if (selectedPiece.tag == "Bishop") selectedPiece.GetComponent<Bishop_MovementScript>().MakeImmune();
+                else if (selectedPiece.tag == "Rook") selectedPiece.GetComponent<Rook_MovementScript>().MakeImmune();
+                else if (selectedPiece.tag == "Queen") selectedPiece.GetComponent<Queen_MovementScript>().MakeImmune();
+            }
+		}
     }
 
     public bool GetSelectedPiece()
@@ -933,19 +946,7 @@ public class GameManagerScript : MonoBehaviour
             attacking = false;
 
             // changing turns
-            if (!extraTurn)
-            {
-                if (turn == "White")
-                {
-                    turn = "Black";
-                    Debug.Log("Black's turn.");
-                }
-                else
-                {
-                    turn = "White";
-                    Debug.Log("White's turn.");
-                }
-            }
+            if (!extraTurn) SwitchTurn();
             else extraTurn = false;
 		}
         else
@@ -1093,19 +1094,7 @@ public class GameManagerScript : MonoBehaviour
             attacking = false;
 
             // changing turns
-            if (!extraTurn)
-            {
-                if (turn == "White")
-                {
-                    turn = "Black";
-                    Debug.Log("Black's turn.");
-                }
-                else
-                {
-                    turn = "White";
-                    Debug.Log("White's turn.");
-                }
-            }
+            if (!extraTurn) SwitchTurn();
             else extraTurn = false;
         }
         else
@@ -1259,19 +1248,7 @@ public class GameManagerScript : MonoBehaviour
             attacking = false;
 
             // changing turns
-            if (!extraTurn)
-            {
-                if (turn == "White")
-                {
-                    turn = "Black";
-                    Debug.Log("Black's turn.");
-                }
-                else
-                {
-                    turn = "White";
-                    Debug.Log("White's turn.");
-                }
-            }
+            if (!extraTurn) SwitchTurn();
             else extraTurn = false;
         }
         else
@@ -1400,19 +1377,7 @@ public class GameManagerScript : MonoBehaviour
             attacking = false;
 
             // changing turns
-            if (!extraTurn)
-            {
-                if (turn == "White")
-                {
-                    turn = "Black";
-                    Debug.Log("Black's turn.");
-                }
-                else
-                {
-                    turn = "White";
-                    Debug.Log("White's turn.");
-                }
-            }
+            if (!extraTurn) SwitchTurn();
             else extraTurn = false;
         }
         else
@@ -1628,19 +1593,7 @@ public class GameManagerScript : MonoBehaviour
             attacking = false;
 
             // changing turns
-            if (!extraTurn)
-            {
-                if (turn == "White")
-                {
-                    turn = "Black";
-                    Debug.Log("Black's turn.");
-                }
-                else
-                {
-                    turn = "White";
-                    Debug.Log("White's turn.");
-                }
-            }
+            if (!extraTurn) SwitchTurn();
             else extraTurn = false;
         }
         else
@@ -1756,20 +1709,8 @@ public class GameManagerScript : MonoBehaviour
 			attacking = false;
 
 			// changing turns
-			if (!extraTurn)
-			{
-				if (turn == "White")
-				{
-					turn = "Black";
-					Debug.Log("Black's turn.");
-				}
-				else
-				{
-					turn = "White";
-					Debug.Log("White's turn.");
-				}
-			}
-			else extraTurn = false;
+			if (!extraTurn) SwitchTurn();
+            else extraTurn = false;
 		}
 		else
 		{
@@ -1779,6 +1720,31 @@ public class GameManagerScript : MonoBehaviour
 		}
 	}
 
+
+    private void SwitchTurn()
+	{
+        if (turn == "White")
+        {
+            turn = "Black";
+            Debug.Log("Black's turn.");
+        }
+        else
+        {
+            turn = "White";
+            Debug.Log("White's turn.");
+        }
+
+        foreach (GameObject go in GameObject.FindGameObjectsWithTag("Pawn"))
+            go.GetComponent<Pawn_MovementScript>().MakeNotImmune();
+        foreach (GameObject go in GameObject.FindGameObjectsWithTag("Queen"))
+            go.GetComponent<Queen_MovementScript>().MakeNotImmune();
+        foreach (GameObject go in GameObject.FindGameObjectsWithTag("Knight"))
+            go.GetComponent<Knight_MovementScript>().MakeNotImmune();
+        foreach (GameObject go in GameObject.FindGameObjectsWithTag("Bishop"))
+            go.GetComponent<Bishop_MovementScript>().MakeNotImmune();
+        foreach (GameObject go in GameObject.FindGameObjectsWithTag("Rook"))
+            go.GetComponent<Rook_MovementScript>().MakeNotImmune();
+    }
 
 	private void Update()
 	{
