@@ -134,6 +134,7 @@ public class GameManagerScript : MonoBehaviour
         globalPosition = board_cells[7, 3].transform.position;
         go = Instantiate(Queen_White, globalPosition, Quaternion.identity);
         board_cells[7, 3].GetComponent<CellScript>().OccupiedBy(go);
+        go.GetComponent<Queen_MovementScript>().SetCoordinates(0, 3);
 
         // king
         globalPosition = board_cells[7, 4].transform.position;
@@ -192,6 +193,7 @@ public class GameManagerScript : MonoBehaviour
         globalPosition = board_cells[0, 3].transform.position;
         go = Instantiate(Queen_Black, globalPosition, Quaternion.identity);
         board_cells[0, 3].GetComponent<CellScript>().OccupiedBy(go);
+        go.GetComponent<Queen_MovementScript>().SetCoordinates(7, 3);
 
         // king
         globalPosition = board_cells[0, 4].transform.position;
@@ -447,6 +449,7 @@ public class GameManagerScript : MonoBehaviour
             else if (selectedPiece.tag == "Rook") CheckMoveRook();
             else if (selectedPiece.tag == "Bishop") CheckMoveBishop();
             else if (selectedPiece.tag == "Knight") CheckMoveKnight();
+            else if (selectedPiece.tag == "Queen") CheckMoveQueen();
         }
 	}
 
@@ -500,6 +503,11 @@ public class GameManagerScript : MonoBehaviour
             {
                 Cell_xcoord = selectedPiece2.GetComponent<Knight_MovementScript>().GetXCoordinate();
                 Cell_ycoord = selectedPiece2.GetComponent<Knight_MovementScript>().GetYCoordinate();
+            }
+            else if (selectedPiece2.tag == "Queen")
+            {
+                Cell_xcoord = selectedPiece2.GetComponent<Queen_MovementScript>().GetXCoordinate();
+                Cell_ycoord = selectedPiece2.GetComponent<Queen_MovementScript>().GetYCoordinate();
             }
         }
 
@@ -643,6 +651,11 @@ public class GameManagerScript : MonoBehaviour
             {
                 Cell_xcoord = selectedPiece2.GetComponent<Knight_MovementScript>().GetXCoordinate();
                 Cell_ycoord = selectedPiece2.GetComponent<Knight_MovementScript>().GetYCoordinate();
+            }
+            else if (selectedPiece2.tag == "Queen")
+            {
+                Cell_xcoord = selectedPiece2.GetComponent<Queen_MovementScript>().GetXCoordinate();
+                Cell_ycoord = selectedPiece2.GetComponent<Queen_MovementScript>().GetYCoordinate();
             }
         }
 
@@ -795,6 +808,11 @@ public class GameManagerScript : MonoBehaviour
                 Cell_xcoord = selectedPiece2.GetComponent<Knight_MovementScript>().GetXCoordinate();
                 Cell_ycoord = selectedPiece2.GetComponent<Knight_MovementScript>().GetYCoordinate();
             }
+            else if (selectedPiece2.tag == "Queen")
+            {
+                Cell_xcoord = selectedPiece2.GetComponent<Queen_MovementScript>().GetXCoordinate();
+                Cell_ycoord = selectedPiece2.GetComponent<Queen_MovementScript>().GetYCoordinate();
+            }
         }
 
         List<int[]> possibleCoordinates = new List<int[]>();
@@ -811,7 +829,6 @@ public class GameManagerScript : MonoBehaviour
                         coords[0] = i;
                         coords[1] = j;
 
-                        Debug.Log(i + " " + j + " " + IsCellOccupied(coords));
                         if (!IsCellOccupied(coords)) possibleCoordinates.Add(coords);
                         else
                         {
@@ -829,7 +846,6 @@ public class GameManagerScript : MonoBehaviour
                     coords[0] = i;
                     coords[1] = j;
 
-                    Debug.Log(i + " " + j + " " + IsCellOccupied(coords));
                     if (!IsCellOccupied(coords)) possibleCoordinates.Add(coords);
                     else
                     {
@@ -847,7 +863,6 @@ public class GameManagerScript : MonoBehaviour
                     coords[0] = i;
                     coords[1] = j;
 
-                    Debug.Log(i + " " + j + " " + IsCellOccupied(coords));
                     if (!IsCellOccupied(coords)) possibleCoordinates.Add(coords);
                     else
                     {
@@ -865,7 +880,6 @@ public class GameManagerScript : MonoBehaviour
                     coords[0] = i;
                     coords[1] = j;
 
-                    Debug.Log(i + " " + j + " " + IsCellOccupied(coords));
                     if (!IsCellOccupied(coords)) possibleCoordinates.Add(coords);
                     else
                     {
@@ -955,6 +969,11 @@ public class GameManagerScript : MonoBehaviour
             {
                 Cell_xcoord = selectedPiece2.GetComponent<Knight_MovementScript>().GetXCoordinate();
                 Cell_ycoord = selectedPiece2.GetComponent<Knight_MovementScript>().GetYCoordinate();
+            }
+            else if (selectedPiece2.tag == "Queen")
+            {
+                Cell_xcoord = selectedPiece2.GetComponent<Queen_MovementScript>().GetXCoordinate();
+                Cell_ycoord = selectedPiece2.GetComponent<Queen_MovementScript>().GetYCoordinate();
             }
         }
 
@@ -1046,6 +1065,231 @@ public class GameManagerScript : MonoBehaviour
         {
             selectedCell = null;
             selectedPiece.GetComponent<Knight_MovementScript>().Deselect();
+            selectedPiece = null;
+        }
+    }
+
+    private void CheckMoveQueen()
+	{
+        int Queen_XCoord = 0, Queen_YCoord = 0;
+
+        Queen_XCoord = selectedPiece.GetComponent<Queen_MovementScript>().GetXCoordinate();
+        Queen_YCoord = selectedPiece.GetComponent<Queen_MovementScript>().GetYCoordinate();
+        // the rook can move horizontally and vertically. Don't need direction, nor firstMove.
+
+        int Cell_xcoord = 0, Cell_ycoord = 0; // for the cell
+
+
+        if (!attacking) // because otherwise, I'm not selecting a cell
+        {
+            Cell_xcoord = selectedCell.GetXCoordinate();
+            Cell_ycoord = selectedCell.GetYCoordinate();
+        }
+        else // I need to get the coordinates of that piece
+        {
+            if (selectedPiece2.tag == "Pawn")
+            {
+                Cell_xcoord = selectedPiece2.GetComponent<Pawn_MovementScript>().GetXCoordinate();
+                Cell_ycoord = selectedPiece2.GetComponent<Pawn_MovementScript>().GetYCoordinate();
+            }
+            else if (selectedPiece2.tag == "Rook")
+            {
+                Cell_xcoord = selectedPiece2.GetComponent<Rook_MovementScript>().GetXCoordinate();
+                Cell_ycoord = selectedPiece2.GetComponent<Rook_MovementScript>().GetYCoordinate();
+            }
+            else if (selectedPiece2.tag == "Bishop")
+            {
+                Cell_xcoord = selectedPiece2.GetComponent<Bishop_MovementScript>().GetXCoordinate();
+                Cell_ycoord = selectedPiece2.GetComponent<Bishop_MovementScript>().GetYCoordinate();
+            }
+            else if (selectedPiece2.tag == "Knight")
+            {
+                Cell_xcoord = selectedPiece2.GetComponent<Knight_MovementScript>().GetXCoordinate();
+                Cell_ycoord = selectedPiece2.GetComponent<Knight_MovementScript>().GetYCoordinate();
+            }
+            else if (selectedPiece2.tag == "Queen")
+            {
+                Cell_xcoord = selectedPiece2.GetComponent<Queen_MovementScript>().GetXCoordinate();
+                Cell_ycoord = selectedPiece2.GetComponent<Queen_MovementScript>().GetYCoordinate();
+            }
+        }
+
+        List<int[]> possibleCoordinates = new List<int[]>();
+
+        // the queen moves in + and on diagonals.
+        bool obstacle = false;
+
+        // checking cells upwards
+        for (int i = Queen_XCoord + 1; i < 8 && !obstacle; i++)
+        {
+            int[] coords = new int[2];
+            coords[0] = i;
+            coords[1] = Queen_YCoord;
+
+            if (!IsCellOccupied(coords)) possibleCoordinates.Add(coords);
+            else
+            {
+                possibleCoordinates.Add(coords); // because I can attack it, but I cannot move past it
+                obstacle = true;
+            }
+        }
+
+		// checking cells downwards
+		obstacle = false;
+		for (int i = Queen_XCoord - 1; i >= 0 && !obstacle; i--)
+		{
+			int[] coords = new int[2];
+			coords[0] = i;
+			coords[1] = Queen_YCoord;
+
+			if (!IsCellOccupied(coords)) possibleCoordinates.Add(coords);
+			else
+			{
+				possibleCoordinates.Add(coords); // because I can attack it, but I cannot move past it
+				obstacle = true;
+			}
+		}
+
+		// checking cells towards the right side
+		obstacle = false;
+		for (int j = Queen_YCoord + 1; j < 8 && !obstacle; j++)
+		{
+			int[] coords = new int[2];
+			coords[0] = Queen_XCoord;
+			coords[1] = j;
+
+			if (!IsCellOccupied(coords)) possibleCoordinates.Add(coords);
+			else
+			{
+				possibleCoordinates.Add(coords); // because I can attack it, but I cannot move past it
+				obstacle = true;
+			}
+		}
+
+		// checking cells towards the left side
+		obstacle = false;
+		for (int j = Queen_YCoord - 1; j >= 0 && !obstacle; j--)
+		{
+			int[] coords = new int[2];
+			coords[0] = Queen_XCoord;
+			coords[1] = j;
+
+			if (!IsCellOccupied(coords)) possibleCoordinates.Add(coords);
+			else
+			{
+				possibleCoordinates.Add(coords); // because I can attack it, but I cannot move past it
+				obstacle = true;
+			}
+		}
+
+        // Upper-Right diagonal
+        obstacle = false;
+		for (int i = Queen_XCoord + 1, j = Queen_YCoord + 1; i < 8 && j < 8; i++, j++)
+			if (!obstacle)
+			{
+				int[] coords = new int[2];
+				coords[0] = i;
+				coords[1] = j;
+
+				if (!IsCellOccupied(coords)) possibleCoordinates.Add(coords);
+				else
+				{
+					possibleCoordinates.Add(coords);
+					obstacle = true;
+				}
+			}
+
+		// Lower-Right diagonal
+		obstacle = false;
+		for (int i = Queen_XCoord - 1, j = Queen_YCoord + 1; i >= 0 && j < 8; i--, j++)
+			if (!obstacle)
+			{
+				int[] coords = new int[2];
+				coords[0] = i;
+				coords[1] = j;
+
+				if (!IsCellOccupied(coords)) possibleCoordinates.Add(coords);
+				else
+				{
+					possibleCoordinates.Add(coords);
+					obstacle = true;
+				}
+			}
+
+		// Lower-Left diagonal
+		obstacle = false;
+		for (int i = Queen_XCoord - 1, j = Queen_YCoord - 1; i >= 0 && j >= 0; i--, j--)
+			if (!obstacle)
+			{
+				int[] coords = new int[2];
+				coords[0] = i;
+				coords[1] = j;
+
+				if (!IsCellOccupied(coords)) possibleCoordinates.Add(coords);
+				else
+				{
+					possibleCoordinates.Add(coords);
+					obstacle = true;
+				}
+			}
+
+		// Upper-Left diagonal
+		obstacle = false;
+		for (int i = Queen_XCoord + 1, j = Queen_YCoord - 1; i < 8 && j >= 0; i++, j--)
+			if (!obstacle)
+			{
+				int[] coords = new int[2];
+				coords[0] = i;
+				coords[1] = j;
+
+				if (!IsCellOccupied(coords)) possibleCoordinates.Add(coords);
+				else
+				{
+					possibleCoordinates.Add(coords);
+					obstacle = true;
+				}
+			}
+
+		//------------------Calculated the cells I can move to--------------------
+		bool canMove = false;
+
+        int[] cellCoord = new int[2];
+        cellCoord[0] = Cell_xcoord;
+        cellCoord[1] = Cell_ycoord;
+
+        for (int i = 0; i < possibleCoordinates.Count; i++)
+        {
+            Debug.Log(possibleCoordinates[i][0] + " " + possibleCoordinates[i][1]);
+            if (possibleCoordinates[i][0] == cellCoord[0] && possibleCoordinates[i][1] == cellCoord[1]) canMove = true;
+        }
+
+        Debug.Log("Coordinates of the Queen: " + Queen_XCoord + "," + Queen_YCoord + ". Coordinates of the cell: " + cellCoord[0] + "," + cellCoord[1] + ". Can Move: " + canMove);
+
+        if (canMove)
+        {
+            UnOccupyCell(Queen_XCoord, Queen_YCoord);
+            selectedPiece.GetComponent<Queen_MovementScript>().MoveToCell(cellCoord, board_cells[7 - cellCoord[0], cellCoord[1]]);
+            selectedCell = null;
+            selectedPiece = null;
+            selectedPiece2 = null;
+            attacking = false;
+
+            // changing turns
+            if (turn == "White")
+            {
+                turn = "Black";
+                Debug.Log("Black's turn.");
+            }
+            else
+            {
+                turn = "White";
+                Debug.Log("White's turn.");
+            }
+        }
+        else
+        {
+            selectedCell = null;
+            selectedPiece.GetComponent<Queen_MovementScript>().Deselect();
             selectedPiece = null;
         }
     }
