@@ -3,35 +3,29 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Pawn_MovementScript : MonoBehaviour, PieceInterface
+public class Knight_MovementScript : MonoBehaviour, PieceInterface
 {
 	private GameManagerScript GameManager;
 	private int X_Coord = 0, Y_Coord = 0;
-
-	private bool downwards = false; // false = Upwards; true = Downwards;
 	private bool selected = false; // to send this information to the GameManagerScript
-	private bool firstMove = true;
-
 	private string color = "";
 
-	private void Start()
+	// Start is called before the first frame update
+	void Start()
 	{
 		GameManager = GameObject.Find("GameManager").GetComponent<GameManagerScript>();
 		if (name.Contains("White")) color = "White";
 		else if (name.Contains("Black")) color = "Black";
 	}
 
-	public void SetCoordinates(int i, int j, bool direction)
+	public void SetCoordinates(int i, int j)
 	{
 		this.X_Coord = i;
 		this.Y_Coord = j;
-		this.downwards = direction;
 	}
 
 	public int GetXCoordinate() { return this.X_Coord; }
 	public int GetYCoordinate() { return this.Y_Coord; }
-	public bool GetDirection() { return this.downwards; }
-	public bool GetFirstMove() { return this.firstMove; }
 
 	private void OnMouseDown()
 	{
@@ -64,7 +58,7 @@ public class Pawn_MovementScript : MonoBehaviour, PieceInterface
 				Debug.Log("Not your piece!!");
 			}
 		}
-	}	
+	}
 
 	public void MoveToCell(int[] newCoords, CellScript cell)
 	{
@@ -73,8 +67,6 @@ public class Pawn_MovementScript : MonoBehaviour, PieceInterface
 		this.X_Coord = newCoords[0];
 		this.Y_Coord = newCoords[1];
 		this.selected = false;
-		if (firstMove) firstMove = false;
-		position.y += 0.1f;
 		position.z = -5f;
 		this.transform.position = position;
 
@@ -87,7 +79,6 @@ public class Pawn_MovementScript : MonoBehaviour, PieceInterface
 		{
 			Debug.Log("occupied new cell");
 			cell.OccupiedBy(this.gameObject);
-			//SoundManagerScript.PieceCapture();
 		}
 		this.gameObject.GetComponent<Renderer>().material.color = Color.white;
 	}
