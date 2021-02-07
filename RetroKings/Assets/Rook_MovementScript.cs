@@ -12,6 +12,8 @@ public class Rook_MovementScript : MonoBehaviour, PieceInterface
 
 	private SoundManagerScript SoundManager;
 
+	private bool immune = false;
+
 	private void Start()
 	{
 		GameManager = GameObject.Find("GameManager").GetComponent<GameManagerScript>();
@@ -78,9 +80,20 @@ public class Rook_MovementScript : MonoBehaviour, PieceInterface
 
 		if (cell.IsOccupied())
 		{
-			// that means that I am capturing that piece
-			cell.Captured(this.gameObject);
-			SoundManager.PieceCapture();
+			GameObject go = cell.GetPieceOccupied();
+			bool canAttack = false;
+
+			if (go.tag == "Pawn") canAttack = !go.GetComponent<Pawn_MovementScript>().IsImmune();
+			else if (go.tag == "Queen") canAttack = !go.GetComponent<Queen_MovementScript>().IsImmune();
+			else if (go.tag == "Rook") canAttack = !go.GetComponent<Rook_MovementScript>().IsImmune();
+			else if (go.tag == "Knight") canAttack = !go.GetComponent<Knight_MovementScript>().IsImmune();
+			else if (go.tag == "Bishop") canAttack = !go.GetComponent<Bishop_MovementScript>().IsImmune();
+
+			if (canAttack)
+			{
+				cell.Captured(this.gameObject);
+				SoundManager.PieceCapture();
+			}
 		}
 		else
 		{
@@ -94,5 +107,10 @@ public class Rook_MovementScript : MonoBehaviour, PieceInterface
 	public void Deselect()
 	{
 		this.selected = false;
+	}
+
+	public bool IsImmune()
+	{
+		return this.immune;
 	}
 }

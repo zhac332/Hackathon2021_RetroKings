@@ -53,12 +53,17 @@ public class CellScript : MonoBehaviour
 
 	public bool IsOccupied() { return this.occupied; }
 
+	public GameObject GetPieceOccupied()
+	{
+		return this.pieceOccuping;
+	}
+
 	public void Captured(GameObject newPiece)
 	{
 		Debug.Log("captured piece");
 
+		GameManager.AddPoints(pieceOccuping);
 		Destroy(pieceOccuping);
-		GameManager.AddPoints();
 
 		// replacing the piece that was occupying the cell with the new piece
 		pieceOccuping = newPiece;

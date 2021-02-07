@@ -8,6 +8,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 /// <summary>
 /// The main GameObject that allows the movement of pieces to be made.
@@ -39,10 +40,21 @@ public class GameManagerScript : MonoBehaviour
                                    // will be easier to check which piece has been selected
 
     private bool extraTurn = false;
+    private bool immunity = false;
+    private bool kill = false;
+
+    private int White_Points = 0;
+    private int Black_Points = 0;
+
+
+    private Text TurnText;
+    private Text PointsText;
 
     // Start is called before the first frame update
     void Start()
     {
+        TurnText = GameObject.Find("Canvas/Turn").GetComponent<Text>();
+        PointsText = GameObject.Find("Canvas/Points").GetComponent<Text>();
         InitBoard();
         ShowWhitePerspective();
     }
@@ -227,6 +239,13 @@ public class GameManagerScript : MonoBehaviour
                 else if (selectedPiece.tag == "Bishop") selectedPiece.GetComponent<Bishop_MovementScript>().Deselect();
                 else if (selectedPiece.tag == "Rook") selectedPiece.GetComponent<Rook_MovementScript>().Deselect();
                 else if (selectedPiece.tag == "Queen") selectedPiece.GetComponent<Queen_MovementScript>().Deselect();
+
+                if (selectedPiece2.tag == "Pawn") selectedPiece2.GetComponent<Pawn_MovementScript>().Deselect();
+                else if (selectedPiece2.tag == "Knight") selectedPiece2.GetComponent<Knight_MovementScript>().Deselect();
+                else if (selectedPiece2.tag == "Bishop") selectedPiece2.GetComponent<Bishop_MovementScript>().Deselect();
+                else if (selectedPiece2.tag == "Rook") selectedPiece2.GetComponent<Rook_MovementScript>().Deselect();
+                else if (selectedPiece2.tag == "Queen") selectedPiece2.GetComponent<Queen_MovementScript>().Deselect();
+
                 selectedCell = null;
                 selectedPiece = null;
                 selectedPiece2 = null;
@@ -238,6 +257,13 @@ public class GameManagerScript : MonoBehaviour
                 else if (selectedPiece.tag == "Bishop") selectedPiece.GetComponent<Bishop_MovementScript>().Deselect();
                 else if (selectedPiece.tag == "Rook") selectedPiece.GetComponent<Rook_MovementScript>().Deselect();
                 else if (selectedPiece.tag == "Queen") selectedPiece.GetComponent<Queen_MovementScript>().Deselect();
+
+                if (selectedPiece2.tag == "Pawn") selectedPiece2.GetComponent<Pawn_MovementScript>().Deselect();
+                else if (selectedPiece2.tag == "Knight") selectedPiece2.GetComponent<Knight_MovementScript>().Deselect();
+                else if (selectedPiece2.tag == "Bishop") selectedPiece2.GetComponent<Bishop_MovementScript>().Deselect();
+                else if (selectedPiece2.tag == "Rook") selectedPiece2.GetComponent<Rook_MovementScript>().Deselect();
+                else if (selectedPiece2.tag == "Queen") selectedPiece2.GetComponent<Queen_MovementScript>().Deselect();
+
                 selectedPiece = go;
             }
         }
@@ -675,14 +701,78 @@ public class GameManagerScript : MonoBehaviour
         extraTurn = true;
 	}
 
+    public void Immunity()
+	{
+        immunity = true;
+	}
+
+    public void Kill()
+	{
+        kill = true;
+	}
+
+    public int GetWhitePoints() { return this.White_Points; }
+    public int GetBlackPoints() { return this.Black_Points; }
+
+    public void SetWhitePoints(int p)
+	{
+        this.White_Points = p;
+	}
+
+    public void SetBlackPoints(int p)
+	{
+        this.Black_Points = p;
+	}
+
     /// <summary>
     /// Adds points to a specified player.
     /// 
     /// TO BE IMPLEMENTED.
     /// </summary>
-    public void AddPoints()
+    public void AddPoints(GameObject piece)
 	{
-
+        if (turn == "White")
+		{
+            switch(piece.tag)
+			{
+                case "Pawn":
+                    White_Points += 1;
+                    break;
+                case "Queen":
+                    White_Points += 9;
+                    break;
+                case "Bishop":
+                    White_Points += 5;
+                    break;
+                case "Knight":
+                    White_Points += 5;
+                    break;
+                case "Rook":
+                    White_Points += 7;
+                    break;
+			}
+		}
+        else
+		{
+            switch (piece.tag)
+            {
+                case "Pawn":
+                    Black_Points += 1;
+                    break;
+                case "Queen":
+                    Black_Points += 9;
+                    break;
+                case "Bishop":
+                    Black_Points += 5;
+                    break;
+                case "Knight":
+                    Black_Points += 5;
+                    break;
+                case "Rook":
+                    Black_Points += 7;
+                    break;
+            }
+        }
 	}
 
     private void CheckValidMove()
@@ -1687,5 +1777,24 @@ public class GameManagerScript : MonoBehaviour
 			selectedPiece.GetComponent<King_MovementScript>().Deselect();
 			selectedPiece = null;
 		}
+	}
+
+
+	private void Update()
+	{
+		if (turn == "White")
+		{
+            TurnText.text = "TURN: White";
+            TurnText.color = Color.white;
+
+            PointsText.text = "POINTS: " + White_Points;
+		}
+        else
+		{
+            TurnText.text = "TURN: Black";
+            TurnText.color = Color.black;
+
+            PointsText.text = "POINTS: " + Black_Points;
+        }
 	}
 }
