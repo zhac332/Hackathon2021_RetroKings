@@ -67,47 +67,6 @@ public class GameManagerScript : MonoBehaviour
                 board_cells[i, j] = GameObject.Find("Cell_" + (7 - i) + j).GetComponent<CellScript>();
                 board_cells[i, j].SetCoordinates(7 - i, j);
 			}
-
-        //for (int i = 0; i < row1.Count; i++)
-        //{
-        //    board_cells[7, i] = row1[i].GetComponent<CellScript>();
-        //    board_cells[7, i].SetCoordinates(i, 7);
-        //}
-        //for (int i = 0; i < row2.Count; i++)
-        //{
-        //    board_cells[6, i] = row2[i].GetComponent<CellScript>();
-        //    board_cells[6, i].SetCoordinates(i, 6);
-        //}
-        //for (int i = 0; i < row3.Count; i++)
-        //{
-        //    board_cells[5, i] = row3[i].GetComponent<CellScript>();
-        //    board_cells[5, i].SetCoordinates(i, 5);
-        //}
-        //for (int i = 0; i < row4.Count; i++)
-        //{
-        //    board_cells[4, i] = row4[i].GetComponent<CellScript>();
-        //    board_cells[4, i].SetCoordinates(i, 4);
-        //}
-        //for (int i = 0; i < row5.Count; i++)
-        //{
-        //    board_cells[3, i] = row5[i].GetComponent<CellScript>();
-        //    board_cells[3, i].SetCoordinates(i, 3);
-        //}
-        //for (int i = 0; i < row6.Count; i++)
-        //{
-        //    board_cells[2, i] = row6[i].GetComponent<CellScript>();
-        //    board_cells[2, i].SetCoordinates(i, 2);
-        //}
-        //for (int i = 0; i < row7.Count; i++)
-        //{
-        //    board_cells[1, i] = row7[i].GetComponent<CellScript>();
-        //    board_cells[1, i].SetCoordinates(i, 1);
-        //}
-        //for (int i = 0; i < row8.Count; i++)
-        //{
-        //    board_cells[0, i] = row8[i].GetComponent<CellScript>();
-        //    board_cells[0, i].SetCoordinates(i, 0);
-        //}
     }
 
     private void ShowWhitePerspective()
@@ -161,11 +120,13 @@ public class GameManagerScript : MonoBehaviour
         globalPosition = board_cells[7, 2].transform.position;
         go = Instantiate(Bishop_White, globalPosition, Quaternion.identity);
         board_cells[7, 2].GetComponent<CellScript>().OccupiedBy(go);
+        go.GetComponent<Bishop_MovementScript>().SetCoordinates(0, 2);
 
         // second bishop
         globalPosition = board_cells[7, 5].transform.position;
         go = Instantiate(Bishop_White, globalPosition, Quaternion.identity);
         board_cells[7, 5].GetComponent<CellScript>().OccupiedBy(go);
+        go.GetComponent<Bishop_MovementScript>().SetCoordinates(0, 5);
 
         // queen
         globalPosition = board_cells[7, 3].transform.position;
@@ -215,11 +176,13 @@ public class GameManagerScript : MonoBehaviour
         globalPosition = board_cells[0, 2].transform.position;
         go = Instantiate(Bishop_Black, globalPosition, Quaternion.identity);
         board_cells[0, 2].GetComponent<CellScript>().OccupiedBy(go);
+        go.GetComponent<Bishop_MovementScript>().SetCoordinates(7, 2);
 
         // second bishop
         globalPosition = board_cells[0, 5].transform.position;
         go = Instantiate(Bishop_Black, globalPosition, Quaternion.identity);
         board_cells[0, 5].GetComponent<CellScript>().OccupiedBy(go);
+        go.GetComponent<Bishop_MovementScript>().SetCoordinates(7, 5);
 
         // queen
         globalPosition = board_cells[0, 3].transform.position;
@@ -232,120 +195,121 @@ public class GameManagerScript : MonoBehaviour
         board_cells[0, 4].GetComponent<CellScript>().OccupiedBy(go);
     }
 
-    private void ShowBlackPerspective()
-	{
-        /// -----------------------------------------WHITE PIECES-----------------------------------------
+    // I don't think we need the Black Perspective. Because we can have an alternative to that.
+ //   private void ShowBlackPerspective()
+	//{
+ //       /// -----------------------------------------WHITE PIECES-----------------------------------------
 
-        Vector3 globalPosition = new Vector3();
-        GameObject go = new GameObject();
+ //       Vector3 globalPosition = new Vector3();
+ //       GameObject go = new GameObject();
 
-        // setting up the white pawns
-        for (int i = 0; i < 8; i++)
-        {
-            globalPosition = board_cells[1, i].transform.position;
-            globalPosition.y += 0.1f;
-            go = Instantiate(Pawn_White, globalPosition, Quaternion.identity);
-            go.GetComponent<Pawn_MovementScript>().SetCoordinates(6, i, true);
-            board_cells[1, i].GetComponent<CellScript>().OccupiedBy(go);
-        }
+ //       // setting up the white pawns
+ //       for (int i = 0; i < 8; i++)
+ //       {
+ //           globalPosition = board_cells[1, i].transform.position;
+ //           globalPosition.y += 0.1f;
+ //           go = Instantiate(Pawn_White, globalPosition, Quaternion.identity);
+ //           go.GetComponent<Pawn_MovementScript>().SetCoordinates(6, i, true);
+ //           board_cells[1, i].GetComponent<CellScript>().OccupiedBy(go);
+ //       }
 
-        // First Rook.
-        globalPosition = board_cells[0, 0].transform.position;
-        go = Instantiate(Rook_White, globalPosition, Quaternion.identity);
-        board_cells[0, 0].GetComponent<CellScript>().OccupiedBy(go);
-        go.GetComponent<Rook_MovementScript>().SetCoordinates(7, 0);
+ //       // First Rook.
+ //       globalPosition = board_cells[0, 0].transform.position;
+ //       go = Instantiate(Rook_White, globalPosition, Quaternion.identity);
+ //       board_cells[0, 0].GetComponent<CellScript>().OccupiedBy(go);
+ //       go.GetComponent<Rook_MovementScript>().SetCoordinates(7, 0);
 
-        // Second Rook.
-        globalPosition = board_cells[0, 7].transform.position;
-        go = Instantiate(Rook_White, globalPosition, Quaternion.identity);
-        board_cells[0, 7].GetComponent<CellScript>().OccupiedBy(go);
-        go.GetComponent<Rook_MovementScript>().SetCoordinates(7, 7);
+ //       // Second Rook.
+ //       globalPosition = board_cells[0, 7].transform.position;
+ //       go = Instantiate(Rook_White, globalPosition, Quaternion.identity);
+ //       board_cells[0, 7].GetComponent<CellScript>().OccupiedBy(go);
+ //       go.GetComponent<Rook_MovementScript>().SetCoordinates(7, 7);
 
-        // First Knight.
-        globalPosition = board_cells[0, 1].transform.position;
-        go = Instantiate(Knight_White, globalPosition, Quaternion.identity);
-        board_cells[0, 1].GetComponent<CellScript>().OccupiedBy(go);
+ //       // First Knight.
+ //       globalPosition = board_cells[0, 1].transform.position;
+ //       go = Instantiate(Knight_White, globalPosition, Quaternion.identity);
+ //       board_cells[0, 1].GetComponent<CellScript>().OccupiedBy(go);
 
-        // Second Knight.
-        globalPosition = board_cells[0, 6].transform.position;
-        go = Instantiate(Knight_White, globalPosition, Quaternion.identity);
-        board_cells[0, 6].GetComponent<CellScript>().OccupiedBy(go);
+ //       // Second Knight.
+ //       globalPosition = board_cells[0, 6].transform.position;
+ //       go = Instantiate(Knight_White, globalPosition, Quaternion.identity);
+ //       board_cells[0, 6].GetComponent<CellScript>().OccupiedBy(go);
 
-        // First Bishop.
-        globalPosition = board_cells[0, 2].transform.position;
-        go = Instantiate(Bishop_White, globalPosition, Quaternion.identity);
-        board_cells[0, 2].GetComponent<CellScript>().OccupiedBy(go);
+ //       // First Bishop.
+ //       globalPosition = board_cells[0, 2].transform.position;
+ //       go = Instantiate(Bishop_White, globalPosition, Quaternion.identity);
+ //       board_cells[0, 2].GetComponent<CellScript>().OccupiedBy(go);
 
-        // Second Bishop.
-        globalPosition = board_cells[0, 5].transform.position;
-        go = Instantiate(Bishop_White, globalPosition, Quaternion.identity);
-        board_cells[0, 5].GetComponent<CellScript>().OccupiedBy(go);
+ //       // Second Bishop.
+ //       globalPosition = board_cells[0, 5].transform.position;
+ //       go = Instantiate(Bishop_White, globalPosition, Quaternion.identity);
+ //       board_cells[0, 5].GetComponent<CellScript>().OccupiedBy(go);
 
-        // Queen.
-        globalPosition = board_cells[0, 3].transform.position;
-        go = Instantiate(Queen_White, globalPosition, Quaternion.identity);
-        board_cells[0, 3].GetComponent<CellScript>().OccupiedBy(go);
+ //       // Queen.
+ //       globalPosition = board_cells[0, 3].transform.position;
+ //       go = Instantiate(Queen_White, globalPosition, Quaternion.identity);
+ //       board_cells[0, 3].GetComponent<CellScript>().OccupiedBy(go);
 
-        // King.
-        globalPosition = board_cells[0, 4].transform.position;
-        go = Instantiate(King_White, globalPosition, Quaternion.identity);
-        board_cells[0, 4].GetComponent<CellScript>().OccupiedBy(go);
+ //       // King.
+ //       globalPosition = board_cells[0, 4].transform.position;
+ //       go = Instantiate(King_White, globalPosition, Quaternion.identity);
+ //       board_cells[0, 4].GetComponent<CellScript>().OccupiedBy(go);
 
 
-        /// -----------------------------------------BLACK PIECES-----------------------------------------
+ //       /// -----------------------------------------BLACK PIECES-----------------------------------------
 
-        // setting up the white pawns
-        for (int i = 0; i < 8; i++)
-        {
-            globalPosition = board_cells[6, i].transform.position;
-            globalPosition.y += 0.1f;
-            go = Instantiate(Pawn_Black, globalPosition, Quaternion.identity);
-            go.GetComponent<Pawn_MovementScript>().SetCoordinates(1, i, false);
-            board_cells[6, 0].GetComponent<CellScript>().OccupiedBy(go);
-        }
+ //       // setting up the white pawns
+ //       for (int i = 0; i < 8; i++)
+ //       {
+ //           globalPosition = board_cells[6, i].transform.position;
+ //           globalPosition.y += 0.1f;
+ //           go = Instantiate(Pawn_Black, globalPosition, Quaternion.identity);
+ //           go.GetComponent<Pawn_MovementScript>().SetCoordinates(1, i, false);
+ //           board_cells[6, 0].GetComponent<CellScript>().OccupiedBy(go);
+ //       }
 
-        // First Rook.
-		globalPosition = board_cells[7, 0].transform.position;
-		go = Instantiate(Rook_Black, globalPosition, Quaternion.identity);
-        board_cells[7, 0].GetComponent<CellScript>().OccupiedBy(go);
-        go.GetComponent<Rook_MovementScript>().SetCoordinates(0, 0);
+ //       // First Rook.
+	//	globalPosition = board_cells[7, 0].transform.position;
+	//	go = Instantiate(Rook_Black, globalPosition, Quaternion.identity);
+ //       board_cells[7, 0].GetComponent<CellScript>().OccupiedBy(go);
+ //       go.GetComponent<Rook_MovementScript>().SetCoordinates(0, 0);
 
-        // Second Rook.
-        globalPosition = board_cells[7, 7].transform.position;
-		go = Instantiate(Rook_Black, globalPosition, Quaternion.identity);
-        board_cells[7, 7].GetComponent<CellScript>().OccupiedBy(go);
-        go.GetComponent<Rook_MovementScript>().SetCoordinates(0, 7);
+ //       // Second Rook.
+ //       globalPosition = board_cells[7, 7].transform.position;
+	//	go = Instantiate(Rook_Black, globalPosition, Quaternion.identity);
+ //       board_cells[7, 7].GetComponent<CellScript>().OccupiedBy(go);
+ //       go.GetComponent<Rook_MovementScript>().SetCoordinates(0, 7);
 
-        // First Knight.
-        globalPosition = board_cells[7, 1].transform.position;
-		go = Instantiate(Knight_Black, globalPosition, Quaternion.identity);
-        board_cells[7, 1].GetComponent<CellScript>().OccupiedBy(go);
+ //       // First Knight.
+ //       globalPosition = board_cells[7, 1].transform.position;
+	//	go = Instantiate(Knight_Black, globalPosition, Quaternion.identity);
+ //       board_cells[7, 1].GetComponent<CellScript>().OccupiedBy(go);
 
-        // Second Knight.
-		globalPosition = board_cells[7, 6].transform.position;
-		go = Instantiate(Knight_Black, globalPosition, Quaternion.identity);
-        board_cells[7, 6].GetComponent<CellScript>().OccupiedBy(go);
+ //       // Second Knight.
+	//	globalPosition = board_cells[7, 6].transform.position;
+	//	go = Instantiate(Knight_Black, globalPosition, Quaternion.identity);
+ //       board_cells[7, 6].GetComponent<CellScript>().OccupiedBy(go);
 
-        // First Bishop.
-		globalPosition = board_cells[7, 2].transform.position;
-		go = Instantiate(Bishop_Black, globalPosition, Quaternion.identity);
-        board_cells[7, 2].GetComponent<CellScript>().OccupiedBy(go);
+ //       // First Bishop.
+	//	globalPosition = board_cells[7, 2].transform.position;
+	//	go = Instantiate(Bishop_Black, globalPosition, Quaternion.identity);
+ //       board_cells[7, 2].GetComponent<CellScript>().OccupiedBy(go);
 
-        // Second Bishop.
-		globalPosition = board_cells[7, 5].transform.position;
-		go = Instantiate(Bishop_Black, globalPosition, Quaternion.identity);
-        board_cells[7, 5].GetComponent<CellScript>().OccupiedBy(go);
+ //       // Second Bishop.
+	//	globalPosition = board_cells[7, 5].transform.position;
+	//	go = Instantiate(Bishop_Black, globalPosition, Quaternion.identity);
+ //       board_cells[7, 5].GetComponent<CellScript>().OccupiedBy(go);
 
-        // Queen.
-		globalPosition = board_cells[7, 3].transform.position;
-		go = Instantiate(Queen_Black, globalPosition, Quaternion.identity);
-        board_cells[7, 3].GetComponent<CellScript>().OccupiedBy(go);
+ //       // Queen.
+	//	globalPosition = board_cells[7, 3].transform.position;
+	//	go = Instantiate(Queen_Black, globalPosition, Quaternion.identity);
+ //       board_cells[7, 3].GetComponent<CellScript>().OccupiedBy(go);
 
-        // King.
-		globalPosition = board_cells[7, 4].transform.position;
-		go = Instantiate(King_Black, globalPosition, Quaternion.identity);
-        board_cells[7, 4].GetComponent<CellScript>().OccupiedBy(go);
-	}
+ //       // King.
+	//	globalPosition = board_cells[7, 4].transform.position;
+	//	go = Instantiate(King_Black, globalPosition, Quaternion.identity);
+ //       board_cells[7, 4].GetComponent<CellScript>().OccupiedBy(go);
+	//}
 
     public string GetTurn()
 	{
@@ -440,7 +404,6 @@ public class GameManagerScript : MonoBehaviour
 	{
         int x = a[0];
         int y = a[1];
-        Debug.Log(board_cells[7-x,y].GetXCoordinate() + "," + board_cells[7-x,y].GetYCoordinate());
         return board_cells[7 - x, y].IsOccupied();
     }
 
@@ -470,6 +433,8 @@ public class GameManagerScript : MonoBehaviour
             Debug.Log("check if the piece can be moved");
             if (selectedPiece.tag == "Pawn") CheckMovePawn();
             else if (selectedPiece.tag == "Rook") CheckMoveRook();
+            else if (selectedPiece.tag == "Bishop") CheckMoveBishop();
+            else if (selectedPiece.tag == "Knight") CheckMoveKnight();
         }
 	}
 
@@ -513,6 +478,11 @@ public class GameManagerScript : MonoBehaviour
             {
                 Cell_xcoord = selectedPiece2.GetComponent<Rook_MovementScript>().GetXCoordinate();
                 Cell_ycoord = selectedPiece2.GetComponent<Rook_MovementScript>().GetYCoordinate();
+            }
+            else if (selectedPiece2.tag == "Bishop")
+            {
+                Cell_xcoord = selectedPiece2.GetComponent<Bishop_MovementScript>().GetXCoordinate();
+                Cell_ycoord = selectedPiece2.GetComponent<Bishop_MovementScript>().GetYCoordinate();
             }
         }
 
@@ -647,6 +617,11 @@ public class GameManagerScript : MonoBehaviour
                 Cell_xcoord = selectedPiece2.GetComponent<Rook_MovementScript>().GetXCoordinate();
                 Cell_ycoord = selectedPiece2.GetComponent<Rook_MovementScript>().GetYCoordinate();
             }
+            else if (selectedPiece2.tag == "Bishop")
+            {
+                Cell_xcoord = selectedPiece2.GetComponent<Bishop_MovementScript>().GetXCoordinate();
+                Cell_ycoord = selectedPiece2.GetComponent<Bishop_MovementScript>().GetYCoordinate();
+            }
         }
 
         List<int[]> possibleCoordinates = new List<int[]>();
@@ -759,4 +734,165 @@ public class GameManagerScript : MonoBehaviour
             selectedPiece = null;
         }
     }
+
+    private void CheckMoveBishop()
+	{
+        int Bishop_XCoord = 0, Bishop_YCoord = 0;
+
+        Bishop_XCoord = selectedPiece.GetComponent<Bishop_MovementScript>().GetXCoordinate();
+        Bishop_YCoord = selectedPiece.GetComponent<Bishop_MovementScript>().GetYCoordinate();
+        // the rook can move horizontally and vertically. Don't need direction, nor firstMove.
+
+        int Cell_xcoord = 0, Cell_ycoord = 0; // for the cell
+
+
+        if (!attacking) // because otherwise, I'm not selecting a cell
+        {
+            Cell_xcoord = selectedCell.GetXCoordinate();
+            Cell_ycoord = selectedCell.GetYCoordinate();
+        }
+        else // I need to get the coordinates of that piece
+        {
+            if (selectedPiece2.tag == "Pawn")
+            {
+                Cell_xcoord = selectedPiece2.GetComponent<Pawn_MovementScript>().GetXCoordinate();
+                Cell_ycoord = selectedPiece2.GetComponent<Pawn_MovementScript>().GetYCoordinate();
+            }
+            else if (selectedPiece2.tag == "Rook")
+            {
+                Cell_xcoord = selectedPiece2.GetComponent<Rook_MovementScript>().GetXCoordinate();
+                Cell_ycoord = selectedPiece2.GetComponent<Rook_MovementScript>().GetYCoordinate();
+            }
+            else if (selectedPiece2.tag == "Bishop")
+			{
+                Cell_xcoord = selectedPiece2.GetComponent<Bishop_MovementScript>().GetXCoordinate();
+                Cell_ycoord = selectedPiece2.GetComponent<Bishop_MovementScript>().GetYCoordinate();
+            }
+        }
+
+        List<int[]> possibleCoordinates = new List<int[]>();
+
+        bool obstacle = false; // because the piece may meet another piece in its trajectory.
+                               // checking cells upwards
+
+        // the bishop moves on the diagonals
+        // Upper-Right diagonal
+        for (int i = Bishop_XCoord + 1, j = Bishop_YCoord + 1; i < 8 && j < 8; i++, j++)
+			    if (!obstacle)
+                    {
+                        int[] coords = new int[2];
+                        coords[0] = i;
+                        coords[1] = j;
+
+                        Debug.Log(i + " " + j + " " + IsCellOccupied(coords));
+                        if (!IsCellOccupied(coords)) possibleCoordinates.Add(coords);
+                        else
+                        {
+                            possibleCoordinates.Add(coords);
+                            obstacle = true;
+                        }
+                    }
+
+        // Lower-Right diagonal
+        obstacle = false;
+        for (int i = Bishop_XCoord - 1, j = Bishop_YCoord + 1; i >= 0 && j < 8; i--, j++)
+                if (!obstacle)
+                {
+                    int[] coords = new int[2];
+                    coords[0] = i;
+                    coords[1] = j;
+
+                    Debug.Log(i + " " + j + " " + IsCellOccupied(coords));
+                    if (!IsCellOccupied(coords)) possibleCoordinates.Add(coords);
+                    else
+                    {
+                        possibleCoordinates.Add(coords);
+                        obstacle = true;
+                    }
+                }
+
+        // Lower-Left diagonal
+        obstacle = false;
+        for (int i = Bishop_XCoord - 1, j = Bishop_YCoord - 1; i >= 0 && j >= 0; i--, j--)
+                if (!obstacle)
+                {
+                    int[] coords = new int[2];
+                    coords[0] = i;
+                    coords[1] = j;
+
+                    Debug.Log(i + " " + j + " " + IsCellOccupied(coords));
+                    if (!IsCellOccupied(coords)) possibleCoordinates.Add(coords);
+                    else
+                    {
+                        possibleCoordinates.Add(coords);
+                        obstacle = true;
+                    }
+                }
+
+        // Upper-Left diagonal
+        obstacle = false;
+        for (int i = Bishop_XCoord + 1, j = Bishop_YCoord - 1; i < 8 && j >= 0; i++, j--)
+                if (!obstacle)
+                {
+                    int[] coords = new int[2];
+                    coords[0] = i;
+                    coords[1] = j;
+
+                    Debug.Log(i + " " + j + " " + IsCellOccupied(coords));
+                    if (!IsCellOccupied(coords)) possibleCoordinates.Add(coords);
+                    else
+                    {
+                        possibleCoordinates.Add(coords);
+                        obstacle = true;
+                    }
+                }
+
+        //------------------Calculated the cells I can move to--------------------
+        bool canMove = false;
+
+        int[] cellCoord = new int[2];
+        cellCoord[0] = Cell_xcoord;
+        cellCoord[1] = Cell_ycoord;
+
+        for (int i = 0; i < possibleCoordinates.Count; i++)
+        {
+            Debug.Log(possibleCoordinates[i][0] + " " + possibleCoordinates[i][1]);
+            if (possibleCoordinates[i][0] == cellCoord[0] && possibleCoordinates[i][1] == cellCoord[1]) canMove = true;
+        }
+
+        Debug.Log("Coordinates of the bishop: " + Bishop_XCoord + "," + Bishop_YCoord + ". Coordinates of the cell: " + cellCoord[0] + "," + cellCoord[1] + ". Can Move: " + canMove);
+
+        if (canMove)
+        {
+            UnOccupyCell(Bishop_XCoord, Bishop_YCoord);
+            selectedPiece.GetComponent<Bishop_MovementScript>().MoveToCell(cellCoord, board_cells[7 - cellCoord[0], cellCoord[1]]);
+            selectedCell = null;
+            selectedPiece = null;
+            selectedPiece2 = null;
+            attacking = false;
+
+            // changing turns
+            if (turn == "White")
+            {
+                turn = "Black";
+                Debug.Log("Black's turn.");
+            }
+            else
+            {
+                turn = "White";
+                Debug.Log("White's turn.");
+            }
+        }
+        else
+        {
+            selectedCell = null;
+            selectedPiece.GetComponent<Bishop_MovementScript>().Deselect();
+            selectedPiece = null;
+        }
+    }
+
+    private void CheckMoveKnight()
+	{
+
+	}
 }
