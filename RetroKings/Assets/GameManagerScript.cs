@@ -328,7 +328,7 @@ public class GameManagerScript : MonoBehaviour
 		{
             // NEED TO CHECK FOR BLACK PIECES
 
-            // firstly, I need to check if there are any pawns on the upper-left and right diagonal
+            //---------------check if there are any pawns on the upper-left and right diagonal-------------------
             int[] upperLeftDiag = new int[2];
             upperLeftDiag[0] = x + 1;
             upperLeftDiag[1] = y - 1;
@@ -349,7 +349,7 @@ public class GameManagerScript : MonoBehaviour
                     return true;
 			    }
 
-			// then, I need to check if there are any rooks on the row or column
+			//---------------check if there are any rooks on the row or column--------------------
 
 			// checking for up direction
 			for (int i = x + 1; i < 8; i++)
@@ -362,7 +362,43 @@ public class GameManagerScript : MonoBehaviour
                         return true;
                     }
             }
-		}
+
+            // checking for down direction
+            for (int i = x - 1; i >= 0; i--)
+            {
+                CellScript cell = board_cells[7 - i, y];
+                if (cell.IsOccupied())
+                    if (cell.IsRook() && cell.IsPieceBlack())
+                    {
+                        Debug.Log("King is attacked! By a black rook! On " + (i) + " " + (y));
+                        return true;
+                    }
+            }
+
+            // checking for left direction
+            for (int j = y - 1; j >= 0; j--)
+            {
+                CellScript cell = board_cells[7 - x, j];
+                if (cell.IsOccupied())
+                    if (cell.IsRook() && cell.IsPieceBlack())
+                    {
+                        Debug.Log("King is attacked! By a black rook! On " + (x) + " " + (j));
+                        return true;
+                    }
+            }
+
+            // checking for right direction
+            for (int j = y + 1; j < 8; j++)
+            {
+                CellScript cell = board_cells[7 - x, j];
+                if (cell.IsOccupied())
+                    if (cell.IsRook() && cell.IsPieceBlack())
+                    {
+                        Debug.Log("King is attacked! By a black rook! On " + (x) + " " + (j));
+                        return true;
+                    }
+            }
+        }
         return false;
 	}
 
