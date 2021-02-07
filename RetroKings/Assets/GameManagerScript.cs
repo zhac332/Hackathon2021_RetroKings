@@ -433,6 +433,43 @@ public class GameManagerScript : MonoBehaviour
                     else if (cell.IsQueen() && cell.IsPieceBlack()) return true;
                 }
             }
+
+            //---------------check if there are any knights-------------------------
+            CellScript cell1;
+
+            // L facing up
+            int[] xCoordinates = new int[8];
+            xCoordinates[0] = x + 2;
+            xCoordinates[1] = x + 2;
+            xCoordinates[2] = x + 1;
+            xCoordinates[3] = x - 1;
+            xCoordinates[4] = x - 2;
+            xCoordinates[5] = x - 2;
+            xCoordinates[6] = x + 1;
+            xCoordinates[7] = x - 1;
+            int[] yCoordinates = new int[8];
+            yCoordinates[0] = y - 1;
+            yCoordinates[1] = y + 1;
+            yCoordinates[2] = y + 2;
+            yCoordinates[3] = y + 2;
+            yCoordinates[4] = y - 1;
+            yCoordinates[5] = y - 1;
+            yCoordinates[6] = y - 2;
+            yCoordinates[7] = y - 2;
+
+            for (int i = 0; i < 8; i++)
+			{
+                int[] a = new int[2];
+                a[0] = xCoordinates[i];
+                a[1] = yCoordinates[i];
+                if (IsWithinBorders(a))
+				{
+                    cell1 = board_cells[7 - a[0], a[1]];
+                    if (cell1.IsOccupied() && cell1.IsKnight() && cell1.IsPieceBlack()) return true;
+                }
+			}
+
+            //-------------------checking if there is a king nearby------------------
         }
         return false;
 	}
