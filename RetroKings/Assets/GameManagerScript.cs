@@ -1293,4 +1293,9 @@ public class GameManagerScript : MonoBehaviour
             selectedPiece = null;
         }
     }
+
+    private void CheckMoveKing()
+	{
+
+	}
 }
