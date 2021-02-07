@@ -139,11 +139,13 @@ public class GameManagerScript : MonoBehaviour
         globalPosition = board_cells[7, 0].transform.position;
         go = Instantiate(Rook_White, globalPosition, Quaternion.identity);
         board_cells[7, 0].GetComponent<CellScript>().OccupiedBy(go);
+        go.GetComponent<Rook_MovementScript>().SetCoordinates(0, 0);
 
         // second rook
         globalPosition = board_cells[7, 7].transform.position;
         go = Instantiate(Rook_White, globalPosition, Quaternion.identity);
         board_cells[7, 7].GetComponent<CellScript>().OccupiedBy(go);
+        go.GetComponent<Rook_MovementScript>().SetCoordinates(0, 7);
 
         // first knight
         globalPosition = board_cells[7, 1].transform.position;
@@ -191,11 +193,13 @@ public class GameManagerScript : MonoBehaviour
         globalPosition = board_cells[0, 0].transform.position;
         go = Instantiate(Rook_Black, globalPosition, Quaternion.identity);
         board_cells[0, 0].GetComponent<CellScript>().OccupiedBy(go);
+        go.GetComponent<Rook_MovementScript>().SetCoordinates(7, 0);
 
         // second rook
         globalPosition = board_cells[0, 7].transform.position;
         go = Instantiate(Rook_Black, globalPosition, Quaternion.identity);
         board_cells[0, 7].GetComponent<CellScript>().OccupiedBy(go);
+        go.GetComponent<Rook_MovementScript>().SetCoordinates(7, 7);
 
         // first knight
         globalPosition = board_cells[0, 1].transform.position;
@@ -249,11 +253,13 @@ public class GameManagerScript : MonoBehaviour
         globalPosition = board_cells[0, 0].transform.position;
         go = Instantiate(Rook_White, globalPosition, Quaternion.identity);
         board_cells[0, 0].GetComponent<CellScript>().OccupiedBy(go);
+        go.GetComponent<Rook_MovementScript>().SetCoordinates(7, 0);
 
         // Second Rook.
         globalPosition = board_cells[0, 7].transform.position;
         go = Instantiate(Rook_White, globalPosition, Quaternion.identity);
         board_cells[0, 7].GetComponent<CellScript>().OccupiedBy(go);
+        go.GetComponent<Rook_MovementScript>().SetCoordinates(7, 7);
 
         // First Knight.
         globalPosition = board_cells[0, 1].transform.position;
@@ -302,14 +308,16 @@ public class GameManagerScript : MonoBehaviour
 		globalPosition = board_cells[7, 0].transform.position;
 		go = Instantiate(Rook_Black, globalPosition, Quaternion.identity);
         board_cells[7, 0].GetComponent<CellScript>().OccupiedBy(go);
+        go.GetComponent<Rook_MovementScript>().SetCoordinates(0, 0);
 
         // Second Rook.
-		globalPosition = board_cells[7, 7].transform.position;
+        globalPosition = board_cells[7, 7].transform.position;
 		go = Instantiate(Rook_Black, globalPosition, Quaternion.identity);
         board_cells[7, 7].GetComponent<CellScript>().OccupiedBy(go);
+        go.GetComponent<Rook_MovementScript>().SetCoordinates(0, 7);
 
         // First Knight.
-		globalPosition = board_cells[7, 1].transform.position;
+        globalPosition = board_cells[7, 1].transform.position;
 		go = Instantiate(Knight_Black, globalPosition, Quaternion.identity);
         board_cells[7, 1].GetComponent<CellScript>().OccupiedBy(go);
 
@@ -432,6 +440,7 @@ public class GameManagerScript : MonoBehaviour
 	{
         int x = a[0];
         int y = a[1];
+        Debug.Log(board_cells[7-x,y].GetXCoordinate() + "," + board_cells[7-x,y].GetYCoordinate());
         return board_cells[7 - x, y].IsOccupied();
     }
 
@@ -458,8 +467,9 @@ public class GameManagerScript : MonoBehaviour
         // I need to know what kind of piece it is. --> need to check the tag of the object
         if (selectedPiece != null || attacking)
 		{
-            Debug.Log("check if the pawn can be moved");
+            Debug.Log("check if the piece can be moved");
             if (selectedPiece.tag == "Pawn") CheckMovePawn();
+            else if (selectedPiece.tag == "Rook") CheckMoveRook();
         }
 	}
 
@@ -600,4 +610,137 @@ public class GameManagerScript : MonoBehaviour
             selectedPiece = null;
 		}
 	}
+
+    private void CheckMoveRook()
+	{
+        int Rook_XCoord = 0, Rook_YCoord = 0;
+
+        Rook_XCoord = selectedPiece.GetComponent<Rook_MovementScript>().GetXCoordinate();
+        Rook_YCoord = selectedPiece.GetComponent<Rook_MovementScript>().GetYCoordinate();
+        // the rook can move horizontally and vertically. Don't need direction, nor firstMove.
+
+        int Cell_xcoord = 0, Cell_ycoord = 0; // for the cell
+
+
+        if (!attacking) // because otherwise, I'm not selecting a cell
+        {
+            Cell_xcoord = selectedCell.GetXCoordinate();
+            Cell_ycoord = selectedCell.GetYCoordinate();
+        }
+        else // I need to get the coordinates of that piece
+        {
+            Cell_xcoord = selectedPiece2.GetComponent<Pawn_MovementScript>().GetXCoordinate();
+            Cell_ycoord = selectedPiece2.GetComponent<Pawn_MovementScript>().GetYCoordinate();
+        }
+
+        List<int[]> possibleCoordinates = new List<int[]>();
+
+        bool obstacle = false; // because the piece may meet another piece in its trajectory.
+        // checking cells upwards
+        
+        for (int i = Rook_XCoord + 1; i < 8 && !obstacle; i++)
+		{
+            int[] coords = new int[2];
+            coords[0] = i;
+            coords[1] = Rook_YCoord;
+
+            if (!IsCellOccupied(coords)) possibleCoordinates.Add(coords);
+            else
+			{
+                possibleCoordinates.Add(coords); // because I can attack it, but I cannot move past it
+                obstacle = true;
+            }
+		}
+
+		// checking cells downwards
+		obstacle = false;
+		for (int i = Rook_XCoord - 1; i >= 0 && !obstacle; i--)
+		{
+			int[] coords = new int[2];
+			coords[0] = i;
+			coords[1] = Rook_YCoord;
+
+			if (!IsCellOccupied(coords)) possibleCoordinates.Add(coords);
+			else
+			{
+				possibleCoordinates.Add(coords); // because I can attack it, but I cannot move past it
+				obstacle = true;
+			}
+		}
+
+		// checking cells towards the right side
+		obstacle = false;
+		for (int j = Rook_YCoord + 1; j < 8 && !obstacle; j++)
+		{
+			int[] coords = new int[2];
+			coords[0] = Rook_XCoord;
+			coords[1] = j;
+
+			if (!IsCellOccupied(coords)) possibleCoordinates.Add(coords);
+			else
+			{
+				possibleCoordinates.Add(coords); // because I can attack it, but I cannot move past it
+				obstacle = true;
+			}
+		}
+
+		// checking cells towards the left side
+		obstacle = false;
+		for (int j = Rook_YCoord - 1; j >= 0 && !obstacle; j--)
+		{
+			int[] coords = new int[2];
+			coords[0] = Rook_XCoord;
+			coords[1] = j;
+
+			if (!IsCellOccupied(coords)) possibleCoordinates.Add(coords);
+			else
+			{
+				possibleCoordinates.Add(coords); // because I can attack it, but I cannot move past it
+				obstacle = true;
+			}
+		}
+
+		//------------------Calculated the cells I can move to--------------------
+		bool canMove = false;
+
+        int[] cellCoord = new int[2];
+        cellCoord[0] = Cell_xcoord;
+        cellCoord[1] = Cell_ycoord;
+
+        for (int i = 0; i < possibleCoordinates.Count; i++)
+        {
+            Debug.Log(possibleCoordinates[i][0] + " " + possibleCoordinates[i][1]);
+            if (possibleCoordinates[i][0] == cellCoord[0] && possibleCoordinates[i][1] == cellCoord[1]) canMove = true;
+        }
+
+        Debug.Log("Coordinates of the rook: " + Rook_XCoord + "," + Rook_YCoord + ". Coordinates of the cell: " + cellCoord[0] + "," + cellCoord[1] + ". Can Move: " + canMove);
+
+        if (canMove)
+        {
+            UnOccupyCell(Rook_XCoord, Rook_YCoord);
+            selectedPiece.GetComponent<Rook_MovementScript>().MoveToCell(cellCoord, board_cells[7 - cellCoord[0], cellCoord[1]]);
+            selectedCell = null;
+            selectedPiece = null;
+            selectedPiece2 = null;
+            attacking = false;
+
+            // changing turns
+            if (turn == "White")
+            {
+                turn = "Black";
+                Debug.Log("Black's turn.");
+            }
+            else
+            {
+                turn = "White";
+                Debug.Log("White's turn.");
+            }
+        }
+        else
+        {
+            selectedCell = null;
+            selectedPiece.GetComponent<Rook_MovementScript>().Deselect();
+            selectedPiece = null;
+        }
+    }
 }

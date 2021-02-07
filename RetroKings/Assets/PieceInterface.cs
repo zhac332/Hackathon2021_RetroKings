@@ -2,6 +2,10 @@
 {
 	interface PieceInterface
 	{
-		void SetCoordinates(int i, int j, bool direction);
+		int GetXCoordinate();
+		int GetYCoordinate();
+
+		void MoveToCell(int[] newCoords, CellScript cell);
+		void Deselect();
 	}
 }
