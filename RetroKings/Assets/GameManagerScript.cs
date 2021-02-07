@@ -504,8 +504,16 @@ public class GameManagerScript : MonoBehaviour
         }
         else // I need to get the coordinates of that piece
 		{
-            Cell_xcoord = selectedPiece2.GetComponent<Pawn_MovementScript>().GetXCoordinate();
-            Cell_ycoord = selectedPiece2.GetComponent<Pawn_MovementScript>().GetYCoordinate();
+            if (selectedPiece2.tag == "Pawn")
+            {
+                Cell_xcoord = selectedPiece2.GetComponent<Pawn_MovementScript>().GetXCoordinate();
+                Cell_ycoord = selectedPiece2.GetComponent<Pawn_MovementScript>().GetYCoordinate();
+            }
+            else if (selectedPiece2.tag == "Rook")
+            {
+                Cell_xcoord = selectedPiece2.GetComponent<Rook_MovementScript>().GetXCoordinate();
+                Cell_ycoord = selectedPiece2.GetComponent<Rook_MovementScript>().GetYCoordinate();
+            }
         }
 
         // Then, I need to calculate a list of all the possible movements for that pawn. If the clicked cell
@@ -629,8 +637,16 @@ public class GameManagerScript : MonoBehaviour
         }
         else // I need to get the coordinates of that piece
         {
-            Cell_xcoord = selectedPiece2.GetComponent<Pawn_MovementScript>().GetXCoordinate();
-            Cell_ycoord = selectedPiece2.GetComponent<Pawn_MovementScript>().GetYCoordinate();
+            if (selectedPiece2.tag == "Pawn")
+			{
+                Cell_xcoord = selectedPiece2.GetComponent<Pawn_MovementScript>().GetXCoordinate();
+                Cell_ycoord = selectedPiece2.GetComponent<Pawn_MovementScript>().GetYCoordinate();
+            }
+            else if (selectedPiece2.tag == "Rook")
+			{
+                Cell_xcoord = selectedPiece2.GetComponent<Rook_MovementScript>().GetXCoordinate();
+                Cell_ycoord = selectedPiece2.GetComponent<Rook_MovementScript>().GetYCoordinate();
+            }
         }
 
         List<int[]> possibleCoordinates = new List<int[]>();
