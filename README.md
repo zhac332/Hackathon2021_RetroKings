@@ -17,5 +17,7 @@ Files:
 How to play:
   It's the rules of normal chess! But in addition there is a point system, and as the game progresses you can accumilate points for your color. Once you have enough points, you can click the buttons on the left to buy any of the avaliable power-ups. This can be done at anytime as long as you have the points to buy the power-ups, and so this allows you to be very strategic in when you use them.
 
+To move or capture a piece, simply click on the piece to select it, and click on a correct square, according to how the piece moves. Then, simply click the cell you want the piece to move to.
+
 Running the game:
   The game can be run simply by downloading and running the executable.
