@@ -62,3 +62,7 @@ RetroKings/Assets/.DS_Store
 RetroKings/Assets/MY SPRITES/.DS_Store
 RetroKings/Assets/MY SPRITES/Chess Pieces/.DS_Store
 .DS_Store
+RetroKings/Library/
+RetroKings/Temp/
+RetroKings/obj/
+RetroKings/Logs/
