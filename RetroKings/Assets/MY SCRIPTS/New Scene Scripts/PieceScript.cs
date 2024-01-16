@@ -58,12 +58,12 @@ public class PieceScript : MonoBehaviour
         if (!Move.IsFirstCellSelected())
         {
             Select();
-            Move.SelectPiece(currentCell, Name, Color);
+            //Move.SelectPiece(currentCell, Name, Color);
         }
         else if (Move.IsFirstCellSelected() && !Move.IsSecondCellSelected())
         {
             Deselect();
-            Move.SelectPiece(currentCell, Name, Color);
+            //Move.SelectPiece(currentCell, Name, Color);
         }
     }
 
