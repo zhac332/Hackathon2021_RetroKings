@@ -116,7 +116,7 @@ public static class MoveChecker
             int r = row + knightMoves[i, 0];
             int c = colIndex + knightMoves[i, 1];
 
-            if (r >= 0 && c >= 0 && r * 8 + c >= 0 && r * 8 + c < cells.Count)
+            if ((0 <= r && r < 8) && (0 <= c && c < 8) && (0 <= r * 8 + c && r * 8 + c < cells.Count))
             {
                 Tuple<Piece, PieceColor> pieceOnCell = GetPieceOnCell(r * 8 + c);
 
