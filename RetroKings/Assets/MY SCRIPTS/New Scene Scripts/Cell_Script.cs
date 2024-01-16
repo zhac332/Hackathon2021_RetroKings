@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class Cell_Script : MonoBehaviour
 {
+    [SerializeField] private Color LegalCell_Color;
     [SerializeField] private Color Selected_Color;
     [SerializeField] private Color Default_Color;
     private SpriteRenderer sr;
@@ -10,22 +11,23 @@ public class Cell_Script : MonoBehaviour
     private void Start()
     {
         sr = GetComponent<SpriteRenderer>();
+        MoveChecker.AcquireAllCells();
     }
 
     private void Cell_OnClick()
     {
-        Debug.Log("clicked cell " + name + ".");
         GameObject piece = null;
         if (!Move.IsFirstCellSelected())
         {
-            if (transform.childCount != 0)
+            if (HasAPiece())
             {
                 piece = transform.GetChild(0).gameObject;
 
-                Debug.Log("selected " + piece.name);
                 SelectCell();
 
                 Move.SelectPiece(name, piece.name);
+                MoveChecker.SetFirstPiece(piece.name);
+                MoveChecker.MarkAvailableCells(gameObject);
             }
             else Debug.Log("Select a cell with a piece. If there is no piece, how do I know what move to make?");
         }
@@ -33,22 +35,24 @@ public class Cell_Script : MonoBehaviour
         {
             if (Move.IsCellIdenticalWithFirst(name))
             {
-                Debug.Log("deselected " + name);
                 DeselectCell();
-
                 Move.SelectPiece();
+                MoveChecker.UnmarkAll();
             }
             else if (!Move.IsSecondCellSelected())
             {
                 piece = null;
                 if (transform.childCount != 0) piece = transform.GetChild(0).gameObject;
 
-                Debug.Log("moving to cell " + name);
-
                 if (piece == null) Move.SelectCell(name, (cell1, cell2, piece) => ExecuteMove(cell1, cell2, piece));
                 else Move.SelectCell(name, piece.name, (cell1, cell2, piece) => ExecuteMove(cell1, cell2, piece));
             }
         }
+    }
+
+    public bool HasAPiece()
+    {
+        return transform.childCount != 0;
     }
 
     private void SelectCell()
@@ -59,6 +63,11 @@ public class Cell_Script : MonoBehaviour
     public void DeselectCell()
     {
         sr.color = Default_Color;
+    }
+
+    public void MarkForLegalCells()
+    {
+        sr.color = LegalCell_Color;
     }
 
     private void ExecuteMove(string cell1, string cell2, Tuple<Piece, PieceColor> piece)
@@ -82,6 +91,7 @@ public class Cell_Script : MonoBehaviour
         p.transform.localPosition = new Vector3(0f, 0f, 0f);
 
         Move.ResetMove();
+        MoveChecker.UnmarkAll();
     }
 
     private void Update()
