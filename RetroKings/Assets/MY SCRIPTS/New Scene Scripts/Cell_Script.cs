@@ -1,10 +1,17 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Cell_Script : MonoBehaviour
 {
+    [SerializeField] private Color Selected_Color;
+    [SerializeField] private Color Default_Color;
+    private SpriteRenderer sr;
+
+    private void Start()
+    {
+        sr = GetComponent<SpriteRenderer>();
+    }
+
     private void Cell_OnClick()
     {
         Debug.Log("clicked cell " + name + ".");
@@ -16,6 +23,7 @@ public class Cell_Script : MonoBehaviour
                 piece = transform.GetChild(0).gameObject;
 
                 Debug.Log("selected " + piece.name);
+                SelectCell();
 
                 Move.SelectPiece(name, piece.name);
             }
@@ -26,6 +34,7 @@ public class Cell_Script : MonoBehaviour
             if (Move.IsCellIdenticalWithFirst(name))
             {
                 Debug.Log("deselected " + name);
+                DeselectCell();
 
                 Move.SelectPiece();
             }
@@ -42,6 +51,16 @@ public class Cell_Script : MonoBehaviour
         }
     }
 
+    private void SelectCell()
+    {
+        sr.color = Selected_Color;
+    }
+
+    public void DeselectCell()
+    {
+        sr.color = Default_Color;
+    }
+
     private void ExecuteMove(string cell1, string cell2, Tuple<Piece, PieceColor> piece)
     {
         // I need to hold the child piece from cell1,
@@ -50,6 +69,8 @@ public class Cell_Script : MonoBehaviour
         GameObject c1 = GameObject.Find(cell1);
         GameObject c2 = GameObject.Find(cell2);
         GameObject p = c1.transform.GetChild(0).gameObject;
+
+        c1.GetComponent<Cell_Script>().DeselectCell();
 
         if (c2.transform.childCount != 0)
             Destroy(c2.transform.GetChild(0).gameObject);
