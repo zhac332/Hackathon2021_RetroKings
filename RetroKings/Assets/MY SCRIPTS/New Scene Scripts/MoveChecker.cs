@@ -46,9 +46,124 @@ public static class MoveChecker
 
     private static void MarkQueen(GameObject currentCell)
     {
-        // rook and bishop combined
-        MarkBishop(currentCell);
-        MarkRook(currentCell);
+        int currentCellIndex = cells.IndexOf(currentCell);
+
+        UnmarkAll(currentCellIndex);
+
+        int row = currentCellIndex / 8;
+        int colIndex = currentCellIndex % 8;
+        bool stop = false;
+
+        // top left diagonal
+        for (int r = row + 1, c = colIndex - 1; (0 <= r && r < 8) && (0 <= c && c < 8) && !stop; r++, c--)
+        {
+            Tuple<Piece, PieceColor> pieceOnCell = GetPieceOnCell(r * 8 + c);
+
+            if (pieceOnCell == nullPiece) MarkCell(r, c);
+            else
+            {
+                if (pieceOnCell.Item2 != currentPieceColor) MarkCell(r, c);
+                stop = true;
+            }
+        }
+
+        // top right diagonal
+        stop = false;
+        for (int r = row + 1, c = colIndex + 1; (0 <= r && r < 8) && (0 <= c && c < 8) && !stop; r++, c++)
+        {
+            Tuple<Piece, PieceColor> pieceOnCell = GetPieceOnCell(r * 8 + c);
+
+            if (pieceOnCell == nullPiece) MarkCell(r, c);
+            else
+            {
+                if (pieceOnCell.Item2 != currentPieceColor) MarkCell(r, c);
+                stop = true;
+            }
+        }
+
+        //bot left diagonal
+        stop = false;
+        for (int r = row - 1, c = colIndex - 1; (0 <= r && r < 8) && (0 <= c && c < 8) && !stop; r--, c--)
+        {
+            Tuple<Piece, PieceColor> pieceOnCell = GetPieceOnCell(r * 8 + c);
+
+            if (pieceOnCell == nullPiece) MarkCell(r, c);
+            else
+            {
+                if (pieceOnCell.Item2 != currentPieceColor) MarkCell(r, c);
+                stop = true;
+            }
+        }
+
+        // bot right diagonal
+        stop = false;
+        for (int r = row - 1, c = colIndex + 1; (0 <= r && r < 8) && (0 <= c && c < 8) && !stop; r--, c++)
+        {
+            Tuple<Piece, PieceColor> pieceOnCell = GetPieceOnCell(r * 8 + c);
+
+            if (pieceOnCell == nullPiece) MarkCell(r, c);
+            else
+            {
+                if (pieceOnCell.Item2 != currentPieceColor) MarkCell(r, c);
+                stop = true;
+            }
+        }
+
+        // vertical downwards
+        stop = false;
+        for (int c = colIndex - 1; (0 <= c && c < 8) && !stop; c--)
+        {
+            Tuple<Piece, PieceColor> pieceOnCell = GetPieceOnCell(row * 8 + c);
+
+            if (pieceOnCell == nullPiece) MarkCell(row, c);
+            else
+            {
+                if (pieceOnCell.Item2 != currentPieceColor) MarkCell(row, c);
+                stop = true;
+            }
+        }
+
+        // vertical upwards
+        stop = false;
+        for (int c = colIndex + 1; (0 <= c && c < 8) && !stop; c++)
+        {
+            Tuple<Piece, PieceColor> pieceOnCell = GetPieceOnCell(row * 8 + c);
+
+            if (pieceOnCell == nullPiece) MarkCell(row, c);
+            else
+            {
+                if (pieceOnCell.Item2 != currentPieceColor) MarkCell(row, c);
+                stop = true;
+            }
+        }
+
+        // horizontal left
+        stop = false;
+        for (int r = row - 1; (0 <= r && r < 8) && !stop; r--)
+        {
+            Tuple<Piece, PieceColor> pieceOnCell = GetPieceOnCell(r * 8 + colIndex);
+
+            if (pieceOnCell == nullPiece) MarkCell(r, colIndex);
+            else
+            {
+                if (pieceOnCell.Item2 != currentPieceColor) MarkCell(r, colIndex);
+                stop = true;
+            }
+        }
+
+        // horizontal right
+        stop = false;
+        for (int r = row + 1; (0 <= r && r < 8) && !stop; r++)
+        {
+            Tuple<Piece, PieceColor> pieceOnCell = GetPieceOnCell(r * 8 + colIndex);
+
+            if (pieceOnCell == nullPiece) MarkCell(r, colIndex);
+            else
+            {
+                if (pieceOnCell.Item2 != currentPieceColor) MarkCell(r, colIndex);
+                stop = true;
+            }
+        }
     }
 
     private static void MarkKing(GameObject currentCell)
