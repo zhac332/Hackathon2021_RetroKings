@@ -1,5 +1,4 @@
 using System;
-using UnityEngine;
 
 public static class Move
 {
@@ -12,6 +11,11 @@ public static class Move
     public static bool IsFirstCellSelected()
     {
         return firstCell_Selected;
+    }
+    
+    public static bool IsCellIdenticalWithFirst(string cellName)
+    {
+        return cellName == firstCell;
     }
 
     public static bool IsSecondCellSelected()
@@ -26,6 +30,7 @@ public static class Move
         PieceColor c = PieceColor.NULL;
 
         c = (parts[1] == "B" ? PieceColor.Black : PieceColor.White);
+
         if (parts[0] == "Pawn") p = Piece.Pawn;
         else if (parts[0] == "Bishop") p = Piece.Bishop;
         else if (parts[0] == "Rook") p = Piece.Rook;
@@ -45,6 +50,13 @@ public static class Move
             firstCell = "";
             currentPiece = new Tuple<Piece, PieceColor>(Piece.NULL, PieceColor.NULL);
         }
+    }
+
+    public static void SelectPiece()
+    {
+        firstCell_Selected = false;
+        firstCell = "";
+        currentPiece = new Tuple<Piece, PieceColor>(Piece.NULL, PieceColor.NULL);
     }
 
     public static void SelectCell(string cellName, Action<string, string, Tuple<Piece, PieceColor>> executeMove)

@@ -8,24 +8,37 @@ public class Cell_Script : MonoBehaviour
     private void Cell_OnClick()
     {
         Debug.Log("clicked cell " + name + ".");
-        if (!Move.IsFirstCellSelected() && transform.childCount != 0)
+        GameObject piece = null;
+        if (!Move.IsFirstCellSelected())
         {
-            // select that cell and pass the piece
-            GameObject piece = transform.GetChild(0).gameObject;
+            if (transform.childCount != 0)
+            {
+                piece = transform.GetChild(0).gameObject;
 
-            Debug.Log("selected " + piece.name);
+                Debug.Log("selected " + piece.name);
 
-            Move.SelectPiece(name, piece.name);
+                Move.SelectPiece(name, piece.name);
+            }
+            else Debug.Log("Select a cell with a piece. If there is no piece, how do I know what move to make?");
         }
-        else if (Move.IsFirstCellSelected() && !Move.IsSecondCellSelected())
+        else
         {
-            GameObject piece = null;
-            if (transform.childCount != 0) piece = transform.GetChild(0).gameObject;
+            if (Move.IsCellIdenticalWithFirst(name))
+            {
+                Debug.Log("deselected " + name);
 
-            Debug.Log("moving to cell " + name);
+                Move.SelectPiece();
+            }
+            else if (!Move.IsSecondCellSelected())
+            {
+                piece = null;
+                if (transform.childCount != 0) piece = transform.GetChild(0).gameObject;
 
-            if (piece == null) Move.SelectCell(name, (cell1, cell2, piece) => ExecuteMove(cell1, cell2, piece));
-            else Move.SelectCell(name, piece.name, (cell1, cell2, piece) => ExecuteMove(cell1, cell2, piece));
+                Debug.Log("moving to cell " + name);
+
+                if (piece == null) Move.SelectCell(name, (cell1, cell2, piece) => ExecuteMove(cell1, cell2, piece));
+                else Move.SelectCell(name, piece.name, (cell1, cell2, piece) => ExecuteMove(cell1, cell2, piece));
+            }
         }
     }
 
