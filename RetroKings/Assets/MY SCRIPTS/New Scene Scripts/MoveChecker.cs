@@ -36,7 +36,10 @@ public static class MoveChecker
 
     public static void MarkAvailableCells(GameObject currentCell)
     {
-        if (currentPiece == Piece.Pawn) MarkPawn(currentCell);
+        if (currentPiece == Piece.Pawn)
+        {
+            MarkPawn(currentCell, (currentPieceColor == PieceColor.White) ? false : true);
+        }
         if (currentPiece == Piece.Queen) MarkQueen(currentCell);
         if (currentPiece == Piece.King) MarkKing(currentCell);
         if (currentPiece == Piece.Rook) MarkRook(currentCell);
@@ -307,7 +310,7 @@ public static class MoveChecker
         }
     }
     
-    private static void MarkPawn(GameObject currentCell)
+    private static void MarkPawn(GameObject currentCell, bool invertDirection)
     {
         int currentCellIndex = cells.IndexOf(currentCell);
 
@@ -316,17 +319,18 @@ public static class MoveChecker
         int row = currentCellIndex / 8;
         int colIndex = currentCellIndex % 8;
         int[] rowAdds = { -1, +1 };
+        int columnDelta = (invertDirection) ? -1 : 1;
 
-        Tuple<Piece, PieceColor> pieceOnCell = GetPieceOnCell(row * 8 + colIndex + 1);
+        Tuple<Piece, PieceColor> pieceOnCell = GetPieceOnCell(row * 8 + colIndex + columnDelta);
 
-        if (pieceOnCell == nullPiece) MarkCell(row, colIndex + 1);
-        else if (pieceOnCell.Item2 != currentPieceColor) MarkCell(row, colIndex + 1);
+        if (pieceOnCell == nullPiece) MarkCell(row, colIndex + columnDelta);
+        else if (pieceOnCell.Item2 != currentPieceColor) MarkCell(row, colIndex + columnDelta);
 
         for (int i = 0; i < rowAdds.Length; i++)
             if (row + rowAdds[i] >= 0 && row + rowAdds[i] < 8)
             {
-                pieceOnCell = GetPieceOnCell((row + rowAdds[i]) * 8 + colIndex + 1);
-                if (pieceOnCell.Item2 != PieceColor.NULL && pieceOnCell.Item2 != currentPieceColor) MarkCell(row + rowAdds[i], colIndex + 1);
+                pieceOnCell = GetPieceOnCell((row + rowAdds[i]) * 8 + colIndex + columnDelta);
+                if (pieceOnCell.Item2 != PieceColor.NULL && pieceOnCell.Item2 != currentPieceColor) MarkCell(row + rowAdds[i], colIndex + columnDelta);
             }
     }
 
