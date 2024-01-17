@@ -6,19 +6,27 @@ using UnityEngine;
 public static class MoveChecker
 {
     private static List<GameObject> cells;
+    private static GameObject PromotionalPanel;
     private static Piece currentPiece;
     private static PieceColor currentPieceColor;
     private static bool acquired = false;
     private static readonly Tuple<Piece, PieceColor> nullPiece = new Tuple<Piece, PieceColor>(Piece.NULL, PieceColor.NULL);
     private static List<string> markedCells;
+    private static Action<bool> updatePromotionalPieces_Function;
 
     public static void AcquireAllCells()
     {
         if (!acquired)
         {
             acquired = true;
-            cells = GameObject.FindGameObjectsWithTag("Cell").ToList<GameObject>();
+            cells = GameObject.FindGameObjectsWithTag("Cell").ToList();
+            PromotionalPanel = GameObject.Find("MAIN CANVAS/Promotion Panel");
         }
+    }
+
+    public static void SetUpdatePromotionalPiecesFunction(Action<bool> method)
+    {
+        updatePromotionalPieces_Function = method;
     }
 
     public static void SetFirstPiece(string pieceName)
@@ -355,7 +363,6 @@ public static class MoveChecker
         // the cell in front
         Tuple<Piece, PieceColor> pieceOnCell = GetPieceOnCell(row * 8 + colIndex + columnDelta);
         if (pieceOnCell == nullPiece) MarkCell(row, colIndex + columnDelta, false);
-        else if (pieceOnCell.Item2 != currentPieceColor) MarkCell(row, colIndex + columnDelta, true);
 
         // the first move that the pawn makes, can skip one cell.
         if (currentPieceColor == PieceColor.White && currentCell.name.Contains("2"))
@@ -433,5 +440,29 @@ public static class MoveChecker
             else cells[index].GetComponent<Cell_Script>().MarkForCaptureCells();
             markedCells.Add(cells[index].name);
         }
+    }
+
+    public static bool IsPromotionalMove(string cellName)
+    {
+        // if the piece is white, and the row is 8
+        // if the piece is black, and the row is 1
+        if (currentPiece == Piece.Pawn)
+        {
+            if (currentPieceColor == PieceColor.White)
+            {
+                return cellName.Contains("8");
+            }
+            else if (currentPieceColor == PieceColor.Black)
+            {
+                return cellName.Contains("1");
+            }
+        }
+        return false;
+    }
+
+    public static void ShowPromotionalPanel()
+    {
+        PromotionalPanel.transform.GetChild(0).gameObject.SetActive(true);
+        updatePromotionalPieces_Function((currentPieceColor == PieceColor.White));
     }
 }

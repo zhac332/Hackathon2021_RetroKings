@@ -44,11 +44,20 @@ public class Cell_Script : MonoBehaviour
             {
                 if (MoveChecker.CheckMove(name))
                 {
-                    piece = null;
-                    if (transform.childCount != 0) piece = transform.GetChild(0).gameObject;
+                    // this is where I should check if the end cell makes the pawn be promoted
+                    if (MoveChecker.IsPromotionalMove(name))
+                    {
+                        MoveChecker.ShowPromotionalPanel();
+                    }
+                    else
+                    {
+                        // just move like normal
+                        piece = null;
+                        if (transform.childCount != 0) piece = transform.GetChild(0).gameObject;
 
-                    if (piece == null) Move.SelectCell(name, (cell1, cell2, piece) => ExecuteMove(cell1, cell2, piece));
-                    else Move.SelectCell(name, piece.name, (cell1, cell2, piece) => ExecuteMove(cell1, cell2, piece));
+                        if (piece == null) Move.SelectCell(name, (cell1, cell2, piece) => ExecuteMove(cell1, cell2, piece));
+                        else Move.SelectCell(name, piece.name, (cell1, cell2, piece) => ExecuteMove(cell1, cell2, piece));
+                    }
                 }
                 else Debug.LogWarning("Illegal move.");
             }

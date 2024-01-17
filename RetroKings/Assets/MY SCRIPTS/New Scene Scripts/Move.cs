@@ -67,7 +67,6 @@ public static class Move
             secondCell_Selected = true;
             lastCell = cellName;
 
-            // verify if the move is legal
             executeMove(firstCell, lastCell, currentPiece);
         }
         // there is no turning back, if the second cell is already selected. You cannot undo it.
