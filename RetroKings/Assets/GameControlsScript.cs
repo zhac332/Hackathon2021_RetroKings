@@ -5,6 +5,12 @@ using UnityEngine.UI;
 
 public class GameControlsScript : MonoBehaviour
 {
+    [Header("For turns")]
+    [SerializeField] private Sprite KingWhite;
+    [SerializeField] private Sprite KingBlack;
+    [SerializeField] private Image TurnImage;
+
+    [Header("For the promotion buttons")]
     [SerializeField] private Image QueenButton_Image;
     [SerializeField] private Image RookButton_Image;
     [SerializeField] private Image BishopButton_Image;
@@ -15,6 +21,8 @@ public class GameControlsScript : MonoBehaviour
     private void Start()
     {
         MoveChecker.SetUpdatePromotionalPiecesFunction((white) => UpdateImages(white));
+        Game.SetDisplayTurnFunction(DisplayTurn);
+        DisplayTurn();
     }
 
     public void UpdateImages(bool isWhite)
@@ -43,5 +51,10 @@ public class GameControlsScript : MonoBehaviour
     public void KnightButton_OnClick()
     {
         Move.PromotionSelected(Piece.Knight);
+    }
+
+    public void DisplayTurn()
+    {
+        TurnImage.sprite = (Game.IsMyTurn()) ? KingWhite : KingBlack;
     }
 }

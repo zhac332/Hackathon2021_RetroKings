@@ -28,6 +28,23 @@ public class Cell_Script : MonoBehaviour
         GameObject piece = null;
         if (!Move.IsFirstCellSelected())
         {
+            if (Game.IsMyTurn())
+            {
+                if (!IsPieceWhite())
+                {
+                    Debug.LogError("Not your piece.");
+                    return;
+                }
+            }
+            else
+            {
+                if (IsPieceWhite())
+                {
+                    Debug.LogError("Not your piece.");
+                    return;
+                }
+            }
+
             if (HasAPiece())
             {
                 piece = transform.GetChild(0).gameObject;
@@ -76,6 +93,11 @@ public class Cell_Script : MonoBehaviour
     public bool HasAPiece()
     {
         return transform.childCount != 0;
+    }
+
+    private bool IsPieceWhite()
+    {
+        return transform.GetChild(0).name.Contains("W");
     }
 
     private void SelectCell()
@@ -174,6 +196,7 @@ public class Cell_Script : MonoBehaviour
 
         Move.ResetMove();
         MoveChecker.UnmarkAll();
+        Game.SwitchTurn();
     }
 
     private void Update()
