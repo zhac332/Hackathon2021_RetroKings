@@ -322,20 +322,12 @@ public static class MoveChecker
         if (pieceOnCell == nullPiece) MarkCell(row, colIndex + 1);
         else if (pieceOnCell.Item2 != currentPieceColor) MarkCell(row, colIndex + 1);
 
-
-
         for (int i = 0; i < rowAdds.Length; i++)
-        {
-            pieceOnCell = GetPieceOnCell((row + rowAdds[i]) * 8 + colIndex + 1);
-            if (pieceOnCell.Item2 != PieceColor.NULL && pieceOnCell.Item2 != currentPieceColor) MarkCell(row + rowAdds[i], colIndex + 1);
-        }
-
-        // Mark cells in front of the pawn
-        //MarkPawnMove(row + (currentPieceColor == PieceColor.White ? 1 : -1), colIndex);
-
-        //// Mark diagonal cells for possible captures
-        //MarkPawnCapture(row + (currentPieceColor == PieceColor.White ? 1 : -1), colIndex - 1);
-        //MarkPawnCapture(row + (currentPieceColor == PieceColor.White ? 1 : -1), colIndex + 1);
+            if (row + rowAdds[i] >= 0 && row + rowAdds[i] < 8)
+            {
+                pieceOnCell = GetPieceOnCell((row + rowAdds[i]) * 8 + colIndex + 1);
+                if (pieceOnCell.Item2 != PieceColor.NULL && pieceOnCell.Item2 != currentPieceColor) MarkCell(row + rowAdds[i], colIndex + 1);
+            }
     }
 
     private static Tuple<Piece, PieceColor> GetPieceOnCell(int cellIndex)
