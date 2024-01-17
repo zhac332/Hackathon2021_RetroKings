@@ -321,17 +321,35 @@ public static class MoveChecker
         int[] rowAdds = { -1, +1 };
         int columnDelta = (invertDirection) ? -1 : 1;
 
+        // the cell in front
         Tuple<Piece, PieceColor> pieceOnCell = GetPieceOnCell(row * 8 + colIndex + columnDelta);
 
         if (pieceOnCell == nullPiece) MarkCell(row, colIndex + columnDelta);
         else if (pieceOnCell.Item2 != currentPieceColor) MarkCell(row, colIndex + columnDelta);
 
+        // the first move that the pawn makes, can skip one cell.
+        if (currentPieceColor == PieceColor.White && currentCell.name.Contains("2"))
+        {
+            pieceOnCell = GetPieceOnCell(row * 8 + colIndex + 2);
+
+            if (pieceOnCell == nullPiece) MarkCell(row, colIndex + 2);
+            else if (pieceOnCell.Item2 != currentPieceColor) MarkCell(row, colIndex + 2);
+        }
+        else if (currentPieceColor == PieceColor.Black && currentCell.name.Contains("7"))
+        {
+            pieceOnCell = GetPieceOnCell(row * 8 + colIndex - 2);
+
+            if (pieceOnCell == nullPiece) MarkCell(row, colIndex - 2);
+            else if (pieceOnCell.Item2 != currentPieceColor) MarkCell(row, colIndex - 2);
+        }
+
+        // the cells on the diagonals
         for (int i = 0; i < rowAdds.Length; i++)
-            if (row + rowAdds[i] >= 0 && row + rowAdds[i] < 8)
-            {
-                pieceOnCell = GetPieceOnCell((row + rowAdds[i]) * 8 + colIndex + columnDelta);
-                if (pieceOnCell.Item2 != PieceColor.NULL && pieceOnCell.Item2 != currentPieceColor) MarkCell(row + rowAdds[i], colIndex + columnDelta);
-            }
+        if (row + rowAdds[i] >= 0 && row + rowAdds[i] < 8)
+        {
+            pieceOnCell = GetPieceOnCell((row + rowAdds[i]) * 8 + colIndex + columnDelta);
+            if (pieceOnCell.Item2 != PieceColor.NULL && pieceOnCell.Item2 != currentPieceColor) MarkCell(row + rowAdds[i], colIndex + columnDelta);
+        }
     }
 
     private static Tuple<Piece, PieceColor> GetPieceOnCell(int cellIndex)
