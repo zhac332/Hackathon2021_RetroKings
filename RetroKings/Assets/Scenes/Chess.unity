@@ -221,6 +221,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de8b8440558fdee44bf953ddecd94b05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Queen_White: {fileID: -901049484, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Rook_White: {fileID: 755626042, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Bishop_White: {fileID: -1695517569, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Knight_White: {fileID: 1650585498, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Queen_Black: {fileID: -1573964589, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Rook_Black: {fileID: 462100223, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Bishop_Black: {fileID: -130907966, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Knight_Black: {fileID: 1299455937, guid: 4b66001842a0256478f312bb77a94530, type: 3}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -769,6 +777,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de8b8440558fdee44bf953ddecd94b05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Queen_White: {fileID: -901049484, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Rook_White: {fileID: 755626042, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Bishop_White: {fileID: -1695517569, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Knight_White: {fileID: 1650585498, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Queen_Black: {fileID: -1573964589, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Rook_Black: {fileID: 462100223, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Bishop_Black: {fileID: -130907966, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Knight_Black: {fileID: 1299455937, guid: 4b66001842a0256478f312bb77a94530, type: 3}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -882,7 +898,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 154356677}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1257681271}
+        m_TargetAssemblyTypeName: GameControlsScript, Assembly-CSharp
+        m_MethodName: RookButton_OnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &154356677
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1020,6 +1048,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de8b8440558fdee44bf953ddecd94b05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Queen_White: {fileID: -901049484, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Rook_White: {fileID: 755626042, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Bishop_White: {fileID: -1695517569, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Knight_White: {fileID: 1650585498, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Queen_Black: {fileID: -1573964589, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Rook_Black: {fileID: 462100223, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Bishop_Black: {fileID: -130907966, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Knight_Black: {fileID: 1299455937, guid: 4b66001842a0256478f312bb77a94530, type: 3}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -1232,6 +1268,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de8b8440558fdee44bf953ddecd94b05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Queen_White: {fileID: -901049484, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Rook_White: {fileID: 755626042, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Bishop_White: {fileID: -1695517569, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Knight_White: {fileID: 1650585498, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Queen_Black: {fileID: -1573964589, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Rook_Black: {fileID: 462100223, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Bishop_Black: {fileID: -130907966, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Knight_Black: {fileID: 1299455937, guid: 4b66001842a0256478f312bb77a94530, type: 3}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -1521,6 +1565,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de8b8440558fdee44bf953ddecd94b05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Queen_White: {fileID: -901049484, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Rook_White: {fileID: 755626042, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Bishop_White: {fileID: -1695517569, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Knight_White: {fileID: 1650585498, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Queen_Black: {fileID: -1573964589, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Rook_Black: {fileID: 462100223, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Bishop_Black: {fileID: -130907966, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Knight_Black: {fileID: 1299455937, guid: 4b66001842a0256478f312bb77a94530, type: 3}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -1902,6 +1954,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de8b8440558fdee44bf953ddecd94b05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Queen_White: {fileID: -901049484, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Rook_White: {fileID: 755626042, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Bishop_White: {fileID: -1695517569, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Knight_White: {fileID: 1650585498, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Queen_Black: {fileID: -1573964589, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Rook_Black: {fileID: 462100223, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Bishop_Black: {fileID: -130907966, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Knight_Black: {fileID: 1299455937, guid: 4b66001842a0256478f312bb77a94530, type: 3}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -2098,6 +2158,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de8b8440558fdee44bf953ddecd94b05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Queen_White: {fileID: -901049484, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Rook_White: {fileID: 755626042, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Bishop_White: {fileID: -1695517569, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Knight_White: {fileID: 1650585498, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Queen_Black: {fileID: -1573964589, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Rook_Black: {fileID: 462100223, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Bishop_Black: {fileID: -130907966, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Knight_Black: {fileID: 1299455937, guid: 4b66001842a0256478f312bb77a94530, type: 3}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -2226,6 +2294,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de8b8440558fdee44bf953ddecd94b05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Queen_White: {fileID: -901049484, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Rook_White: {fileID: 755626042, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Bishop_White: {fileID: -1695517569, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Knight_White: {fileID: 1650585498, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Queen_Black: {fileID: -1573964589, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Rook_Black: {fileID: 462100223, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Bishop_Black: {fileID: -130907966, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Knight_Black: {fileID: 1299455937, guid: 4b66001842a0256478f312bb77a94530, type: 3}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -2607,6 +2683,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de8b8440558fdee44bf953ddecd94b05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Queen_White: {fileID: -901049484, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Rook_White: {fileID: 755626042, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Bishop_White: {fileID: -1695517569, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Knight_White: {fileID: 1650585498, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Queen_Black: {fileID: -1573964589, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Rook_Black: {fileID: 462100223, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Bishop_Black: {fileID: -130907966, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Knight_Black: {fileID: 1299455937, guid: 4b66001842a0256478f312bb77a94530, type: 3}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -3166,6 +3250,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de8b8440558fdee44bf953ddecd94b05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Queen_White: {fileID: -901049484, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Rook_White: {fileID: 755626042, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Bishop_White: {fileID: -1695517569, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Knight_White: {fileID: 1650585498, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Queen_Black: {fileID: -1573964589, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Rook_Black: {fileID: 462100223, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Bishop_Black: {fileID: -130907966, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Knight_Black: {fileID: 1299455937, guid: 4b66001842a0256478f312bb77a94530, type: 3}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -3462,6 +3554,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de8b8440558fdee44bf953ddecd94b05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Queen_White: {fileID: -901049484, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Rook_White: {fileID: 755626042, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Bishop_White: {fileID: -1695517569, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Knight_White: {fileID: 1650585498, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Queen_Black: {fileID: -1573964589, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Rook_Black: {fileID: 462100223, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Bishop_Black: {fileID: -130907966, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Knight_Black: {fileID: 1299455937, guid: 4b66001842a0256478f312bb77a94530, type: 3}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -3575,7 +3675,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 617589920}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1257681271}
+        m_TargetAssemblyTypeName: GameControlsScript, Assembly-CSharp
+        m_MethodName: BishopButton_OnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &617589920
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3797,6 +3909,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de8b8440558fdee44bf953ddecd94b05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Queen_White: {fileID: -901049484, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Rook_White: {fileID: 755626042, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Bishop_White: {fileID: -1695517569, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Knight_White: {fileID: 1650585498, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Queen_Black: {fileID: -1573964589, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Rook_Black: {fileID: 462100223, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Bishop_Black: {fileID: -130907966, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Knight_Black: {fileID: 1299455937, guid: 4b66001842a0256478f312bb77a94530, type: 3}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -3925,6 +4045,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de8b8440558fdee44bf953ddecd94b05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Queen_White: {fileID: -901049484, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Rook_White: {fileID: 755626042, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Bishop_White: {fileID: -1695517569, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Knight_White: {fileID: 1650585498, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Queen_Black: {fileID: -1573964589, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Rook_Black: {fileID: 462100223, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Bishop_Black: {fileID: -130907966, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Knight_Black: {fileID: 1299455937, guid: 4b66001842a0256478f312bb77a94530, type: 3}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -4038,7 +4166,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 736422099}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1257681271}
+        m_TargetAssemblyTypeName: GameControlsScript, Assembly-CSharp
+        m_MethodName: QueenButton_OnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &736422099
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4176,6 +4316,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de8b8440558fdee44bf953ddecd94b05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Queen_White: {fileID: -901049484, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Rook_White: {fileID: 755626042, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Bishop_White: {fileID: -1695517569, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Knight_White: {fileID: 1650585498, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Queen_Black: {fileID: -1573964589, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Rook_Black: {fileID: 462100223, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Bishop_Black: {fileID: -130907966, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Knight_Black: {fileID: 1299455937, guid: 4b66001842a0256478f312bb77a94530, type: 3}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -4305,6 +4453,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de8b8440558fdee44bf953ddecd94b05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Queen_White: {fileID: -901049484, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Rook_White: {fileID: 755626042, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Bishop_White: {fileID: -1695517569, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Knight_White: {fileID: 1650585498, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Queen_Black: {fileID: -1573964589, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Rook_Black: {fileID: 462100223, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Bishop_Black: {fileID: -130907966, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Knight_Black: {fileID: 1299455937, guid: 4b66001842a0256478f312bb77a94530, type: 3}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -4434,6 +4590,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de8b8440558fdee44bf953ddecd94b05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Queen_White: {fileID: -901049484, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Rook_White: {fileID: 755626042, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Bishop_White: {fileID: -1695517569, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Knight_White: {fileID: 1650585498, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Queen_Black: {fileID: -1573964589, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Rook_Black: {fileID: 462100223, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Bishop_Black: {fileID: -130907966, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Knight_Black: {fileID: 1299455937, guid: 4b66001842a0256478f312bb77a94530, type: 3}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -4663,6 +4827,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de8b8440558fdee44bf953ddecd94b05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Queen_White: {fileID: -901049484, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Rook_White: {fileID: 755626042, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Bishop_White: {fileID: -1695517569, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Knight_White: {fileID: 1650585498, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Queen_Black: {fileID: -1573964589, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Rook_Black: {fileID: 462100223, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Bishop_Black: {fileID: -130907966, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Knight_Black: {fileID: 1299455937, guid: 4b66001842a0256478f312bb77a94530, type: 3}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -4876,6 +5048,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de8b8440558fdee44bf953ddecd94b05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Queen_White: {fileID: -901049484, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Rook_White: {fileID: 755626042, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Bishop_White: {fileID: -1695517569, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Knight_White: {fileID: 1650585498, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Queen_Black: {fileID: -1573964589, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Rook_Black: {fileID: 462100223, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Bishop_Black: {fileID: -130907966, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Knight_Black: {fileID: 1299455937, guid: 4b66001842a0256478f312bb77a94530, type: 3}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -5005,6 +5185,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de8b8440558fdee44bf953ddecd94b05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Queen_White: {fileID: -901049484, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Rook_White: {fileID: 755626042, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Bishop_White: {fileID: -1695517569, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Knight_White: {fileID: 1650585498, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Queen_Black: {fileID: -1573964589, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Rook_Black: {fileID: 462100223, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Bishop_Black: {fileID: -130907966, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Knight_Black: {fileID: 1299455937, guid: 4b66001842a0256478f312bb77a94530, type: 3}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -5218,6 +5406,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de8b8440558fdee44bf953ddecd94b05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Queen_White: {fileID: -901049484, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Rook_White: {fileID: 755626042, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Bishop_White: {fileID: -1695517569, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Knight_White: {fileID: 1650585498, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Queen_Black: {fileID: -1573964589, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Rook_Black: {fileID: 462100223, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Bishop_Black: {fileID: -130907966, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Knight_Black: {fileID: 1299455937, guid: 4b66001842a0256478f312bb77a94530, type: 3}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -5377,6 +5573,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de8b8440558fdee44bf953ddecd94b05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Queen_White: {fileID: -901049484, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Rook_White: {fileID: 755626042, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Bishop_White: {fileID: -1695517569, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Knight_White: {fileID: 1650585498, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Queen_Black: {fileID: -1573964589, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Rook_Black: {fileID: 462100223, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Bishop_Black: {fileID: -130907966, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Knight_Black: {fileID: 1299455937, guid: 4b66001842a0256478f312bb77a94530, type: 3}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -5795,6 +5999,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de8b8440558fdee44bf953ddecd94b05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Queen_White: {fileID: -901049484, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Rook_White: {fileID: 755626042, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Bishop_White: {fileID: -1695517569, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Knight_White: {fileID: 1650585498, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Queen_Black: {fileID: -1573964589, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Rook_Black: {fileID: 462100223, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Bishop_Black: {fileID: -130907966, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Knight_Black: {fileID: 1299455937, guid: 4b66001842a0256478f312bb77a94530, type: 3}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -5924,6 +6136,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de8b8440558fdee44bf953ddecd94b05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Queen_White: {fileID: -901049484, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Rook_White: {fileID: 755626042, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Bishop_White: {fileID: -1695517569, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Knight_White: {fileID: 1650585498, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Queen_Black: {fileID: -1573964589, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Rook_Black: {fileID: 462100223, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Bishop_Black: {fileID: -130907966, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Knight_Black: {fileID: 1299455937, guid: 4b66001842a0256478f312bb77a94530, type: 3}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -6052,6 +6272,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de8b8440558fdee44bf953ddecd94b05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Queen_White: {fileID: -901049484, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Rook_White: {fileID: 755626042, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Bishop_White: {fileID: -1695517569, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Knight_White: {fileID: 1650585498, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Queen_Black: {fileID: -1573964589, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Rook_Black: {fileID: 462100223, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Bishop_Black: {fileID: -130907966, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Knight_Black: {fileID: 1299455937, guid: 4b66001842a0256478f312bb77a94530, type: 3}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -6181,6 +6409,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de8b8440558fdee44bf953ddecd94b05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Queen_White: {fileID: -901049484, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Rook_White: {fileID: 755626042, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Bishop_White: {fileID: -1695517569, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Knight_White: {fileID: 1650585498, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Queen_Black: {fileID: -1573964589, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Rook_Black: {fileID: 462100223, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Bishop_Black: {fileID: -130907966, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Knight_Black: {fileID: 1299455937, guid: 4b66001842a0256478f312bb77a94530, type: 3}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -6310,6 +6546,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de8b8440558fdee44bf953ddecd94b05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Queen_White: {fileID: -901049484, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Rook_White: {fileID: 755626042, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Bishop_White: {fileID: -1695517569, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Knight_White: {fileID: 1650585498, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Queen_Black: {fileID: -1573964589, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Rook_Black: {fileID: 462100223, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Bishop_Black: {fileID: -130907966, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Knight_Black: {fileID: 1299455937, guid: 4b66001842a0256478f312bb77a94530, type: 3}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -6438,6 +6682,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de8b8440558fdee44bf953ddecd94b05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Queen_White: {fileID: -901049484, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Rook_White: {fileID: 755626042, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Bishop_White: {fileID: -1695517569, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Knight_White: {fileID: 1650585498, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Queen_Black: {fileID: -1573964589, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Rook_Black: {fileID: 462100223, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Bishop_Black: {fileID: -130907966, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Knight_Black: {fileID: 1299455937, guid: 4b66001842a0256478f312bb77a94530, type: 3}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -6567,6 +6819,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de8b8440558fdee44bf953ddecd94b05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Queen_White: {fileID: -901049484, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Rook_White: {fileID: 755626042, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Bishop_White: {fileID: -1695517569, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Knight_White: {fileID: 1650585498, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Queen_Black: {fileID: -1573964589, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Rook_Black: {fileID: 462100223, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Bishop_Black: {fileID: -130907966, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Knight_Black: {fileID: 1299455937, guid: 4b66001842a0256478f312bb77a94530, type: 3}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -6696,6 +6956,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de8b8440558fdee44bf953ddecd94b05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Queen_White: {fileID: -901049484, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Rook_White: {fileID: 755626042, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Bishop_White: {fileID: -1695517569, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Knight_White: {fileID: 1650585498, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Queen_Black: {fileID: -1573964589, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Rook_Black: {fileID: 462100223, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Bishop_Black: {fileID: -130907966, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Knight_Black: {fileID: 1299455937, guid: 4b66001842a0256478f312bb77a94530, type: 3}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -6824,6 +7092,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de8b8440558fdee44bf953ddecd94b05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Queen_White: {fileID: -901049484, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Rook_White: {fileID: 755626042, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Bishop_White: {fileID: -1695517569, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Knight_White: {fileID: 1650585498, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Queen_Black: {fileID: -1573964589, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Rook_Black: {fileID: 462100223, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Bishop_Black: {fileID: -130907966, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Knight_Black: {fileID: 1299455937, guid: 4b66001842a0256478f312bb77a94530, type: 3}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -7094,6 +7370,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de8b8440558fdee44bf953ddecd94b05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Queen_White: {fileID: -901049484, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Rook_White: {fileID: 755626042, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Bishop_White: {fileID: -1695517569, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Knight_White: {fileID: 1650585498, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Queen_Black: {fileID: -1573964589, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Rook_Black: {fileID: 462100223, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Bishop_Black: {fileID: -130907966, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Knight_Black: {fileID: 1299455937, guid: 4b66001842a0256478f312bb77a94530, type: 3}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -7298,6 +7582,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de8b8440558fdee44bf953ddecd94b05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Queen_White: {fileID: -901049484, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Rook_White: {fileID: 755626042, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Bishop_White: {fileID: -1695517569, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Knight_White: {fileID: 1650585498, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Queen_Black: {fileID: -1573964589, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Rook_Black: {fileID: 462100223, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Bishop_Black: {fileID: -130907966, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Knight_Black: {fileID: 1299455937, guid: 4b66001842a0256478f312bb77a94530, type: 3}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -7510,6 +7802,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de8b8440558fdee44bf953ddecd94b05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Queen_White: {fileID: -901049484, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Rook_White: {fileID: 755626042, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Bishop_White: {fileID: -1695517569, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Knight_White: {fileID: 1650585498, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Queen_Black: {fileID: -1573964589, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Rook_Black: {fileID: 462100223, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Bishop_Black: {fileID: -130907966, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Knight_Black: {fileID: 1299455937, guid: 4b66001842a0256478f312bb77a94530, type: 3}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -7723,6 +8023,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de8b8440558fdee44bf953ddecd94b05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Queen_White: {fileID: -901049484, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Rook_White: {fileID: 755626042, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Bishop_White: {fileID: -1695517569, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Knight_White: {fileID: 1650585498, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Queen_Black: {fileID: -1573964589, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Rook_Black: {fileID: 462100223, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Bishop_Black: {fileID: -130907966, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Knight_Black: {fileID: 1299455937, guid: 4b66001842a0256478f312bb77a94530, type: 3}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -7851,6 +8159,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de8b8440558fdee44bf953ddecd94b05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Queen_White: {fileID: -901049484, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Rook_White: {fileID: 755626042, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Bishop_White: {fileID: -1695517569, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Knight_White: {fileID: 1650585498, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Queen_Black: {fileID: -1573964589, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Rook_Black: {fileID: 462100223, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Bishop_Black: {fileID: -130907966, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Knight_Black: {fileID: 1299455937, guid: 4b66001842a0256478f312bb77a94530, type: 3}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -7979,6 +8295,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de8b8440558fdee44bf953ddecd94b05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Queen_White: {fileID: -901049484, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Rook_White: {fileID: 755626042, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Bishop_White: {fileID: -1695517569, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Knight_White: {fileID: 1650585498, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Queen_Black: {fileID: -1573964589, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Rook_Black: {fileID: 462100223, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Bishop_Black: {fileID: -130907966, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Knight_Black: {fileID: 1299455937, guid: 4b66001842a0256478f312bb77a94530, type: 3}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -8107,6 +8431,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de8b8440558fdee44bf953ddecd94b05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Queen_White: {fileID: -901049484, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Rook_White: {fileID: 755626042, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Bishop_White: {fileID: -1695517569, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Knight_White: {fileID: 1650585498, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Queen_Black: {fileID: -1573964589, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Rook_Black: {fileID: 462100223, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Bishop_Black: {fileID: -130907966, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Knight_Black: {fileID: 1299455937, guid: 4b66001842a0256478f312bb77a94530, type: 3}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -8320,6 +8652,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de8b8440558fdee44bf953ddecd94b05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Queen_White: {fileID: -901049484, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Rook_White: {fileID: 755626042, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Bishop_White: {fileID: -1695517569, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Knight_White: {fileID: 1650585498, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Queen_Black: {fileID: -1573964589, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Rook_Black: {fileID: 462100223, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Bishop_Black: {fileID: -130907966, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Knight_Black: {fileID: 1299455937, guid: 4b66001842a0256478f312bb77a94530, type: 3}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -8448,6 +8788,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de8b8440558fdee44bf953ddecd94b05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Queen_White: {fileID: -901049484, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Rook_White: {fileID: 755626042, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Bishop_White: {fileID: -1695517569, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Knight_White: {fileID: 1650585498, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Queen_Black: {fileID: -1573964589, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Rook_Black: {fileID: 462100223, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Bishop_Black: {fileID: -130907966, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Knight_Black: {fileID: 1299455937, guid: 4b66001842a0256478f312bb77a94530, type: 3}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -8576,6 +8924,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de8b8440558fdee44bf953ddecd94b05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Queen_White: {fileID: -901049484, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Rook_White: {fileID: 755626042, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Bishop_White: {fileID: -1695517569, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Knight_White: {fileID: 1650585498, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Queen_Black: {fileID: -1573964589, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Rook_Black: {fileID: 462100223, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Bishop_Black: {fileID: -130907966, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Knight_Black: {fileID: 1299455937, guid: 4b66001842a0256478f312bb77a94530, type: 3}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -8704,6 +9060,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de8b8440558fdee44bf953ddecd94b05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Queen_White: {fileID: -901049484, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Rook_White: {fileID: 755626042, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Bishop_White: {fileID: -1695517569, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Knight_White: {fileID: 1650585498, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Queen_Black: {fileID: -1573964589, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Rook_Black: {fileID: 462100223, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Bishop_Black: {fileID: -130907966, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Knight_Black: {fileID: 1299455937, guid: 4b66001842a0256478f312bb77a94530, type: 3}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -8832,6 +9196,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de8b8440558fdee44bf953ddecd94b05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Queen_White: {fileID: -901049484, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Rook_White: {fileID: 755626042, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Bishop_White: {fileID: -1695517569, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Knight_White: {fileID: 1650585498, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Queen_Black: {fileID: -1573964589, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Rook_Black: {fileID: 462100223, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Bishop_Black: {fileID: -130907966, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Knight_Black: {fileID: 1299455937, guid: 4b66001842a0256478f312bb77a94530, type: 3}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -8960,6 +9332,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de8b8440558fdee44bf953ddecd94b05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Queen_White: {fileID: -901049484, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Rook_White: {fileID: 755626042, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Bishop_White: {fileID: -1695517569, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Knight_White: {fileID: 1650585498, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Queen_Black: {fileID: -1573964589, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Rook_Black: {fileID: 462100223, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Bishop_Black: {fileID: -130907966, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Knight_Black: {fileID: 1299455937, guid: 4b66001842a0256478f312bb77a94530, type: 3}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -9089,6 +9469,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de8b8440558fdee44bf953ddecd94b05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Queen_White: {fileID: -901049484, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Rook_White: {fileID: 755626042, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Bishop_White: {fileID: -1695517569, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Knight_White: {fileID: 1650585498, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Queen_Black: {fileID: -1573964589, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Rook_Black: {fileID: 462100223, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Bishop_Black: {fileID: -130907966, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Knight_Black: {fileID: 1299455937, guid: 4b66001842a0256478f312bb77a94530, type: 3}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -9538,6 +9926,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de8b8440558fdee44bf953ddecd94b05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Queen_White: {fileID: -901049484, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Rook_White: {fileID: 755626042, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Bishop_White: {fileID: -1695517569, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Knight_White: {fileID: 1650585498, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Queen_Black: {fileID: -1573964589, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Rook_Black: {fileID: 462100223, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Bishop_Black: {fileID: -130907966, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Knight_Black: {fileID: 1299455937, guid: 4b66001842a0256478f312bb77a94530, type: 3}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -9666,6 +10062,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de8b8440558fdee44bf953ddecd94b05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Queen_White: {fileID: -901049484, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Rook_White: {fileID: 755626042, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Bishop_White: {fileID: -1695517569, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Knight_White: {fileID: 1650585498, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Queen_Black: {fileID: -1573964589, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Rook_Black: {fileID: 462100223, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Bishop_Black: {fileID: -130907966, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Knight_Black: {fileID: 1299455937, guid: 4b66001842a0256478f312bb77a94530, type: 3}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -9795,6 +10199,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de8b8440558fdee44bf953ddecd94b05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Queen_White: {fileID: -901049484, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Rook_White: {fileID: 755626042, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Bishop_White: {fileID: -1695517569, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Knight_White: {fileID: 1650585498, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Queen_Black: {fileID: -1573964589, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Rook_Black: {fileID: 462100223, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Bishop_Black: {fileID: -130907966, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Knight_Black: {fileID: 1299455937, guid: 4b66001842a0256478f312bb77a94530, type: 3}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -9923,6 +10335,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de8b8440558fdee44bf953ddecd94b05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Queen_White: {fileID: -901049484, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Rook_White: {fileID: 755626042, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Bishop_White: {fileID: -1695517569, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Knight_White: {fileID: 1650585498, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Queen_Black: {fileID: -1573964589, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Rook_Black: {fileID: 462100223, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Bishop_Black: {fileID: -130907966, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Knight_Black: {fileID: 1299455937, guid: 4b66001842a0256478f312bb77a94530, type: 3}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -10052,6 +10472,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de8b8440558fdee44bf953ddecd94b05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Queen_White: {fileID: -901049484, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Rook_White: {fileID: 755626042, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Bishop_White: {fileID: -1695517569, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Knight_White: {fileID: 1650585498, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Queen_Black: {fileID: -1573964589, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Rook_Black: {fileID: 462100223, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Bishop_Black: {fileID: -130907966, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Knight_Black: {fileID: 1299455937, guid: 4b66001842a0256478f312bb77a94530, type: 3}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -10181,6 +10609,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de8b8440558fdee44bf953ddecd94b05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Queen_White: {fileID: -901049484, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Rook_White: {fileID: 755626042, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Bishop_White: {fileID: -1695517569, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Knight_White: {fileID: 1650585498, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Queen_Black: {fileID: -1573964589, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Rook_Black: {fileID: 462100223, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Bishop_Black: {fileID: -130907966, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Knight_Black: {fileID: 1299455937, guid: 4b66001842a0256478f312bb77a94530, type: 3}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -10478,6 +10914,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de8b8440558fdee44bf953ddecd94b05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Queen_White: {fileID: -901049484, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Rook_White: {fileID: 755626042, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Bishop_White: {fileID: -1695517569, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Knight_White: {fileID: 1650585498, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Queen_Black: {fileID: -1573964589, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Rook_Black: {fileID: 462100223, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Bishop_Black: {fileID: -130907966, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Knight_Black: {fileID: 1299455937, guid: 4b66001842a0256478f312bb77a94530, type: 3}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -10607,6 +11051,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de8b8440558fdee44bf953ddecd94b05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Queen_White: {fileID: -901049484, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Rook_White: {fileID: 755626042, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Bishop_White: {fileID: -1695517569, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Knight_White: {fileID: 1650585498, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Queen_Black: {fileID: -1573964589, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Rook_Black: {fileID: 462100223, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Bishop_Black: {fileID: -130907966, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Knight_Black: {fileID: 1299455937, guid: 4b66001842a0256478f312bb77a94530, type: 3}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -10775,6 +11227,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de8b8440558fdee44bf953ddecd94b05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Queen_White: {fileID: -901049484, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Rook_White: {fileID: 755626042, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Bishop_White: {fileID: -1695517569, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Knight_White: {fileID: 1650585498, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Queen_Black: {fileID: -1573964589, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Rook_Black: {fileID: 462100223, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Bishop_Black: {fileID: -130907966, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Knight_Black: {fileID: 1299455937, guid: 4b66001842a0256478f312bb77a94530, type: 3}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -10904,6 +11364,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de8b8440558fdee44bf953ddecd94b05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Queen_White: {fileID: -901049484, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Rook_White: {fileID: 755626042, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Bishop_White: {fileID: -1695517569, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Knight_White: {fileID: 1650585498, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Queen_Black: {fileID: -1573964589, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Rook_Black: {fileID: 462100223, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Bishop_Black: {fileID: -130907966, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Knight_Black: {fileID: 1299455937, guid: 4b66001842a0256478f312bb77a94530, type: 3}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -11032,6 +11500,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de8b8440558fdee44bf953ddecd94b05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Queen_White: {fileID: -901049484, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Rook_White: {fileID: 755626042, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Bishop_White: {fileID: -1695517569, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Knight_White: {fileID: 1650585498, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Queen_Black: {fileID: -1573964589, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Rook_Black: {fileID: 462100223, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Bishop_Black: {fileID: -130907966, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Knight_Black: {fileID: 1299455937, guid: 4b66001842a0256478f312bb77a94530, type: 3}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -11160,6 +11636,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de8b8440558fdee44bf953ddecd94b05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Queen_White: {fileID: -901049484, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Rook_White: {fileID: 755626042, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Bishop_White: {fileID: -1695517569, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Knight_White: {fileID: 1650585498, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Queen_Black: {fileID: -1573964589, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Rook_Black: {fileID: 462100223, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Bishop_Black: {fileID: -130907966, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Knight_Black: {fileID: 1299455937, guid: 4b66001842a0256478f312bb77a94530, type: 3}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -11273,7 +11757,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1939486698}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1257681271}
+        m_TargetAssemblyTypeName: GameControlsScript, Assembly-CSharp
+        m_MethodName: KnightButton_OnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1939486698
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11411,6 +11907,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de8b8440558fdee44bf953ddecd94b05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Queen_White: {fileID: -901049484, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Rook_White: {fileID: 755626042, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Bishop_White: {fileID: -1695517569, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Knight_White: {fileID: 1650585498, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Queen_Black: {fileID: -1573964589, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Rook_Black: {fileID: 462100223, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Bishop_Black: {fileID: -130907966, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Knight_Black: {fileID: 1299455937, guid: 4b66001842a0256478f312bb77a94530, type: 3}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -11539,6 +12043,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de8b8440558fdee44bf953ddecd94b05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Queen_White: {fileID: -901049484, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Rook_White: {fileID: 755626042, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Bishop_White: {fileID: -1695517569, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Knight_White: {fileID: 1650585498, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Queen_Black: {fileID: -1573964589, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Rook_Black: {fileID: 462100223, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Bishop_Black: {fileID: -130907966, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Knight_Black: {fileID: 1299455937, guid: 4b66001842a0256478f312bb77a94530, type: 3}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -11667,6 +12179,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de8b8440558fdee44bf953ddecd94b05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Queen_White: {fileID: -901049484, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Rook_White: {fileID: 755626042, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Bishop_White: {fileID: -1695517569, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Knight_White: {fileID: 1650585498, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Queen_Black: {fileID: -1573964589, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Rook_Black: {fileID: 462100223, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Bishop_Black: {fileID: -130907966, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Knight_Black: {fileID: 1299455937, guid: 4b66001842a0256478f312bb77a94530, type: 3}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -11795,6 +12315,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de8b8440558fdee44bf953ddecd94b05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Queen_White: {fileID: -901049484, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Rook_White: {fileID: 755626042, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Bishop_White: {fileID: -1695517569, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Knight_White: {fileID: 1650585498, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Queen_Black: {fileID: -1573964589, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Rook_Black: {fileID: 462100223, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Bishop_Black: {fileID: -130907966, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Knight_Black: {fileID: 1299455937, guid: 4b66001842a0256478f312bb77a94530, type: 3}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -11924,6 +12452,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de8b8440558fdee44bf953ddecd94b05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Queen_White: {fileID: -901049484, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Rook_White: {fileID: 755626042, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Bishop_White: {fileID: -1695517569, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Knight_White: {fileID: 1650585498, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Queen_Black: {fileID: -1573964589, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Rook_Black: {fileID: 462100223, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Bishop_Black: {fileID: -130907966, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Knight_Black: {fileID: 1299455937, guid: 4b66001842a0256478f312bb77a94530, type: 3}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -12053,6 +12589,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de8b8440558fdee44bf953ddecd94b05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Queen_White: {fileID: -901049484, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Rook_White: {fileID: 755626042, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Bishop_White: {fileID: -1695517569, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Knight_White: {fileID: 1650585498, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Queen_Black: {fileID: -1573964589, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Rook_Black: {fileID: 462100223, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Bishop_Black: {fileID: -130907966, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Knight_Black: {fileID: 1299455937, guid: 4b66001842a0256478f312bb77a94530, type: 3}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -12182,6 +12726,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de8b8440558fdee44bf953ddecd94b05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Queen_White: {fileID: -901049484, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Rook_White: {fileID: 755626042, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Bishop_White: {fileID: -1695517569, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Knight_White: {fileID: 1650585498, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Queen_Black: {fileID: -1573964589, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Rook_Black: {fileID: 462100223, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Bishop_Black: {fileID: -130907966, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Knight_Black: {fileID: 1299455937, guid: 4b66001842a0256478f312bb77a94530, type: 3}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -12311,6 +12863,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de8b8440558fdee44bf953ddecd94b05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Queen_White: {fileID: -901049484, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Rook_White: {fileID: 755626042, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Bishop_White: {fileID: -1695517569, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Knight_White: {fileID: 1650585498, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Queen_Black: {fileID: -1573964589, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Rook_Black: {fileID: 462100223, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Bishop_Black: {fileID: -130907966, guid: 4b66001842a0256478f312bb77a94530, type: 3}
+  Knight_Black: {fileID: 1299455937, guid: 4b66001842a0256478f312bb77a94530, type: 3}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}

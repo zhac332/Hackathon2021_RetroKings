@@ -465,4 +465,9 @@ public static class MoveChecker
         PromotionalPanel.transform.GetChild(0).gameObject.SetActive(true);
         updatePromotionalPieces_Function((currentPieceColor == PieceColor.White));
     }
+
+    public static void DisablePromotionalPanel()
+    {
+        PromotionalPanel.transform.GetChild(0).gameObject.SetActive(false);
+    }
 }

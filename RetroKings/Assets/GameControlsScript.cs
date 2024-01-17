@@ -24,4 +24,24 @@ public class GameControlsScript : MonoBehaviour
         BishopButton_Image.sprite = (isWhite) ? WhitePieces[2] : BlackPieces[2];
         KnightButton_Image.sprite = (isWhite) ? WhitePieces[3] : BlackPieces[3];
     }
+
+    public void QueenButton_OnClick()
+    {
+        Move.PromotionSelected(Piece.Queen);
+    }
+
+    public void RookButton_OnClick()
+    {
+        Move.PromotionSelected(Piece.Rook);
+    }
+
+    public void BishopButton_OnClick()
+    {
+        Move.PromotionSelected(Piece.Bishop);
+    }
+
+    public void KnightButton_OnClick()
+    {
+        Move.PromotionSelected(Piece.Knight);
+    }
 }

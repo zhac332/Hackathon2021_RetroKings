@@ -8,6 +8,7 @@ public static class Move
     private static string lastCell;
     private static bool firstCell_Selected = false;
     private static bool secondCell_Selected = false;
+    private static Action<string, string, Tuple<Piece, PieceColor>> method_ExecuteMove;
 
     public static bool IsFirstCellSelected()
     {
@@ -82,6 +83,24 @@ public static class Move
             // verify if the move is legal, and a piece exists on the second cell
             executeMove(firstCell, lastCell, currentPiece);
         }
+    }
+
+    public static void SelectCell_Promote(string cellName, Action<string, string, Tuple<Piece, PieceColor>> method)
+    {
+        if (!secondCell_Selected)
+        {
+            secondCell_Selected = true;
+            lastCell = cellName;
+
+            method_ExecuteMove = method; // which will be called when a promotional piece has been selected
+        }
+    }
+
+    public static void PromotionSelected(Piece p)
+    {
+        currentPiece = new Tuple<Piece, PieceColor>(p, currentPiece.Item2);
+        method_ExecuteMove(firstCell, lastCell, currentPiece);
+        MoveChecker.DisablePromotionalPanel();
     }
 
     public static void ResetMove()

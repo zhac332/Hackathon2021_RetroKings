@@ -3,6 +3,14 @@ using UnityEngine;
 
 public class Cell_Script : MonoBehaviour
 {
+    [SerializeField] private Sprite Queen_White;
+    [SerializeField] private Sprite Rook_White;
+    [SerializeField] private Sprite Bishop_White;
+    [SerializeField] private Sprite Knight_White;
+    [SerializeField] private Sprite Queen_Black;
+    [SerializeField] private Sprite Rook_Black;
+    [SerializeField] private Sprite Bishop_Black;
+    [SerializeField] private Sprite Knight_Black;
     [SerializeField] private Color CapturingCell_Color;
     [SerializeField] private Color LegalCell_Color;
     [SerializeField] private Color Selected_Color;
@@ -48,6 +56,7 @@ public class Cell_Script : MonoBehaviour
                     if (MoveChecker.IsPromotionalMove(name))
                     {
                         MoveChecker.ShowPromotionalPanel();
+                        Move.SelectCell_Promote(name, (cell1, cell2, piece) => ExecuteMove(cell1, cell2, piece));
                     }
                     else
                     {
@@ -89,6 +98,58 @@ public class Cell_Script : MonoBehaviour
         sr.color = CapturingCell_Color;
     }
 
+    private void UpdatePieceDisplay(GameObject piece, Tuple<Piece, PieceColor> pieceData)
+    {
+        SpriteRenderer sr = piece.GetComponent<SpriteRenderer>();
+
+        if (pieceData.Item2 == PieceColor.White)
+        {
+            if (pieceData.Item1 == Piece.Queen)
+            {
+                sr.sprite = Queen_White;
+                sr.gameObject.name = "Queen_W";
+            }
+            if (pieceData.Item1 == Piece.Rook)
+            {
+                sr.sprite = Rook_White;
+                sr.gameObject.name = "Rook_W";
+            }
+            if (pieceData.Item1 == Piece.Bishop)
+            {
+                sr.sprite = Bishop_White;
+                sr.gameObject.name = "Bishop_W";
+            }
+            if (pieceData.Item1 == Piece.Knight)
+            {
+                sr.sprite = Knight_White;
+                sr.gameObject.name = "Knight_W";
+            }
+        }
+        else if (pieceData.Item2 == PieceColor.Black)
+        {
+            if (pieceData.Item1 == Piece.Queen)
+            {
+                sr.sprite = Queen_Black;
+                sr.gameObject.name = "Queen_B";
+            }
+            if (pieceData.Item1 == Piece.Rook)
+            {
+                sr.sprite = Rook_Black;
+                sr.gameObject.name = "Rook_B";
+            }
+            if (pieceData.Item1 == Piece.Bishop)
+            {
+                sr.sprite = Bishop_Black;
+                sr.gameObject.name = "Bishop_B";
+            }
+            if (pieceData.Item1 == Piece.Knight)
+            {
+                sr.sprite = Knight_Black;
+                sr.gameObject.name = "Knight_B";
+            }
+        }
+    }
+
     private void ExecuteMove(string cell1, string cell2, Tuple<Piece, PieceColor> piece)
     {
         // I need to hold the child piece from cell1,
@@ -97,6 +158,8 @@ public class Cell_Script : MonoBehaviour
         GameObject c1 = GameObject.Find(cell1);
         GameObject c2 = GameObject.Find(cell2);
         GameObject p = c1.transform.GetChild(0).gameObject;
+
+        UpdatePieceDisplay(p, piece);
 
         c1.GetComponent<Cell_Script>().DeselectCell();
 
