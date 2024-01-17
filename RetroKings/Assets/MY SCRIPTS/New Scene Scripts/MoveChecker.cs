@@ -177,27 +177,55 @@ public static class MoveChecker
 
         UnmarkAll(currentCellIndex);
 
-        // Mark horizontally
         int row = currentCellIndex / 8;
+        int colIndex = currentCellIndex % 8;
+        // vertical downwards
         bool stop = false;
-        for (int col = 0; col < 8 && !stop; col++)
+        for (int c = colIndex - 1; (0 <= c && c < 8) && !stop; c--)
         {
-            Tuple<Piece, PieceColor> pieceOnCell = GetPieceOnCell(col);
+            Tuple<Piece, PieceColor> pieceOnCell = GetPieceOnCell(row * 8 + c);
 
-            if (pieceOnCell == nullPiece) MarkCell(row, col);
+            if (pieceOnCell == nullPiece) MarkCell(row, c);
             else
             {
-                if (pieceOnCell.Item2 != currentPieceColor) MarkCell(row, col);
+                if (pieceOnCell.Item2 != currentPieceColor) MarkCell(row, c);
                 stop = true;
             }
         }
 
-        // Mark vertically
-        int colIndex = currentCellIndex % 8;
+        // vertical upwards
         stop = false;
-        for (int r = 0; r < 8 && !stop; r++)
+        for (int c = colIndex + 1; (0 <= c && c < 8) && !stop; c++)
         {
-            Tuple<Piece, PieceColor> pieceOnCell = GetPieceOnCell(r);
+            Tuple<Piece, PieceColor> pieceOnCell = GetPieceOnCell(row * 8 + c);
+
+            if (pieceOnCell == nullPiece) MarkCell(row, c);
+            else
+            {
+                if (pieceOnCell.Item2 != currentPieceColor) MarkCell(row, c);
+                stop = true;
+            }
+        }
+
+        // horizontal left
+        stop = false;
+        for (int r = row - 1; (0 <= r && r < 8) && !stop; r--)
+        {
+            Tuple<Piece, PieceColor> pieceOnCell = GetPieceOnCell(r * 8 + colIndex);
+
+            if (pieceOnCell == nullPiece) MarkCell(r, colIndex);
+            else
+            {
+                if (pieceOnCell.Item2 != currentPieceColor) MarkCell(r, colIndex);
+                stop = true;
+            }
+        }
+
+        // horizontal right
+        stop = false;
+        for (int r = row + 1; (0 <= r && r < 8) && !stop; r++)
+        {
+            Tuple<Piece, PieceColor> pieceOnCell = GetPieceOnCell(r * 8 + colIndex);
 
             if (pieceOnCell == nullPiece) MarkCell(r, colIndex);
             else
