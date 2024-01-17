@@ -221,8 +221,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de8b8440558fdee44bf953ddecd94b05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LegalCell_Color: {r: 0.88580775, g: 1, b: 0, a: 1}
-  Selected_Color: {r: 0.38451576, g: 1, b: 0, a: 1}
+  CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
+  LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
+  Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
   Default_Color: {r: 0.86274517, g: 0.8588236, b: 0.86274517, a: 1}
 --- !u!61 &17953056
 BoxCollider2D:
@@ -768,8 +769,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de8b8440558fdee44bf953ddecd94b05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LegalCell_Color: {r: 0.88580775, g: 1, b: 0, a: 1}
-  Selected_Color: {r: 0.38451576, g: 1, b: 0, a: 1}
+  CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
+  LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
+  Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
   Default_Color: {r: 0.86274517, g: 0.8588236, b: 0.86274517, a: 1}
 --- !u!61 &72946944
 BoxCollider2D:
@@ -896,8 +898,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de8b8440558fdee44bf953ddecd94b05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LegalCell_Color: {r: 0.88580775, g: 1, b: 0, a: 1}
-  Selected_Color: {r: 0.38451576, g: 1, b: 0, a: 1}
+  CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
+  LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
+  Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
   Default_Color: {r: 0.3647059, g: 0.36078432, b: 0.3647059, a: 1}
 --- !u!61 &169309531
 BoxCollider2D:
@@ -1107,8 +1110,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de8b8440558fdee44bf953ddecd94b05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LegalCell_Color: {r: 0.88580775, g: 1, b: 0, a: 1}
-  Selected_Color: {r: 0.38451576, g: 1, b: 0, a: 1}
+  CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
+  LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
+  Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
   Default_Color: {r: 0.86274517, g: 0.8588236, b: 0.86274517, a: 1}
 --- !u!61 &207934770
 BoxCollider2D:
@@ -1319,8 +1323,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de8b8440558fdee44bf953ddecd94b05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LegalCell_Color: {r: 0.88580775, g: 1, b: 0, a: 1}
-  Selected_Color: {r: 0.38451576, g: 1, b: 0, a: 1}
+  CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
+  LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
+  Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
   Default_Color: {r: 0.86274517, g: 0.8588236, b: 0.86274517, a: 1}
 --- !u!61 &235849398
 BoxCollider2D:
@@ -1699,8 +1704,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de8b8440558fdee44bf953ddecd94b05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LegalCell_Color: {r: 0.88580775, g: 1, b: 0, a: 1}
-  Selected_Color: {r: 0.38451576, g: 1, b: 0, a: 1}
+  CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
+  LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
+  Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
   Default_Color: {r: 0.86274517, g: 0.8588236, b: 0.86274517, a: 1}
 --- !u!61 &344223254
 BoxCollider2D:
@@ -1826,8 +1832,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de8b8440558fdee44bf953ddecd94b05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LegalCell_Color: {r: 0.88580775, g: 1, b: 0, a: 1}
-  Selected_Color: {r: 0.38451576, g: 1, b: 0, a: 1}
+  CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
+  LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
+  Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
   Default_Color: {r: 0.3647059, g: 0.36078432, b: 0.3647059, a: 1}
 --- !u!61 &391989793
 BoxCollider2D:
@@ -1953,8 +1960,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de8b8440558fdee44bf953ddecd94b05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LegalCell_Color: {r: 0.88580775, g: 1, b: 0, a: 1}
-  Selected_Color: {r: 0.38451576, g: 1, b: 0, a: 1}
+  CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
+  LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
+  Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
   Default_Color: {r: 0.86274517, g: 0.8588236, b: 0.86274517, a: 1}
 --- !u!61 &400096529
 BoxCollider2D:
@@ -2333,8 +2341,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de8b8440558fdee44bf953ddecd94b05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LegalCell_Color: {r: 0.88580775, g: 1, b: 0, a: 1}
-  Selected_Color: {r: 0.38451576, g: 1, b: 0, a: 1}
+  CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
+  LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
+  Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
   Default_Color: {r: 0.86274517, g: 0.8588236, b: 0.86274517, a: 1}
 --- !u!61 &454216268
 BoxCollider2D:
@@ -2891,8 +2900,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de8b8440558fdee44bf953ddecd94b05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LegalCell_Color: {r: 0.88580775, g: 1, b: 0, a: 1}
-  Selected_Color: {r: 0.38451576, g: 1, b: 0, a: 1}
+  CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
+  LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
+  Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
   Default_Color: {r: 0.3647059, g: 0.36078432, b: 0.3647059, a: 1}
 --- !u!61 &568693566
 BoxCollider2D:
@@ -3186,8 +3196,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de8b8440558fdee44bf953ddecd94b05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LegalCell_Color: {r: 0.88580775, g: 1, b: 0, a: 1}
-  Selected_Color: {r: 0.38451576, g: 1, b: 0, a: 1}
+  CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
+  LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
+  Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
   Default_Color: {r: 0.3647059, g: 0.36078432, b: 0.3647059, a: 1}
 --- !u!61 &608470193
 BoxCollider2D:
@@ -3398,8 +3409,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de8b8440558fdee44bf953ddecd94b05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LegalCell_Color: {r: 0.88580775, g: 1, b: 0, a: 1}
-  Selected_Color: {r: 0.38451576, g: 1, b: 0, a: 1}
+  CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
+  LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
+  Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
   Default_Color: {r: 0.3647059, g: 0.36078432, b: 0.3647059, a: 1}
 --- !u!61 &638889010
 BoxCollider2D:
@@ -3525,8 +3537,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de8b8440558fdee44bf953ddecd94b05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LegalCell_Color: {r: 0.88580775, g: 1, b: 0, a: 1}
-  Selected_Color: {r: 0.38451576, g: 1, b: 0, a: 1}
+  CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
+  LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
+  Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
   Default_Color: {r: 0.86274517, g: 0.8588236, b: 0.86274517, a: 1}
 --- !u!61 &693146944
 BoxCollider2D:
@@ -3653,8 +3666,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de8b8440558fdee44bf953ddecd94b05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LegalCell_Color: {r: 0.88580775, g: 1, b: 0, a: 1}
-  Selected_Color: {r: 0.38451576, g: 1, b: 0, a: 1}
+  CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
+  LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
+  Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
   Default_Color: {r: 0.3647059, g: 0.36078432, b: 0.3647059, a: 1}
 --- !u!61 &736901318
 BoxCollider2D:
@@ -3781,8 +3795,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de8b8440558fdee44bf953ddecd94b05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LegalCell_Color: {r: 0.88580775, g: 1, b: 0, a: 1}
-  Selected_Color: {r: 0.38451576, g: 1, b: 0, a: 1}
+  CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
+  LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
+  Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
   Default_Color: {r: 0.3647059, g: 0.36078432, b: 0.3647059, a: 1}
 --- !u!61 &751742028
 BoxCollider2D:
@@ -3909,8 +3924,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de8b8440558fdee44bf953ddecd94b05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LegalCell_Color: {r: 0.88580775, g: 1, b: 0, a: 1}
-  Selected_Color: {r: 0.38451576, g: 1, b: 0, a: 1}
+  CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
+  LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
+  Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
   Default_Color: {r: 0.86274517, g: 0.8588236, b: 0.86274517, a: 1}
 --- !u!61 &771401645
 BoxCollider2D:
@@ -4036,8 +4052,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de8b8440558fdee44bf953ddecd94b05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LegalCell_Color: {r: 0.88580775, g: 1, b: 0, a: 1}
-  Selected_Color: {r: 0.38451576, g: 1, b: 0, a: 1}
+  CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
+  LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
+  Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
   Default_Color: {r: 0.86274517, g: 0.8588236, b: 0.86274517, a: 1}
 --- !u!61 &778566174
 BoxCollider2D:
@@ -4248,8 +4265,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de8b8440558fdee44bf953ddecd94b05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LegalCell_Color: {r: 0.88580775, g: 1, b: 0, a: 1}
-  Selected_Color: {r: 0.38451576, g: 1, b: 0, a: 1}
+  CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
+  LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
+  Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
   Default_Color: {r: 0.3647059, g: 0.36078432, b: 0.3647059, a: 1}
 --- !u!61 &826858015
 BoxCollider2D:
@@ -4376,8 +4394,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de8b8440558fdee44bf953ddecd94b05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LegalCell_Color: {r: 0.88580775, g: 1, b: 0, a: 1}
-  Selected_Color: {r: 0.38451576, g: 1, b: 0, a: 1}
+  CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
+  LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
+  Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
   Default_Color: {r: 0.86274517, g: 0.8588236, b: 0.86274517, a: 1}
 --- !u!61 &858073050
 BoxCollider2D:
@@ -4588,8 +4607,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de8b8440558fdee44bf953ddecd94b05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LegalCell_Color: {r: 0.88580775, g: 1, b: 0, a: 1}
-  Selected_Color: {r: 0.38451576, g: 1, b: 0, a: 1}
+  CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
+  LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
+  Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
   Default_Color: {r: 0.3647059, g: 0.36078432, b: 0.3647059, a: 1}
 --- !u!61 &910169023
 BoxCollider2D:
@@ -4746,8 +4766,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de8b8440558fdee44bf953ddecd94b05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LegalCell_Color: {r: 0.88580775, g: 1, b: 0, a: 1}
-  Selected_Color: {r: 0.38451576, g: 1, b: 0, a: 1}
+  CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
+  LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
+  Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
   Default_Color: {r: 0.3647059, g: 0.36078432, b: 0.3647059, a: 1}
 --- !u!61 &942935338
 BoxCollider2D:
@@ -5126,8 +5147,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de8b8440558fdee44bf953ddecd94b05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LegalCell_Color: {r: 0.88580775, g: 1, b: 0, a: 1}
-  Selected_Color: {r: 0.38451576, g: 1, b: 0, a: 1}
+  CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
+  LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
+  Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
   Default_Color: {r: 0.86274517, g: 0.8588236, b: 0.86274517, a: 1}
 --- !u!61 &993866225
 BoxCollider2D:
@@ -5254,8 +5276,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de8b8440558fdee44bf953ddecd94b05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LegalCell_Color: {r: 0.88580775, g: 1, b: 0, a: 1}
-  Selected_Color: {r: 0.38451576, g: 1, b: 0, a: 1}
+  CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
+  LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
+  Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
   Default_Color: {r: 0.86274517, g: 0.8588236, b: 0.86274517, a: 1}
 --- !u!61 &1024405658
 BoxCollider2D:
@@ -5381,8 +5404,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de8b8440558fdee44bf953ddecd94b05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LegalCell_Color: {r: 0.88580775, g: 1, b: 0, a: 1}
-  Selected_Color: {r: 0.38451576, g: 1, b: 0, a: 1}
+  CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
+  LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
+  Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
   Default_Color: {r: 0.3647059, g: 0.36078432, b: 0.3647059, a: 1}
 --- !u!61 &1024570705
 BoxCollider2D:
@@ -5509,8 +5533,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de8b8440558fdee44bf953ddecd94b05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LegalCell_Color: {r: 0.88580775, g: 1, b: 0, a: 1}
-  Selected_Color: {r: 0.38451576, g: 1, b: 0, a: 1}
+  CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
+  LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
+  Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
   Default_Color: {r: 0.86274517, g: 0.8588236, b: 0.86274517, a: 1}
 --- !u!61 &1032107660
 BoxCollider2D:
@@ -5637,8 +5662,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de8b8440558fdee44bf953ddecd94b05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LegalCell_Color: {r: 0.88580775, g: 1, b: 0, a: 1}
-  Selected_Color: {r: 0.38451576, g: 1, b: 0, a: 1}
+  CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
+  LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
+  Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
   Default_Color: {r: 0.3647059, g: 0.36078432, b: 0.3647059, a: 1}
 --- !u!61 &1038670891
 BoxCollider2D:
@@ -5764,8 +5790,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de8b8440558fdee44bf953ddecd94b05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LegalCell_Color: {r: 0.88580775, g: 1, b: 0, a: 1}
-  Selected_Color: {r: 0.38451576, g: 1, b: 0, a: 1}
+  CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
+  LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
+  Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
   Default_Color: {r: 0.3647059, g: 0.36078432, b: 0.3647059, a: 1}
 --- !u!61 &1052029524
 BoxCollider2D:
@@ -5892,8 +5919,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de8b8440558fdee44bf953ddecd94b05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LegalCell_Color: {r: 0.88580775, g: 1, b: 0, a: 1}
-  Selected_Color: {r: 0.38451576, g: 1, b: 0, a: 1}
+  CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
+  LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
+  Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
   Default_Color: {r: 0.3647059, g: 0.36078432, b: 0.3647059, a: 1}
 --- !u!61 &1106301464
 BoxCollider2D:
@@ -6020,8 +6048,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de8b8440558fdee44bf953ddecd94b05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LegalCell_Color: {r: 0.88580775, g: 1, b: 0, a: 1}
-  Selected_Color: {r: 0.38451576, g: 1, b: 0, a: 1}
+  CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
+  LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
+  Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
   Default_Color: {r: 0.3647059, g: 0.36078432, b: 0.3647059, a: 1}
 --- !u!61 &1116064298
 BoxCollider2D:
@@ -6147,8 +6176,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de8b8440558fdee44bf953ddecd94b05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LegalCell_Color: {r: 0.88580775, g: 1, b: 0, a: 1}
-  Selected_Color: {r: 0.38451576, g: 1, b: 0, a: 1}
+  CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
+  LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
+  Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
   Default_Color: {r: 0.3647059, g: 0.36078432, b: 0.3647059, a: 1}
 --- !u!61 &1116282425
 BoxCollider2D:
@@ -6358,8 +6388,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de8b8440558fdee44bf953ddecd94b05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LegalCell_Color: {r: 0.88580775, g: 1, b: 0, a: 1}
-  Selected_Color: {r: 0.38451576, g: 1, b: 0, a: 1}
+  CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
+  LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
+  Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
   Default_Color: {r: 0.3647059, g: 0.36078432, b: 0.3647059, a: 1}
 --- !u!61 &1268290728
 BoxCollider2D:
@@ -6485,8 +6516,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de8b8440558fdee44bf953ddecd94b05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LegalCell_Color: {r: 0.88580775, g: 1, b: 0, a: 1}
-  Selected_Color: {r: 0.38451576, g: 1, b: 0, a: 1}
+  CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
+  LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
+  Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
   Default_Color: {r: 0.86274517, g: 0.8588236, b: 0.86274517, a: 1}
 --- !u!61 &1303770345
 BoxCollider2D:
@@ -6696,8 +6728,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de8b8440558fdee44bf953ddecd94b05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LegalCell_Color: {r: 0.88580775, g: 1, b: 0, a: 1}
-  Selected_Color: {r: 0.38451576, g: 1, b: 0, a: 1}
+  CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
+  LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
+  Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
   Default_Color: {r: 0.86274517, g: 0.8588236, b: 0.86274517, a: 1}
 --- !u!61 &1310571023
 BoxCollider2D:
@@ -6908,8 +6941,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de8b8440558fdee44bf953ddecd94b05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LegalCell_Color: {r: 0.88580775, g: 1, b: 0, a: 1}
-  Selected_Color: {r: 0.38451576, g: 1, b: 0, a: 1}
+  CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
+  LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
+  Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
   Default_Color: {r: 0.3647059, g: 0.36078432, b: 0.3647059, a: 1}
 --- !u!61 &1332586778
 BoxCollider2D:
@@ -7035,8 +7069,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de8b8440558fdee44bf953ddecd94b05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LegalCell_Color: {r: 0.88580775, g: 1, b: 0, a: 1}
-  Selected_Color: {r: 0.38451576, g: 1, b: 0, a: 1}
+  CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
+  LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
+  Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
   Default_Color: {r: 0.86274517, g: 0.8588236, b: 0.86274517, a: 1}
 --- !u!61 &1344637369
 BoxCollider2D:
@@ -7162,8 +7197,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de8b8440558fdee44bf953ddecd94b05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LegalCell_Color: {r: 0.88580775, g: 1, b: 0, a: 1}
-  Selected_Color: {r: 0.38451576, g: 1, b: 0, a: 1}
+  CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
+  LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
+  Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
   Default_Color: {r: 0.3647059, g: 0.36078432, b: 0.3647059, a: 1}
 --- !u!61 &1360075438
 BoxCollider2D:
@@ -7289,8 +7325,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de8b8440558fdee44bf953ddecd94b05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LegalCell_Color: {r: 0.88580775, g: 1, b: 0, a: 1}
-  Selected_Color: {r: 0.38451576, g: 1, b: 0, a: 1}
+  CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
+  LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
+  Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
   Default_Color: {r: 0.86274517, g: 0.8588236, b: 0.86274517, a: 1}
 --- !u!61 &1374830783
 BoxCollider2D:
@@ -7501,8 +7538,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de8b8440558fdee44bf953ddecd94b05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LegalCell_Color: {r: 0.88580775, g: 1, b: 0, a: 1}
-  Selected_Color: {r: 0.38451576, g: 1, b: 0, a: 1}
+  CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
+  LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
+  Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
   Default_Color: {r: 0.3647059, g: 0.36078432, b: 0.3647059, a: 1}
 --- !u!61 &1422488301
 BoxCollider2D:
@@ -7628,8 +7666,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de8b8440558fdee44bf953ddecd94b05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LegalCell_Color: {r: 0.88580775, g: 1, b: 0, a: 1}
-  Selected_Color: {r: 0.38451576, g: 1, b: 0, a: 1}
+  CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
+  LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
+  Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
   Default_Color: {r: 0.3647059, g: 0.36078432, b: 0.3647059, a: 1}
 --- !u!61 &1427447167
 BoxCollider2D:
@@ -7755,8 +7794,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de8b8440558fdee44bf953ddecd94b05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LegalCell_Color: {r: 0.88580775, g: 1, b: 0, a: 1}
-  Selected_Color: {r: 0.38451576, g: 1, b: 0, a: 1}
+  CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
+  LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
+  Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
   Default_Color: {r: 0.3647059, g: 0.36078432, b: 0.3647059, a: 1}
 --- !u!61 &1454468938
 BoxCollider2D:
@@ -7882,8 +7922,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de8b8440558fdee44bf953ddecd94b05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LegalCell_Color: {r: 0.88580775, g: 1, b: 0, a: 1}
-  Selected_Color: {r: 0.38451576, g: 1, b: 0, a: 1}
+  CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
+  LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
+  Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
   Default_Color: {r: 0.3647059, g: 0.36078432, b: 0.3647059, a: 1}
 --- !u!61 &1457051540
 BoxCollider2D:
@@ -8009,8 +8050,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de8b8440558fdee44bf953ddecd94b05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LegalCell_Color: {r: 0.88580775, g: 1, b: 0, a: 1}
-  Selected_Color: {r: 0.38451576, g: 1, b: 0, a: 1}
+  CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
+  LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
+  Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
   Default_Color: {r: 0.86274517, g: 0.8588236, b: 0.86274517, a: 1}
 --- !u!61 &1482283390
 BoxCollider2D:
@@ -8136,8 +8178,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de8b8440558fdee44bf953ddecd94b05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LegalCell_Color: {r: 0.88580775, g: 1, b: 0, a: 1}
-  Selected_Color: {r: 0.38451576, g: 1, b: 0, a: 1}
+  CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
+  LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
+  Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
   Default_Color: {r: 0.3647059, g: 0.36078432, b: 0.3647059, a: 1}
 --- !u!61 &1486524606
 BoxCollider2D:
@@ -8264,8 +8307,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de8b8440558fdee44bf953ddecd94b05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LegalCell_Color: {r: 0.88580775, g: 1, b: 0, a: 1}
-  Selected_Color: {r: 0.38451576, g: 1, b: 0, a: 1}
+  CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
+  LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
+  Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
   Default_Color: {r: 0.3647059, g: 0.36078432, b: 0.3647059, a: 1}
 --- !u!61 &1490089699
 BoxCollider2D:
@@ -8560,8 +8604,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de8b8440558fdee44bf953ddecd94b05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LegalCell_Color: {r: 0.88580775, g: 1, b: 0, a: 1}
-  Selected_Color: {r: 0.38451576, g: 1, b: 0, a: 1}
+  CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
+  LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
+  Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
   Default_Color: {r: 0.86274517, g: 0.8588236, b: 0.86274517, a: 1}
 --- !u!61 &1583645687
 BoxCollider2D:
@@ -8687,8 +8732,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de8b8440558fdee44bf953ddecd94b05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LegalCell_Color: {r: 0.88580775, g: 1, b: 0, a: 1}
-  Selected_Color: {r: 0.38451576, g: 1, b: 0, a: 1}
+  CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
+  LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
+  Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
   Default_Color: {r: 0.3647059, g: 0.36078432, b: 0.3647059, a: 1}
 --- !u!61 &1588730816
 BoxCollider2D:
@@ -8815,8 +8861,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de8b8440558fdee44bf953ddecd94b05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LegalCell_Color: {r: 0.88580775, g: 1, b: 0, a: 1}
-  Selected_Color: {r: 0.38451576, g: 1, b: 0, a: 1}
+  CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
+  LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
+  Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
   Default_Color: {r: 0.86274517, g: 0.8588236, b: 0.86274517, a: 1}
 --- !u!61 &1623326549
 BoxCollider2D:
@@ -8942,8 +8989,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de8b8440558fdee44bf953ddecd94b05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LegalCell_Color: {r: 0.88580775, g: 1, b: 0, a: 1}
-  Selected_Color: {r: 0.38451576, g: 1, b: 0, a: 1}
+  CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
+  LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
+  Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
   Default_Color: {r: 0.3647059, g: 0.36078432, b: 0.3647059, a: 1}
 --- !u!61 &1716261928
 BoxCollider2D:
@@ -9070,8 +9118,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de8b8440558fdee44bf953ddecd94b05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LegalCell_Color: {r: 0.88580775, g: 1, b: 0, a: 1}
-  Selected_Color: {r: 0.38451576, g: 1, b: 0, a: 1}
+  CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
+  LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
+  Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
   Default_Color: {r: 0.86274517, g: 0.8588236, b: 0.86274517, a: 1}
 --- !u!61 &1719650532
 BoxCollider2D:
@@ -9198,8 +9247,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de8b8440558fdee44bf953ddecd94b05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LegalCell_Color: {r: 0.88580775, g: 1, b: 0, a: 1}
-  Selected_Color: {r: 0.38451576, g: 1, b: 0, a: 1}
+  CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
+  LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
+  Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
   Default_Color: {r: 0.86274517, g: 0.8588236, b: 0.86274517, a: 1}
 --- !u!61 &1731510367
 BoxCollider2D:
@@ -9494,8 +9544,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de8b8440558fdee44bf953ddecd94b05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LegalCell_Color: {r: 0.88580775, g: 1, b: 0, a: 1}
-  Selected_Color: {r: 0.38451576, g: 1, b: 0, a: 1}
+  CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
+  LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
+  Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
   Default_Color: {r: 0.3647059, g: 0.36078432, b: 0.3647059, a: 1}
 --- !u!61 &1832716601
 BoxCollider2D:
@@ -9622,8 +9673,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de8b8440558fdee44bf953ddecd94b05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LegalCell_Color: {r: 0.88580775, g: 1, b: 0, a: 1}
-  Selected_Color: {r: 0.38451576, g: 1, b: 0, a: 1}
+  CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
+  LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
+  Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
   Default_Color: {r: 0.86274517, g: 0.8588236, b: 0.86274517, a: 1}
 --- !u!61 &1857508915
 BoxCollider2D:
@@ -9749,8 +9801,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de8b8440558fdee44bf953ddecd94b05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LegalCell_Color: {r: 0.88580775, g: 1, b: 0, a: 1}
-  Selected_Color: {r: 0.38451576, g: 1, b: 0, a: 1}
+  CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
+  LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
+  Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
   Default_Color: {r: 0.86274517, g: 0.8588236, b: 0.86274517, a: 1}
 --- !u!61 &1920857730
 BoxCollider2D:
@@ -9877,8 +9930,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de8b8440558fdee44bf953ddecd94b05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LegalCell_Color: {r: 0.88580775, g: 1, b: 0, a: 1}
-  Selected_Color: {r: 0.38451576, g: 1, b: 0, a: 1}
+  CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
+  LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
+  Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
   Default_Color: {r: 0.86274517, g: 0.8588236, b: 0.86274517, a: 1}
 --- !u!61 &1922611631
 BoxCollider2D:
@@ -10004,8 +10058,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de8b8440558fdee44bf953ddecd94b05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LegalCell_Color: {r: 0.88580775, g: 1, b: 0, a: 1}
-  Selected_Color: {r: 0.38451576, g: 1, b: 0, a: 1}
+  CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
+  LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
+  Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
   Default_Color: {r: 0.3647059, g: 0.36078432, b: 0.3647059, a: 1}
 --- !u!61 &1922852208
 BoxCollider2D:
@@ -10131,8 +10186,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de8b8440558fdee44bf953ddecd94b05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LegalCell_Color: {r: 0.88580775, g: 1, b: 0, a: 1}
-  Selected_Color: {r: 0.38451576, g: 1, b: 0, a: 1}
+  CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
+  LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
+  Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
   Default_Color: {r: 0.86274517, g: 0.8588236, b: 0.86274517, a: 1}
 --- !u!61 &1938126594
 BoxCollider2D:
@@ -10259,8 +10315,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de8b8440558fdee44bf953ddecd94b05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LegalCell_Color: {r: 0.88580775, g: 1, b: 0, a: 1}
-  Selected_Color: {r: 0.38451576, g: 1, b: 0, a: 1}
+  CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
+  LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
+  Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
   Default_Color: {r: 0.3647059, g: 0.36078432, b: 0.3647059, a: 1}
 --- !u!61 &1967786612
 BoxCollider2D:
@@ -10386,8 +10443,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de8b8440558fdee44bf953ddecd94b05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LegalCell_Color: {r: 0.88580775, g: 1, b: 0, a: 1}
-  Selected_Color: {r: 0.38451576, g: 1, b: 0, a: 1}
+  CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
+  LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
+  Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
   Default_Color: {r: 0.86274517, g: 0.8588236, b: 0.86274517, a: 1}
 --- !u!61 &2018924004
 BoxCollider2D:
@@ -10513,8 +10571,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de8b8440558fdee44bf953ddecd94b05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LegalCell_Color: {r: 0.88580775, g: 1, b: 0, a: 1}
-  Selected_Color: {r: 0.38451576, g: 1, b: 0, a: 1}
+  CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
+  LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
+  Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
   Default_Color: {r: 0.86274517, g: 0.8588236, b: 0.86274517, a: 1}
 --- !u!61 &2053211406
 BoxCollider2D:
@@ -10640,8 +10699,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de8b8440558fdee44bf953ddecd94b05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LegalCell_Color: {r: 0.88580775, g: 1, b: 0, a: 1}
-  Selected_Color: {r: 0.38451576, g: 1, b: 0, a: 1}
+  CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
+  LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
+  Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
   Default_Color: {r: 0.86274517, g: 0.8588236, b: 0.86274517, a: 1}
 --- !u!61 &2077576924
 BoxCollider2D:
@@ -10768,8 +10828,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de8b8440558fdee44bf953ddecd94b05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LegalCell_Color: {r: 0.88580775, g: 1, b: 0, a: 1}
-  Selected_Color: {r: 0.38451576, g: 1, b: 0, a: 1}
+  CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
+  LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
+  Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
   Default_Color: {r: 0.3647059, g: 0.36078432, b: 0.3647059, a: 1}
 --- !u!61 &2096677421
 BoxCollider2D:
@@ -10896,8 +10957,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de8b8440558fdee44bf953ddecd94b05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LegalCell_Color: {r: 0.88580775, g: 1, b: 0, a: 1}
-  Selected_Color: {r: 0.38451576, g: 1, b: 0, a: 1}
+  CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
+  LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
+  Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
   Default_Color: {r: 0.86274517, g: 0.8588236, b: 0.86274517, a: 1}
 --- !u!61 &2099726458
 BoxCollider2D:
@@ -11024,8 +11086,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de8b8440558fdee44bf953ddecd94b05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LegalCell_Color: {r: 0.88580775, g: 1, b: 0, a: 1}
-  Selected_Color: {r: 0.38451576, g: 1, b: 0, a: 1}
+  CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
+  LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
+  Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
   Default_Color: {r: 0.3647059, g: 0.36078432, b: 0.3647059, a: 1}
 --- !u!61 &2112076190
 BoxCollider2D:
@@ -11152,8 +11215,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de8b8440558fdee44bf953ddecd94b05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LegalCell_Color: {r: 0.88580775, g: 1, b: 0, a: 1}
-  Selected_Color: {r: 0.38451576, g: 1, b: 0, a: 1}
+  CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
+  LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
+  Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
   Default_Color: {r: 0.86274517, g: 0.8588236, b: 0.86274517, a: 1}
 --- !u!61 &2147052637
 BoxCollider2D:

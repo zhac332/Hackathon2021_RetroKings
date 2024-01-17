@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class Cell_Script : MonoBehaviour
 {
+    [SerializeField] private Color CapturingCell_Color;
     [SerializeField] private Color LegalCell_Color;
     [SerializeField] private Color Selected_Color;
     [SerializeField] private Color Default_Color;
@@ -72,6 +73,11 @@ public class Cell_Script : MonoBehaviour
     public void MarkForLegalCells()
     {
         sr.color = LegalCell_Color;
+    }
+
+    public void MarkForCaptureCells()
+    {
+        sr.color = CapturingCell_Color;
     }
 
     private void ExecuteMove(string cell1, string cell2, Tuple<Piece, PieceColor> piece)
