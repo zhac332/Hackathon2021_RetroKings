@@ -10,6 +10,7 @@ public static class MoveChecker
     private static PieceColor currentPieceColor;
     private static bool acquired = false;
     private static readonly Tuple<Piece, PieceColor> nullPiece = new Tuple<Piece, PieceColor>(Piece.NULL, PieceColor.NULL);
+    private static List<string> markedCells;
 
     public static void AcquireAllCells()
     {
@@ -36,10 +37,7 @@ public static class MoveChecker
 
     public static void MarkAvailableCells(GameObject currentCell)
     {
-        if (currentPiece == Piece.Pawn)
-        {
-            MarkPawn(currentCell, (currentPieceColor == PieceColor.White) ? false : true);
-        }
+        if (currentPiece == Piece.Pawn) MarkPawn(currentCell, (currentPieceColor == PieceColor.White) ? false : true);
         if (currentPiece == Piece.Queen) MarkQueen(currentCell);
         if (currentPiece == Piece.King) MarkKing(currentCell);
         if (currentPiece == Piece.Rook) MarkRook(currentCell);
@@ -52,6 +50,7 @@ public static class MoveChecker
         int currentCellIndex = cells.IndexOf(currentCell);
 
         UnmarkAll(currentCellIndex);
+        markedCells = new List<string>();
 
         int row = currentCellIndex / 8;
         int colIndex = currentCellIndex % 8;
@@ -169,9 +168,37 @@ public static class MoveChecker
         }
     }
 
+    private static bool IsIndexValid(int value, int minInclusive, int maxExclusive)
+    {
+        return (minInclusive <= value) && (value < maxExclusive);
+    }
+
     private static void MarkKing(GameObject currentCell)
     {
+        int currentCellIndex = cells.IndexOf(currentCell);
 
+        UnmarkAll(currentCellIndex);
+        markedCells = new List<string>();
+
+        int row = currentCellIndex / 8;
+        int colIndex = currentCellIndex % 8;
+        int[] rDelta = { -1, 0, 1, -1, 1, -1, 0, 1 };
+        int[] cDelta = { 1, 1, 1, 0, 0, -1, -1, -1 };
+        
+        for (int i = 0; i < rDelta.Length; i++)
+        {
+            int r = row + rDelta[i];
+            int c = colIndex + cDelta[i];
+            int cellIndex = r * 8 + c;
+
+            if (IsIndexValid(r, 0, 8) && IsIndexValid(c, 0, 8) && IsIndexValid(cellIndex, 0, cells.Count))
+            {
+                Tuple<Piece, PieceColor> pieceOnCell = GetPieceOnCell(cellIndex);
+
+                if (pieceOnCell == nullPiece) MarkCell(r, c);
+                else if (pieceOnCell.Item2 != currentPieceColor) MarkCell(r, c);
+            }
+        }
     }
 
     private static void MarkRook(GameObject currentCell)
@@ -179,6 +206,7 @@ public static class MoveChecker
         int currentCellIndex = cells.IndexOf(currentCell);
 
         UnmarkAll(currentCellIndex);
+        markedCells = new List<string>();
 
         int row = currentCellIndex / 8;
         int colIndex = currentCellIndex % 8;
@@ -241,10 +269,10 @@ public static class MoveChecker
 
     private static void MarkKnight(GameObject currentCell)
     {
-        Debug.Log("Marking for knight on " + currentCell.name);
         int currentCellIndex = cells.IndexOf(currentCell);
 
         UnmarkAll(currentCellIndex);
+        markedCells = new List<string>();
 
         int row = currentCellIndex / 8;
         int colIndex = currentCellIndex % 8;
@@ -261,10 +289,11 @@ public static class MoveChecker
         {
             int r = row + knightMoves[i, 0];
             int c = colIndex + knightMoves[i, 1];
+            int cellIndex = r * 8 + c;
 
-            if ((0 <= r && r < 8) && (0 <= c && c < 8) && (0 <= r * 8 + c && r * 8 + c < cells.Count))
+            if (IsIndexValid(r, 0, 8) && IsIndexValid(c, 0, 8) && IsIndexValid(cellIndex, 0, cells.Count))
             {
-                Tuple<Piece, PieceColor> pieceOnCell = GetPieceOnCell(r * 8 + c);
+                Tuple<Piece, PieceColor> pieceOnCell = GetPieceOnCell(cellIndex);
 
                 if (pieceOnCell == nullPiece) MarkCell(r, c);
                 else if (pieceOnCell.Item2 != currentPieceColor) MarkCell(r, c);
@@ -277,6 +306,7 @@ public static class MoveChecker
         int currentCellIndex = cells.IndexOf(currentCell);
 
         UnmarkAll(currentCellIndex);
+        markedCells = new List<string>();
 
         int row = currentCellIndex / 8;
         int colIndex = currentCellIndex % 8;
@@ -297,7 +327,7 @@ public static class MoveChecker
     private static void MarkDiagonalCells(int startRow, int startCol, int rowIncrement, int colIncrement)
     {
         bool stop = false;
-        for (int r = startRow, c = startCol; r >= 0 && r < 8 && c >= 0 && c < 8 && !stop; r += rowIncrement, c += colIncrement)
+        for (int r = startRow, c = startCol; IsIndexValid(r, 0, 8) && IsIndexValid(c, 0, 8) && !stop; r += rowIncrement, c += colIncrement)
         {
             Tuple<Piece, PieceColor> pieceOnCell = GetPieceOnCell(r * 8 + c);
 
@@ -315,6 +345,7 @@ public static class MoveChecker
         int currentCellIndex = cells.IndexOf(currentCell);
 
         UnmarkAll(currentCellIndex);
+        markedCells = new List<string>();
 
         int row = currentCellIndex / 8;
         int colIndex = currentCellIndex % 8;
@@ -323,7 +354,6 @@ public static class MoveChecker
 
         // the cell in front
         Tuple<Piece, PieceColor> pieceOnCell = GetPieceOnCell(row * 8 + colIndex + columnDelta);
-
         if (pieceOnCell == nullPiece) MarkCell(row, colIndex + columnDelta);
         else if (pieceOnCell.Item2 != currentPieceColor) MarkCell(row, colIndex + columnDelta);
 
@@ -354,7 +384,6 @@ public static class MoveChecker
 
     private static Tuple<Piece, PieceColor> GetPieceOnCell(int cellIndex)
     {
-        Debug.Log(cells[cellIndex].name);
         if (cells[cellIndex].GetComponent<Cell_Script>().HasAPiece())
         {
             Piece p = Piece.NULL;
@@ -378,6 +407,11 @@ public static class MoveChecker
         return nullPiece;
     }
 
+    public static bool CheckMove(string endCell)
+    {
+        return markedCells.Contains(endCell);
+    }
+
     public static void UnmarkAll(int exceptionIndex)
     {
         for (int i = 0; i < cells.Count; i++)
@@ -395,8 +429,8 @@ public static class MoveChecker
         int index = row * 8 + col;
         if (index >= 0 && index < cells.Count)
         {
-            // Mark the cell or perform your desired action
-            cells[index].GetComponent<Cell_Script>().MarkForLegalCells(); // Assuming there is a method Mark() in your Cell script.
+            cells[index].GetComponent<Cell_Script>().MarkForLegalCells();
+            markedCells.Add(cells[index].name);
         }
     }
 }
