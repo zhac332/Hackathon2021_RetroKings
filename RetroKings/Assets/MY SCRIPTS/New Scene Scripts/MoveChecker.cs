@@ -284,7 +284,53 @@ public static class MoveChecker
 
     private static void CheckForCastles_BlackKing(string currentCellName)
     {
+        if (currentCellName != "E8") return;
 
+        Tuple<Piece, PieceColor> rightCornerPiece = GetPieceOnCell(FindCellOfName("H8"));
+        Tuple<Piece, PieceColor> leftCornerPiece = GetPieceOnCell(FindCellOfName("A8"));
+
+        if (rightCornerPiece.Item1 == Piece.Rook && rightCornerPiece.Item2 == PieceColor.Black)
+        {
+            Debug.Log("There is a white rook on H8");
+            string[] cellsToCheck = { "F8", "G8" };
+            bool isValidForCastles = true;
+
+            for (int i = 0; i < cellsToCheck.Length && isValidForCastles; i++)
+            {
+                var piece = GetPieceOnCell(FindCellOfName(cellsToCheck[i]));
+                if (piece != nullPiece) isValidForCastles = false;
+            }
+
+            if (isValidForCastles)
+            {
+                Debug.Log("Valid for short castles");
+                int cellIndex = FindCellOfName("G8");
+                int r = cellIndex / 8;
+                int c = cellIndex % 8;
+                MarkCell(r, c, false);
+            }
+            else Debug.Log("Invalid for short castles");
+        }
+
+        if (leftCornerPiece.Item1 == Piece.Rook && leftCornerPiece.Item2 == PieceColor.Black)
+        {
+            string[] cellsToCheck = { "B8", "C8", "D8" };
+            bool isValidForCastles = true;
+
+            for (int i = 0; i < cellsToCheck.Length && isValidForCastles; i++)
+            {
+                var piece = GetPieceOnCell(FindCellOfName(cellsToCheck[i]));
+                if (piece != nullPiece) isValidForCastles = false;
+            }
+
+            if (isValidForCastles)
+            {
+                int cellIndex = FindCellOfName("C8");
+                int r = cellIndex / 8;
+                int c = cellIndex % 8;
+                MarkCell(r, c, false);
+            }
+        }
     }
 
     private static void MarkRook(GameObject currentCell)
