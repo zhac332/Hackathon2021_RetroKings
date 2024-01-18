@@ -188,7 +188,11 @@ public class Cell_Script : MonoBehaviour
         c1.GetComponent<Cell_Script>().DeselectCell();
 
         if (c2.transform.childCount != 0)
-            Destroy(c2.transform.GetChild(0).gameObject);
+        {
+            GameObject go = c2.transform.GetChild(0).gameObject;
+            Game.PieceCaptured(go.name);
+            Destroy(go);
+        }
 
         p.transform.SetParent(c2.transform);
 
