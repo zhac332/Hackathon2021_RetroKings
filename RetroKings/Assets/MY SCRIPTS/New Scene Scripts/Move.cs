@@ -72,18 +72,6 @@ public static class Move
         }
         // there is no turning back, if the second cell is already selected. You cannot undo it.
     }
-    
-    public static void SelectCell(string cellName, string pieceName, Action<string, string, Tuple<Piece, PieceColor>> executeMove)
-    {
-        if (!secondCell_Selected)
-        {
-            secondCell_Selected = true;
-            lastCell = cellName;
-
-            // verify if the move is legal, and a piece exists on the second cell
-            executeMove(firstCell, lastCell, currentPiece);
-        }
-    }
 
     public static void SelectCell_Promote(string cellName, Action<string, string, Tuple<Piece, PieceColor>> method)
     {
