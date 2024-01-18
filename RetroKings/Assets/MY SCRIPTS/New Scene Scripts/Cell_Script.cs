@@ -28,6 +28,12 @@ public class Cell_Script : MonoBehaviour
         GameObject piece = null;
         if (!Move.IsFirstCellSelected())
         {
+            if (!HasAPiece())
+            {
+                return;
+                Debug.Log("Select a cell with a piece. If there is no piece, how do I know what move to make?");
+            }
+
             if (Game.IsMyTurn())
             {
                 if (!IsPieceWhite())
@@ -45,17 +51,14 @@ public class Cell_Script : MonoBehaviour
                 }
             }
 
-            if (HasAPiece())
-            {
-                piece = transform.GetChild(0).gameObject;
+            // if (HasAPiece())....
+            piece = transform.GetChild(0).gameObject;
 
-                SelectCell();
+            SelectCell();
 
-                Move.SelectPiece(name, piece.name);
-                MoveChecker.SetFirstPiece(piece.name);
-                MoveChecker.MarkAvailableCells(gameObject);
-            }
-            else Debug.Log("Select a cell with a piece. If there is no piece, how do I know what move to make?");
+            Move.SelectPiece(name, piece.name);
+            MoveChecker.SetFirstPiece(piece.name);
+            MoveChecker.MarkAvailableCells(gameObject);
         }
         else
         {
