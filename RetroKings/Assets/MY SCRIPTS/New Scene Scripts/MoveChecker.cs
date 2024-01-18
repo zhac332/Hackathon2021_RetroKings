@@ -181,6 +181,13 @@ public static class MoveChecker
         return (minInclusive <= value) && (value < maxExclusive);
     }
 
+    private static int FindCellOfName(string name)
+    {
+        for (int i = 0; i < cells.Count; i++)
+            if (cells[i].name == name) return i;
+        return -1;
+    }
+
     private static void MarkKing(GameObject currentCell)
     {
         int currentCellIndex = cells.IndexOf(currentCell);
@@ -207,6 +214,77 @@ public static class MoveChecker
                 else if (pieceOnCell.Item2 != currentPieceColor) MarkCell(r, c, true);
             }
         }
+
+        // need to consider castles positions
+        if (currentPieceColor == PieceColor.White)
+        {
+            Debug.Log("Checking castles position for white king");
+            CheckForCastles_WhiteKing(currentCell.name);
+        }
+        else CheckForCastles_BlackKing(currentCell.name);
+    }
+
+    private static void CheckForCastles_WhiteKing(string currentCellName)
+    {
+        // if the king is on E1
+        // and the white rook is either on H1, or A1
+        // and no pieces in between
+        if (currentCellName != "E1") return;
+
+        Tuple<Piece, PieceColor> rightCornerPiece = GetPieceOnCell(FindCellOfName("H1"));
+        Tuple<Piece, PieceColor> leftCornerPiece = GetPieceOnCell(FindCellOfName("A1"));
+
+        if (rightCornerPiece.Item1 == Piece.Rook && rightCornerPiece.Item2 == PieceColor.White)
+        {
+            Debug.Log("There is a white rook on H1");
+            // I need to make sure that there are no pieces on F1, and G1
+            string[] cellsToCheck = { "F1", "G1" };
+            bool isValidForCastles = true;
+
+            for (int i = 0; i < cellsToCheck.Length && isValidForCastles; i++)
+            {
+                var piece = GetPieceOnCell(FindCellOfName(cellsToCheck[i]));
+                if (piece != nullPiece) isValidForCastles = false;
+            }
+
+            if (isValidForCastles)
+            {
+                Debug.Log("Valid for short castles");
+                // then I will mark G1
+                int cellIndex = FindCellOfName("G1");
+                int r = cellIndex / 8;
+                int c = cellIndex % 8;
+                MarkCell(r, c, false);
+            }
+            else Debug.Log("Invalid for short castles");
+        }
+
+        if (leftCornerPiece.Item1 == Piece.Rook && leftCornerPiece.Item2 == PieceColor.White)
+        {
+            // I need to make sure that there are no pieces on B1, C1, D1
+            string[] cellsToCheck = { "B1", "C1", "D1" };
+            bool isValidForCastles = true;
+
+            for (int i = 0; i < cellsToCheck.Length && isValidForCastles; i++)
+            {
+                var piece = GetPieceOnCell(FindCellOfName(cellsToCheck[i]));
+                if (piece != nullPiece) isValidForCastles = false;
+            }
+
+            if (isValidForCastles)
+            {
+                // then I will mark C1
+                int cellIndex = FindCellOfName("C1");
+                int r = cellIndex / 8;
+                int c = cellIndex % 8;
+                MarkCell(r, c, false);
+            }
+        }
+    }
+
+    private static void CheckForCastles_BlackKing(string currentCellName)
+    {
+
     }
 
     private static void MarkRook(GameObject currentCell)
@@ -402,12 +480,12 @@ public static class MoveChecker
 
              c = (parts[1] == "B" ? PieceColor.Black : PieceColor.White);
 
-            if (parts[0] == "Pawn") p = Piece.Pawn;
-            else if (parts[0] == "Bishop") p = Piece.Bishop;
-            else if (parts[0] == "Rook") p = Piece.Rook;
-            else if (parts[0] == "Knight") p = Piece.Knight;
-            else if (parts[0] == "Queen") p = Piece.Queen;
-            else if (parts[0] == "King") p = Piece.King;
+            if (parts[0].Contains("Pawn")) p = Piece.Pawn;
+            else if (parts[0].Contains("Bishop")) p = Piece.Bishop;
+            else if (parts[0].Contains("Rook")) p = Piece.Rook;
+            else if (parts[0].Contains("Knight")) p = Piece.Knight;
+            else if (parts[0].Contains("Queen")) p = Piece.Queen;
+            else if (parts[0].Contains("King")) p = Piece.King;
 
             return new Tuple<Piece, PieceColor>(p, c);
         }

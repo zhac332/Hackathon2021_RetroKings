@@ -30,8 +30,8 @@ public class Cell_Script : MonoBehaviour
         {
             if (!HasAPiece())
             {
-                return;
                 Debug.Log("Select a cell with a piece. If there is no piece, how do I know what move to make?");
+                return;
             }
 
             if (Game.IsMyTurn())
