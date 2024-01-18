@@ -365,6 +365,60 @@ public static class MoveChecker
         }
     }
 
+    public static Tuple<bool, Tuple<string, string, Tuple<Piece, PieceColor>>> IsMove_Castles(string firstCell, string lastCell, Tuple<Piece, PieceColor> currentPiece)
+    {
+        bool isValid = false;
+        string fC = "", lC = ""; // first cell and last cell for the second move
+        Tuple<Piece, PieceColor> rookPiece = new(Piece.Rook, PieceColor.NULL);
+
+        if (currentPiece.Item2 == PieceColor.White)
+        {
+            // E1 -> G1 or E1 -> C1
+            if (firstCell == "E1")
+            {
+                if (lastCell == "G1")
+                {
+                    isValid = true;
+                    rookPiece = new(Piece.Rook, PieceColor.White);
+                    fC = "H1"; lC = "F1";
+                }
+                else if (lastCell == "C1")
+                {
+                    isValid = true;
+                    rookPiece = new(Piece.Rook, PieceColor.White);
+                    fC = "A1"; lC = "D1";
+                }
+                else isValid = false;
+            }
+            else isValid = false;
+        }
+        else if (currentPiece.Item2 == PieceColor.Black)
+        {
+            // E8 -> G8 or E8 -> C8
+            if (firstCell == "E8")
+            {
+                if (lastCell == "G8")
+                {
+                    isValid = true;
+                    rookPiece = new(Piece.Rook, PieceColor.Black);
+                    fC = "H8"; lC = "F8";
+                }
+                else if (lastCell == "C8")
+                {
+                    isValid = true;
+                    rookPiece = new(Piece.Rook, PieceColor.Black);
+                    fC = "A8"; lC = "D8";
+                }
+                else isValid = false;
+            }
+            else isValid = false;
+        }
+        Debug.Log(fC + " " + lC);
+
+        Tuple<string, string, Tuple<Piece, PieceColor>> move = new(fC, lC, rookPiece);
+        return new(isValid, move);
+    }
+
     private static void MarkRook(GameObject currentCell)
     {
         int currentCellIndex = cells.IndexOf(currentCell);

@@ -76,7 +76,7 @@ public class Cell_Script : MonoBehaviour
                     if (MoveChecker.IsPromotionalMove(name))
                     {
                         MoveChecker.ShowPromotionalPanel();
-                        Move.SelectCell_Promote(name, (cell1, cell2, piece) => ExecuteMove(cell1, cell2, piece));
+                        Move.SelectCell_Promote(name, (cell1, cell2, piece, switchTurn) => ExecuteMove(cell1, cell2, piece, switchTurn));
                     }
                     else
                     {
@@ -84,7 +84,7 @@ public class Cell_Script : MonoBehaviour
                         piece = null;
                         if (transform.childCount != 0) piece = transform.GetChild(0).gameObject;
 
-                        Move.SelectCell(name, (cell1, cell2, piece) => ExecuteMove(cell1, cell2, piece));
+                        Move.SelectCell(name, (cell1, cell2, piece, switchTurn) => ExecuteMove(cell1, cell2, piece, switchTurn));
                     }
                 }
                 else Debug.LogWarning("Illegal move.");
@@ -174,7 +174,7 @@ public class Cell_Script : MonoBehaviour
         }
     }
 
-    private void ExecuteMove(string cell1, string cell2, Tuple<Piece, PieceColor> piece)
+    private void ExecuteMove(string cell1, string cell2, Tuple<Piece, PieceColor> piece, bool switchTurn)
     {
         // I need to hold the child piece from cell1,
         // I need to remove the child piece from cell2, if there is one
@@ -198,7 +198,7 @@ public class Cell_Script : MonoBehaviour
 
         Move.ResetMove();
         MoveChecker.UnmarkAll();
-        Game.SwitchTurn();
+        if (switchTurn) Game.SwitchTurn();
         MoveChecker.UpdateCastlingPossibilities(piece, cell1);
     }
 
