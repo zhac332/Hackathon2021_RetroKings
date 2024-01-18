@@ -200,6 +200,7 @@ public class Cell_Script : MonoBehaviour
         Move.ResetMove();
         MoveChecker.UnmarkAll();
         Game.SwitchTurn();
+        MoveChecker.UpdateCastlingPossibilities(piece, cell1);
     }
 
     private void Update()

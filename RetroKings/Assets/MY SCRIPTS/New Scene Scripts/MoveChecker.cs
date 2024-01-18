@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using UnityEditor;
 using UnityEngine;
 
 public static class MoveChecker
@@ -10,9 +11,16 @@ public static class MoveChecker
     private static Piece currentPiece;
     private static PieceColor currentPieceColor;
     private static bool acquired = false;
-    private static readonly Tuple<Piece, PieceColor> nullPiece = new Tuple<Piece, PieceColor>(Piece.NULL, PieceColor.NULL);
+    private static readonly Tuple<Piece, PieceColor> nullPiece = new(Piece.NULL, PieceColor.NULL);
     private static List<string> markedCells;
     private static Action<bool> updatePromotionalPieces_Function;
+
+    private static bool left_BlackRook_Moved = false;
+    private static bool right_BlackRook_Moved = false;
+    private static bool left_WhiteRook_Moved = false;
+    private static bool right_WhiteRook_Moved = false;
+    private static bool whiteKing_Moved = false;
+    private static bool blackKing_Moved = false;
 
     public static void AcquireAllCells()
     {
@@ -216,12 +224,14 @@ public static class MoveChecker
         }
 
         // need to consider castles positions
-        if (currentPieceColor == PieceColor.White)
+        if (currentPieceColor == PieceColor.White && !left_WhiteRook_Moved  && !right_WhiteRook_Moved && !whiteKing_Moved)
         {
-            Debug.Log("Checking castles position for white king");
             CheckForCastles_WhiteKing(currentCell.name);
         }
-        else CheckForCastles_BlackKing(currentCell.name);
+        else if (currentPieceColor == PieceColor.Black && !left_BlackRook_Moved && !right_BlackRook_Moved && !blackKing_Moved)
+        {
+            CheckForCastles_BlackKing(currentCell.name);
+        }
     }
 
     private static void CheckForCastles_WhiteKing(string currentCellName)
@@ -329,6 +339,28 @@ public static class MoveChecker
                 int r = cellIndex / 8;
                 int c = cellIndex % 8;
                 MarkCell(r, c, false);
+            }
+        }
+    }
+
+    public static void UpdateCastlingPossibilities(Tuple<Piece, PieceColor> piece, string originalCell)
+    {
+        if (piece.Item1 == Piece.King)
+        {
+            if (piece.Item2 == PieceColor.White) whiteKing_Moved = true;
+            else if (piece.Item2 == PieceColor.Black) blackKing_Moved = true;
+        }
+        else if (piece.Item1 == Piece.Rook)
+        {
+            if (piece.Item2 == PieceColor.White)
+            {
+                if (originalCell == "H1") right_WhiteRook_Moved = true;
+                else if (originalCell == "A1") left_WhiteRook_Moved = true;
+            }
+            else if (piece.Item2 == PieceColor.Black)
+            {
+                if (originalCell == "H8") right_BlackRook_Moved = true;
+                else if (originalCell == "A8") left_BlackRook_Moved = true;
             }
         }
     }
