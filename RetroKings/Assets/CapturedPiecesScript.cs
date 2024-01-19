@@ -5,49 +5,52 @@ using UnityEngine.UI;
 
 public class CapturedPiecesScript : MonoBehaviour
 {
-    [Tooltip("0 - King, 1 - Queen, 2 - Rook, 4 - Bishop, 6 - Knight, 8 - Pawn")]
-    [SerializeField] private List<Image> PiecesCaptured;
-    private int rookIndex = 2;
-    private int bishopIndex = 4;
-    private int knightIndex = 6;
-    private int pawnIndex = 8;
+    [SerializeField] private float StartX = -400f;
+    [SerializeField] private float DeltaX = 80f;
+
+    [SerializeField] private Sprite Rook_Sprite;
+    [SerializeField] private Sprite Bishop_Sprite;
+    [SerializeField] private Sprite Knight_Sprite;
+    [SerializeField] private Sprite King_Sprite;
+    [SerializeField] private Sprite Queen_Sprite;
+    [SerializeField] private Sprite Pawn_Sprite;
+
+    private List<Image> PiecesCaptured;
+    private int index;
 
     private void Start()
     {
         if (name.Contains("White")) Game.SetWhitePiecesCaptured(this);
         else if (name.Contains("Black")) Game.SetBlackPiecesCaptured(this);
 
+        PiecesCaptured = new List<Image>();
+        index = 0;
+
+        for (int i = 0; i < transform.childCount; i++)
+        {
+            Transform t = transform.GetChild(i);
+            t.localPosition = new Vector3(StartX + i * DeltaX, 0f, 0f);
+            PiecesCaptured.Add(t.GetComponent<Image>());
+        }
+
         for (int i = 0; i < PiecesCaptured.Count; i++)
+        {
+            PiecesCaptured[i].sprite = null;
             PiecesCaptured[i].gameObject.SetActive(false);
+        }
     }
 
     public void AddPieceCaptured(Piece p)
     {
-        int index = 0;
-
-        if (p == Piece.Pawn)
-        {
-            index = pawnIndex;
-            pawnIndex++;
-        }
-        else if (p == Piece.Rook)
-        {
-            index = rookIndex;
-            rookIndex++;
-        }
-        else if (p == Piece.Bishop)
-        {
-            index = bishopIndex;
-            bishopIndex++;
-        }
-        else if (p == Piece.Knight)
-        {
-            index = knightIndex;
-            knightIndex++;
-        }
-        else if (p == Piece.Queen) index = 1;
-        else if (p == Piece.King) index = 0;
-
         PiecesCaptured[index].gameObject.SetActive(true);
+
+        if (p == Piece.Pawn) PiecesCaptured[index].sprite = Pawn_Sprite;
+        if (p == Piece.Bishop) PiecesCaptured[index].sprite = Bishop_Sprite;
+        if (p == Piece.Rook) PiecesCaptured[index].sprite = Rook_Sprite;
+        if (p == Piece.Knight) PiecesCaptured[index].sprite = Knight_Sprite;
+        if (p == Piece.King) PiecesCaptured[index].sprite = King_Sprite;
+        if (p == Piece.Queen) PiecesCaptured[index].sprite = Queen_Sprite;
+
+        index++;
     }
 }

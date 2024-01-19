@@ -580,14 +580,12 @@ public static class MoveChecker
             pieceOnCell = GetPieceOnCell(row * 8 + colIndex + 2);
 
             if (pieceOnCell == nullPiece) MarkCell(row, colIndex + 2, false);
-            else if (pieceOnCell.Item2 != currentPieceColor) MarkCell(row, colIndex + 2, true);
         }
         else if (currentPieceColor == PieceColor.Black && currentCell.name.Contains("7"))
         {
             pieceOnCell = GetPieceOnCell(row * 8 + colIndex - 2);
 
             if (pieceOnCell == nullPiece) MarkCell(row, colIndex - 2, false);
-            else if (pieceOnCell.Item2 != currentPieceColor) MarkCell(row, colIndex - 2, true);
         }
 
         // the cells on the diagonals
