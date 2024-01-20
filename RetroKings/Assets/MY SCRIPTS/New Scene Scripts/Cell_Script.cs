@@ -25,6 +25,8 @@ public class Cell_Script : MonoBehaviour
 
     private void Cell_OnClick()
     {
+        if (Game.IsGameOver()) return;
+
         GameObject piece = null;
         if (!Move.IsFirstCellSelected())
         {

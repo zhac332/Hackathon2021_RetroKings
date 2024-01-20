@@ -16,6 +16,8 @@ public static class Game
     private static readonly int Rook_Value = 5;
     private static readonly int Queen_Value = 9;
     private static Text PointsText;
+    private static Action setGameOverTextOn;
+    private static bool gameOver = false;
 
     public static void SetWhitePiecesCaptured(CapturedPiecesScript t)
     {
@@ -32,12 +34,20 @@ public static class Game
         displayTurn_Function = t;
     }
 
+    public static void SetGameOverTrigger(Action t)
+    {
+        setGameOverTextOn = t;
+    }
+
     public static void SwitchTurn()
     {
         myTurn = !myTurn;
+        
         PointsText = GameObject.Find("MAIN CANVAS/Turn and Powerups Panel/PointsText").GetComponent<Text>();
+        
         if (myTurn) PointsText.text = "Points: " + White_Points;
         else PointsText.text = "Points: " + Black_Points;
+        
         displayTurn_Function();
     }
 
@@ -45,6 +55,11 @@ public static class Game
     {
         if (color == PieceColor.White) Black_Points += value;
         else White_Points += value;
+    }
+
+    public static bool IsGameOver()
+    {
+        return gameOver;
     }
 
     public static void PieceCaptured(string pieceName)
@@ -80,6 +95,8 @@ public static class Game
         else if (pieceName.Contains("King"))
         {
             piece = Piece.King;
+            gameOver = true;
+            setGameOverTextOn();
         }
 
         if (color == PieceColor.White) blackPiecesCaptured.AddPieceCaptured(piece);

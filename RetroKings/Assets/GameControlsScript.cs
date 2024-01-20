@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,6 +10,7 @@ public class GameControlsScript : MonoBehaviour
     [SerializeField] private Sprite KingWhite;
     [SerializeField] private Sprite KingBlack;
     [SerializeField] private Image TurnImage;
+    [SerializeField] private GameObject GameOverText; 
 
     [Header("For the promotion buttons")]
     [SerializeField] private Image QueenButton_Image;
@@ -22,7 +24,13 @@ public class GameControlsScript : MonoBehaviour
     {
         MoveChecker.SetUpdatePromotionalPiecesFunction((white) => UpdateImages(white));
         Game.SetDisplayTurnFunction(DisplayTurn);
+        Game.SetGameOverTrigger(SetGameOver);
         DisplayTurn();
+    }
+
+    public void SetGameOver()
+    {
+        GameOverText.SetActive(true);
     }
 
     public void UpdateImages(bool isWhite)
