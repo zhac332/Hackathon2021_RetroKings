@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEditor;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public static class MoveChecker
@@ -30,6 +31,42 @@ public static class MoveChecker
             cells = GameObject.FindGameObjectsWithTag("Cell").ToList();
             PromotionalPanel = GameObject.Find("MAIN CANVAS/Promotion Panel");
         }
+    }
+
+    public static void MarkDestroyableCells(int pointsNumber, bool myTurn)
+    {
+        for (int i = 0; i < cells.Count; i++)
+            if (PieceChecker.HasAPiece(cells[i]))
+            {
+                if (myTurn)
+                {
+                    if (PieceChecker.IsBlackPiece(cells[i]) && PieceChecker.IsPieceValueLowerThan(cells[i], pointsNumber))
+                        cells[i].GetComponent<Cell_Script>().MarkForDestroyableCells();
+                }
+                else
+                {
+                    if (PieceChecker.IsWhitePiece(cells[i]) && PieceChecker.IsPieceValueLowerThan(cells[i], pointsNumber))
+                        cells[i].GetComponent<Cell_Script>().MarkForDestroyableCells();
+                }
+            }
+    }
+
+    public static void MarkShieldableCells(int pointsNumber, bool myTurn)
+    {
+        for (int i = 0; i < cells.Count; i++)
+            if (PieceChecker.HasAPiece(cells[i]))
+            {
+                if (myTurn)
+                {
+                    if (PieceChecker.IsWhitePiece(cells[i]) && pointsNumber >= 4 && !PieceChecker.IsPieceKing(cells[i]))
+                        cells[i].GetComponent<Cell_Script>().MarkForShieldableCells();
+                }
+                else
+                {
+                    if (PieceChecker.IsBlackPiece(cells[i]) && pointsNumber >= 4 && !PieceChecker.IsPieceKing(cells[i]))
+                        cells[i].GetComponent<Cell_Script>().MarkForShieldableCells();
+                }
+            }
     }
 
     public static void SetUpdatePromotionalPiecesFunction(Action<bool> method)
@@ -77,10 +114,10 @@ public static class MoveChecker
         {
             Tuple<Piece, PieceColor> pieceOnCell = GetPieceOnCell(r * 8 + c);
 
-            if (pieceOnCell == nullPiece) MarkCell(r, c, false);
+            if (pieceOnCell == nullPiece) MarkCell(r, c, 0);
             else
             {
-                if (pieceOnCell.Item2 != currentPieceColor) MarkCell(r, c, true);
+                if (pieceOnCell.Item2 != currentPieceColor) MarkCell(r, c, 1);
                 stop = true;
             }
         }
@@ -91,10 +128,10 @@ public static class MoveChecker
         {
             Tuple<Piece, PieceColor> pieceOnCell = GetPieceOnCell(r * 8 + c);
 
-            if (pieceOnCell == nullPiece) MarkCell(r, c, false);
+            if (pieceOnCell == nullPiece) MarkCell(r, c, 0);
             else
             {
-                if (pieceOnCell.Item2 != currentPieceColor) MarkCell(r, c, true);
+                if (pieceOnCell.Item2 != currentPieceColor) MarkCell(r, c, 1);
                 stop = true;
             }
         }
@@ -105,10 +142,10 @@ public static class MoveChecker
         {
             Tuple<Piece, PieceColor> pieceOnCell = GetPieceOnCell(r * 8 + c);
 
-            if (pieceOnCell == nullPiece) MarkCell(r, c, false);
+            if (pieceOnCell == nullPiece) MarkCell(r, c, 0);
             else
             {
-                if (pieceOnCell.Item2 != currentPieceColor) MarkCell(r, c, true);
+                if (pieceOnCell.Item2 != currentPieceColor) MarkCell(r, c, 1);
                 stop = true;
             }
         }
@@ -119,10 +156,10 @@ public static class MoveChecker
         {
             Tuple<Piece, PieceColor> pieceOnCell = GetPieceOnCell(r * 8 + c);
 
-            if (pieceOnCell == nullPiece) MarkCell(r, c, false);
+            if (pieceOnCell == nullPiece) MarkCell(r, c, 0);
             else
             {
-                if (pieceOnCell.Item2 != currentPieceColor) MarkCell(r, c, true);
+                if (pieceOnCell.Item2 != currentPieceColor) MarkCell(r, c, 1);
                 stop = true;
             }
         }
@@ -133,10 +170,10 @@ public static class MoveChecker
         {
             Tuple<Piece, PieceColor> pieceOnCell = GetPieceOnCell(row * 8 + c);
 
-            if (pieceOnCell == nullPiece) MarkCell(row, c, false);
+            if (pieceOnCell == nullPiece) MarkCell(row, c, 0);
             else
             {
-                if (pieceOnCell.Item2 != currentPieceColor) MarkCell(row, c, true);
+                if (pieceOnCell.Item2 != currentPieceColor) MarkCell(row, c, 1);
                 stop = true;
             }
         }
@@ -147,10 +184,10 @@ public static class MoveChecker
         {
             Tuple<Piece, PieceColor> pieceOnCell = GetPieceOnCell(row * 8 + c);
 
-            if (pieceOnCell == nullPiece) MarkCell(row, c, false);
+            if (pieceOnCell == nullPiece) MarkCell(row, c, 0);
             else
             {
-                if (pieceOnCell.Item2 != currentPieceColor) MarkCell(row, c, true);
+                if (pieceOnCell.Item2 != currentPieceColor) MarkCell(row, c, 1);
                 stop = true;
             }
         }
@@ -161,10 +198,10 @@ public static class MoveChecker
         {
             Tuple<Piece, PieceColor> pieceOnCell = GetPieceOnCell(r * 8 + colIndex);
 
-            if (pieceOnCell == nullPiece) MarkCell(r, colIndex, false);
+            if (pieceOnCell == nullPiece) MarkCell(r, colIndex, 0);
             else
             {
-                if (pieceOnCell.Item2 != currentPieceColor) MarkCell(r, colIndex, true);
+                if (pieceOnCell.Item2 != currentPieceColor) MarkCell(r, colIndex, 1);
                 stop = true;
             }
         }
@@ -175,10 +212,10 @@ public static class MoveChecker
         {
             Tuple<Piece, PieceColor> pieceOnCell = GetPieceOnCell(r * 8 + colIndex);
 
-            if (pieceOnCell == nullPiece) MarkCell(r, colIndex, false);
+            if (pieceOnCell == nullPiece) MarkCell(r, colIndex, 0);
             else
             {
-                if (pieceOnCell.Item2 != currentPieceColor) MarkCell(r, colIndex, true);
+                if (pieceOnCell.Item2 != currentPieceColor) MarkCell(r, colIndex, 1);
                 stop = true;
             }
         }
@@ -218,8 +255,8 @@ public static class MoveChecker
             {
                 Tuple<Piece, PieceColor> pieceOnCell = GetPieceOnCell(cellIndex);
 
-                if (pieceOnCell == nullPiece) MarkCell(r, c, false);
-                else if (pieceOnCell.Item2 != currentPieceColor) MarkCell(r, c, true);
+                if (pieceOnCell == nullPiece) MarkCell(r, c, 0);
+                else if (pieceOnCell.Item2 != currentPieceColor) MarkCell(r, c, 1);
             }
         }
 
@@ -264,7 +301,7 @@ public static class MoveChecker
                 int cellIndex = FindCellOfName("G1");
                 int r = cellIndex / 8;
                 int c = cellIndex % 8;
-                MarkCell(r, c, false);
+                MarkCell(r, c, 0);
             }
             else Debug.Log("Invalid for short castles");
         }
@@ -287,7 +324,7 @@ public static class MoveChecker
                 int cellIndex = FindCellOfName("C1");
                 int r = cellIndex / 8;
                 int c = cellIndex % 8;
-                MarkCell(r, c, false);
+                MarkCell(r, c, 0);
             }
         }
     }
@@ -317,7 +354,7 @@ public static class MoveChecker
                 int cellIndex = FindCellOfName("G8");
                 int r = cellIndex / 8;
                 int c = cellIndex % 8;
-                MarkCell(r, c, false);
+                MarkCell(r, c, 0);
             }
             else Debug.Log("Invalid for short castles");
         }
@@ -338,7 +375,7 @@ public static class MoveChecker
                 int cellIndex = FindCellOfName("C8");
                 int r = cellIndex / 8;
                 int c = cellIndex % 8;
-                MarkCell(r, c, false);
+                MarkCell(r, c, 0);
             }
         }
     }
@@ -434,10 +471,10 @@ public static class MoveChecker
         {
             Tuple<Piece, PieceColor> pieceOnCell = GetPieceOnCell(row * 8 + c);
 
-            if (pieceOnCell == nullPiece) MarkCell(row, c, false);
+            if (pieceOnCell == nullPiece) MarkCell(row, c, 0);
             else
             {
-                if (pieceOnCell.Item2 != currentPieceColor) MarkCell(row, c, true);
+                if (pieceOnCell.Item2 != currentPieceColor) MarkCell(row, c, 1);
                 stop = true;
             }
         }
@@ -448,10 +485,10 @@ public static class MoveChecker
         {
             Tuple<Piece, PieceColor> pieceOnCell = GetPieceOnCell(row * 8 + c);
 
-            if (pieceOnCell == nullPiece) MarkCell(row, c, false);
+            if (pieceOnCell == nullPiece) MarkCell(row, c, 0);
             else
             {
-                if (pieceOnCell.Item2 != currentPieceColor) MarkCell(row, c, true);
+                if (pieceOnCell.Item2 != currentPieceColor) MarkCell(row, c, 1);
                 stop = true;
             }
         }
@@ -462,10 +499,10 @@ public static class MoveChecker
         {
             Tuple<Piece, PieceColor> pieceOnCell = GetPieceOnCell(r * 8 + colIndex);
 
-            if (pieceOnCell == nullPiece) MarkCell(r, colIndex, false);
+            if (pieceOnCell == nullPiece) MarkCell(r, colIndex, 0);
             else
             {
-                if (pieceOnCell.Item2 != currentPieceColor) MarkCell(r, colIndex, true);
+                if (pieceOnCell.Item2 != currentPieceColor) MarkCell(r, colIndex, 1);
                 stop = true;
             }
         }
@@ -476,10 +513,10 @@ public static class MoveChecker
         {
             Tuple<Piece, PieceColor> pieceOnCell = GetPieceOnCell(r * 8 + colIndex);
 
-            if (pieceOnCell == nullPiece) MarkCell(r, colIndex, false);
+            if (pieceOnCell == nullPiece) MarkCell(r, colIndex, 0);
             else
             {
-                if (pieceOnCell.Item2 != currentPieceColor) MarkCell(r, colIndex, true);
+                if (pieceOnCell.Item2 != currentPieceColor) MarkCell(r, colIndex, 1);
                 stop = true;
             }
         }
@@ -513,8 +550,8 @@ public static class MoveChecker
             {
                 Tuple<Piece, PieceColor> pieceOnCell = GetPieceOnCell(cellIndex);
 
-                if (pieceOnCell == nullPiece) MarkCell(r, c, false);
-                else if (pieceOnCell.Item2 != currentPieceColor) MarkCell(r, c, true);
+                if (pieceOnCell == nullPiece) MarkCell(r, c, 0);
+                else if (pieceOnCell.Item2 != currentPieceColor) MarkCell(r, c, 1);
             }
         }
     }
@@ -549,10 +586,10 @@ public static class MoveChecker
         {
             Tuple<Piece, PieceColor> pieceOnCell = GetPieceOnCell(r * 8 + c);
 
-            if (pieceOnCell == nullPiece) MarkCell(r, c, false);
+            if (pieceOnCell == nullPiece) MarkCell(r, c, 0);
             else
             {
-                if (pieceOnCell.Item2 != currentPieceColor) MarkCell(r, c, true);
+                if (pieceOnCell.Item2 != currentPieceColor) MarkCell(r, c, 1);
                 stop = true;
             }
         }
@@ -572,20 +609,20 @@ public static class MoveChecker
 
         // the cell in front
         Tuple<Piece, PieceColor> pieceOnCell = GetPieceOnCell(row * 8 + colIndex + columnDelta);
-        if (pieceOnCell == nullPiece) MarkCell(row, colIndex + columnDelta, false);
+        if (pieceOnCell == nullPiece) MarkCell(row, colIndex + columnDelta, 0);
 
         // the first move that the pawn makes, can skip one cell.
         if (currentPieceColor == PieceColor.White && currentCell.name.Contains("2"))
         {
             pieceOnCell = GetPieceOnCell(row * 8 + colIndex + 2);
 
-            if (pieceOnCell == nullPiece) MarkCell(row, colIndex + 2, false);
+            if (pieceOnCell == nullPiece) MarkCell(row, colIndex + 2, 0);
         }
         else if (currentPieceColor == PieceColor.Black && currentCell.name.Contains("7"))
         {
             pieceOnCell = GetPieceOnCell(row * 8 + colIndex - 2);
 
-            if (pieceOnCell == nullPiece) MarkCell(row, colIndex - 2, false);
+            if (pieceOnCell == nullPiece) MarkCell(row, colIndex - 2, 0);
         }
 
         // the cells on the diagonals
@@ -593,7 +630,7 @@ public static class MoveChecker
         if (row + rowAdds[i] >= 0 && row + rowAdds[i] < 8)
         {
             pieceOnCell = GetPieceOnCell((row + rowAdds[i]) * 8 + colIndex + columnDelta);
-            if (pieceOnCell.Item2 != PieceColor.NULL && pieceOnCell.Item2 != currentPieceColor) MarkCell(row + rowAdds[i], colIndex + columnDelta, true);
+            if (pieceOnCell.Item2 != PieceColor.NULL && pieceOnCell.Item2 != currentPieceColor) MarkCell(row + rowAdds[i], colIndex + columnDelta, 1);
         }
     }
 
@@ -639,13 +676,16 @@ public static class MoveChecker
             cells[i].GetComponent<Cell_Script>().DeselectCell();
     }
 
-    private static void MarkCell(int row, int col, bool isCapturing)
+    // 0 - can move, 1 - isCapturing, 2 - isDestroyable, 3 - isShieldable
+    private static void MarkCell(int row, int col, int colorCode)
     {
         int index = row * 8 + col;
         if (index >= 0 && index < cells.Count)
         {
-            if (!isCapturing) cells[index].GetComponent<Cell_Script>().MarkForLegalCells();
-            else cells[index].GetComponent<Cell_Script>().MarkForCaptureCells();
+            if (colorCode == 0) cells[index].GetComponent<Cell_Script>().MarkForLegalCells();
+            else if (colorCode == 1) cells[index].GetComponent<Cell_Script>().MarkForCaptureCells();
+            else if (colorCode == 2) cells[index].GetComponent<Cell_Script>().MarkForDestroyableCells();
+            else if (colorCode == 3) cells[index].GetComponent<Cell_Script>().MarkForShieldableCells();
             markedCells.Add(cells[index].name);
         }
     }

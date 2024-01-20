@@ -33,6 +33,16 @@ public class GameControlsScript : MonoBehaviour
         GameOverText.SetActive(true);
     }
 
+    public void DestroyButton_OnClick()
+    {
+        MoveChecker.MarkDestroyableCells(Game.GetPoints(), Game.IsMyTurn());
+    }
+
+    public void ImmunityButton_OnClick()
+    {
+        MoveChecker.MarkShieldableCells(Game.GetPoints(), Game.IsMyTurn());
+    }
+
     public void UpdateImages(bool isWhite)
     {
         QueenButton_Image.sprite = (isWhite) ? WhitePieces[0] : BlackPieces[0];

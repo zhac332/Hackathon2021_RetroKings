@@ -8,8 +8,8 @@ public static class Game
     private static Action displayTurn_Function;
     private static CapturedPiecesScript whitePiecesCaptured;
     private static CapturedPiecesScript blackPiecesCaptured;
-    private static int White_Points = 0;
-    private static int Black_Points = 0;
+    private static int White_Points = 10;
+    private static int Black_Points = 10;
     private static readonly int Pawn_Value = 1;
     private static readonly int Bishop_Value = 3;
     private static readonly int Knight_Value = 3;
@@ -106,5 +106,11 @@ public static class Game
     public static bool IsMyTurn()
     {
         return myTurn;
+    }
+    
+    public static int GetPoints()
+    {
+        if (myTurn) return White_Points;
+        return Black_Points;
     }
 }

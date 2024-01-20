@@ -229,6 +229,8 @@ MonoBehaviour:
   Rook_Black: {fileID: 21300000, guid: a27e0cb0e21d5034780b5052e7cd0f85, type: 3}
   Bishop_Black: {fileID: 21300000, guid: 0ab00615540d2a74baf4effcb0dcbe21, type: 3}
   Knight_Black: {fileID: 21300000, guid: 14ce5ad708a5fc14e90f16e0b6e4ef20, type: 3}
+  DestroyableCell_Color: {r: 0.7264151, g: 0, b: 0, a: 1}
+  ShieldableCell_Color: {r: 0, g: 0.77655625, b: 1, a: 1}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -785,6 +787,8 @@ MonoBehaviour:
   Rook_Black: {fileID: 21300000, guid: a27e0cb0e21d5034780b5052e7cd0f85, type: 3}
   Bishop_Black: {fileID: 21300000, guid: 0ab00615540d2a74baf4effcb0dcbe21, type: 3}
   Knight_Black: {fileID: 21300000, guid: 14ce5ad708a5fc14e90f16e0b6e4ef20, type: 3}
+  DestroyableCell_Color: {r: 0.7264151, g: 0, b: 0, a: 1}
+  ShieldableCell_Color: {r: 0, g: 0.77655625, b: 1, a: 1}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -1132,6 +1136,8 @@ MonoBehaviour:
   Rook_Black: {fileID: 21300000, guid: a27e0cb0e21d5034780b5052e7cd0f85, type: 3}
   Bishop_Black: {fileID: 21300000, guid: 0ab00615540d2a74baf4effcb0dcbe21, type: 3}
   Knight_Black: {fileID: 21300000, guid: 14ce5ad708a5fc14e90f16e0b6e4ef20, type: 3}
+  DestroyableCell_Color: {r: 0.7264151, g: 0, b: 0, a: 1}
+  ShieldableCell_Color: {r: 0, g: 0.77655625, b: 1, a: 1}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -1504,6 +1510,8 @@ MonoBehaviour:
   Rook_Black: {fileID: 21300000, guid: a27e0cb0e21d5034780b5052e7cd0f85, type: 3}
   Bishop_Black: {fileID: 21300000, guid: 0ab00615540d2a74baf4effcb0dcbe21, type: 3}
   Knight_Black: {fileID: 21300000, guid: 14ce5ad708a5fc14e90f16e0b6e4ef20, type: 3}
+  DestroyableCell_Color: {r: 0.7264151, g: 0, b: 0, a: 1}
+  ShieldableCell_Color: {r: 0, g: 0.77655625, b: 1, a: 1}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -1694,6 +1702,155 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 216321868}
   m_CullTransparentMesh: 1
+--- !u!1 &222687205
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 222687206}
+  - component: {fileID: 222687209}
+  - component: {fileID: 222687208}
+  - component: {fileID: 222687207}
+  - component: {fileID: 222687210}
+  m_Layer: 5
+  m_Name: Destroy_Button
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &222687206
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 222687205}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1963331375}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &222687207
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 222687205}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 222687208}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1257681271}
+        m_TargetAssemblyTypeName: GameControlsScript, Assembly-CSharp
+        m_MethodName: DestroyButton_OnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &222687208
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 222687205}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 158a07607b311614295db9c4e75ba72a, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &222687209
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 222687205}
+  m_CullTransparentMesh: 1
+--- !u!114 &222687210
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 222687205}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfabb0440166ab443bba8876756fdfa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 1}
+  m_EffectDistance: {x: 0, y: -5}
+  m_UseGraphicAlpha: 1
 --- !u!1 &235849394
 GameObject:
   m_ObjectHideFlags: 0
@@ -1801,6 +1958,8 @@ MonoBehaviour:
   Rook_Black: {fileID: 21300000, guid: a27e0cb0e21d5034780b5052e7cd0f85, type: 3}
   Bishop_Black: {fileID: 21300000, guid: 0ab00615540d2a74baf4effcb0dcbe21, type: 3}
   Knight_Black: {fileID: 21300000, guid: 14ce5ad708a5fc14e90f16e0b6e4ef20, type: 3}
+  DestroyableCell_Color: {r: 0.7264151, g: 0, b: 0, a: 1}
+  ShieldableCell_Color: {r: 0, g: 0.77655625, b: 1, a: 1}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -1866,8 +2025,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -112, y: 418}
-  m_SizeDelta: {x: 133.81, y: 50}
+  m_AnchoredPosition: {x: -100, y: 420}
+  m_SizeDelta: {x: 130, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &237571429
 MonoBehaviour:
@@ -2574,6 +2733,8 @@ MonoBehaviour:
   Rook_Black: {fileID: 21300000, guid: a27e0cb0e21d5034780b5052e7cd0f85, type: 3}
   Bishop_Black: {fileID: 21300000, guid: 0ab00615540d2a74baf4effcb0dcbe21, type: 3}
   Knight_Black: {fileID: 21300000, guid: 14ce5ad708a5fc14e90f16e0b6e4ef20, type: 3}
+  DestroyableCell_Color: {r: 0.7264151, g: 0, b: 0, a: 1}
+  ShieldableCell_Color: {r: 0, g: 0.77655625, b: 1, a: 1}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -2778,6 +2939,8 @@ MonoBehaviour:
   Rook_Black: {fileID: 21300000, guid: a27e0cb0e21d5034780b5052e7cd0f85, type: 3}
   Bishop_Black: {fileID: 21300000, guid: 0ab00615540d2a74baf4effcb0dcbe21, type: 3}
   Knight_Black: {fileID: 21300000, guid: 14ce5ad708a5fc14e90f16e0b6e4ef20, type: 3}
+  DestroyableCell_Color: {r: 0.7264151, g: 0, b: 0, a: 1}
+  ShieldableCell_Color: {r: 0, g: 0.77655625, b: 1, a: 1}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -2990,6 +3153,8 @@ MonoBehaviour:
   Rook_Black: {fileID: 21300000, guid: a27e0cb0e21d5034780b5052e7cd0f85, type: 3}
   Bishop_Black: {fileID: 21300000, guid: 0ab00615540d2a74baf4effcb0dcbe21, type: 3}
   Knight_Black: {fileID: 21300000, guid: 14ce5ad708a5fc14e90f16e0b6e4ef20, type: 3}
+  DestroyableCell_Color: {r: 0.7264151, g: 0, b: 0, a: 1}
+  ShieldableCell_Color: {r: 0, g: 0.77655625, b: 1, a: 1}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -3379,6 +3544,8 @@ MonoBehaviour:
   Rook_Black: {fileID: 21300000, guid: a27e0cb0e21d5034780b5052e7cd0f85, type: 3}
   Bishop_Black: {fileID: 21300000, guid: 0ab00615540d2a74baf4effcb0dcbe21, type: 3}
   Knight_Black: {fileID: 21300000, guid: 14ce5ad708a5fc14e90f16e0b6e4ef20, type: 3}
+  DestroyableCell_Color: {r: 0.7264151, g: 0, b: 0, a: 1}
+  ShieldableCell_Color: {r: 0, g: 0.77655625, b: 1, a: 1}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -4098,6 +4265,8 @@ MonoBehaviour:
   Rook_Black: {fileID: 21300000, guid: a27e0cb0e21d5034780b5052e7cd0f85, type: 3}
   Bishop_Black: {fileID: 21300000, guid: 0ab00615540d2a74baf4effcb0dcbe21, type: 3}
   Knight_Black: {fileID: 21300000, guid: 14ce5ad708a5fc14e90f16e0b6e4ef20, type: 3}
+  DestroyableCell_Color: {r: 0.7264151, g: 0, b: 0, a: 1}
+  ShieldableCell_Color: {r: 0, g: 0.77655625, b: 1, a: 1}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -4402,6 +4571,8 @@ MonoBehaviour:
   Rook_Black: {fileID: 21300000, guid: a27e0cb0e21d5034780b5052e7cd0f85, type: 3}
   Bishop_Black: {fileID: 21300000, guid: 0ab00615540d2a74baf4effcb0dcbe21, type: 3}
   Knight_Black: {fileID: 21300000, guid: 14ce5ad708a5fc14e90f16e0b6e4ef20, type: 3}
+  DestroyableCell_Color: {r: 0.7264151, g: 0, b: 0, a: 1}
+  ShieldableCell_Color: {r: 0, g: 0.77655625, b: 1, a: 1}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -4833,6 +5004,8 @@ MonoBehaviour:
   Rook_Black: {fileID: 21300000, guid: a27e0cb0e21d5034780b5052e7cd0f85, type: 3}
   Bishop_Black: {fileID: 21300000, guid: 0ab00615540d2a74baf4effcb0dcbe21, type: 3}
   Knight_Black: {fileID: 21300000, guid: 14ce5ad708a5fc14e90f16e0b6e4ef20, type: 3}
+  DestroyableCell_Color: {r: 0.7264151, g: 0, b: 0, a: 1}
+  ShieldableCell_Color: {r: 0, g: 0.77655625, b: 1, a: 1}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -4969,6 +5142,8 @@ MonoBehaviour:
   Rook_Black: {fileID: 21300000, guid: a27e0cb0e21d5034780b5052e7cd0f85, type: 3}
   Bishop_Black: {fileID: 21300000, guid: 0ab00615540d2a74baf4effcb0dcbe21, type: 3}
   Knight_Black: {fileID: 21300000, guid: 14ce5ad708a5fc14e90f16e0b6e4ef20, type: 3}
+  DestroyableCell_Color: {r: 0.7264151, g: 0, b: 0, a: 1}
+  ShieldableCell_Color: {r: 0, g: 0.77655625, b: 1, a: 1}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -5389,6 +5564,8 @@ MonoBehaviour:
   Rook_Black: {fileID: 21300000, guid: a27e0cb0e21d5034780b5052e7cd0f85, type: 3}
   Bishop_Black: {fileID: 21300000, guid: 0ab00615540d2a74baf4effcb0dcbe21, type: 3}
   Knight_Black: {fileID: 21300000, guid: 14ce5ad708a5fc14e90f16e0b6e4ef20, type: 3}
+  DestroyableCell_Color: {r: 0.7264151, g: 0, b: 0, a: 1}
+  ShieldableCell_Color: {r: 0, g: 0.77655625, b: 1, a: 1}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -5526,6 +5703,8 @@ MonoBehaviour:
   Rook_Black: {fileID: 21300000, guid: a27e0cb0e21d5034780b5052e7cd0f85, type: 3}
   Bishop_Black: {fileID: 21300000, guid: 0ab00615540d2a74baf4effcb0dcbe21, type: 3}
   Knight_Black: {fileID: 21300000, guid: 14ce5ad708a5fc14e90f16e0b6e4ef20, type: 3}
+  DestroyableCell_Color: {r: 0.7264151, g: 0, b: 0, a: 1}
+  ShieldableCell_Color: {r: 0, g: 0.77655625, b: 1, a: 1}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -5663,6 +5842,8 @@ MonoBehaviour:
   Rook_Black: {fileID: 21300000, guid: a27e0cb0e21d5034780b5052e7cd0f85, type: 3}
   Bishop_Black: {fileID: 21300000, guid: 0ab00615540d2a74baf4effcb0dcbe21, type: 3}
   Knight_Black: {fileID: 21300000, guid: 14ce5ad708a5fc14e90f16e0b6e4ef20, type: 3}
+  DestroyableCell_Color: {r: 0.7264151, g: 0, b: 0, a: 1}
+  ShieldableCell_Color: {r: 0, g: 0.77655625, b: 1, a: 1}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -5903,6 +6084,8 @@ MonoBehaviour:
   Rook_Black: {fileID: 21300000, guid: a27e0cb0e21d5034780b5052e7cd0f85, type: 3}
   Bishop_Black: {fileID: 21300000, guid: 0ab00615540d2a74baf4effcb0dcbe21, type: 3}
   Knight_Black: {fileID: 21300000, guid: 14ce5ad708a5fc14e90f16e0b6e4ef20, type: 3}
+  DestroyableCell_Color: {r: 0.7264151, g: 0, b: 0, a: 1}
+  ShieldableCell_Color: {r: 0, g: 0.77655625, b: 1, a: 1}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -5968,8 +6151,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -49.452, y: 315.78}
-  m_SizeDelta: {x: 258.91, y: 57.57}
+  m_AnchoredPosition: {x: -50, y: 300}
+  m_SizeDelta: {x: 250, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &790410525
 MonoBehaviour:
@@ -6204,6 +6387,8 @@ MonoBehaviour:
   Rook_Black: {fileID: 21300000, guid: a27e0cb0e21d5034780b5052e7cd0f85, type: 3}
   Bishop_Black: {fileID: 21300000, guid: 0ab00615540d2a74baf4effcb0dcbe21, type: 3}
   Knight_Black: {fileID: 21300000, guid: 14ce5ad708a5fc14e90f16e0b6e4ef20, type: 3}
+  DestroyableCell_Color: {r: 0.7264151, g: 0, b: 0, a: 1}
+  ShieldableCell_Color: {r: 0, g: 0.77655625, b: 1, a: 1}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -6341,6 +6526,8 @@ MonoBehaviour:
   Rook_Black: {fileID: 21300000, guid: a27e0cb0e21d5034780b5052e7cd0f85, type: 3}
   Bishop_Black: {fileID: 21300000, guid: 0ab00615540d2a74baf4effcb0dcbe21, type: 3}
   Knight_Black: {fileID: 21300000, guid: 14ce5ad708a5fc14e90f16e0b6e4ef20, type: 3}
+  DestroyableCell_Color: {r: 0.7264151, g: 0, b: 0, a: 1}
+  ShieldableCell_Color: {r: 0, g: 0.77655625, b: 1, a: 1}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -6562,6 +6749,8 @@ MonoBehaviour:
   Rook_Black: {fileID: 21300000, guid: a27e0cb0e21d5034780b5052e7cd0f85, type: 3}
   Bishop_Black: {fileID: 21300000, guid: 0ab00615540d2a74baf4effcb0dcbe21, type: 3}
   Knight_Black: {fileID: 21300000, guid: 14ce5ad708a5fc14e90f16e0b6e4ef20, type: 3}
+  DestroyableCell_Color: {r: 0.7264151, g: 0, b: 0, a: 1}
+  ShieldableCell_Color: {r: 0, g: 0.77655625, b: 1, a: 1}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -6805,6 +6994,8 @@ MonoBehaviour:
   Rook_Black: {fileID: 21300000, guid: a27e0cb0e21d5034780b5052e7cd0f85, type: 3}
   Bishop_Black: {fileID: 21300000, guid: 0ab00615540d2a74baf4effcb0dcbe21, type: 3}
   Knight_Black: {fileID: 21300000, guid: 14ce5ad708a5fc14e90f16e0b6e4ef20, type: 3}
+  DestroyableCell_Color: {r: 0.7264151, g: 0, b: 0, a: 1}
+  ShieldableCell_Color: {r: 0, g: 0.77655625, b: 1, a: 1}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -7459,6 +7650,8 @@ MonoBehaviour:
   Rook_Black: {fileID: 21300000, guid: a27e0cb0e21d5034780b5052e7cd0f85, type: 3}
   Bishop_Black: {fileID: 21300000, guid: 0ab00615540d2a74baf4effcb0dcbe21, type: 3}
   Knight_Black: {fileID: 21300000, guid: 14ce5ad708a5fc14e90f16e0b6e4ef20, type: 3}
+  DestroyableCell_Color: {r: 0.7264151, g: 0, b: 0, a: 1}
+  ShieldableCell_Color: {r: 0, g: 0.77655625, b: 1, a: 1}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -7596,6 +7789,8 @@ MonoBehaviour:
   Rook_Black: {fileID: 21300000, guid: a27e0cb0e21d5034780b5052e7cd0f85, type: 3}
   Bishop_Black: {fileID: 21300000, guid: 0ab00615540d2a74baf4effcb0dcbe21, type: 3}
   Knight_Black: {fileID: 21300000, guid: 14ce5ad708a5fc14e90f16e0b6e4ef20, type: 3}
+  DestroyableCell_Color: {r: 0.7264151, g: 0, b: 0, a: 1}
+  ShieldableCell_Color: {r: 0, g: 0.77655625, b: 1, a: 1}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -7732,6 +7927,8 @@ MonoBehaviour:
   Rook_Black: {fileID: 21300000, guid: a27e0cb0e21d5034780b5052e7cd0f85, type: 3}
   Bishop_Black: {fileID: 21300000, guid: 0ab00615540d2a74baf4effcb0dcbe21, type: 3}
   Knight_Black: {fileID: 21300000, guid: 14ce5ad708a5fc14e90f16e0b6e4ef20, type: 3}
+  DestroyableCell_Color: {r: 0.7264151, g: 0, b: 0, a: 1}
+  ShieldableCell_Color: {r: 0, g: 0.77655625, b: 1, a: 1}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -7869,6 +8066,8 @@ MonoBehaviour:
   Rook_Black: {fileID: 21300000, guid: a27e0cb0e21d5034780b5052e7cd0f85, type: 3}
   Bishop_Black: {fileID: 21300000, guid: 0ab00615540d2a74baf4effcb0dcbe21, type: 3}
   Knight_Black: {fileID: 21300000, guid: 14ce5ad708a5fc14e90f16e0b6e4ef20, type: 3}
+  DestroyableCell_Color: {r: 0.7264151, g: 0, b: 0, a: 1}
+  ShieldableCell_Color: {r: 0, g: 0.77655625, b: 1, a: 1}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -8006,6 +8205,8 @@ MonoBehaviour:
   Rook_Black: {fileID: 21300000, guid: a27e0cb0e21d5034780b5052e7cd0f85, type: 3}
   Bishop_Black: {fileID: 21300000, guid: 0ab00615540d2a74baf4effcb0dcbe21, type: 3}
   Knight_Black: {fileID: 21300000, guid: 14ce5ad708a5fc14e90f16e0b6e4ef20, type: 3}
+  DestroyableCell_Color: {r: 0.7264151, g: 0, b: 0, a: 1}
+  ShieldableCell_Color: {r: 0, g: 0.77655625, b: 1, a: 1}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -8142,6 +8343,8 @@ MonoBehaviour:
   Rook_Black: {fileID: 21300000, guid: a27e0cb0e21d5034780b5052e7cd0f85, type: 3}
   Bishop_Black: {fileID: 21300000, guid: 0ab00615540d2a74baf4effcb0dcbe21, type: 3}
   Knight_Black: {fileID: 21300000, guid: 14ce5ad708a5fc14e90f16e0b6e4ef20, type: 3}
+  DestroyableCell_Color: {r: 0.7264151, g: 0, b: 0, a: 1}
+  ShieldableCell_Color: {r: 0, g: 0.77655625, b: 1, a: 1}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -8355,6 +8558,8 @@ MonoBehaviour:
   Rook_Black: {fileID: 21300000, guid: a27e0cb0e21d5034780b5052e7cd0f85, type: 3}
   Bishop_Black: {fileID: 21300000, guid: 0ab00615540d2a74baf4effcb0dcbe21, type: 3}
   Knight_Black: {fileID: 21300000, guid: 14ce5ad708a5fc14e90f16e0b6e4ef20, type: 3}
+  DestroyableCell_Color: {r: 0.7264151, g: 0, b: 0, a: 1}
+  ShieldableCell_Color: {r: 0, g: 0.77655625, b: 1, a: 1}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -8492,6 +8697,8 @@ MonoBehaviour:
   Rook_Black: {fileID: 21300000, guid: a27e0cb0e21d5034780b5052e7cd0f85, type: 3}
   Bishop_Black: {fileID: 21300000, guid: 0ab00615540d2a74baf4effcb0dcbe21, type: 3}
   Knight_Black: {fileID: 21300000, guid: 14ce5ad708a5fc14e90f16e0b6e4ef20, type: 3}
+  DestroyableCell_Color: {r: 0.7264151, g: 0, b: 0, a: 1}
+  ShieldableCell_Color: {r: 0, g: 0.77655625, b: 1, a: 1}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -8628,6 +8835,8 @@ MonoBehaviour:
   Rook_Black: {fileID: 21300000, guid: a27e0cb0e21d5034780b5052e7cd0f85, type: 3}
   Bishop_Black: {fileID: 21300000, guid: 0ab00615540d2a74baf4effcb0dcbe21, type: 3}
   Knight_Black: {fileID: 21300000, guid: 14ce5ad708a5fc14e90f16e0b6e4ef20, type: 3}
+  DestroyableCell_Color: {r: 0.7264151, g: 0, b: 0, a: 1}
+  ShieldableCell_Color: {r: 0, g: 0.77655625, b: 1, a: 1}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -9287,6 +9496,8 @@ MonoBehaviour:
   Rook_Black: {fileID: 21300000, guid: a27e0cb0e21d5034780b5052e7cd0f85, type: 3}
   Bishop_Black: {fileID: 21300000, guid: 0ab00615540d2a74baf4effcb0dcbe21, type: 3}
   Knight_Black: {fileID: 21300000, guid: 14ce5ad708a5fc14e90f16e0b6e4ef20, type: 3}
+  DestroyableCell_Color: {r: 0.7264151, g: 0, b: 0, a: 1}
+  ShieldableCell_Color: {r: 0, g: 0.77655625, b: 1, a: 1}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -9392,6 +9603,86 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1275204618}
+  m_CullTransparentMesh: 1
+--- !u!1 &1299790642
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1299790643}
+  - component: {fileID: 1299790645}
+  - component: {fileID: 1299790644}
+  m_Layer: 5
+  m_Name: DestroyAPieceText
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1299790643
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1299790642}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1963331375}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 100}
+  m_SizeDelta: {x: 350, y: 50}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1299790644
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1299790642}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 40
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 4
+    m_MaxSize: 40
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: Destroy a piece
+--- !u!222 &1299790645
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1299790642}
   m_CullTransparentMesh: 1
 --- !u!1 &1303770341
 GameObject:
@@ -9499,6 +9790,8 @@ MonoBehaviour:
   Rook_Black: {fileID: 21300000, guid: a27e0cb0e21d5034780b5052e7cd0f85, type: 3}
   Bishop_Black: {fileID: 21300000, guid: 0ab00615540d2a74baf4effcb0dcbe21, type: 3}
   Knight_Black: {fileID: 21300000, guid: 14ce5ad708a5fc14e90f16e0b6e4ef20, type: 3}
+  DestroyableCell_Color: {r: 0.7264151, g: 0, b: 0, a: 1}
+  ShieldableCell_Color: {r: 0, g: 0.77655625, b: 1, a: 1}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -9719,6 +10012,8 @@ MonoBehaviour:
   Rook_Black: {fileID: 21300000, guid: a27e0cb0e21d5034780b5052e7cd0f85, type: 3}
   Bishop_Black: {fileID: 21300000, guid: 0ab00615540d2a74baf4effcb0dcbe21, type: 3}
   Knight_Black: {fileID: 21300000, guid: 14ce5ad708a5fc14e90f16e0b6e4ef20, type: 3}
+  DestroyableCell_Color: {r: 0.7264151, g: 0, b: 0, a: 1}
+  ShieldableCell_Color: {r: 0, g: 0.77655625, b: 1, a: 1}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -10016,6 +10311,8 @@ MonoBehaviour:
   Rook_Black: {fileID: 21300000, guid: a27e0cb0e21d5034780b5052e7cd0f85, type: 3}
   Bishop_Black: {fileID: 21300000, guid: 0ab00615540d2a74baf4effcb0dcbe21, type: 3}
   Knight_Black: {fileID: 21300000, guid: 14ce5ad708a5fc14e90f16e0b6e4ef20, type: 3}
+  DestroyableCell_Color: {r: 0.7264151, g: 0, b: 0, a: 1}
+  ShieldableCell_Color: {r: 0, g: 0.77655625, b: 1, a: 1}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -10152,6 +10449,8 @@ MonoBehaviour:
   Rook_Black: {fileID: 21300000, guid: a27e0cb0e21d5034780b5052e7cd0f85, type: 3}
   Bishop_Black: {fileID: 21300000, guid: 0ab00615540d2a74baf4effcb0dcbe21, type: 3}
   Knight_Black: {fileID: 21300000, guid: 14ce5ad708a5fc14e90f16e0b6e4ef20, type: 3}
+  DestroyableCell_Color: {r: 0.7264151, g: 0, b: 0, a: 1}
+  ShieldableCell_Color: {r: 0, g: 0.77655625, b: 1, a: 1}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -10288,6 +10587,8 @@ MonoBehaviour:
   Rook_Black: {fileID: 21300000, guid: a27e0cb0e21d5034780b5052e7cd0f85, type: 3}
   Bishop_Black: {fileID: 21300000, guid: 0ab00615540d2a74baf4effcb0dcbe21, type: 3}
   Knight_Black: {fileID: 21300000, guid: 14ce5ad708a5fc14e90f16e0b6e4ef20, type: 3}
+  DestroyableCell_Color: {r: 0.7264151, g: 0, b: 0, a: 1}
+  ShieldableCell_Color: {r: 0, g: 0.77655625, b: 1, a: 1}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -10500,6 +10801,8 @@ MonoBehaviour:
   Rook_Black: {fileID: 21300000, guid: a27e0cb0e21d5034780b5052e7cd0f85, type: 3}
   Bishop_Black: {fileID: 21300000, guid: 0ab00615540d2a74baf4effcb0dcbe21, type: 3}
   Knight_Black: {fileID: 21300000, guid: 14ce5ad708a5fc14e90f16e0b6e4ef20, type: 3}
+  DestroyableCell_Color: {r: 0.7264151, g: 0, b: 0, a: 1}
+  ShieldableCell_Color: {r: 0, g: 0.77655625, b: 1, a: 1}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -10721,6 +11024,8 @@ MonoBehaviour:
   Rook_Black: {fileID: 21300000, guid: a27e0cb0e21d5034780b5052e7cd0f85, type: 3}
   Bishop_Black: {fileID: 21300000, guid: 0ab00615540d2a74baf4effcb0dcbe21, type: 3}
   Knight_Black: {fileID: 21300000, guid: 14ce5ad708a5fc14e90f16e0b6e4ef20, type: 3}
+  DestroyableCell_Color: {r: 0.7264151, g: 0, b: 0, a: 1}
+  ShieldableCell_Color: {r: 0, g: 0.77655625, b: 1, a: 1}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -10857,6 +11162,8 @@ MonoBehaviour:
   Rook_Black: {fileID: 21300000, guid: a27e0cb0e21d5034780b5052e7cd0f85, type: 3}
   Bishop_Black: {fileID: 21300000, guid: 0ab00615540d2a74baf4effcb0dcbe21, type: 3}
   Knight_Black: {fileID: 21300000, guid: 14ce5ad708a5fc14e90f16e0b6e4ef20, type: 3}
+  DestroyableCell_Color: {r: 0.7264151, g: 0, b: 0, a: 1}
+  ShieldableCell_Color: {r: 0, g: 0.77655625, b: 1, a: 1}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -10993,6 +11300,8 @@ MonoBehaviour:
   Rook_Black: {fileID: 21300000, guid: a27e0cb0e21d5034780b5052e7cd0f85, type: 3}
   Bishop_Black: {fileID: 21300000, guid: 0ab00615540d2a74baf4effcb0dcbe21, type: 3}
   Knight_Black: {fileID: 21300000, guid: 14ce5ad708a5fc14e90f16e0b6e4ef20, type: 3}
+  DestroyableCell_Color: {r: 0.7264151, g: 0, b: 0, a: 1}
+  ShieldableCell_Color: {r: 0, g: 0.77655625, b: 1, a: 1}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -11129,6 +11438,8 @@ MonoBehaviour:
   Rook_Black: {fileID: 21300000, guid: a27e0cb0e21d5034780b5052e7cd0f85, type: 3}
   Bishop_Black: {fileID: 21300000, guid: 0ab00615540d2a74baf4effcb0dcbe21, type: 3}
   Knight_Black: {fileID: 21300000, guid: 14ce5ad708a5fc14e90f16e0b6e4ef20, type: 3}
+  DestroyableCell_Color: {r: 0.7264151, g: 0, b: 0, a: 1}
+  ShieldableCell_Color: {r: 0, g: 0.77655625, b: 1, a: 1}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -11341,6 +11652,8 @@ MonoBehaviour:
   Rook_Black: {fileID: 21300000, guid: a27e0cb0e21d5034780b5052e7cd0f85, type: 3}
   Bishop_Black: {fileID: 21300000, guid: 0ab00615540d2a74baf4effcb0dcbe21, type: 3}
   Knight_Black: {fileID: 21300000, guid: 14ce5ad708a5fc14e90f16e0b6e4ef20, type: 3}
+  DestroyableCell_Color: {r: 0.7264151, g: 0, b: 0, a: 1}
+  ShieldableCell_Color: {r: 0, g: 0.77655625, b: 1, a: 1}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -11477,6 +11790,8 @@ MonoBehaviour:
   Rook_Black: {fileID: 21300000, guid: a27e0cb0e21d5034780b5052e7cd0f85, type: 3}
   Bishop_Black: {fileID: 21300000, guid: 0ab00615540d2a74baf4effcb0dcbe21, type: 3}
   Knight_Black: {fileID: 21300000, guid: 14ce5ad708a5fc14e90f16e0b6e4ef20, type: 3}
+  DestroyableCell_Color: {r: 0.7264151, g: 0, b: 0, a: 1}
+  ShieldableCell_Color: {r: 0, g: 0.77655625, b: 1, a: 1}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -11614,6 +11929,8 @@ MonoBehaviour:
   Rook_Black: {fileID: 21300000, guid: a27e0cb0e21d5034780b5052e7cd0f85, type: 3}
   Bishop_Black: {fileID: 21300000, guid: 0ab00615540d2a74baf4effcb0dcbe21, type: 3}
   Knight_Black: {fileID: 21300000, guid: 14ce5ad708a5fc14e90f16e0b6e4ef20, type: 3}
+  DestroyableCell_Color: {r: 0.7264151, g: 0, b: 0, a: 1}
+  ShieldableCell_Color: {r: 0, g: 0.77655625, b: 1, a: 1}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -12147,6 +12464,8 @@ MonoBehaviour:
   Rook_Black: {fileID: 21300000, guid: a27e0cb0e21d5034780b5052e7cd0f85, type: 3}
   Bishop_Black: {fileID: 21300000, guid: 0ab00615540d2a74baf4effcb0dcbe21, type: 3}
   Knight_Black: {fileID: 21300000, guid: 14ce5ad708a5fc14e90f16e0b6e4ef20, type: 3}
+  DestroyableCell_Color: {r: 0.7264151, g: 0, b: 0, a: 1}
+  ShieldableCell_Color: {r: 0, g: 0.77655625, b: 1, a: 1}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -12359,6 +12678,8 @@ MonoBehaviour:
   Rook_Black: {fileID: 21300000, guid: a27e0cb0e21d5034780b5052e7cd0f85, type: 3}
   Bishop_Black: {fileID: 21300000, guid: 0ab00615540d2a74baf4effcb0dcbe21, type: 3}
   Knight_Black: {fileID: 21300000, guid: 14ce5ad708a5fc14e90f16e0b6e4ef20, type: 3}
+  DestroyableCell_Color: {r: 0.7264151, g: 0, b: 0, a: 1}
+  ShieldableCell_Color: {r: 0, g: 0.77655625, b: 1, a: 1}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -12496,6 +12817,8 @@ MonoBehaviour:
   Rook_Black: {fileID: 21300000, guid: a27e0cb0e21d5034780b5052e7cd0f85, type: 3}
   Bishop_Black: {fileID: 21300000, guid: 0ab00615540d2a74baf4effcb0dcbe21, type: 3}
   Knight_Black: {fileID: 21300000, guid: 14ce5ad708a5fc14e90f16e0b6e4ef20, type: 3}
+  DestroyableCell_Color: {r: 0.7264151, g: 0, b: 0, a: 1}
+  ShieldableCell_Color: {r: 0, g: 0.77655625, b: 1, a: 1}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -12632,6 +12955,8 @@ MonoBehaviour:
   Rook_Black: {fileID: 21300000, guid: a27e0cb0e21d5034780b5052e7cd0f85, type: 3}
   Bishop_Black: {fileID: 21300000, guid: 0ab00615540d2a74baf4effcb0dcbe21, type: 3}
   Knight_Black: {fileID: 21300000, guid: 14ce5ad708a5fc14e90f16e0b6e4ef20, type: 3}
+  DestroyableCell_Color: {r: 0.7264151, g: 0, b: 0, a: 1}
+  ShieldableCell_Color: {r: 0, g: 0.77655625, b: 1, a: 1}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -12769,6 +13094,8 @@ MonoBehaviour:
   Rook_Black: {fileID: 21300000, guid: a27e0cb0e21d5034780b5052e7cd0f85, type: 3}
   Bishop_Black: {fileID: 21300000, guid: 0ab00615540d2a74baf4effcb0dcbe21, type: 3}
   Knight_Black: {fileID: 21300000, guid: 14ce5ad708a5fc14e90f16e0b6e4ef20, type: 3}
+  DestroyableCell_Color: {r: 0.7264151, g: 0, b: 0, a: 1}
+  ShieldableCell_Color: {r: 0, g: 0.77655625, b: 1, a: 1}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -12906,6 +13233,8 @@ MonoBehaviour:
   Rook_Black: {fileID: 21300000, guid: a27e0cb0e21d5034780b5052e7cd0f85, type: 3}
   Bishop_Black: {fileID: 21300000, guid: 0ab00615540d2a74baf4effcb0dcbe21, type: 3}
   Knight_Black: {fileID: 21300000, guid: 14ce5ad708a5fc14e90f16e0b6e4ef20, type: 3}
+  DestroyableCell_Color: {r: 0.7264151, g: 0, b: 0, a: 1}
+  ShieldableCell_Color: {r: 0, g: 0.77655625, b: 1, a: 1}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -13519,6 +13848,8 @@ MonoBehaviour:
   Rook_Black: {fileID: 21300000, guid: a27e0cb0e21d5034780b5052e7cd0f85, type: 3}
   Bishop_Black: {fileID: 21300000, guid: 0ab00615540d2a74baf4effcb0dcbe21, type: 3}
   Knight_Black: {fileID: 21300000, guid: 14ce5ad708a5fc14e90f16e0b6e4ef20, type: 3}
+  DestroyableCell_Color: {r: 0.7264151, g: 0, b: 0, a: 1}
+  ShieldableCell_Color: {r: 0, g: 0.77655625, b: 1, a: 1}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -13549,6 +13880,155 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.28, y: 1.28}
   m_EdgeRadius: 0
+--- !u!1 &1843397627
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1843397628}
+  - component: {fileID: 1843397631}
+  - component: {fileID: 1843397630}
+  - component: {fileID: 1843397629}
+  - component: {fileID: 1843397632}
+  m_Layer: 5
+  m_Name: Immunity_Button
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1843397628
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1843397627}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1963331375}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -220}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1843397629
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1843397627}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 1843397630}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1257681271}
+        m_TargetAssemblyTypeName: GameControlsScript, Assembly-CSharp
+        m_MethodName: ImmunityButton_OnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1843397630
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1843397627}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 14e58312fc5848a46a33d1c9ff4e89b4, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1843397631
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1843397627}
+  m_CullTransparentMesh: 1
+--- !u!114 &1843397632
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1843397627}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfabb0440166ab443bba8876756fdfa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 1}
+  m_EffectDistance: {x: 0, y: -5}
+  m_UseGraphicAlpha: 1
 --- !u!1 &1857508911
 GameObject:
   m_ObjectHideFlags: 0
@@ -13656,6 +14136,8 @@ MonoBehaviour:
   Rook_Black: {fileID: 21300000, guid: a27e0cb0e21d5034780b5052e7cd0f85, type: 3}
   Bishop_Black: {fileID: 21300000, guid: 0ab00615540d2a74baf4effcb0dcbe21, type: 3}
   Knight_Black: {fileID: 21300000, guid: 14ce5ad708a5fc14e90f16e0b6e4ef20, type: 3}
+  DestroyableCell_Color: {r: 0.7264151, g: 0, b: 0, a: 1}
+  ShieldableCell_Color: {r: 0, g: 0.77655625, b: 1, a: 1}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -13832,6 +14314,8 @@ MonoBehaviour:
   Rook_Black: {fileID: 21300000, guid: a27e0cb0e21d5034780b5052e7cd0f85, type: 3}
   Bishop_Black: {fileID: 21300000, guid: 0ab00615540d2a74baf4effcb0dcbe21, type: 3}
   Knight_Black: {fileID: 21300000, guid: 14ce5ad708a5fc14e90f16e0b6e4ef20, type: 3}
+  DestroyableCell_Color: {r: 0.7264151, g: 0, b: 0, a: 1}
+  ShieldableCell_Color: {r: 0, g: 0.77655625, b: 1, a: 1}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -13969,6 +14453,8 @@ MonoBehaviour:
   Rook_Black: {fileID: 21300000, guid: a27e0cb0e21d5034780b5052e7cd0f85, type: 3}
   Bishop_Black: {fileID: 21300000, guid: 0ab00615540d2a74baf4effcb0dcbe21, type: 3}
   Knight_Black: {fileID: 21300000, guid: 14ce5ad708a5fc14e90f16e0b6e4ef20, type: 3}
+  DestroyableCell_Color: {r: 0.7264151, g: 0, b: 0, a: 1}
+  ShieldableCell_Color: {r: 0, g: 0.77655625, b: 1, a: 1}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -14105,6 +14591,8 @@ MonoBehaviour:
   Rook_Black: {fileID: 21300000, guid: a27e0cb0e21d5034780b5052e7cd0f85, type: 3}
   Bishop_Black: {fileID: 21300000, guid: 0ab00615540d2a74baf4effcb0dcbe21, type: 3}
   Knight_Black: {fileID: 21300000, guid: 14ce5ad708a5fc14e90f16e0b6e4ef20, type: 3}
+  DestroyableCell_Color: {r: 0.7264151, g: 0, b: 0, a: 1}
+  ShieldableCell_Color: {r: 0, g: 0.77655625, b: 1, a: 1}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -14241,6 +14729,8 @@ MonoBehaviour:
   Rook_Black: {fileID: 21300000, guid: a27e0cb0e21d5034780b5052e7cd0f85, type: 3}
   Bishop_Black: {fileID: 21300000, guid: 0ab00615540d2a74baf4effcb0dcbe21, type: 3}
   Knight_Black: {fileID: 21300000, guid: 14ce5ad708a5fc14e90f16e0b6e4ef20, type: 3}
+  DestroyableCell_Color: {r: 0.7264151, g: 0, b: 0, a: 1}
+  ShieldableCell_Color: {r: 0, g: 0.77655625, b: 1, a: 1}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -14437,12 +14927,16 @@ RectTransform:
   - {fileID: 152473541}
   - {fileID: 790410524}
   - {fileID: 1792082243}
+  - {fileID: 1299790643}
+  - {fileID: 222687206}
+  - {fileID: 1968182148}
+  - {fileID: 1843397628}
   m_Father: {fileID: 775664258}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -750, y: 0}
+  m_AnchoredPosition: {x: -749.99994, y: 0}
   m_SizeDelta: {x: -1500, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1967786608
@@ -14552,6 +15046,8 @@ MonoBehaviour:
   Rook_Black: {fileID: 21300000, guid: a27e0cb0e21d5034780b5052e7cd0f85, type: 3}
   Bishop_Black: {fileID: 21300000, guid: 0ab00615540d2a74baf4effcb0dcbe21, type: 3}
   Knight_Black: {fileID: 21300000, guid: 14ce5ad708a5fc14e90f16e0b6e4ef20, type: 3}
+  DestroyableCell_Color: {r: 0.7264151, g: 0, b: 0, a: 1}
+  ShieldableCell_Color: {r: 0, g: 0.77655625, b: 1, a: 1}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -14582,6 +15078,86 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.28, y: 1.28}
   m_EdgeRadius: 0
+--- !u!1 &1968182147
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1968182148}
+  - component: {fileID: 1968182150}
+  - component: {fileID: 1968182149}
+  m_Layer: 5
+  m_Name: GiveImmunityText
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1968182148
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1968182147}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1963331375}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -120}
+  m_SizeDelta: {x: 350, y: 50}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1968182149
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1968182147}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 40
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 4
+    m_MaxSize: 40
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: Give Immunity
+--- !u!222 &1968182150
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1968182147}
+  m_CullTransparentMesh: 1
 --- !u!1 &1971528329
 GameObject:
   m_ObjectHideFlags: 0
@@ -14764,6 +15340,8 @@ MonoBehaviour:
   Rook_Black: {fileID: 21300000, guid: a27e0cb0e21d5034780b5052e7cd0f85, type: 3}
   Bishop_Black: {fileID: 21300000, guid: 0ab00615540d2a74baf4effcb0dcbe21, type: 3}
   Knight_Black: {fileID: 21300000, guid: 14ce5ad708a5fc14e90f16e0b6e4ef20, type: 3}
+  DestroyableCell_Color: {r: 0.7264151, g: 0, b: 0, a: 1}
+  ShieldableCell_Color: {r: 0, g: 0.77655625, b: 1, a: 1}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -14900,6 +15478,8 @@ MonoBehaviour:
   Rook_Black: {fileID: 21300000, guid: a27e0cb0e21d5034780b5052e7cd0f85, type: 3}
   Bishop_Black: {fileID: 21300000, guid: 0ab00615540d2a74baf4effcb0dcbe21, type: 3}
   Knight_Black: {fileID: 21300000, guid: 14ce5ad708a5fc14e90f16e0b6e4ef20, type: 3}
+  DestroyableCell_Color: {r: 0.7264151, g: 0, b: 0, a: 1}
+  ShieldableCell_Color: {r: 0, g: 0.77655625, b: 1, a: 1}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -15188,6 +15768,8 @@ MonoBehaviour:
   Rook_Black: {fileID: 21300000, guid: a27e0cb0e21d5034780b5052e7cd0f85, type: 3}
   Bishop_Black: {fileID: 21300000, guid: 0ab00615540d2a74baf4effcb0dcbe21, type: 3}
   Knight_Black: {fileID: 21300000, guid: 14ce5ad708a5fc14e90f16e0b6e4ef20, type: 3}
+  DestroyableCell_Color: {r: 0.7264151, g: 0, b: 0, a: 1}
+  ShieldableCell_Color: {r: 0, g: 0.77655625, b: 1, a: 1}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -15325,6 +15907,8 @@ MonoBehaviour:
   Rook_Black: {fileID: 21300000, guid: a27e0cb0e21d5034780b5052e7cd0f85, type: 3}
   Bishop_Black: {fileID: 21300000, guid: 0ab00615540d2a74baf4effcb0dcbe21, type: 3}
   Knight_Black: {fileID: 21300000, guid: 14ce5ad708a5fc14e90f16e0b6e4ef20, type: 3}
+  DestroyableCell_Color: {r: 0.7264151, g: 0, b: 0, a: 1}
+  ShieldableCell_Color: {r: 0, g: 0.77655625, b: 1, a: 1}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -15462,6 +16046,8 @@ MonoBehaviour:
   Rook_Black: {fileID: 21300000, guid: a27e0cb0e21d5034780b5052e7cd0f85, type: 3}
   Bishop_Black: {fileID: 21300000, guid: 0ab00615540d2a74baf4effcb0dcbe21, type: 3}
   Knight_Black: {fileID: 21300000, guid: 14ce5ad708a5fc14e90f16e0b6e4ef20, type: 3}
+  DestroyableCell_Color: {r: 0.7264151, g: 0, b: 0, a: 1}
+  ShieldableCell_Color: {r: 0, g: 0.77655625, b: 1, a: 1}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -15599,6 +16185,8 @@ MonoBehaviour:
   Rook_Black: {fileID: 21300000, guid: a27e0cb0e21d5034780b5052e7cd0f85, type: 3}
   Bishop_Black: {fileID: 21300000, guid: 0ab00615540d2a74baf4effcb0dcbe21, type: 3}
   Knight_Black: {fileID: 21300000, guid: 14ce5ad708a5fc14e90f16e0b6e4ef20, type: 3}
+  DestroyableCell_Color: {r: 0.7264151, g: 0, b: 0, a: 1}
+  ShieldableCell_Color: {r: 0, g: 0.77655625, b: 1, a: 1}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -15812,6 +16400,8 @@ MonoBehaviour:
   Rook_Black: {fileID: 21300000, guid: a27e0cb0e21d5034780b5052e7cd0f85, type: 3}
   Bishop_Black: {fileID: 21300000, guid: 0ab00615540d2a74baf4effcb0dcbe21, type: 3}
   Knight_Black: {fileID: 21300000, guid: 14ce5ad708a5fc14e90f16e0b6e4ef20, type: 3}
+  DestroyableCell_Color: {r: 0.7264151, g: 0, b: 0, a: 1}
+  ShieldableCell_Color: {r: 0, g: 0.77655625, b: 1, a: 1}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}

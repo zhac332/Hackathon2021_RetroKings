@@ -11,6 +11,10 @@ public class Cell_Script : MonoBehaviour
     [SerializeField] private Sprite Rook_Black;
     [SerializeField] private Sprite Bishop_Black;
     [SerializeField] private Sprite Knight_Black;
+
+    [Header("Colors")]
+    [SerializeField] private Color DestroyableCell_Color;
+    [SerializeField] private Color ShieldableCell_Color;
     [SerializeField] private Color CapturingCell_Color;
     [SerializeField] private Color LegalCell_Color;
     [SerializeField] private Color Selected_Color;
@@ -41,7 +45,7 @@ public class Cell_Script : MonoBehaviour
                 if (!IsPieceWhite())
                 {
                     Debug.LogError("Not your piece.");
-                    return;
+                    return; 
                 }
             }
             else
@@ -122,6 +126,16 @@ public class Cell_Script : MonoBehaviour
     public void MarkForCaptureCells()
     {
         sr.color = CapturingCell_Color;
+    }
+
+    public void MarkForDestroyableCells()
+    {
+        sr.color = DestroyableCell_Color;
+    }
+
+    public void MarkForShieldableCells()
+    {
+        sr.color = ShieldableCell_Color;
     }
 
     private void UpdatePieceDisplay(GameObject piece, Tuple<Piece, PieceColor> pieceData)
