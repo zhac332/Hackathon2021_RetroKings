@@ -23,12 +23,14 @@ public static class PieceChecker
 
     public static bool IsWhitePiece(GameObject go)
     {
-        return go.transform.GetChild(0).name.Contains("W");
+        string n = go.transform.GetChild(0).name;
+        return n[n.Length - 1] == 'W';
     }
 
     public static bool IsBlackPiece(GameObject go) 
     {
-        return go.transform.GetChild(0).name.Contains("B");
+        string n = go.transform.GetChild(0).name;
+        return n[n.Length - 1] == 'B';
     }
 
     public static bool HasAPiece(GameObject go)
