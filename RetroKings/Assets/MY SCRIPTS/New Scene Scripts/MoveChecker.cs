@@ -35,6 +35,9 @@ public static class MoveChecker
 
     public static void MarkDestroyableCells(int pointsNumber, bool myTurn)
     {
+        UnmarkAll();
+        markedCells = new List<string>();
+
         for (int i = 0; i < cells.Count; i++)
             if (PieceChecker.HasAPiece(cells[i]))
             {
@@ -53,6 +56,9 @@ public static class MoveChecker
 
     public static void MarkShieldableCells(int pointsNumber, bool myTurn)
     {
+        UnmarkAll();
+        markedCells = new List<string>();
+
         for (int i = 0; i < cells.Count; i++)
             if (PieceChecker.HasAPiece(cells[i]))
             {
