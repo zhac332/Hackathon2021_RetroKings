@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public static class PieceChecker
@@ -67,5 +68,21 @@ public static class PieceChecker
     public static bool IsPieceKing(GameObject go)
     {
         return go.transform.GetChild(0).name.Contains("King");
+    }
+
+    public static Tuple<Piece, PieceColor> TransformGoInTuple(GameObject go)
+    {
+        string[] parts = go.name.Split('_');
+        Piece p = Piece.NULL;
+        PieceColor c = (parts[1] == "W" ? PieceColor.White : PieceColor.Black);
+
+        if (parts[0].Contains("Pawn")) p = Piece.Pawn;
+        if (parts[0].Contains("Bishop")) p = Piece.Bishop;
+        if (parts[0].Contains("Knight")) p = Piece.Knight;
+        if (parts[0].Contains("Rook")) p = Piece.Rook;
+        if (parts[0].Contains("Queen")) p = Piece.Queen;
+        if (parts[0].Contains("King")) p = Piece.King;
+
+        return new Tuple<Piece, PieceColor>(p, c);
     }
 }

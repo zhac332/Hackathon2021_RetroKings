@@ -31,6 +31,18 @@ public class Cell_Script : MonoBehaviour
     {
         if (Game.IsGameOver()) return;
 
+        if (MoveChecker.IsDestroyPowerupOn())
+        {
+            ExecuteMove_DestroyFeature();
+            return;
+        }
+
+        if (MoveChecker.IsImmunityPowerupOn())
+        {
+            ExecuteMove_ImmunityFeature();
+            return;
+        }
+
         GameObject piece = null;
         if (!Move.IsFirstCellSelected())
         {
@@ -220,6 +232,26 @@ public class Cell_Script : MonoBehaviour
         MoveChecker.UnmarkAll();
         if (switchTurn) Game.SwitchTurn();
         MoveChecker.UpdateCastlingPossibilities(piece, cell1);
+    }
+
+    private void ExecuteMove_DestroyFeature()
+    {
+        GameObject p = transform.GetChild(0).gameObject;
+        Tuple<Piece, PieceColor> piece = PieceChecker.TransformGoInTuple(p);
+
+        UpdatePieceDisplay(p, piece);
+        Destroy(p);
+
+        Game.DestroyUsed(piece);
+        Move.ResetMove();
+        MoveChecker.UnmarkAll();
+        Game.SwitchTurn();
+        MoveChecker.UpdateCastlingPossibilities(piece, name);
+    }
+
+    private void ExecuteMove_ImmunityFeature()
+    {
+
     }
 
     private void Update()

@@ -112,7 +112,7 @@ public static class Move
     public static void ResetMove()
     {
         firstCell_Selected = secondCell_Selected = false;
-            firstCell = lastCell = "";
-            currentPiece = currentPiece = new Tuple<Piece, PieceColor>(Piece.NULL, PieceColor.NULL);
+        firstCell = lastCell = "";
+        currentPiece = currentPiece = new Tuple<Piece, PieceColor>(Piece.NULL, PieceColor.NULL);
     }
 }

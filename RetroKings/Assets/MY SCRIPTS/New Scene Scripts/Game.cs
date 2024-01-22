@@ -57,6 +57,28 @@ public static class Game
         else White_Points += value;
     }
 
+    public static void DestroyUsed(Tuple<Piece, PieceColor> piece)
+    {
+        int value = 0;
+
+        if (piece.Item1 == Piece.Pawn) value = Pawn_Value;
+        if (piece.Item1 == Piece.Bishop) value = Bishop_Value;
+        if (piece.Item1 == Piece.Knight) value = Knight_Value;
+        if (piece.Item1 == Piece.Rook) value = Rook_Value;
+        if (piece.Item1 == Piece.Queen) value = Queen_Value;
+
+        if (myTurn) White_Points -= value;
+        else Black_Points -= value;
+
+        MoveChecker.ResetPowerupToggles();
+    }
+
+    public static void ImmunityUsed()
+    {
+        if (myTurn) White_Points -= 4;
+        else Black_Points -= 4;
+    }
+
     public static bool IsGameOver()
     {
         return gameOver;

@@ -106,6 +106,21 @@ public static class MoveChecker
         }
     }
 
+    public static bool IsDestroyPowerupOn()
+    {
+        return destroyPowerup_Toggle;
+    }
+
+    public static bool IsImmunityPowerupOn()
+    {
+        return immunityPowerup_Toggle;
+    }
+
+    public static void ResetPowerupToggles()
+    {
+        destroyPowerup_Toggle = immunityPowerup_Toggle = false;
+    }
+
     public static void SetUpdatePromotionalPiecesFunction(Action<bool> method)
     {
         updatePromotionalPieces_Function = method;
