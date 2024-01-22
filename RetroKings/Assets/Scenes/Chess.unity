@@ -231,6 +231,8 @@ MonoBehaviour:
   Knight_Black: {fileID: 21300000, guid: 14ce5ad708a5fc14e90f16e0b6e4ef20, type: 3}
   DestroyableCell_Color: {r: 0.7264151, g: 0, b: 0, a: 1}
   ShieldableCell_Color: {r: 0, g: 0.77655625, b: 1, a: 1}
+  White_ShieldedCell_Color: {r: 0.49685526, g: 0.8875324, b: 1, a: 1}
+  Black_ShieldedCell_Color: {r: 0, g: 0.4932667, b: 0.6320754, a: 1}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -789,6 +791,8 @@ MonoBehaviour:
   Knight_Black: {fileID: 21300000, guid: 14ce5ad708a5fc14e90f16e0b6e4ef20, type: 3}
   DestroyableCell_Color: {r: 0.7264151, g: 0, b: 0, a: 1}
   ShieldableCell_Color: {r: 0, g: 0.77655625, b: 1, a: 1}
+  White_ShieldedCell_Color: {r: 0.49685526, g: 0.8875324, b: 1, a: 1}
+  Black_ShieldedCell_Color: {r: 0, g: 0.4932667, b: 0.6320754, a: 1}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -1138,6 +1142,8 @@ MonoBehaviour:
   Knight_Black: {fileID: 21300000, guid: 14ce5ad708a5fc14e90f16e0b6e4ef20, type: 3}
   DestroyableCell_Color: {r: 0.7264151, g: 0, b: 0, a: 1}
   ShieldableCell_Color: {r: 0, g: 0.77655625, b: 1, a: 1}
+  White_ShieldedCell_Color: {r: 0.49685526, g: 0.8875324, b: 1, a: 1}
+  Black_ShieldedCell_Color: {r: 0, g: 0.4932667, b: 0.6320754, a: 1}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -1512,6 +1518,8 @@ MonoBehaviour:
   Knight_Black: {fileID: 21300000, guid: 14ce5ad708a5fc14e90f16e0b6e4ef20, type: 3}
   DestroyableCell_Color: {r: 0.7264151, g: 0, b: 0, a: 1}
   ShieldableCell_Color: {r: 0, g: 0.77655625, b: 1, a: 1}
+  White_ShieldedCell_Color: {r: 0.49685526, g: 0.8875324, b: 1, a: 1}
+  Black_ShieldedCell_Color: {r: 0, g: 0.4932667, b: 0.6320754, a: 1}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -1960,6 +1968,8 @@ MonoBehaviour:
   Knight_Black: {fileID: 21300000, guid: 14ce5ad708a5fc14e90f16e0b6e4ef20, type: 3}
   DestroyableCell_Color: {r: 0.7264151, g: 0, b: 0, a: 1}
   ShieldableCell_Color: {r: 0, g: 0.77655625, b: 1, a: 1}
+  White_ShieldedCell_Color: {r: 0.49685526, g: 0.8875324, b: 1, a: 1}
+  Black_ShieldedCell_Color: {r: 0, g: 0.4932667, b: 0.6320754, a: 1}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -2735,6 +2745,8 @@ MonoBehaviour:
   Knight_Black: {fileID: 21300000, guid: 14ce5ad708a5fc14e90f16e0b6e4ef20, type: 3}
   DestroyableCell_Color: {r: 0.7264151, g: 0, b: 0, a: 1}
   ShieldableCell_Color: {r: 0, g: 0.77655625, b: 1, a: 1}
+  White_ShieldedCell_Color: {r: 0.49685526, g: 0.8875324, b: 1, a: 1}
+  Black_ShieldedCell_Color: {r: 0, g: 0.4932667, b: 0.6320754, a: 1}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -2941,6 +2953,8 @@ MonoBehaviour:
   Knight_Black: {fileID: 21300000, guid: 14ce5ad708a5fc14e90f16e0b6e4ef20, type: 3}
   DestroyableCell_Color: {r: 0.7264151, g: 0, b: 0, a: 1}
   ShieldableCell_Color: {r: 0, g: 0.77655625, b: 1, a: 1}
+  White_ShieldedCell_Color: {r: 0.49685526, g: 0.8875324, b: 1, a: 1}
+  Black_ShieldedCell_Color: {r: 0, g: 0.4932667, b: 0.6320754, a: 1}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -3155,6 +3169,8 @@ MonoBehaviour:
   Knight_Black: {fileID: 21300000, guid: 14ce5ad708a5fc14e90f16e0b6e4ef20, type: 3}
   DestroyableCell_Color: {r: 0.7264151, g: 0, b: 0, a: 1}
   ShieldableCell_Color: {r: 0, g: 0.77655625, b: 1, a: 1}
+  White_ShieldedCell_Color: {r: 0.49685526, g: 0.8875324, b: 1, a: 1}
+  Black_ShieldedCell_Color: {r: 0, g: 0.4932667, b: 0.6320754, a: 1}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -3546,6 +3562,8 @@ MonoBehaviour:
   Knight_Black: {fileID: 21300000, guid: 14ce5ad708a5fc14e90f16e0b6e4ef20, type: 3}
   DestroyableCell_Color: {r: 0.7264151, g: 0, b: 0, a: 1}
   ShieldableCell_Color: {r: 0, g: 0.77655625, b: 1, a: 1}
+  White_ShieldedCell_Color: {r: 0.49685526, g: 0.8875324, b: 1, a: 1}
+  Black_ShieldedCell_Color: {r: 0, g: 0.4932667, b: 0.6320754, a: 1}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -4267,6 +4285,8 @@ MonoBehaviour:
   Knight_Black: {fileID: 21300000, guid: 14ce5ad708a5fc14e90f16e0b6e4ef20, type: 3}
   DestroyableCell_Color: {r: 0.7264151, g: 0, b: 0, a: 1}
   ShieldableCell_Color: {r: 0, g: 0.77655625, b: 1, a: 1}
+  White_ShieldedCell_Color: {r: 0.49685526, g: 0.8875324, b: 1, a: 1}
+  Black_ShieldedCell_Color: {r: 0, g: 0.4932667, b: 0.6320754, a: 1}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -4573,6 +4593,8 @@ MonoBehaviour:
   Knight_Black: {fileID: 21300000, guid: 14ce5ad708a5fc14e90f16e0b6e4ef20, type: 3}
   DestroyableCell_Color: {r: 0.7264151, g: 0, b: 0, a: 1}
   ShieldableCell_Color: {r: 0, g: 0.77655625, b: 1, a: 1}
+  White_ShieldedCell_Color: {r: 0.49685526, g: 0.8875324, b: 1, a: 1}
+  Black_ShieldedCell_Color: {r: 0, g: 0.4932667, b: 0.6320754, a: 1}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -5006,6 +5028,8 @@ MonoBehaviour:
   Knight_Black: {fileID: 21300000, guid: 14ce5ad708a5fc14e90f16e0b6e4ef20, type: 3}
   DestroyableCell_Color: {r: 0.7264151, g: 0, b: 0, a: 1}
   ShieldableCell_Color: {r: 0, g: 0.77655625, b: 1, a: 1}
+  White_ShieldedCell_Color: {r: 0.49685526, g: 0.8875324, b: 1, a: 1}
+  Black_ShieldedCell_Color: {r: 0, g: 0.4932667, b: 0.6320754, a: 1}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -5144,6 +5168,8 @@ MonoBehaviour:
   Knight_Black: {fileID: 21300000, guid: 14ce5ad708a5fc14e90f16e0b6e4ef20, type: 3}
   DestroyableCell_Color: {r: 0.7264151, g: 0, b: 0, a: 1}
   ShieldableCell_Color: {r: 0, g: 0.77655625, b: 1, a: 1}
+  White_ShieldedCell_Color: {r: 0.49685526, g: 0.8875324, b: 1, a: 1}
+  Black_ShieldedCell_Color: {r: 0, g: 0.4932667, b: 0.6320754, a: 1}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -5566,6 +5592,8 @@ MonoBehaviour:
   Knight_Black: {fileID: 21300000, guid: 14ce5ad708a5fc14e90f16e0b6e4ef20, type: 3}
   DestroyableCell_Color: {r: 0.7264151, g: 0, b: 0, a: 1}
   ShieldableCell_Color: {r: 0, g: 0.77655625, b: 1, a: 1}
+  White_ShieldedCell_Color: {r: 0.49685526, g: 0.8875324, b: 1, a: 1}
+  Black_ShieldedCell_Color: {r: 0, g: 0.4932667, b: 0.6320754, a: 1}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -5705,6 +5733,8 @@ MonoBehaviour:
   Knight_Black: {fileID: 21300000, guid: 14ce5ad708a5fc14e90f16e0b6e4ef20, type: 3}
   DestroyableCell_Color: {r: 0.7264151, g: 0, b: 0, a: 1}
   ShieldableCell_Color: {r: 0, g: 0.77655625, b: 1, a: 1}
+  White_ShieldedCell_Color: {r: 0.49685526, g: 0.8875324, b: 1, a: 1}
+  Black_ShieldedCell_Color: {r: 0, g: 0.4932667, b: 0.6320754, a: 1}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -5844,6 +5874,8 @@ MonoBehaviour:
   Knight_Black: {fileID: 21300000, guid: 14ce5ad708a5fc14e90f16e0b6e4ef20, type: 3}
   DestroyableCell_Color: {r: 0.7264151, g: 0, b: 0, a: 1}
   ShieldableCell_Color: {r: 0, g: 0.77655625, b: 1, a: 1}
+  White_ShieldedCell_Color: {r: 0.49685526, g: 0.8875324, b: 1, a: 1}
+  Black_ShieldedCell_Color: {r: 0, g: 0.4932667, b: 0.6320754, a: 1}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -6086,6 +6118,8 @@ MonoBehaviour:
   Knight_Black: {fileID: 21300000, guid: 14ce5ad708a5fc14e90f16e0b6e4ef20, type: 3}
   DestroyableCell_Color: {r: 0.7264151, g: 0, b: 0, a: 1}
   ShieldableCell_Color: {r: 0, g: 0.77655625, b: 1, a: 1}
+  White_ShieldedCell_Color: {r: 0.49685526, g: 0.8875324, b: 1, a: 1}
+  Black_ShieldedCell_Color: {r: 0, g: 0.4932667, b: 0.6320754, a: 1}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -6389,6 +6423,8 @@ MonoBehaviour:
   Knight_Black: {fileID: 21300000, guid: 14ce5ad708a5fc14e90f16e0b6e4ef20, type: 3}
   DestroyableCell_Color: {r: 0.7264151, g: 0, b: 0, a: 1}
   ShieldableCell_Color: {r: 0, g: 0.77655625, b: 1, a: 1}
+  White_ShieldedCell_Color: {r: 0.49685526, g: 0.8875324, b: 1, a: 1}
+  Black_ShieldedCell_Color: {r: 0, g: 0.4932667, b: 0.6320754, a: 1}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -6528,6 +6564,8 @@ MonoBehaviour:
   Knight_Black: {fileID: 21300000, guid: 14ce5ad708a5fc14e90f16e0b6e4ef20, type: 3}
   DestroyableCell_Color: {r: 0.7264151, g: 0, b: 0, a: 1}
   ShieldableCell_Color: {r: 0, g: 0.77655625, b: 1, a: 1}
+  White_ShieldedCell_Color: {r: 0.49685526, g: 0.8875324, b: 1, a: 1}
+  Black_ShieldedCell_Color: {r: 0, g: 0.4932667, b: 0.6320754, a: 1}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -6751,6 +6789,8 @@ MonoBehaviour:
   Knight_Black: {fileID: 21300000, guid: 14ce5ad708a5fc14e90f16e0b6e4ef20, type: 3}
   DestroyableCell_Color: {r: 0.7264151, g: 0, b: 0, a: 1}
   ShieldableCell_Color: {r: 0, g: 0.77655625, b: 1, a: 1}
+  White_ShieldedCell_Color: {r: 0.49685526, g: 0.8875324, b: 1, a: 1}
+  Black_ShieldedCell_Color: {r: 0, g: 0.4932667, b: 0.6320754, a: 1}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -6996,6 +7036,8 @@ MonoBehaviour:
   Knight_Black: {fileID: 21300000, guid: 14ce5ad708a5fc14e90f16e0b6e4ef20, type: 3}
   DestroyableCell_Color: {r: 0.7264151, g: 0, b: 0, a: 1}
   ShieldableCell_Color: {r: 0, g: 0.77655625, b: 1, a: 1}
+  White_ShieldedCell_Color: {r: 0.49685526, g: 0.8875324, b: 1, a: 1}
+  Black_ShieldedCell_Color: {r: 0, g: 0.4932667, b: 0.6320754, a: 1}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -7652,6 +7694,8 @@ MonoBehaviour:
   Knight_Black: {fileID: 21300000, guid: 14ce5ad708a5fc14e90f16e0b6e4ef20, type: 3}
   DestroyableCell_Color: {r: 0.7264151, g: 0, b: 0, a: 1}
   ShieldableCell_Color: {r: 0, g: 0.77655625, b: 1, a: 1}
+  White_ShieldedCell_Color: {r: 0.49685526, g: 0.8875324, b: 1, a: 1}
+  Black_ShieldedCell_Color: {r: 0, g: 0.4932667, b: 0.6320754, a: 1}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -7791,6 +7835,8 @@ MonoBehaviour:
   Knight_Black: {fileID: 21300000, guid: 14ce5ad708a5fc14e90f16e0b6e4ef20, type: 3}
   DestroyableCell_Color: {r: 0.7264151, g: 0, b: 0, a: 1}
   ShieldableCell_Color: {r: 0, g: 0.77655625, b: 1, a: 1}
+  White_ShieldedCell_Color: {r: 0.49685526, g: 0.8875324, b: 1, a: 1}
+  Black_ShieldedCell_Color: {r: 0, g: 0.4932667, b: 0.6320754, a: 1}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -7929,6 +7975,8 @@ MonoBehaviour:
   Knight_Black: {fileID: 21300000, guid: 14ce5ad708a5fc14e90f16e0b6e4ef20, type: 3}
   DestroyableCell_Color: {r: 0.7264151, g: 0, b: 0, a: 1}
   ShieldableCell_Color: {r: 0, g: 0.77655625, b: 1, a: 1}
+  White_ShieldedCell_Color: {r: 0.49685526, g: 0.8875324, b: 1, a: 1}
+  Black_ShieldedCell_Color: {r: 0, g: 0.4932667, b: 0.6320754, a: 1}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -8068,6 +8116,8 @@ MonoBehaviour:
   Knight_Black: {fileID: 21300000, guid: 14ce5ad708a5fc14e90f16e0b6e4ef20, type: 3}
   DestroyableCell_Color: {r: 0.7264151, g: 0, b: 0, a: 1}
   ShieldableCell_Color: {r: 0, g: 0.77655625, b: 1, a: 1}
+  White_ShieldedCell_Color: {r: 0.49685526, g: 0.8875324, b: 1, a: 1}
+  Black_ShieldedCell_Color: {r: 0, g: 0.4932667, b: 0.6320754, a: 1}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -8207,6 +8257,8 @@ MonoBehaviour:
   Knight_Black: {fileID: 21300000, guid: 14ce5ad708a5fc14e90f16e0b6e4ef20, type: 3}
   DestroyableCell_Color: {r: 0.7264151, g: 0, b: 0, a: 1}
   ShieldableCell_Color: {r: 0, g: 0.77655625, b: 1, a: 1}
+  White_ShieldedCell_Color: {r: 0.49685526, g: 0.8875324, b: 1, a: 1}
+  Black_ShieldedCell_Color: {r: 0, g: 0.4932667, b: 0.6320754, a: 1}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -8345,6 +8397,8 @@ MonoBehaviour:
   Knight_Black: {fileID: 21300000, guid: 14ce5ad708a5fc14e90f16e0b6e4ef20, type: 3}
   DestroyableCell_Color: {r: 0.7264151, g: 0, b: 0, a: 1}
   ShieldableCell_Color: {r: 0, g: 0.77655625, b: 1, a: 1}
+  White_ShieldedCell_Color: {r: 0.49685526, g: 0.8875324, b: 1, a: 1}
+  Black_ShieldedCell_Color: {r: 0, g: 0.4932667, b: 0.6320754, a: 1}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -8560,6 +8614,8 @@ MonoBehaviour:
   Knight_Black: {fileID: 21300000, guid: 14ce5ad708a5fc14e90f16e0b6e4ef20, type: 3}
   DestroyableCell_Color: {r: 0.7264151, g: 0, b: 0, a: 1}
   ShieldableCell_Color: {r: 0, g: 0.77655625, b: 1, a: 1}
+  White_ShieldedCell_Color: {r: 0.49685526, g: 0.8875324, b: 1, a: 1}
+  Black_ShieldedCell_Color: {r: 0, g: 0.4932667, b: 0.6320754, a: 1}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -8699,6 +8755,8 @@ MonoBehaviour:
   Knight_Black: {fileID: 21300000, guid: 14ce5ad708a5fc14e90f16e0b6e4ef20, type: 3}
   DestroyableCell_Color: {r: 0.7264151, g: 0, b: 0, a: 1}
   ShieldableCell_Color: {r: 0, g: 0.77655625, b: 1, a: 1}
+  White_ShieldedCell_Color: {r: 0.49685526, g: 0.8875324, b: 1, a: 1}
+  Black_ShieldedCell_Color: {r: 0, g: 0.4932667, b: 0.6320754, a: 1}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -8837,6 +8895,8 @@ MonoBehaviour:
   Knight_Black: {fileID: 21300000, guid: 14ce5ad708a5fc14e90f16e0b6e4ef20, type: 3}
   DestroyableCell_Color: {r: 0.7264151, g: 0, b: 0, a: 1}
   ShieldableCell_Color: {r: 0, g: 0.77655625, b: 1, a: 1}
+  White_ShieldedCell_Color: {r: 0.49685526, g: 0.8875324, b: 1, a: 1}
+  Black_ShieldedCell_Color: {r: 0, g: 0.4932667, b: 0.6320754, a: 1}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -9498,6 +9558,8 @@ MonoBehaviour:
   Knight_Black: {fileID: 21300000, guid: 14ce5ad708a5fc14e90f16e0b6e4ef20, type: 3}
   DestroyableCell_Color: {r: 0.7264151, g: 0, b: 0, a: 1}
   ShieldableCell_Color: {r: 0, g: 0.77655625, b: 1, a: 1}
+  White_ShieldedCell_Color: {r: 0.49685526, g: 0.8875324, b: 1, a: 1}
+  Black_ShieldedCell_Color: {r: 0, g: 0.4932667, b: 0.6320754, a: 1}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -9792,6 +9854,8 @@ MonoBehaviour:
   Knight_Black: {fileID: 21300000, guid: 14ce5ad708a5fc14e90f16e0b6e4ef20, type: 3}
   DestroyableCell_Color: {r: 0.7264151, g: 0, b: 0, a: 1}
   ShieldableCell_Color: {r: 0, g: 0.77655625, b: 1, a: 1}
+  White_ShieldedCell_Color: {r: 0.49685526, g: 0.8875324, b: 1, a: 1}
+  Black_ShieldedCell_Color: {r: 0, g: 0.4932667, b: 0.6320754, a: 1}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -10014,6 +10078,8 @@ MonoBehaviour:
   Knight_Black: {fileID: 21300000, guid: 14ce5ad708a5fc14e90f16e0b6e4ef20, type: 3}
   DestroyableCell_Color: {r: 0.7264151, g: 0, b: 0, a: 1}
   ShieldableCell_Color: {r: 0, g: 0.77655625, b: 1, a: 1}
+  White_ShieldedCell_Color: {r: 0.49685526, g: 0.8875324, b: 1, a: 1}
+  Black_ShieldedCell_Color: {r: 0, g: 0.4932667, b: 0.6320754, a: 1}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -10313,6 +10379,8 @@ MonoBehaviour:
   Knight_Black: {fileID: 21300000, guid: 14ce5ad708a5fc14e90f16e0b6e4ef20, type: 3}
   DestroyableCell_Color: {r: 0.7264151, g: 0, b: 0, a: 1}
   ShieldableCell_Color: {r: 0, g: 0.77655625, b: 1, a: 1}
+  White_ShieldedCell_Color: {r: 0.49685526, g: 0.8875324, b: 1, a: 1}
+  Black_ShieldedCell_Color: {r: 0, g: 0.4932667, b: 0.6320754, a: 1}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -10451,6 +10519,8 @@ MonoBehaviour:
   Knight_Black: {fileID: 21300000, guid: 14ce5ad708a5fc14e90f16e0b6e4ef20, type: 3}
   DestroyableCell_Color: {r: 0.7264151, g: 0, b: 0, a: 1}
   ShieldableCell_Color: {r: 0, g: 0.77655625, b: 1, a: 1}
+  White_ShieldedCell_Color: {r: 0.49685526, g: 0.8875324, b: 1, a: 1}
+  Black_ShieldedCell_Color: {r: 0, g: 0.4932667, b: 0.6320754, a: 1}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -10589,6 +10659,8 @@ MonoBehaviour:
   Knight_Black: {fileID: 21300000, guid: 14ce5ad708a5fc14e90f16e0b6e4ef20, type: 3}
   DestroyableCell_Color: {r: 0.7264151, g: 0, b: 0, a: 1}
   ShieldableCell_Color: {r: 0, g: 0.77655625, b: 1, a: 1}
+  White_ShieldedCell_Color: {r: 0.49685526, g: 0.8875324, b: 1, a: 1}
+  Black_ShieldedCell_Color: {r: 0, g: 0.4932667, b: 0.6320754, a: 1}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -10803,6 +10875,8 @@ MonoBehaviour:
   Knight_Black: {fileID: 21300000, guid: 14ce5ad708a5fc14e90f16e0b6e4ef20, type: 3}
   DestroyableCell_Color: {r: 0.7264151, g: 0, b: 0, a: 1}
   ShieldableCell_Color: {r: 0, g: 0.77655625, b: 1, a: 1}
+  White_ShieldedCell_Color: {r: 0.49685526, g: 0.8875324, b: 1, a: 1}
+  Black_ShieldedCell_Color: {r: 0, g: 0.4932667, b: 0.6320754, a: 1}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -11026,6 +11100,8 @@ MonoBehaviour:
   Knight_Black: {fileID: 21300000, guid: 14ce5ad708a5fc14e90f16e0b6e4ef20, type: 3}
   DestroyableCell_Color: {r: 0.7264151, g: 0, b: 0, a: 1}
   ShieldableCell_Color: {r: 0, g: 0.77655625, b: 1, a: 1}
+  White_ShieldedCell_Color: {r: 0.49685526, g: 0.8875324, b: 1, a: 1}
+  Black_ShieldedCell_Color: {r: 0, g: 0.4932667, b: 0.6320754, a: 1}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -11164,6 +11240,8 @@ MonoBehaviour:
   Knight_Black: {fileID: 21300000, guid: 14ce5ad708a5fc14e90f16e0b6e4ef20, type: 3}
   DestroyableCell_Color: {r: 0.7264151, g: 0, b: 0, a: 1}
   ShieldableCell_Color: {r: 0, g: 0.77655625, b: 1, a: 1}
+  White_ShieldedCell_Color: {r: 0.49685526, g: 0.8875324, b: 1, a: 1}
+  Black_ShieldedCell_Color: {r: 0, g: 0.4932667, b: 0.6320754, a: 1}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -11302,6 +11380,8 @@ MonoBehaviour:
   Knight_Black: {fileID: 21300000, guid: 14ce5ad708a5fc14e90f16e0b6e4ef20, type: 3}
   DestroyableCell_Color: {r: 0.7264151, g: 0, b: 0, a: 1}
   ShieldableCell_Color: {r: 0, g: 0.77655625, b: 1, a: 1}
+  White_ShieldedCell_Color: {r: 0.49685526, g: 0.8875324, b: 1, a: 1}
+  Black_ShieldedCell_Color: {r: 0, g: 0.4932667, b: 0.6320754, a: 1}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -11440,6 +11520,8 @@ MonoBehaviour:
   Knight_Black: {fileID: 21300000, guid: 14ce5ad708a5fc14e90f16e0b6e4ef20, type: 3}
   DestroyableCell_Color: {r: 0.7264151, g: 0, b: 0, a: 1}
   ShieldableCell_Color: {r: 0, g: 0.77655625, b: 1, a: 1}
+  White_ShieldedCell_Color: {r: 0.49685526, g: 0.8875324, b: 1, a: 1}
+  Black_ShieldedCell_Color: {r: 0, g: 0.4932667, b: 0.6320754, a: 1}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -11654,6 +11736,8 @@ MonoBehaviour:
   Knight_Black: {fileID: 21300000, guid: 14ce5ad708a5fc14e90f16e0b6e4ef20, type: 3}
   DestroyableCell_Color: {r: 0.7264151, g: 0, b: 0, a: 1}
   ShieldableCell_Color: {r: 0, g: 0.77655625, b: 1, a: 1}
+  White_ShieldedCell_Color: {r: 0.49685526, g: 0.8875324, b: 1, a: 1}
+  Black_ShieldedCell_Color: {r: 0, g: 0.4932667, b: 0.6320754, a: 1}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -11792,6 +11876,8 @@ MonoBehaviour:
   Knight_Black: {fileID: 21300000, guid: 14ce5ad708a5fc14e90f16e0b6e4ef20, type: 3}
   DestroyableCell_Color: {r: 0.7264151, g: 0, b: 0, a: 1}
   ShieldableCell_Color: {r: 0, g: 0.77655625, b: 1, a: 1}
+  White_ShieldedCell_Color: {r: 0.49685526, g: 0.8875324, b: 1, a: 1}
+  Black_ShieldedCell_Color: {r: 0, g: 0.4932667, b: 0.6320754, a: 1}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -11931,6 +12017,8 @@ MonoBehaviour:
   Knight_Black: {fileID: 21300000, guid: 14ce5ad708a5fc14e90f16e0b6e4ef20, type: 3}
   DestroyableCell_Color: {r: 0.7264151, g: 0, b: 0, a: 1}
   ShieldableCell_Color: {r: 0, g: 0.77655625, b: 1, a: 1}
+  White_ShieldedCell_Color: {r: 0.49685526, g: 0.8875324, b: 1, a: 1}
+  Black_ShieldedCell_Color: {r: 0, g: 0.4932667, b: 0.6320754, a: 1}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -12466,6 +12554,8 @@ MonoBehaviour:
   Knight_Black: {fileID: 21300000, guid: 14ce5ad708a5fc14e90f16e0b6e4ef20, type: 3}
   DestroyableCell_Color: {r: 0.7264151, g: 0, b: 0, a: 1}
   ShieldableCell_Color: {r: 0, g: 0.77655625, b: 1, a: 1}
+  White_ShieldedCell_Color: {r: 0.49685526, g: 0.8875324, b: 1, a: 1}
+  Black_ShieldedCell_Color: {r: 0, g: 0.4932667, b: 0.6320754, a: 1}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -12680,6 +12770,8 @@ MonoBehaviour:
   Knight_Black: {fileID: 21300000, guid: 14ce5ad708a5fc14e90f16e0b6e4ef20, type: 3}
   DestroyableCell_Color: {r: 0.7264151, g: 0, b: 0, a: 1}
   ShieldableCell_Color: {r: 0, g: 0.77655625, b: 1, a: 1}
+  White_ShieldedCell_Color: {r: 0.49685526, g: 0.8875324, b: 1, a: 1}
+  Black_ShieldedCell_Color: {r: 0, g: 0.4932667, b: 0.6320754, a: 1}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -12819,6 +12911,8 @@ MonoBehaviour:
   Knight_Black: {fileID: 21300000, guid: 14ce5ad708a5fc14e90f16e0b6e4ef20, type: 3}
   DestroyableCell_Color: {r: 0.7264151, g: 0, b: 0, a: 1}
   ShieldableCell_Color: {r: 0, g: 0.77655625, b: 1, a: 1}
+  White_ShieldedCell_Color: {r: 0.49685526, g: 0.8875324, b: 1, a: 1}
+  Black_ShieldedCell_Color: {r: 0, g: 0.4932667, b: 0.6320754, a: 1}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -12957,6 +13051,8 @@ MonoBehaviour:
   Knight_Black: {fileID: 21300000, guid: 14ce5ad708a5fc14e90f16e0b6e4ef20, type: 3}
   DestroyableCell_Color: {r: 0.7264151, g: 0, b: 0, a: 1}
   ShieldableCell_Color: {r: 0, g: 0.77655625, b: 1, a: 1}
+  White_ShieldedCell_Color: {r: 0.49685526, g: 0.8875324, b: 1, a: 1}
+  Black_ShieldedCell_Color: {r: 0, g: 0.4932667, b: 0.6320754, a: 1}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -13096,6 +13192,8 @@ MonoBehaviour:
   Knight_Black: {fileID: 21300000, guid: 14ce5ad708a5fc14e90f16e0b6e4ef20, type: 3}
   DestroyableCell_Color: {r: 0.7264151, g: 0, b: 0, a: 1}
   ShieldableCell_Color: {r: 0, g: 0.77655625, b: 1, a: 1}
+  White_ShieldedCell_Color: {r: 0.49685526, g: 0.8875324, b: 1, a: 1}
+  Black_ShieldedCell_Color: {r: 0, g: 0.4932667, b: 0.6320754, a: 1}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -13235,6 +13333,8 @@ MonoBehaviour:
   Knight_Black: {fileID: 21300000, guid: 14ce5ad708a5fc14e90f16e0b6e4ef20, type: 3}
   DestroyableCell_Color: {r: 0.7264151, g: 0, b: 0, a: 1}
   ShieldableCell_Color: {r: 0, g: 0.77655625, b: 1, a: 1}
+  White_ShieldedCell_Color: {r: 0.49685526, g: 0.8875324, b: 1, a: 1}
+  Black_ShieldedCell_Color: {r: 0, g: 0.4932667, b: 0.6320754, a: 1}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -13850,6 +13950,8 @@ MonoBehaviour:
   Knight_Black: {fileID: 21300000, guid: 14ce5ad708a5fc14e90f16e0b6e4ef20, type: 3}
   DestroyableCell_Color: {r: 0.7264151, g: 0, b: 0, a: 1}
   ShieldableCell_Color: {r: 0, g: 0.77655625, b: 1, a: 1}
+  White_ShieldedCell_Color: {r: 0.49685526, g: 0.8875324, b: 1, a: 1}
+  Black_ShieldedCell_Color: {r: 0, g: 0.4932667, b: 0.6320754, a: 1}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -14138,6 +14240,8 @@ MonoBehaviour:
   Knight_Black: {fileID: 21300000, guid: 14ce5ad708a5fc14e90f16e0b6e4ef20, type: 3}
   DestroyableCell_Color: {r: 0.7264151, g: 0, b: 0, a: 1}
   ShieldableCell_Color: {r: 0, g: 0.77655625, b: 1, a: 1}
+  White_ShieldedCell_Color: {r: 0.49685526, g: 0.8875324, b: 1, a: 1}
+  Black_ShieldedCell_Color: {r: 0, g: 0.4932667, b: 0.6320754, a: 1}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -14316,6 +14420,8 @@ MonoBehaviour:
   Knight_Black: {fileID: 21300000, guid: 14ce5ad708a5fc14e90f16e0b6e4ef20, type: 3}
   DestroyableCell_Color: {r: 0.7264151, g: 0, b: 0, a: 1}
   ShieldableCell_Color: {r: 0, g: 0.77655625, b: 1, a: 1}
+  White_ShieldedCell_Color: {r: 0.49685526, g: 0.8875324, b: 1, a: 1}
+  Black_ShieldedCell_Color: {r: 0, g: 0.4932667, b: 0.6320754, a: 1}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -14455,6 +14561,8 @@ MonoBehaviour:
   Knight_Black: {fileID: 21300000, guid: 14ce5ad708a5fc14e90f16e0b6e4ef20, type: 3}
   DestroyableCell_Color: {r: 0.7264151, g: 0, b: 0, a: 1}
   ShieldableCell_Color: {r: 0, g: 0.77655625, b: 1, a: 1}
+  White_ShieldedCell_Color: {r: 0.49685526, g: 0.8875324, b: 1, a: 1}
+  Black_ShieldedCell_Color: {r: 0, g: 0.4932667, b: 0.6320754, a: 1}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -14593,6 +14701,8 @@ MonoBehaviour:
   Knight_Black: {fileID: 21300000, guid: 14ce5ad708a5fc14e90f16e0b6e4ef20, type: 3}
   DestroyableCell_Color: {r: 0.7264151, g: 0, b: 0, a: 1}
   ShieldableCell_Color: {r: 0, g: 0.77655625, b: 1, a: 1}
+  White_ShieldedCell_Color: {r: 0.49685526, g: 0.8875324, b: 1, a: 1}
+  Black_ShieldedCell_Color: {r: 0, g: 0.4932667, b: 0.6320754, a: 1}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -14731,6 +14841,8 @@ MonoBehaviour:
   Knight_Black: {fileID: 21300000, guid: 14ce5ad708a5fc14e90f16e0b6e4ef20, type: 3}
   DestroyableCell_Color: {r: 0.7264151, g: 0, b: 0, a: 1}
   ShieldableCell_Color: {r: 0, g: 0.77655625, b: 1, a: 1}
+  White_ShieldedCell_Color: {r: 0.49685526, g: 0.8875324, b: 1, a: 1}
+  Black_ShieldedCell_Color: {r: 0, g: 0.4932667, b: 0.6320754, a: 1}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -15048,6 +15160,8 @@ MonoBehaviour:
   Knight_Black: {fileID: 21300000, guid: 14ce5ad708a5fc14e90f16e0b6e4ef20, type: 3}
   DestroyableCell_Color: {r: 0.7264151, g: 0, b: 0, a: 1}
   ShieldableCell_Color: {r: 0, g: 0.77655625, b: 1, a: 1}
+  White_ShieldedCell_Color: {r: 0.49685526, g: 0.8875324, b: 1, a: 1}
+  Black_ShieldedCell_Color: {r: 0, g: 0.4932667, b: 0.6320754, a: 1}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -15342,6 +15456,8 @@ MonoBehaviour:
   Knight_Black: {fileID: 21300000, guid: 14ce5ad708a5fc14e90f16e0b6e4ef20, type: 3}
   DestroyableCell_Color: {r: 0.7264151, g: 0, b: 0, a: 1}
   ShieldableCell_Color: {r: 0, g: 0.77655625, b: 1, a: 1}
+  White_ShieldedCell_Color: {r: 0.49685526, g: 0.8875324, b: 1, a: 1}
+  Black_ShieldedCell_Color: {r: 0, g: 0.4932667, b: 0.6320754, a: 1}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -15480,6 +15596,8 @@ MonoBehaviour:
   Knight_Black: {fileID: 21300000, guid: 14ce5ad708a5fc14e90f16e0b6e4ef20, type: 3}
   DestroyableCell_Color: {r: 0.7264151, g: 0, b: 0, a: 1}
   ShieldableCell_Color: {r: 0, g: 0.77655625, b: 1, a: 1}
+  White_ShieldedCell_Color: {r: 0.49685526, g: 0.8875324, b: 1, a: 1}
+  Black_ShieldedCell_Color: {r: 0, g: 0.4932667, b: 0.6320754, a: 1}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -15770,6 +15888,8 @@ MonoBehaviour:
   Knight_Black: {fileID: 21300000, guid: 14ce5ad708a5fc14e90f16e0b6e4ef20, type: 3}
   DestroyableCell_Color: {r: 0.7264151, g: 0, b: 0, a: 1}
   ShieldableCell_Color: {r: 0, g: 0.77655625, b: 1, a: 1}
+  White_ShieldedCell_Color: {r: 0.49685526, g: 0.8875324, b: 1, a: 1}
+  Black_ShieldedCell_Color: {r: 0, g: 0.4932667, b: 0.6320754, a: 1}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -15909,6 +16029,8 @@ MonoBehaviour:
   Knight_Black: {fileID: 21300000, guid: 14ce5ad708a5fc14e90f16e0b6e4ef20, type: 3}
   DestroyableCell_Color: {r: 0.7264151, g: 0, b: 0, a: 1}
   ShieldableCell_Color: {r: 0, g: 0.77655625, b: 1, a: 1}
+  White_ShieldedCell_Color: {r: 0.49685526, g: 0.8875324, b: 1, a: 1}
+  Black_ShieldedCell_Color: {r: 0, g: 0.4932667, b: 0.6320754, a: 1}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -16048,6 +16170,8 @@ MonoBehaviour:
   Knight_Black: {fileID: 21300000, guid: 14ce5ad708a5fc14e90f16e0b6e4ef20, type: 3}
   DestroyableCell_Color: {r: 0.7264151, g: 0, b: 0, a: 1}
   ShieldableCell_Color: {r: 0, g: 0.77655625, b: 1, a: 1}
+  White_ShieldedCell_Color: {r: 0.49685526, g: 0.8875324, b: 1, a: 1}
+  Black_ShieldedCell_Color: {r: 0, g: 0.4932667, b: 0.6320754, a: 1}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -16187,6 +16311,8 @@ MonoBehaviour:
   Knight_Black: {fileID: 21300000, guid: 14ce5ad708a5fc14e90f16e0b6e4ef20, type: 3}
   DestroyableCell_Color: {r: 0.7264151, g: 0, b: 0, a: 1}
   ShieldableCell_Color: {r: 0, g: 0.77655625, b: 1, a: 1}
+  White_ShieldedCell_Color: {r: 0.49685526, g: 0.8875324, b: 1, a: 1}
+  Black_ShieldedCell_Color: {r: 0, g: 0.4932667, b: 0.6320754, a: 1}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}
@@ -16402,6 +16528,8 @@ MonoBehaviour:
   Knight_Black: {fileID: 21300000, guid: 14ce5ad708a5fc14e90f16e0b6e4ef20, type: 3}
   DestroyableCell_Color: {r: 0.7264151, g: 0, b: 0, a: 1}
   ShieldableCell_Color: {r: 0, g: 0.77655625, b: 1, a: 1}
+  White_ShieldedCell_Color: {r: 0.49685526, g: 0.8875324, b: 1, a: 1}
+  Black_ShieldedCell_Color: {r: 0, g: 0.4932667, b: 0.6320754, a: 1}
   CapturingCell_Color: {r: 1, g: 0.58431375, b: 0, a: 1}
   LegalCell_Color: {r: 0.8871795, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.2574176, g: 0.6698113, b: 0, a: 1}

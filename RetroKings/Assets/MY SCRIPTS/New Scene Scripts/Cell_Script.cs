@@ -15,6 +15,8 @@ public class Cell_Script : MonoBehaviour
     [Header("Colors")]
     [SerializeField] private Color DestroyableCell_Color;
     [SerializeField] private Color ShieldableCell_Color;
+    [SerializeField] private Color White_ShieldedCell_Color;
+    [SerializeField] private Color Black_ShieldedCell_Color;
     [SerializeField] private Color CapturingCell_Color;
     [SerializeField] private Color LegalCell_Color;
     [SerializeField] private Color Selected_Color;
@@ -33,14 +35,20 @@ public class Cell_Script : MonoBehaviour
 
         if (MoveChecker.IsDestroyPowerupOn())
         {
-            ExecuteMove_DestroyFeature();
-            return;
+            if (MoveChecker.CheckMove(name))
+            {
+                ExecuteMove_DestroyFeature();
+                return;
+            }
         }
 
         if (MoveChecker.IsImmunityPowerupOn())
         {
-            ExecuteMove_ImmunityFeature();
-            return;
+            if (MoveChecker.CheckMove(name))
+            {
+                ExecuteMove_ImmunityFeature();
+                return;
+            }
         }
 
         GameObject piece = null;
@@ -150,6 +158,16 @@ public class Cell_Script : MonoBehaviour
         sr.color = ShieldableCell_Color;
     }
 
+    public void MarkShieldedCell_White()
+    {
+        sr.color = White_ShieldedCell_Color;
+    }
+
+    public void MarkShieldedCell_Black()
+    {
+        sr.color = Black_ShieldedCell_Color;
+    }
+
     private void UpdatePieceDisplay(GameObject piece, Tuple<Piece, PieceColor> pieceData)
     {
         SpriteRenderer sr = piece.GetComponent<SpriteRenderer>();
@@ -251,7 +269,14 @@ public class Cell_Script : MonoBehaviour
 
     private void ExecuteMove_ImmunityFeature()
     {
+        if (Game.IsMyTurn()) MarkShieldedCell_White();
+        else MarkShieldedCell_Black();
 
+        Game.ImmunityUsed(name);
+
+        Move.ResetMove();
+        MoveChecker.UnmarkAll();
+        Game.SwitchTurn();
     }
 
     private void Update()

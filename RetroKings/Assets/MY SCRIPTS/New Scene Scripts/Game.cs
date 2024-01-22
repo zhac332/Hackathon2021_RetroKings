@@ -19,6 +19,9 @@ public static class Game
     private static Action setGameOverTextOn;
     private static bool gameOver = false;
 
+    private static string whiteImmuneString = "";
+    private static string blackImmuneString = "";
+
     public static void SetWhitePiecesCaptured(CapturedPiecesScript t)
     {
         whitePiecesCaptured = t;
@@ -49,6 +52,29 @@ public static class Game
         else PointsText.text = "Points: " + Black_Points;
         
         displayTurn_Function();
+
+        if (!myTurn)
+        {
+            // white turns black
+            blackImmuneString = "";
+        }
+        else
+        {
+            // black turns white
+            whiteImmuneString = "";
+        }
+
+        MoveChecker.UnmarkAll();
+    }
+
+    public static string GetWhiteImmuneCell()
+    {
+        return whiteImmuneString;
+    }
+
+    public static string GetBlackImmuneCell()
+    {
+        return blackImmuneString;
     }
 
     private static void AddPoints(int value, PieceColor color)
@@ -73,10 +99,20 @@ public static class Game
         MoveChecker.ResetPowerupToggles();
     }
 
-    public static void ImmunityUsed()
+    public static void ImmunityUsed(string cell)
     {
-        if (myTurn) White_Points -= 4;
-        else Black_Points -= 4;
+        if (myTurn)
+        {
+            White_Points -= 4;
+            whiteImmuneString = cell;
+        }
+        else
+        {
+            Black_Points -= 4;
+            blackImmuneString = cell;
+        }
+
+        MoveChecker.ResetPowerupToggles();
     }
 
     public static bool IsGameOver()

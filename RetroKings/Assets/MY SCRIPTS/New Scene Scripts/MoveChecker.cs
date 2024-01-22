@@ -53,7 +53,7 @@ public static class MoveChecker
                 {
                     if (myTurn)
                     {
-                        if (PieceChecker.IsBlackPiece(cells[i]) && PieceChecker.IsPieceValueLowerThan(cells[i], pointsNumber))
+                        if (PieceChecker.IsBlackPiece(cells[i]) && PieceChecker.IsPieceValueLowerThan(cells[i], pointsNumber) && !PieceChecker.IsPieceKing(cells[i]))
                         {
                             cells[i].GetComponent<Cell_Script>().MarkForDestroyableCells();
                             markedCells.Add(cells[i].name);
@@ -61,10 +61,13 @@ public static class MoveChecker
                     }
                     else
                     {
-                        if (PieceChecker.IsWhitePiece(cells[i]) && PieceChecker.IsPieceValueLowerThan(cells[i], pointsNumber))
+                        if (PieceChecker.IsWhitePiece(cells[i]) && PieceChecker.IsPieceValueLowerThan(cells[i], pointsNumber) && !PieceChecker.IsPieceKing(cells[i]))
                         {
-                            cells[i].GetComponent<Cell_Script>().MarkForDestroyableCells();
-                            markedCells.Add(cells[i].name);
+                            if (!IsCellImmune(cells[i]))
+                            {
+                                cells[i].GetComponent<Cell_Script>().MarkForDestroyableCells();
+                                markedCells.Add(cells[i].name);
+                            }
                         }
                     }
                 }
@@ -719,25 +722,41 @@ public static class MoveChecker
     public static void UnmarkAll(int exceptionIndex)
     {
         for (int i = 0; i < cells.Count; i++)
-            if (i != exceptionIndex) cells[i].GetComponent<Cell_Script>().DeselectCell();
+            if (i != exceptionIndex && !IsCellImmune(cells[i]))
+                cells[i].GetComponent<Cell_Script>().DeselectCell();
+    }
+
+    private static bool IsCellImmune(GameObject go)
+    {
+        string whiteImmuneCell = Game.GetWhiteImmuneCell();
+        string blackImmuneCell = Game.GetBlackImmuneCell();
+
+        return ((whiteImmuneCell == go.name) || (blackImmuneCell == go.name));
     }
 
     public static void UnmarkAll()
     {
+        string whiteImmuneCell = Game.GetWhiteImmuneCell();
+        string blackImmuneCell = Game.GetBlackImmuneCell();
+
         for (int i = 0; i < cells.Count; i++)
-            cells[i].GetComponent<Cell_Script>().DeselectCell();
+            if (cells[i].name != whiteImmuneCell && cells[i].name != blackImmuneCell)
+            {
+                cells[i].GetComponent<Cell_Script>().DeselectCell();
+            }
     }
 
     // 0 - can move, 1 - isCapturing, 2 - isDestroyable, 3 - isShieldable
     private static void MarkCell(int row, int col, int colorCode)
     {
         int index = row * 8 + col;
+
         if (index >= 0 && index < cells.Count)
         {
+            if (IsCellImmune(cells[index])) return;
+
             if (colorCode == 0) cells[index].GetComponent<Cell_Script>().MarkForLegalCells();
             else if (colorCode == 1) cells[index].GetComponent<Cell_Script>().MarkForCaptureCells();
-            else if (colorCode == 2) cells[index].GetComponent<Cell_Script>().MarkForDestroyableCells();
-            else if (colorCode == 3) cells[index].GetComponent<Cell_Script>().MarkForShieldableCells();
             markedCells.Add(cells[index].name);
         }
     }
