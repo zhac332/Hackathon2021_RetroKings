@@ -72,6 +72,7 @@ public static class MoveChecker
                     }
                 }
         }
+        else markedCells = new List<string>();
     }
 
     public static void MarkShieldableCells(int pointsNumber, bool myTurn)
@@ -107,6 +108,7 @@ public static class MoveChecker
                     }
                 }
         }
+        else markedCells = new List<string>();
     }
 
     public static bool IsDestroyPowerupOn()
