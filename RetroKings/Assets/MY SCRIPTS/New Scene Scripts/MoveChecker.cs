@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using TMPro;
 using UnityEditor;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
@@ -23,6 +24,9 @@ public static class MoveChecker
     private static bool whiteKing_Moved = false;
     private static bool blackKing_Moved = false;
 
+    private static bool destroyPowerup_Toggle = false;
+    private static bool immunityPowerup_Toggle = false;
+
     public static void AcquireAllCells()
     {
         if (!acquired)
@@ -36,43 +40,70 @@ public static class MoveChecker
     public static void MarkDestroyableCells(int pointsNumber, bool myTurn)
     {
         UnmarkAll();
-        markedCells = new List<string>();
 
-        for (int i = 0; i < cells.Count; i++)
-            if (PieceChecker.HasAPiece(cells[i]))
-            {
-                if (myTurn)
+        destroyPowerup_Toggle = !destroyPowerup_Toggle;
+
+        if (destroyPowerup_Toggle)
+        {
+            immunityPowerup_Toggle = false;
+            markedCells = new List<string>();
+
+            for (int i = 0; i < cells.Count; i++)
+                if (PieceChecker.HasAPiece(cells[i]))
                 {
-                    if (PieceChecker.IsBlackPiece(cells[i]) && PieceChecker.IsPieceValueLowerThan(cells[i], pointsNumber))
-                        cells[i].GetComponent<Cell_Script>().MarkForDestroyableCells();
+                    if (myTurn)
+                    {
+                        if (PieceChecker.IsBlackPiece(cells[i]) && PieceChecker.IsPieceValueLowerThan(cells[i], pointsNumber))
+                        {
+                            cells[i].GetComponent<Cell_Script>().MarkForDestroyableCells();
+                            markedCells.Add(cells[i].name);
+                        }
+                    }
+                    else
+                    {
+                        if (PieceChecker.IsWhitePiece(cells[i]) && PieceChecker.IsPieceValueLowerThan(cells[i], pointsNumber))
+                        {
+                            cells[i].GetComponent<Cell_Script>().MarkForDestroyableCells();
+                            markedCells.Add(cells[i].name);
+                        }
+                    }
                 }
-                else
-                {
-                    if (PieceChecker.IsWhitePiece(cells[i]) && PieceChecker.IsPieceValueLowerThan(cells[i], pointsNumber))
-                        cells[i].GetComponent<Cell_Script>().MarkForDestroyableCells();
-                }
-            }
+        }
     }
 
     public static void MarkShieldableCells(int pointsNumber, bool myTurn)
     {
         UnmarkAll();
-        markedCells = new List<string>();
 
-        for (int i = 0; i < cells.Count; i++)
-            if (PieceChecker.HasAPiece(cells[i]))
-            {
-                if (myTurn)
+        immunityPowerup_Toggle = !immunityPowerup_Toggle;
+
+        if (immunityPowerup_Toggle)
+        {
+            destroyPowerup_Toggle = false;
+            markedCells = new List<string>();
+
+            for (int i = 0; i < cells.Count; i++)
+                if (PieceChecker.HasAPiece(cells[i]))
                 {
-                    if (PieceChecker.IsWhitePiece(cells[i]) && pointsNumber >= 4 && !PieceChecker.IsPieceKing(cells[i]))
-                        cells[i].GetComponent<Cell_Script>().MarkForShieldableCells();
+                    if (myTurn)
+                    {
+                        if (PieceChecker.IsWhitePiece(cells[i]) && pointsNumber >= 4 && !PieceChecker.IsPieceKing(cells[i]))
+                        {
+                            cells[i].GetComponent<Cell_Script>().MarkForShieldableCells();
+                            markedCells.Add(cells[i].name);
+                        }
+
+                    }
+                    else
+                    {
+                        if (PieceChecker.IsBlackPiece(cells[i]) && pointsNumber >= 4 && !PieceChecker.IsPieceKing(cells[i]))
+                        {
+                            cells[i].GetComponent<Cell_Script>().MarkForShieldableCells();
+                            markedCells.Add(cells[i].name);
+                        }
+                    }
                 }
-                else
-                {
-                    if (PieceChecker.IsBlackPiece(cells[i]) && pointsNumber >= 4 && !PieceChecker.IsPieceKing(cells[i]))
-                        cells[i].GetComponent<Cell_Script>().MarkForShieldableCells();
-                }
-            }
+        }
     }
 
     public static void SetUpdatePromotionalPiecesFunction(Action<bool> method)

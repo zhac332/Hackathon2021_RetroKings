@@ -19,8 +19,6 @@ public class GameControlsScript : MonoBehaviour
     [SerializeField] private Image KnightButton_Image;
     [SerializeField] private List<Sprite> WhitePieces;
     [SerializeField] private List<Sprite> BlackPieces;
-    private bool destroyButton_Toggle = false;
-    private bool immunityButton_Toggle = false;
 
     private void Start()
     {
@@ -37,24 +35,12 @@ public class GameControlsScript : MonoBehaviour
 
     public void DestroyButton_OnClick()
     {
-        destroyButton_Toggle = !destroyButton_Toggle;
-        if (destroyButton_Toggle)
-        {
-            immunityButton_Toggle = false;
-            MoveChecker.MarkDestroyableCells(Game.GetPoints(), Game.IsMyTurn());
-        }
-        else MoveChecker.UnmarkAll();
+        MoveChecker.MarkDestroyableCells(Game.GetPoints(), Game.IsMyTurn());
     }
 
     public void ImmunityButton_OnClick()
     {
-        immunityButton_Toggle = !immunityButton_Toggle;
-        if (immunityButton_Toggle)
-        {
-            destroyButton_Toggle = false;
-            MoveChecker.MarkShieldableCells(Game.GetPoints(), Game.IsMyTurn());
-        }
-        else MoveChecker.UnmarkAll();
+        MoveChecker.MarkShieldableCells(Game.GetPoints(), Game.IsMyTurn());
     }
 
     public void UpdateImages(bool isWhite)
