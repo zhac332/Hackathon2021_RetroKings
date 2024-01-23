@@ -30,9 +30,7 @@ public static class Move
     {
         string[] parts = pieceName.Split('_');
         Piece p = Piece.NULL;
-        PieceColor c = PieceColor.NULL;
-
-        c = (parts[1] == "B" ? PieceColor.Black : PieceColor.White);
+        PieceColor c = (parts[1] == "B" ? PieceColor.Black : PieceColor.White);
 
         if (parts[0].Contains("Pawn")) p = Piece.Pawn;
         else if (parts[0].Contains("Bishop")) p = Piece.Bishop;
@@ -46,7 +44,6 @@ public static class Move
             firstCell_Selected = true;
             firstCell = cellName;
             currentPiece = new Tuple<Piece, PieceColor>(p, c);
-            Debug.Log("Set the following piece " + currentPiece.ToString());
         }
         else
         {

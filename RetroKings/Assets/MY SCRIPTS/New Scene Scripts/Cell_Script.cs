@@ -3,6 +3,9 @@ using UnityEngine;
 
 public class Cell_Script : MonoBehaviour
 {
+    [SerializeField] private HistoryMovesScript ListOfMoves;
+    
+    [Header("Sprites for pieces")]
     [SerializeField] private Sprite Queen_White;
     [SerializeField] private Sprite Rook_White;
     [SerializeField] private Sprite Bishop_White;
@@ -226,6 +229,9 @@ public class Cell_Script : MonoBehaviour
         // I need to hold the child piece from cell1,
         // I need to remove the child piece from cell2, if there is one
         // and put the piece from cell1 to cell2
+        bool capture = false;
+        bool isPromotional = MoveChecker.IsPromotionalMove(name);
+
         GameObject c1 = GameObject.Find(cell1);
         GameObject c2 = GameObject.Find(cell2);
         GameObject p = c1.transform.GetChild(0).gameObject;
@@ -236,6 +242,7 @@ public class Cell_Script : MonoBehaviour
 
         if (c2.transform.childCount != 0)
         {
+            capture = true;
             GameObject go = c2.transform.GetChild(0).gameObject;
             Game.PieceCaptured(go.name);
             Destroy(go);
@@ -245,12 +252,24 @@ public class Cell_Script : MonoBehaviour
 
         Debug.Log("Moved " + p.name + " from " + c1.name + " to " + c2.name);
 
+        if (isPromotional)
+        {
+            ListOfMoves.AddPromotionMove(cell1, cell2, piece.Item1);
+        }
+        else
+        {
+            if (!capture) ListOfMoves.AddNormalMove(cell1, cell2);
+            else ListOfMoves.AddCaptureMove(cell1, cell2);
+        }
+
+
         p.transform.localPosition = new Vector3(0f, 0f, 0f);
 
         Move.ResetMove();
         MoveChecker.UnmarkAll();
         if (switchTurn) Game.SwitchTurn();
         MoveChecker.UpdateCastlingPossibilities(piece, cell1);
+        
     }
 
     private void ExecuteMove_DestroyFeature()
@@ -260,6 +279,8 @@ public class Cell_Script : MonoBehaviour
 
         UpdatePieceDisplay(p, piece);
         Destroy(p);
+
+        ListOfMoves.AddDestroyUse(name);
 
         Game.PieceCaptured(p.name);
         Game.DestroyUsed(piece);
@@ -273,6 +294,8 @@ public class Cell_Script : MonoBehaviour
     {
         if (Game.IsMyTurn()) MarkShieldedCell_White();
         else MarkShieldedCell_Black();
+
+        ListOfMoves.AddImmunityMove(name);
 
         Game.ImmunityUsed(name);
 
