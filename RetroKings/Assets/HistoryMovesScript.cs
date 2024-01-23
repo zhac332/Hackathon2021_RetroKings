@@ -11,14 +11,31 @@ public class MoveString
     public Text Move2;
 }
 
+[Serializable]
+public class MoveString_Text
+{
+    public string Move1;
+    public string Move2;
+
+    public MoveString_Text(string a, string b)
+    {
+        Move1 = a;
+        Move2 = b;
+    }
+}
+
 public class HistoryMovesScript : MonoBehaviour
 {
     [SerializeField] private List<MoveString> Moves;
-    private List<string> moves;
+    [SerializeField] private int NrLinesDisplayable = 19;
+    private List<MoveString_Text> moves;
+    private int blockIndex = 0;
 
     private void Start()
     {
-        moves = new List<string>();
+        moves = new List<MoveString_Text>();
+        moves.Add(new MoveString_Text("", ""));
+        blockIndex = 0;
 
         for (int i = 0; i < Moves.Count; i++)
         {
@@ -31,7 +48,8 @@ public class HistoryMovesScript : MonoBehaviour
     {
         cell1 = char.ToLower(cell1[0]) + cell1[1..];
         cell2 = char.ToLower(cell2[0]) + cell2[1..];
-        moves.Add(cell1 + "x" + cell2);
+        AddNewData(cell1 + "x" + cell2);
+        UpdateBlockIndex();
         UpdateStrings();
     }
 
@@ -39,7 +57,8 @@ public class HistoryMovesScript : MonoBehaviour
     {
         cell1 = char.ToLower(cell1[0]) + cell1[1..];
         cell2 = char.ToLower(cell2[0]) + cell2[1..];
-        moves.Add(cell1 + "-" + cell2);
+        AddNewData(cell1 + "-" + cell2);
+        UpdateBlockIndex();
         UpdateStrings();
     }
     
@@ -48,7 +67,8 @@ public class HistoryMovesScript : MonoBehaviour
         cell1 = char.ToLower(cell1[0]) + cell1[1..];
         cell2 = char.ToLower(cell2[0]) + cell2[1..];
         string symbol = (isLong ? "-OO-" : "-O-");
-        moves.Add(cell1 + symbol + cell2);
+        AddNewData(cell1 + symbol + cell2);
+        UpdateBlockIndex();
         UpdateStrings();
     }
 
@@ -63,37 +83,77 @@ public class HistoryMovesScript : MonoBehaviour
         if (p == Piece.Rook) pieceIcon = "R";
         if (p == Piece.Queen) pieceIcon = "Q";
 
-        moves.Add(cell1 + "-" + cell2 + "^" + pieceIcon);
+        AddNewData(cell1 + "-" + cell2 + "^" + pieceIcon);
+        UpdateBlockIndex();
         UpdateStrings();
     }
 
     public void AddDestroyUse(string cell)
     {
         cell = char.ToLower(cell[0]) + cell[1..];
-        moves.Add("D-" + cell);
+        AddNewData("D-" + cell);
+        UpdateBlockIndex();
         UpdateStrings();
     }
 
     public void AddImmunityMove(string cell)
     {
         cell = char.ToLower(cell[0]) + cell[1..];
-        moves.Add("S-" + cell);
+        AddNewData("S-" + cell);
+        UpdateBlockIndex();
+        UpdateStrings();
+    }
+
+    private void AddNewData(string data)
+    {
+        if (moves[moves.Count - 1].Move1 == "") moves[moves.Count - 1].Move1 = data;
+        else
+        {
+            moves[moves.Count - 1].Move2 = data;
+            moves.Add(new MoveString_Text("", ""));
+        }
+    }
+
+    private void UpdateBlockIndex()
+    {
+        blockIndex = (moves.Count - 1) / NrLinesDisplayable;
+    }
+
+    public void UpButton_OnClick()
+    {
+        Debug.Log("up");
+        blockIndex--;
+        if (blockIndex < 0) blockIndex = 0;
+        UpdateStrings();
+    }
+
+    public void DownButton_OnClick()
+    {
+        Debug.Log("down");
+        blockIndex++;
+        if (blockIndex * NrLinesDisplayable >= moves.Count) blockIndex--;
         UpdateStrings();
     }
 
     private void UpdateStrings()
     {
-        int textIndex = -1;
-        for (int i = 0; i < moves.Count; i ++)
-            if (i % 2 == 0)
+        for (int i = 0; i < Moves.Count; i++)
+        {
+            int index = blockIndex * NrLinesDisplayable + i;
+
+            Moves[i].Nr.text = (index + 1).ToString();
+
+            if (index < moves.Count)
             {
-                textIndex++;
-                Moves[textIndex].Nr.text = textIndex.ToString();
-                Moves[textIndex].Move1.text = moves[i];
+                Moves[i].Move1.text = moves[index].Move1;
+                Moves[i].Move2.text = moves[index].Move2;
             }
             else
             {
-                Moves[textIndex].Move2.text = moves[i];
+                Moves[i].Move1.text = "";
+                Moves[i].Move2.text = "";
             }
+        }
+
     }
 }
