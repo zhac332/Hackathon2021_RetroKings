@@ -44,9 +44,13 @@ public class HistoryMovesScript : MonoBehaviour
         UpdateStrings();
     }
     
-    public void AddCastlesMove()
+    public void AddCastlesMove(string cell1, string cell2, bool isLong)
     {
-
+        cell1 = char.ToLower(cell1[0]) + cell1[1..];
+        cell2 = char.ToLower(cell2[0]) + cell2[1..];
+        string symbol = (isLong ? "-OO-" : "-O-");
+        moves.Add(cell1 + symbol + cell2);
+        UpdateStrings();
     }
 
     public void AddPromotionMove(string cell1, string cell2, Piece p)

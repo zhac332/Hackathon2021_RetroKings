@@ -1,4 +1,5 @@
 using System;
+using System.Net.Http.Headers;
 using UnityEngine;
 
 public class Cell_Script : MonoBehaviour
@@ -224,6 +225,24 @@ public class Cell_Script : MonoBehaviour
         }
     }
 
+    private bool IsLongCastling(string cell1, string cell2, Piece p)
+    {
+        if (p == Piece.King)
+        {
+            return ((cell1 == "E1" && cell2 == "C1") || (cell1 == "E8" || cell2 == "C8"));
+        }
+        return false;
+    }
+
+    private bool IsShortCastling(string cell1, string cell2, Piece p)
+    {
+        if (p == Piece.King)
+        {
+            return ((cell1 == "E1" && cell2 == "G1") || (cell1 == "E8" || cell2 == "G8"));
+        }
+        return false;
+    }
+
     private void ExecuteMove(string cell1, string cell2, Tuple<Piece, PieceColor> piece, bool switchTurn)
     {
         // I need to hold the child piece from cell1,
@@ -252,7 +271,15 @@ public class Cell_Script : MonoBehaviour
 
         Debug.Log("Moved " + p.name + " from " + c1.name + " to " + c2.name);
 
-        if (isPromotional)
+        if (IsLongCastling(cell1, cell2, piece.Item1))
+        {
+            ListOfMoves.AddCastlesMove(cell1, cell2, true);
+        }
+        else if (IsShortCastling(cell1, cell2, piece.Item1))
+        {
+            ListOfMoves.AddCastlesMove(cell1, cell2, false);
+        }
+        else if (isPromotional)
         {
             ListOfMoves.AddPromotionMove(cell1, cell2, piece.Item1);
         }
