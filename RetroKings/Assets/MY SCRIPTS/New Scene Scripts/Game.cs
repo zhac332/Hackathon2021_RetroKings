@@ -8,8 +8,8 @@ public static class Game
     private static Action displayTurn_Function;
     private static CapturedPiecesScript whitePiecesCaptured;
     private static CapturedPiecesScript blackPiecesCaptured;
-    private static int White_Points = 10;
-    private static int Black_Points = 10;
+    private static int White_Points = 1000;
+    private static int Black_Points = 1000;
     private static readonly int Pawn_Value = 1;
     private static readonly int Bishop_Value = 3;
     private static readonly int Knight_Value = 3;
@@ -65,6 +65,16 @@ public static class Game
         }
 
         MoveChecker.UnmarkAll();
+    }
+
+    public static bool CanWhiteUseImmune()
+    {
+        return White_Points >= 4;
+    }
+
+    public static bool CanBlackUseImmune()
+    {
+        return Black_Points >= 4;
     }
 
     public static string GetWhiteImmuneCell()

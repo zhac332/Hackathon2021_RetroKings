@@ -85,6 +85,7 @@ public class Cell_Script : MonoBehaviour
             Move.SelectPiece(name, piece.name);
             MoveChecker.SetFirstPiece(piece.name);
             MoveChecker.MarkAvailableCells(gameObject);
+            MoveChecker.ResetPowerupToggles();
         }
         else
         {
@@ -260,6 +261,7 @@ public class Cell_Script : MonoBehaviour
         UpdatePieceDisplay(p, piece);
         Destroy(p);
 
+        Game.PieceCaptured(p.name);
         Game.DestroyUsed(piece);
         Move.ResetMove();
         MoveChecker.UnmarkAll();
