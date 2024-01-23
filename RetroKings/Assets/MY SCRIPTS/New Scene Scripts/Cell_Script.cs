@@ -229,7 +229,7 @@ public class Cell_Script : MonoBehaviour
     {
         if (p == Piece.King)
         {
-            return ((cell1 == "E1" && cell2 == "C1") || (cell1 == "E8" || cell2 == "C8"));
+            return ((cell1 == "E1" && cell2 == "C1") || (cell1 == "E8" && cell2 == "C8"));
         }
         return false;
     }
@@ -238,7 +238,7 @@ public class Cell_Script : MonoBehaviour
     {
         if (p == Piece.King)
         {
-            return ((cell1 == "E1" && cell2 == "G1") || (cell1 == "E8" || cell2 == "G8"));
+            return ((cell1 == "E1" && cell2 == "G1") || (cell1 == "E8" && cell2 == "G8"));
         }
         return false;
     }
@@ -271,30 +271,33 @@ public class Cell_Script : MonoBehaviour
 
         Debug.Log("Moved " + p.name + " from " + c1.name + " to " + c2.name);
 
-        if (IsLongCastling(cell1, cell2, piece.Item1))
-        {
-            ListOfMoves.AddCastlesMove(cell1, cell2, true);
-        }
-        else if (IsShortCastling(cell1, cell2, piece.Item1))
-        {
-            ListOfMoves.AddCastlesMove(cell1, cell2, false);
-        }
-        else if (isPromotional)
-        {
-            ListOfMoves.AddPromotionMove(cell1, cell2, piece.Item1);
-        }
-        else
-        {
-            if (!capture) ListOfMoves.AddNormalMove(cell1, cell2);
-            else ListOfMoves.AddCaptureMove(cell1, cell2);
-        }
-
-
         p.transform.localPosition = new Vector3(0f, 0f, 0f);
 
         Move.ResetMove();
         MoveChecker.UnmarkAll();
-        if (switchTurn) Game.SwitchTurn();
+        if (switchTurn)
+        {
+
+            if (IsLongCastling(cell1, cell2, piece.Item1))
+            {
+                ListOfMoves.AddCastlesMove(cell1, cell2, true);
+            }
+            else if (IsShortCastling(cell1, cell2, piece.Item1))
+            {
+                ListOfMoves.AddCastlesMove(cell1, cell2, false);
+            }
+            else if (isPromotional)
+            {
+                ListOfMoves.AddPromotionMove(cell1, cell2, piece.Item1);
+            }
+            else
+            {
+                if (!capture) ListOfMoves.AddNormalMove(cell1, cell2);
+                else ListOfMoves.AddCaptureMove(cell1, cell2);
+            }
+
+            Game.SwitchTurn();
+        }
         MoveChecker.UpdateCastlingPossibilities(piece, cell1);
         
     }
