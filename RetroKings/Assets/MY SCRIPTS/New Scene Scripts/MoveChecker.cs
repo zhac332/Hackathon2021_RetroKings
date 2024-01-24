@@ -55,8 +55,11 @@ public static class MoveChecker
                     {
                         if (PieceChecker.IsBlackPiece(cells[i]) && PieceChecker.IsPieceValueLowerThan(cells[i], pointsNumber) && !PieceChecker.IsPieceKing(cells[i]))
                         {
-                            cells[i].GetComponent<Cell_Script>().MarkForDestroyableCells();
-                            markedCells.Add(cells[i].name);
+                            if (Game.GetBlackImmuneCell() != cells[i].name)
+                            {
+                                cells[i].GetComponent<Cell_Script>().MarkForDestroyableCells();
+                                markedCells.Add(cells[i].name);
+                            }
                         }
                     }
                     else
@@ -65,8 +68,11 @@ public static class MoveChecker
                         {
                             if (!IsCellImmune(cells[i]))
                             {
-                                cells[i].GetComponent<Cell_Script>().MarkForDestroyableCells();
-                                markedCells.Add(cells[i].name);
+                                if (Game.GetWhiteImmuneCell() != cells[i].name)
+                                {
+                                    cells[i].GetComponent<Cell_Script>().MarkForDestroyableCells();
+                                    markedCells.Add(cells[i].name);
+                                }
                             }
                         }
                     }
