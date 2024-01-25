@@ -46,7 +46,7 @@ public static class Game
     {
         myTurn = !myTurn;
         
-        PointsText = GameObject.Find("MAIN CANVAS/Turn and Powerups Panel/PointsText").GetComponent<Text>();
+        PointsText = GameObject.Find("MAIN CANVAS/PointsText").GetComponent<Text>();
         
         if (myTurn) PointsText.text = "Points: " + White_Points;
         else PointsText.text = "Points: " + Black_Points;

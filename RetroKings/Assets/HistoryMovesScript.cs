@@ -1,47 +1,26 @@
 using System;
 using System.Collections.Generic;
+using System.Net.Http.Headers;
+using System.Security.Cryptography;
 using UnityEngine;
 using UnityEngine.UI;
-
-[Serializable]
-public class MoveString
-{
-    public Text Nr;
-    public Text Move1;
-    public Text Move2;
-}
-
-[Serializable]
-public class MoveString_Text
-{
-    public string Move1;
-    public string Move2;
-
-    public MoveString_Text(string a, string b)
-    {
-        Move1 = a;
-        Move2 = b;
-    }
-}
+using UnityEngine.UIElements;
 
 public class HistoryMovesScript : MonoBehaviour
 {
-    [SerializeField] private List<MoveString> Moves;
-    [SerializeField] private int NrLinesDisplayable = 19;
-    private List<MoveString_Text> moves;
+    [SerializeField] private GameObject LinePrefab;
+    private ScrollRect scroll;
+    private List<Tuple<string, string>> moves;
     private int blockIndex = 0;
 
     private void Start()
     {
-        moves = new List<MoveString_Text>();
-        moves.Add(new MoveString_Text("", ""));
-        blockIndex = 0;
-
-        for (int i = 0; i < Moves.Count; i++)
+        scroll = GetComponent<ScrollRect>();
+        moves = new List<Tuple<string, string>>
         {
-            Moves[i].Nr.text = (i + 1).ToString();
-            Moves[i].Move1.text = Moves[i].Move2.text = "";
-        }
+            new Tuple<string, string>("", "")
+        };
+        AddNewLine(1);
     }
 
     public void AddCaptureMove(string cell1, string cell2)
@@ -49,8 +28,6 @@ public class HistoryMovesScript : MonoBehaviour
         cell1 = char.ToLower(cell1[0]) + cell1[1..];
         cell2 = char.ToLower(cell2[0]) + cell2[1..];
         AddNewData(cell1 + "x" + cell2);
-        UpdateBlockIndex();
-        UpdateStrings();
     }
 
     public void AddNormalMove(string cell1, string cell2)
@@ -58,8 +35,6 @@ public class HistoryMovesScript : MonoBehaviour
         cell1 = char.ToLower(cell1[0]) + cell1[1..];
         cell2 = char.ToLower(cell2[0]) + cell2[1..];
         AddNewData(cell1 + "-" + cell2);
-        UpdateBlockIndex();
-        UpdateStrings();
     }
     
     public void AddCastlesMove(string cell1, string cell2, bool isLong)
@@ -68,8 +43,6 @@ public class HistoryMovesScript : MonoBehaviour
         cell2 = char.ToLower(cell2[0]) + cell2[1..];
         string symbol = (isLong ? "-OO-" : "-O-");
         AddNewData(cell1 + symbol + cell2);
-        UpdateBlockIndex();
-        UpdateStrings();
     }
 
     public void AddPromotionMove(string cell1, string cell2, Piece p)
@@ -84,76 +57,55 @@ public class HistoryMovesScript : MonoBehaviour
         if (p == Piece.Queen) pieceIcon = "Q";
 
         AddNewData(cell1 + "-" + cell2 + "^" + pieceIcon);
-        UpdateBlockIndex();
-        UpdateStrings();
     }
 
     public void AddDestroyUse(string cell)
     {
         cell = char.ToLower(cell[0]) + cell[1..];
         AddNewData("D-" + cell);
-        UpdateBlockIndex();
-        UpdateStrings();
     }
 
     public void AddImmunityMove(string cell)
     {
         cell = char.ToLower(cell[0]) + cell[1..];
         AddNewData("S-" + cell);
-        UpdateBlockIndex();
-        UpdateStrings();
     }
 
     private void AddNewData(string data)
     {
-        if (moves[moves.Count - 1].Move1 == "") moves[moves.Count - 1].Move1 = data;
+        if (moves[moves.Count - 1].Item1 == "")
+        {
+            moves[moves.Count - 1] = new Tuple<string, string>(data, "");
+            UpdateLastLine(moves.Count, data, "");
+        }
         else
         {
-            moves[moves.Count - 1].Move2 = data;
-            moves.Add(new MoveString_Text("", ""));
+            moves[moves.Count - 1] = new Tuple<string, string>(moves[moves.Count - 1].Item1, data);
+            UpdateLastLine(data);
+            moves.Add(new Tuple<string, string>("", ""));
+            AddNewLine(moves.Count);
         }
     }
 
-    private void UpdateBlockIndex()
+    private void UpdateLastLine(int count, string move1, string move2)
     {
-        blockIndex = (moves.Count - 1) / NrLinesDisplayable;
+        var go = scroll.content.transform.GetChild(moves.Count - 1);
+        go.GetComponent<LineScript>().SetNr(count);
+        go.GetComponent<LineScript>().SetMove1(move1);
+        go.GetComponent<LineScript>().SetMove2(move2);
     }
 
-    public void UpButton_OnClick()
+    private void UpdateLastLine(string move2)
     {
-        Debug.Log("up");
-        blockIndex--;
-        if (blockIndex < 0) blockIndex = 0;
-        UpdateStrings();
+        var go = scroll.content.transform.GetChild(moves.Count - 1);
+        go.GetComponent<LineScript>().SetMove2(move2);
     }
 
-    public void DownButton_OnClick()
+    private void AddNewLine(int count)
     {
-        Debug.Log("down");
-        blockIndex++;
-        if (blockIndex * NrLinesDisplayable >= moves.Count) blockIndex--;
-        UpdateStrings();
-    }
-
-    private void UpdateStrings()
-    {
-        for (int i = 0; i < Moves.Count; i++)
-        {
-            int index = blockIndex * NrLinesDisplayable + i;
-
-            Moves[i].Nr.text = (index + 1).ToString();
-
-            if (index < moves.Count)
-            {
-                Moves[i].Move1.text = moves[index].Move1;
-                Moves[i].Move2.text = moves[index].Move2;
-            }
-            else
-            {
-                Moves[i].Move1.text = "";
-                Moves[i].Move2.text = "";
-            }
-        }
-
+        var go = Instantiate(LinePrefab, scroll.content.transform);
+        go.GetComponent<LineScript>().SetNr(count);
+        go.GetComponent<LineScript>().SetMove1("");
+        go.GetComponent<LineScript>().SetMove2("");
     }
 }

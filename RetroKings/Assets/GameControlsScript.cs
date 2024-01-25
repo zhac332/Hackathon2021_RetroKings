@@ -1,11 +1,11 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class GameControlsScript : MonoBehaviour
 {
+    //[SerializeField] private ScrollView scroll;
+    
     [Header("For turns")]
     [SerializeField] private Sprite KingWhite;
     [SerializeField] private Sprite KingBlack;
