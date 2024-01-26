@@ -9,13 +9,17 @@ using UnityEngine.UIElements;
 public class HistoryMovesScript : MonoBehaviour
 {
     [SerializeField] private GameObject LinePrefab;
+    [SerializeField] private Vector3 StartPos; 
     private ScrollRect scroll;
+    private RectTransform contentRectTransform;
     private List<Tuple<string, string>> moves;
     private int blockIndex = 0;
+    private float lastY = 0f;
 
     private void Start()
     {
         scroll = GetComponent<ScrollRect>();
+        contentRectTransform = scroll.content.GetComponent<RectTransform>();
         moves = new List<Tuple<string, string>>
         {
             new Tuple<string, string>("", "")
@@ -101,9 +105,44 @@ public class HistoryMovesScript : MonoBehaviour
         go.GetComponent<LineScript>().SetMove2(move2);
     }
 
+    private void Shift(float height)
+    {
+        for (int i = 0; i < scroll.content.transform.childCount; i++)
+        {
+            var tr = scroll.content.transform.GetChild(i).GetComponent<RectTransform>();
+            var pos = tr.anchoredPosition;
+            pos.y += (height / 2);
+            tr.anchoredPosition = pos;
+        }
+        StartPos = new Vector3(StartPos.x, StartPos.y + 15f, 0f);
+    }
+
     private void AddNewLine(int count)
     {
         var go = Instantiate(LinePrefab, scroll.content.transform);
+        RectTransform rt = go.GetComponent<RectTransform>();
+
+        // Adjust the Y position based on the number of existing lines
+        float yOffset = StartPos.y - (count - 1) * rt.rect.height;
+        rt.anchoredPosition = new Vector2(0f, yOffset);
+
+        if (moves.Count >= 8)
+        {
+            // Update the size of the content rectangle
+            float newHeight = contentRectTransform.sizeDelta.y + rt.rect.height;
+            contentRectTransform.sizeDelta = new Vector2(contentRectTransform.sizeDelta.x, newHeight);
+
+            Vector3 pos = contentRectTransform.position;
+            pos.y += rt.rect.height / 2;
+            contentRectTransform.position = pos;
+
+            Shift(rt.rect.height);
+
+
+            Canvas.ForceUpdateCanvases();
+            scroll.verticalNormalizedPosition = 0f;
+        }
+
         go.GetComponent<LineScript>().SetNr(count);
         go.GetComponent<LineScript>().SetMove1("");
         go.GetComponent<LineScript>().SetMove2("");
