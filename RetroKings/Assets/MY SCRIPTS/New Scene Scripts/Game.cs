@@ -5,17 +5,17 @@ using UnityEngine.UI;
 public static class Game
 {
     private static bool myTurn = true;
-    private static Action displayTurn_Function;
     private static CapturedPiecesScript whitePiecesCaptured;
     private static CapturedPiecesScript blackPiecesCaptured;
-    private static int White_Points = 1000;
-    private static int Black_Points = 1000;
+    private static int White_Points = 10;
+    private static int Black_Points = 10;
     private static readonly int Pawn_Value = 1;
     private static readonly int Bishop_Value = 3;
     private static readonly int Knight_Value = 3;
     private static readonly int Rook_Value = 5;
     private static readonly int Queen_Value = 9;
-    private static Text PointsText;
+    private static Text WhitePointsText;
+    private static Text BlackPointsText;
     private static Action setGameOverTextOn;
     private static bool gameOver = false;
 
@@ -32,11 +32,6 @@ public static class Game
         blackPiecesCaptured = t;
     }
 
-    public static void SetDisplayTurnFunction(Action t)
-    {
-        displayTurn_Function = t;
-    }
-
     public static void SetGameOverTrigger(Action t)
     {
         setGameOverTextOn = t;
@@ -46,12 +41,11 @@ public static class Game
     {
         myTurn = !myTurn;
         
-        PointsText = GameObject.Find("MAIN CANVAS/PointsText").GetComponent<Text>();
-        
-        if (myTurn) PointsText.text = "Points: " + White_Points;
-        else PointsText.text = "Points: " + Black_Points;
-        
-        displayTurn_Function();
+        WhitePointsText = GameObject.Find("MAIN CANVAS/Turn and Powerups Panel/WhitePoints_Text").GetComponent<Text>();
+        BlackPointsText = GameObject.Find("MAIN CANVAS/Turn and Powerups Panel/BlackPoints_Text").GetComponent<Text>();
+
+        WhitePointsText.text = "White points: " + White_Points;
+        BlackPointsText.text = "Black points: " + Black_Points;
 
         if (!myTurn)
         {

@@ -5,9 +5,6 @@ using UnityEngine.UI;
 
 public class CapturedPiecesScript : MonoBehaviour
 {
-    [SerializeField] private float StartX = -400f;
-    [SerializeField] private float DeltaX = 80f;
-
     [SerializeField] private Sprite Rook_Sprite;
     [SerializeField] private Sprite Bishop_Sprite;
     [SerializeField] private Sprite Knight_Sprite;
@@ -29,7 +26,6 @@ public class CapturedPiecesScript : MonoBehaviour
         for (int i = 0; i < transform.childCount; i++)
         {
             Transform t = transform.GetChild(i);
-            t.localPosition = new Vector3(StartX + i * DeltaX, 0f, 0f);
             PiecesCaptured.Add(t.GetComponent<Image>());
         }
 

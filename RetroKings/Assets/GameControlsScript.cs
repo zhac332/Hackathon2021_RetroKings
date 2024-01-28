@@ -23,9 +23,7 @@ public class GameControlsScript : MonoBehaviour
     private void Start()
     {
         MoveChecker.SetUpdatePromotionalPiecesFunction((white) => UpdateImages(white));
-        Game.SetDisplayTurnFunction(DisplayTurn);
         Game.SetGameOverTrigger(SetGameOver);
-        DisplayTurn();
     }
 
     public void SetGameOver()
@@ -69,10 +67,5 @@ public class GameControlsScript : MonoBehaviour
     public void KnightButton_OnClick()
     {
         Move.PromotionSelected(Piece.Knight);
-    }
-
-    public void DisplayTurn()
-    {
-        TurnImage.sprite = (Game.IsMyTurn()) ? KingWhite : KingBlack;
     }
 }
