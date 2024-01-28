@@ -1,10 +1,10 @@
 using System;
 using UnityEngine;
 
-public class Cell_Script : MonoBehaviour
+public class CellPun_Script : MonoBehaviour
 {
     [SerializeField] private HistoryMovesScript ListOfMoves;
-    
+
     [Header("Sprites for pieces")]
     [SerializeField] private Sprite Queen_White;
     [SerializeField] private Sprite Rook_White;
@@ -68,7 +68,7 @@ public class Cell_Script : MonoBehaviour
                 if (!IsPieceWhite())
                 {
                     Debug.LogError("Not your piece.");
-                    return; 
+                    return;
                 }
             }
             else
@@ -298,7 +298,7 @@ public class Cell_Script : MonoBehaviour
             Game.SwitchTurn();
         }
         MoveChecker.UpdateCastlingPossibilities(piece, cell1);
-        
+
     }
 
     private void ExecuteMove_DestroyFeature()

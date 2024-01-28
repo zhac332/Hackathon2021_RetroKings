@@ -12,7 +12,22 @@ public class PhotonRoomEntranceScript : MonoBehaviourPunCallbacks
         {
             WaitingForOthersPanel.SetActive(false);
             // both players need to be assigned colors to decide who starts
+
+            if (PhotonNetwork.IsMasterClient)
+            {
+                DecideColors();
+            }
         }
+    }
+
+    private void DecideColors()
+    {
+        // will send a PunRPC call to the GamePunControlsScript to assign the colors
+    }
+
+    public void ExitButton_OnClick()
+    {
+        PhotonNetwork.Disconnect();
     }
 
     public override void OnPlayerLeftRoom(Player otherPlayer)
