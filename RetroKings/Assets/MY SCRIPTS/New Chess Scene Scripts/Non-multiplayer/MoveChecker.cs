@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 
 public static class MoveChecker
@@ -26,12 +25,7 @@ public static class MoveChecker
 
     public static void AcquireAllCells()
     {
-        if (!acquired)
-        {
-            acquired = true;
-            cells = GameObject.FindGameObjectsWithTag("Cell").ToList();
-            PromotionalPanel = GameObject.Find("MAIN CANVAS/Promotion Panel");
-        }
+        cells = GameObject.Find("Chess Board").GetComponent<PieceDisplayScript>().GetCells();
     }
 
     public static void MarkDestroyableCells(int pointsNumber, bool myTurn)
@@ -658,8 +652,6 @@ public static class MoveChecker
     private static void MarkPawn(GameObject currentCell, bool invertDirection)
     {
         int currentCellIndex = cells.IndexOf(currentCell);
-
-        Debug.Log(currentCell);
 
         UnmarkAll(currentCellIndex);
         markedCells = new List<string>();

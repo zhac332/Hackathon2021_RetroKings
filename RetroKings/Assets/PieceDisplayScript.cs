@@ -4,6 +4,13 @@ using UnityEngine;
 
 public class PieceDisplayScript : MonoBehaviour
 {
+    [SerializeField] private List<GameObject> cells;
+
+    public List<GameObject> GetCells()
+    {
+        return cells;
+    }
+
     public void SetPerspective(bool white)
     {
         transform.rotation = Quaternion.Euler(0f, 0f, (white ? 0f : 180f));

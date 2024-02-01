@@ -25,6 +25,7 @@ public static class Game
     public static void SetMyTurn(bool value)
     {
         myTurn = value;
+        whiteImmuneString = blackImmuneString = "";
     }
 
     public static void SetWhitePiecesCaptured(CapturedPiecesScript t)
