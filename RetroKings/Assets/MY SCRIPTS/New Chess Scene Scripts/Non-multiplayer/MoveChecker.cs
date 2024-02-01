@@ -1,9 +1,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using TMPro;
-using UnityEditor;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public static class MoveChecker
@@ -661,6 +658,8 @@ public static class MoveChecker
     private static void MarkPawn(GameObject currentCell, bool invertDirection)
     {
         int currentCellIndex = cells.IndexOf(currentCell);
+
+        Debug.Log(currentCell);
 
         UnmarkAll(currentCellIndex);
         markedCells = new List<string>();
