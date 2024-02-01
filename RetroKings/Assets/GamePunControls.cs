@@ -7,6 +7,7 @@ using Photon.Realtime;
 public class GamePunControls : MonoBehaviourPunCallbacks
 {
     [SerializeField] private GameObject WaitingForOthersPanel;
+    [SerializeField] private GameControlsScript GameControls;
     private PhotonView pv;
 
     private void Start()
@@ -48,6 +49,8 @@ public class GamePunControls : MonoBehaviourPunCallbacks
     public void SetColor(bool white)
     {
         Debug.LogError((white ? "I got white" : "I got black"));
+        Game.SetMyTurn(white);
+        GameControls.SetDisplay(white);
     }
 
     private void AssignColors()

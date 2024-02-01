@@ -4,6 +4,8 @@ using UnityEngine.UI;
 
 public class GameControlsScript : MonoBehaviour
 {
+    [SerializeField] private PieceDisplayScript PieceDisplay;
+
     [Header("For turns")]
     [SerializeField] private Sprite KingWhite;
     [SerializeField] private Sprite KingBlack;
@@ -21,6 +23,13 @@ public class GameControlsScript : MonoBehaviour
     {
         MoveChecker.SetUpdatePromotionalPiecesFunction((white) => UpdateImages(white));
         Game.SetGameOverTrigger(SetGameOver);
+
+        SetDisplay(true);
+    }
+
+    public void SetDisplay(bool white)
+    {
+        PieceDisplay.SetPerspective(white);
     }
 
     public void SetGameOver()

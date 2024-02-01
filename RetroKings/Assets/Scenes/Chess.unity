@@ -2496,7 +2496,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 391032769}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -3433,6 +3433,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 506051760}
+  - component: {fileID: 506051761}
   m_Layer: 0
   m_Name: Chess Board
   m_TagString: Untagged
@@ -3519,6 +3520,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &506051761
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 506051759}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb0a4321b27b1234b8d2bf99ef046b45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &517618033
 GameObject:
   m_ObjectHideFlags: 0
@@ -9546,9 +9559,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50f03bb38ae14d247951d4cb5ab71fca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PieceDisplay: {fileID: 506051761}
   KingWhite: {fileID: 21300000, guid: 5c2f67d4b04c1694ab054b406ba4147e, type: 3}
   KingBlack: {fileID: 21300000, guid: d9cd12cfd2fcddd4aa5d69d064c16cd5, type: 3}
-  TurnImage: {fileID: 0}
   GameOverText: {fileID: 1792082242}
   QueenButton_Image: {fileID: 216321870}
   RookButton_Image: {fileID: 1275204620}

@@ -22,6 +22,11 @@ public static class Game
     private static string whiteImmuneString = "";
     private static string blackImmuneString = "";
 
+    public static void SetMyTurn(bool value)
+    {
+        myTurn = value;
+    }
+
     public static void SetWhitePiecesCaptured(CapturedPiecesScript t)
     {
         whitePiecesCaptured = t;
