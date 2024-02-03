@@ -5,7 +5,7 @@ public class CellPUN_Script : MonoBehaviour
 {
     [SerializeField] private GamePUN GameP;
 
-    [SerializeField] private HistoryMovesScript ListOfMoves;
+    [SerializeField] private HistoryOfMovesPUN ListOfMoves;
 
     [Header("Sprites for pieces")]
     [SerializeField] private Sprite Queen_White;
