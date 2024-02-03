@@ -8,6 +8,7 @@ public class GamePunControls : MonoBehaviourPunCallbacks
 {
     [SerializeField] private GameObject WaitingForOthersPanel;
     [SerializeField] private GameControlsScript GameControls;
+    [SerializeField] private GamePUN GameP;
     private PhotonView pv;
 
     private void Start()
@@ -46,11 +47,11 @@ public class GamePunControls : MonoBehaviourPunCallbacks
     }
 
     [PunRPC]
-    public void SetColor(bool white)
+    public void SetColor(int white)
     {
-        Debug.LogError((white ? "I got white" : "I got black"));
-        Game.SetMyTurn(white);
-        GameControls.SetDisplay(white);
+        Debug.LogError((white == 0 ? "I got white" : "I got black"));
+        GameP.SetMyTurn(white);
+        GameControls.SetDisplay(white == 0);
     }
 
     private void AssignColors()
@@ -60,14 +61,14 @@ public class GamePunControls : MonoBehaviourPunCallbacks
         if (x == 0)
         {
             // i get white, the opponent gets black
-            pv.RPC("SetColor", RpcTarget.MasterClient, true);
-            pv.RPC("SetColor", RpcTarget.Others, false);
+            pv.RPC("SetColor", RpcTarget.MasterClient, 0);
+            pv.RPC("SetColor", RpcTarget.Others, 1);
         }
         else
         {
             // i get black, the opponent gets white
-            pv.RPC("SetColor", RpcTarget.MasterClient, false);
-            pv.RPC("SetColor", RpcTarget.Others, true);
+            pv.RPC("SetColor", RpcTarget.MasterClient, 1);
+            pv.RPC("SetColor", RpcTarget.Others, 0);
         }
     }
 }
