@@ -56,7 +56,8 @@ public class GamePunControls : MonoBehaviourPunCallbacks
 
     private void AssignColors()
     {
-        int x = Random.Range(0, 2);
+        //int x = Random.Range(0, 2);
+        int x = 0;
 
         if (x == 0)
         {

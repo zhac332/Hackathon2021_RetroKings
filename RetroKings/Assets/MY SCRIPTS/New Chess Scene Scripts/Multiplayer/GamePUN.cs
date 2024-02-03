@@ -59,7 +59,7 @@ public class GamePUN : MonoBehaviour
             whiteImmuneString = "";
         }
 
-        MoveChecker.UnmarkAll();
+        MoveCheckerPUN.UnmarkAll();
     }
 
     public bool CanWhiteUseImmune()
@@ -101,7 +101,7 @@ public class GamePUN : MonoBehaviour
         if (myTurn) White_Points -= value;
         else Black_Points -= value;
 
-        MoveChecker.ResetPowerupToggles();
+        MoveCheckerPUN.ResetPowerupToggles();
     }
 
     public void ImmunityUsed(string cell)
@@ -117,7 +117,7 @@ public class GamePUN : MonoBehaviour
             blackImmuneString = cell;
         }
 
-        MoveChecker.ResetPowerupToggles();
+        MoveCheckerPUN.ResetPowerupToggles();
     }
 
     public bool IsGameOver()

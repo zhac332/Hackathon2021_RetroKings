@@ -23,8 +23,6 @@ public class GameControlsScript : MonoBehaviour
     {
         MoveChecker.SetUpdatePromotionalPiecesFunction((white) => UpdateImages(white));
         Game.SetGameOverTrigger(SetGameOver);
-
-        SetDisplay(true);
     }
 
     public void SetDisplay(bool white)

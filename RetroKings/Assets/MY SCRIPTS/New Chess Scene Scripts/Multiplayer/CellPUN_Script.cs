@@ -31,25 +31,25 @@ public class CellPUN_Script : MonoBehaviour
     private void Start()
     {
         sr = GetComponent<SpriteRenderer>();
-        MoveChecker.AcquireAllCells();
+        MoveCheckerPUN.AcquireAllCells();
     }
 
     private void Cell_OnClick()
     {
         if (GameP.IsGameOver()) return;
 
-        if (MoveChecker.IsDestroyPowerupOn())
+        if (MoveCheckerPUN.IsDestroyPowerupOn())
         {
-            if (MoveChecker.CheckMove(name))
+            if (MoveCheckerPUN.CheckMove(name))
             {
                 ExecuteMove_DestroyFeature();
                 return;
             }
         }
 
-        if (MoveChecker.IsImmunityPowerupOn())
+        if (MoveCheckerPUN.IsImmunityPowerupOn())
         {
-            if (MoveChecker.CheckMove(name))
+            if (MoveCheckerPUN.CheckMove(name))
             {
                 ExecuteMove_ImmunityFeature();
                 return;
@@ -83,9 +83,9 @@ public class CellPUN_Script : MonoBehaviour
             SelectCell();
 
             Move.SelectPiece(name, piece.name);
-            MoveChecker.SetFirstPiece(piece.name);
-            MoveChecker.MarkAvailableCells(gameObject);
-            MoveChecker.ResetPowerupToggles();
+            MoveCheckerPUN.SetFirstPiece(piece.name);
+            MoveCheckerPUN.MarkAvailableCells(gameObject);
+            MoveCheckerPUN.ResetPowerupToggles();
         }
         else
         {
@@ -93,16 +93,16 @@ public class CellPUN_Script : MonoBehaviour
             {
                 DeselectCell();
                 Move.SelectPiece();
-                MoveChecker.UnmarkAll();
+                MoveCheckerPUN.UnmarkAll();
             }
             else if (!Move.IsSecondCellSelected())
             {
-                if (MoveChecker.CheckMove(name))
+                if (MoveCheckerPUN.CheckMove(name))
                 {
                     // this is where I should check if the end cell makes the pawn be promoted
-                    if (MoveChecker.IsPromotionalMove(name))
+                    if (MoveCheckerPUN.IsPromotionalMove(name))
                     {
-                        MoveChecker.ShowPromotionalPanel();
+                        MoveCheckerPUN.ShowPromotionalPanel();
                         Move.SelectCell_Promote(name, (cell1, cell2, piece, switchTurn) => ExecuteMove(cell1, cell2, piece, switchTurn));
                     }
                     else
@@ -240,7 +240,7 @@ public class CellPUN_Script : MonoBehaviour
         // I need to remove the child piece from cell2, if there is one
         // and put the piece from cell1 to cell2
         bool capture = false;
-        bool isPromotional = MoveChecker.IsPromotionalMove(name);
+        bool isPromotional = MoveCheckerPUN.IsPromotionalMove(name);
 
         GameObject c1 = GameObject.Find(cell1);
         GameObject c2 = GameObject.Find(cell2);
@@ -248,7 +248,9 @@ public class CellPUN_Script : MonoBehaviour
 
         UpdatePieceDisplay(p, piece);
 
-        c1.GetComponent<Cell_Script>().DeselectCell();
+        Debug.Log(c1.name);
+
+        c1.GetComponent<CellPUN_Script>().DeselectCell();
 
         if (c2.transform.childCount != 0)
         {
@@ -265,7 +267,7 @@ public class CellPUN_Script : MonoBehaviour
         p.transform.localPosition = new Vector3(0f, 0f, 0f);
 
         Move.ResetMove();
-        MoveChecker.UnmarkAll();
+        MoveCheckerPUN.UnmarkAll();
         if (switchTurn)
         {
 
@@ -289,7 +291,7 @@ public class CellPUN_Script : MonoBehaviour
 
             GameP.SwitchTurn();
         }
-        MoveChecker.UpdateCastlingPossibilities(piece, cell1);
+        MoveCheckerPUN.UpdateCastlingPossibilities(piece, cell1);
 
     }
 
@@ -306,9 +308,9 @@ public class CellPUN_Script : MonoBehaviour
         GameP.PieceCaptured(p.name);
         GameP.DestroyUsed(piece);
         Move.ResetMove();
-        MoveChecker.UnmarkAll();
+        MoveCheckerPUN.UnmarkAll();
         GameP.SwitchTurn();
-        MoveChecker.UpdateCastlingPossibilities(piece, name);
+        MoveCheckerPUN.UpdateCastlingPossibilities(piece, name);
     }
 
     private void ExecuteMove_ImmunityFeature()
@@ -321,7 +323,7 @@ public class CellPUN_Script : MonoBehaviour
         GameP.ImmunityUsed(name);
 
         Move.ResetMove();
-        MoveChecker.UnmarkAll();
+        MoveCheckerPUN.UnmarkAll();
         GameP.SwitchTurn();
     }
 
