@@ -1,10 +1,7 @@
 using System;
 using System.Collections.Generic;
-using System.Net.Http.Headers;
-using System.Security.Cryptography;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.UIElements;
 
 public class HistoryMovesScript : MonoBehaviour
 {
@@ -13,8 +10,6 @@ public class HistoryMovesScript : MonoBehaviour
     private ScrollRect scroll;
     private RectTransform contentRectTransform;
     private List<Tuple<string, string>> moves;
-    private int blockIndex = 0;
-    private float lastY = 0f;
 
     private void Start()
     {
