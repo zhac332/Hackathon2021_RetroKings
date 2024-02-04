@@ -41,6 +41,7 @@ public class GamePUN : MonoBehaviour
         pv.RPC("SwitchTurn", RpcTarget.All);
     }
 
+    [PunRPC]
     public void SwitchTurn()
     {
         myTurn = !myTurn;

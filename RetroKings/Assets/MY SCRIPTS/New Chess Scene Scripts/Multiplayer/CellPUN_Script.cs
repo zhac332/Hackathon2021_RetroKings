@@ -248,8 +248,6 @@ public class CellPUN_Script : MonoBehaviour
 
         UpdatePieceDisplay(p, piece);
 
-        Debug.Log(c1.name);
-
         c1.GetComponent<CellPUN_Script>().DeselectCell();
 
         if (c2.transform.childCount != 0)
@@ -289,7 +287,7 @@ public class CellPUN_Script : MonoBehaviour
                 else ListOfMoves.AddCaptureMove(cell1, cell2);
             }
 
-            GameP.SwitchTurn();
+            GameP.SendRPC_SwitchTurn();
         }
         MoveCheckerPUN.UpdateCastlingPossibilities(piece, cell1);
 
@@ -309,7 +307,7 @@ public class CellPUN_Script : MonoBehaviour
         GameP.DestroyUsed(piece);
         Move.ResetMove();
         MoveCheckerPUN.UnmarkAll();
-        GameP.SwitchTurn();
+        GameP.SendRPC_SwitchTurn();
         MoveCheckerPUN.UpdateCastlingPossibilities(piece, name);
     }
 
@@ -324,7 +322,7 @@ public class CellPUN_Script : MonoBehaviour
 
         Move.ResetMove();
         MoveCheckerPUN.UnmarkAll();
-        GameP.SwitchTurn();
+        GameP.SendRPC_SwitchTurn();
     }
 
     private void Update()
