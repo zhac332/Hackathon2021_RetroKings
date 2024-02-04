@@ -328,7 +328,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GameP: {fileID: 212736798}
-  ListOfMoves: {fileID: 816551626}
+  ListOfMoves: {fileID: 952877265}
   Queen_White: {fileID: 21300000, guid: ec65c4664c32fa647b774ea6bc250c10, type: 3}
   Rook_White: {fileID: 21300000, guid: 1e4a1396ebb154e469e516c8d7aed979, type: 3}
   Bishop_White: {fileID: 21300000, guid: 22d31bb9e2b1420439b5270abce84239, type: 3}
@@ -1042,7 +1042,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GameP: {fileID: 212736798}
-  ListOfMoves: {fileID: 816551626}
+  ListOfMoves: {fileID: 952877265}
   Queen_White: {fileID: 21300000, guid: ec65c4664c32fa647b774ea6bc250c10, type: 3}
   Rook_White: {fileID: 21300000, guid: 1e4a1396ebb154e469e516c8d7aed979, type: 3}
   Bishop_White: {fileID: 21300000, guid: 22d31bb9e2b1420439b5270abce84239, type: 3}
@@ -1319,7 +1319,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GameP: {fileID: 212736798}
-  ListOfMoves: {fileID: 816551626}
+  ListOfMoves: {fileID: 952877265}
   Queen_White: {fileID: 21300000, guid: ec65c4664c32fa647b774ea6bc250c10, type: 3}
   Rook_White: {fileID: 21300000, guid: 1e4a1396ebb154e469e516c8d7aed979, type: 3}
   Bishop_White: {fileID: 21300000, guid: 22d31bb9e2b1420439b5270abce84239, type: 3}
@@ -1545,7 +1545,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GameP: {fileID: 212736798}
-  ListOfMoves: {fileID: 816551626}
+  ListOfMoves: {fileID: 952877265}
   Queen_White: {fileID: 21300000, guid: ec65c4664c32fa647b774ea6bc250c10, type: 3}
   Rook_White: {fileID: 21300000, guid: 1e4a1396ebb154e469e516c8d7aed979, type: 3}
   Bishop_White: {fileID: 21300000, guid: 22d31bb9e2b1420439b5270abce84239, type: 3}
@@ -1656,6 +1656,7 @@ GameObject:
   m_Component:
   - component: {fileID: 212736799}
   - component: {fileID: 212736798}
+  - component: {fileID: 212736800}
   m_Layer: 0
   m_Name: GamePUN
   m_TagString: Untagged
@@ -1675,6 +1676,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2054d51588540744a62ce6bb03336f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  historyOfMovesPUN: {fileID: 952877265}
   WhitePointsText: {fileID: 790410525}
   BlackPointsText: {fileID: 1523189730}
   whitePiecesCaptured: {fileID: 1125510083}
@@ -1695,6 +1697,28 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &212736800
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 212736797}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents: []
+  sceneViewId: 3
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1 &216321868
 GameObject:
   m_ObjectHideFlags: 0
@@ -2046,7 +2070,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GameP: {fileID: 212736798}
-  ListOfMoves: {fileID: 816551626}
+  ListOfMoves: {fileID: 952877265}
   Queen_White: {fileID: 21300000, guid: ec65c4664c32fa647b774ea6bc250c10, type: 3}
   Rook_White: {fileID: 21300000, guid: 1e4a1396ebb154e469e516c8d7aed979, type: 3}
   Bishop_White: {fileID: 21300000, guid: 22d31bb9e2b1420439b5270abce84239, type: 3}
@@ -2517,7 +2541,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GameP: {fileID: 212736798}
-  ListOfMoves: {fileID: 816551626}
+  ListOfMoves: {fileID: 952877265}
   Queen_White: {fileID: 21300000, guid: ec65c4664c32fa647b774ea6bc250c10, type: 3}
   Rook_White: {fileID: 21300000, guid: 1e4a1396ebb154e469e516c8d7aed979, type: 3}
   Bishop_White: {fileID: 21300000, guid: 22d31bb9e2b1420439b5270abce84239, type: 3}
@@ -2764,7 +2788,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GameP: {fileID: 212736798}
-  ListOfMoves: {fileID: 816551626}
+  ListOfMoves: {fileID: 952877265}
   Queen_White: {fileID: 21300000, guid: ec65c4664c32fa647b774ea6bc250c10, type: 3}
   Rook_White: {fileID: 21300000, guid: 1e4a1396ebb154e469e516c8d7aed979, type: 3}
   Bishop_White: {fileID: 21300000, guid: 22d31bb9e2b1420439b5270abce84239, type: 3}
@@ -2906,7 +2930,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GameP: {fileID: 212736798}
-  ListOfMoves: {fileID: 816551626}
+  ListOfMoves: {fileID: 952877265}
   Queen_White: {fileID: 21300000, guid: ec65c4664c32fa647b774ea6bc250c10, type: 3}
   Rook_White: {fileID: 21300000, guid: 1e4a1396ebb154e469e516c8d7aed979, type: 3}
   Bishop_White: {fileID: 21300000, guid: 22d31bb9e2b1420439b5270abce84239, type: 3}
@@ -3377,7 +3401,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GameP: {fileID: 212736798}
-  ListOfMoves: {fileID: 816551626}
+  ListOfMoves: {fileID: 952877265}
   Queen_White: {fileID: 21300000, guid: ec65c4664c32fa647b774ea6bc250c10, type: 3}
   Rook_White: {fileID: 21300000, guid: 1e4a1396ebb154e469e516c8d7aed979, type: 3}
   Bishop_White: {fileID: 21300000, guid: 22d31bb9e2b1420439b5270abce84239, type: 3}
@@ -4104,7 +4128,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GameP: {fileID: 212736798}
-  ListOfMoves: {fileID: 816551626}
+  ListOfMoves: {fileID: 952877265}
   Queen_White: {fileID: 21300000, guid: ec65c4664c32fa647b774ea6bc250c10, type: 3}
   Rook_White: {fileID: 21300000, guid: 1e4a1396ebb154e469e516c8d7aed979, type: 3}
   Bishop_White: {fileID: 21300000, guid: 22d31bb9e2b1420439b5270abce84239, type: 3}
@@ -4494,7 +4518,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GameP: {fileID: 212736798}
-  ListOfMoves: {fileID: 816551626}
+  ListOfMoves: {fileID: 952877265}
   Queen_White: {fileID: 21300000, guid: ec65c4664c32fa647b774ea6bc250c10, type: 3}
   Rook_White: {fileID: 21300000, guid: 1e4a1396ebb154e469e516c8d7aed979, type: 3}
   Bishop_White: {fileID: 21300000, guid: 22d31bb9e2b1420439b5270abce84239, type: 3}
@@ -4855,7 +4879,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GameP: {fileID: 212736798}
-  ListOfMoves: {fileID: 816551626}
+  ListOfMoves: {fileID: 952877265}
   Queen_White: {fileID: 21300000, guid: ec65c4664c32fa647b774ea6bc250c10, type: 3}
   Rook_White: {fileID: 21300000, guid: 1e4a1396ebb154e469e516c8d7aed979, type: 3}
   Bishop_White: {fileID: 21300000, guid: 22d31bb9e2b1420439b5270abce84239, type: 3}
@@ -5164,7 +5188,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GameP: {fileID: 212736798}
-  ListOfMoves: {fileID: 816551626}
+  ListOfMoves: {fileID: 952877265}
   Queen_White: {fileID: 21300000, guid: ec65c4664c32fa647b774ea6bc250c10, type: 3}
   Rook_White: {fileID: 21300000, guid: 1e4a1396ebb154e469e516c8d7aed979, type: 3}
   Bishop_White: {fileID: 21300000, guid: 22d31bb9e2b1420439b5270abce84239, type: 3}
@@ -5740,7 +5764,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GameP: {fileID: 212736798}
-  ListOfMoves: {fileID: 816551626}
+  ListOfMoves: {fileID: 952877265}
   Queen_White: {fileID: 21300000, guid: ec65c4664c32fa647b774ea6bc250c10, type: 3}
   Rook_White: {fileID: 21300000, guid: 1e4a1396ebb154e469e516c8d7aed979, type: 3}
   Bishop_White: {fileID: 21300000, guid: 22d31bb9e2b1420439b5270abce84239, type: 3}
@@ -5959,7 +5983,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GameP: {fileID: 212736798}
-  ListOfMoves: {fileID: 816551626}
+  ListOfMoves: {fileID: 952877265}
   Queen_White: {fileID: 21300000, guid: ec65c4664c32fa647b774ea6bc250c10, type: 3}
   Rook_White: {fileID: 21300000, guid: 1e4a1396ebb154e469e516c8d7aed979, type: 3}
   Bishop_White: {fileID: 21300000, guid: 22d31bb9e2b1420439b5270abce84239, type: 3}
@@ -6102,7 +6126,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GameP: {fileID: 212736798}
-  ListOfMoves: {fileID: 816551626}
+  ListOfMoves: {fileID: 952877265}
   Queen_White: {fileID: 21300000, guid: ec65c4664c32fa647b774ea6bc250c10, type: 3}
   Rook_White: {fileID: 21300000, guid: 1e4a1396ebb154e469e516c8d7aed979, type: 3}
   Bishop_White: {fileID: 21300000, guid: 22d31bb9e2b1420439b5270abce84239, type: 3}
@@ -6348,7 +6372,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GameP: {fileID: 212736798}
-  ListOfMoves: {fileID: 816551626}
+  ListOfMoves: {fileID: 952877265}
   Queen_White: {fileID: 21300000, guid: ec65c4664c32fa647b774ea6bc250c10, type: 3}
   Rook_White: {fileID: 21300000, guid: 1e4a1396ebb154e469e516c8d7aed979, type: 3}
   Bishop_White: {fileID: 21300000, guid: 22d31bb9e2b1420439b5270abce84239, type: 3}
@@ -6457,8 +6481,6 @@ GameObject:
   - component: {fileID: 816551624}
   - component: {fileID: 816551623}
   - component: {fileID: 816551622}
-  - component: {fileID: 816551626}
-  - component: {fileID: 816551627}
   m_Layer: 5
   m_Name: History
   m_TagString: Untagged
@@ -6556,43 +6578,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 816551620}
   m_CullTransparentMesh: 1
---- !u!114 &816551626
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 816551620}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 782cdfe49911b864b8ea4a075262e184, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  LinePrefab: {fileID: 7353262751623030225, guid: d6a9d55c20b99614883c26c311de6765,
-    type: 3}
-  StartPos: {x: 0, y: 135, z: 0}
---- !u!114 &816551627
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 816551620}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ObservedComponentsFoldoutOpen: 1
-  Group: 0
-  prefixField: -1
-  Synchronization: 3
-  OwnershipTransfer: 0
-  observableSearch: 2
-  ObservedComponents: []
-  sceneViewId: 2
-  InstantiationId: 0
-  isRuntimeInstantiated: 0
 --- !u!1 &826395130
 GameObject:
   m_ObjectHideFlags: 0
@@ -6803,7 +6788,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GameP: {fileID: 212736798}
-  ListOfMoves: {fileID: 816551626}
+  ListOfMoves: {fileID: 952877265}
   Queen_White: {fileID: 21300000, guid: ec65c4664c32fa647b774ea6bc250c10, type: 3}
   Rook_White: {fileID: 21300000, guid: 1e4a1396ebb154e469e516c8d7aed979, type: 3}
   Bishop_White: {fileID: 21300000, guid: 22d31bb9e2b1420439b5270abce84239, type: 3}
@@ -6946,7 +6931,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GameP: {fileID: 212736798}
-  ListOfMoves: {fileID: 816551626}
+  ListOfMoves: {fileID: 952877265}
   Queen_White: {fileID: 21300000, guid: ec65c4664c32fa647b774ea6bc250c10, type: 3}
   Rook_White: {fileID: 21300000, guid: 1e4a1396ebb154e469e516c8d7aed979, type: 3}
   Bishop_White: {fileID: 21300000, guid: 22d31bb9e2b1420439b5270abce84239, type: 3}
@@ -7249,7 +7234,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GameP: {fileID: 212736798}
-  ListOfMoves: {fileID: 816551626}
+  ListOfMoves: {fileID: 952877265}
   Queen_White: {fileID: 21300000, guid: ec65c4664c32fa647b774ea6bc250c10, type: 3}
   Rook_White: {fileID: 21300000, guid: 1e4a1396ebb154e469e516c8d7aed979, type: 3}
   Bishop_White: {fileID: 21300000, guid: 22d31bb9e2b1420439b5270abce84239, type: 3}
@@ -7574,7 +7559,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GameP: {fileID: 212736798}
-  ListOfMoves: {fileID: 816551626}
+  ListOfMoves: {fileID: 952877265}
   Queen_White: {fileID: 21300000, guid: ec65c4664c32fa647b774ea6bc250c10, type: 3}
   Rook_White: {fileID: 21300000, guid: 1e4a1396ebb154e469e516c8d7aed979, type: 3}
   Bishop_White: {fileID: 21300000, guid: 22d31bb9e2b1420439b5270abce84239, type: 3}
@@ -7591,6 +7576,79 @@ MonoBehaviour:
   LegalCell_Color: {r: 0.8862745, g: 1, b: 0, a: 1}
   Selected_Color: {r: 0.25882354, g: 0.67058825, b: 0, a: 1}
   Default_Color: {r: 0.3647059, g: 0.36078432, b: 0.3647059, a: 1}
+--- !u!1 &952877264
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 952877266}
+  - component: {fileID: 952877265}
+  - component: {fileID: 952877267}
+  m_Layer: 0
+  m_Name: HistoryPUN
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &952877265
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 952877264}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 782cdfe49911b864b8ea4a075262e184, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LinePrefab: {fileID: 7353262751623030225, guid: d6a9d55c20b99614883c26c311de6765,
+    type: 3}
+  StartPos: {x: 0, y: 135, z: 0}
+  scroll: {fileID: 816551622}
+  contentRectTransform: {fileID: 1837900007}
+  pv: {fileID: 952877267}
+--- !u!4 &952877266
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 952877264}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &952877267
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 952877264}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents: []
+  sceneViewId: 4
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1 &953538965
 GameObject:
   m_ObjectHideFlags: 0
@@ -8161,7 +8219,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GameP: {fileID: 212736798}
-  ListOfMoves: {fileID: 816551626}
+  ListOfMoves: {fileID: 952877265}
   Queen_White: {fileID: 21300000, guid: ec65c4664c32fa647b774ea6bc250c10, type: 3}
   Rook_White: {fileID: 21300000, guid: 1e4a1396ebb154e469e516c8d7aed979, type: 3}
   Bishop_White: {fileID: 21300000, guid: 22d31bb9e2b1420439b5270abce84239, type: 3}
@@ -8380,7 +8438,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GameP: {fileID: 212736798}
-  ListOfMoves: {fileID: 816551626}
+  ListOfMoves: {fileID: 952877265}
   Queen_White: {fileID: 21300000, guid: ec65c4664c32fa647b774ea6bc250c10, type: 3}
   Rook_White: {fileID: 21300000, guid: 1e4a1396ebb154e469e516c8d7aed979, type: 3}
   Bishop_White: {fileID: 21300000, guid: 22d31bb9e2b1420439b5270abce84239, type: 3}
@@ -8522,7 +8580,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GameP: {fileID: 212736798}
-  ListOfMoves: {fileID: 816551626}
+  ListOfMoves: {fileID: 952877265}
   Queen_White: {fileID: 21300000, guid: ec65c4664c32fa647b774ea6bc250c10, type: 3}
   Rook_White: {fileID: 21300000, guid: 1e4a1396ebb154e469e516c8d7aed979, type: 3}
   Bishop_White: {fileID: 21300000, guid: 22d31bb9e2b1420439b5270abce84239, type: 3}
@@ -8665,7 +8723,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GameP: {fileID: 212736798}
-  ListOfMoves: {fileID: 816551626}
+  ListOfMoves: {fileID: 952877265}
   Queen_White: {fileID: 21300000, guid: ec65c4664c32fa647b774ea6bc250c10, type: 3}
   Rook_White: {fileID: 21300000, guid: 1e4a1396ebb154e469e516c8d7aed979, type: 3}
   Bishop_White: {fileID: 21300000, guid: 22d31bb9e2b1420439b5270abce84239, type: 3}
@@ -8808,7 +8866,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GameP: {fileID: 212736798}
-  ListOfMoves: {fileID: 816551626}
+  ListOfMoves: {fileID: 952877265}
   Queen_White: {fileID: 21300000, guid: ec65c4664c32fa647b774ea6bc250c10, type: 3}
   Rook_White: {fileID: 21300000, guid: 1e4a1396ebb154e469e516c8d7aed979, type: 3}
   Bishop_White: {fileID: 21300000, guid: 22d31bb9e2b1420439b5270abce84239, type: 3}
@@ -8950,7 +9008,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GameP: {fileID: 212736798}
-  ListOfMoves: {fileID: 816551626}
+  ListOfMoves: {fileID: 952877265}
   Queen_White: {fileID: 21300000, guid: ec65c4664c32fa647b774ea6bc250c10, type: 3}
   Rook_White: {fileID: 21300000, guid: 1e4a1396ebb154e469e516c8d7aed979, type: 3}
   Bishop_White: {fileID: 21300000, guid: 22d31bb9e2b1420439b5270abce84239, type: 3}
@@ -9245,7 +9303,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GameP: {fileID: 212736798}
-  ListOfMoves: {fileID: 816551626}
+  ListOfMoves: {fileID: 952877265}
   Queen_White: {fileID: 21300000, guid: ec65c4664c32fa647b774ea6bc250c10, type: 3}
   Rook_White: {fileID: 21300000, guid: 1e4a1396ebb154e469e516c8d7aed979, type: 3}
   Bishop_White: {fileID: 21300000, guid: 22d31bb9e2b1420439b5270abce84239, type: 3}
@@ -9388,7 +9446,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GameP: {fileID: 212736798}
-  ListOfMoves: {fileID: 816551626}
+  ListOfMoves: {fileID: 952877265}
   Queen_White: {fileID: 21300000, guid: ec65c4664c32fa647b774ea6bc250c10, type: 3}
   Rook_White: {fileID: 21300000, guid: 1e4a1396ebb154e469e516c8d7aed979, type: 3}
   Bishop_White: {fileID: 21300000, guid: 22d31bb9e2b1420439b5270abce84239, type: 3}
@@ -9530,7 +9588,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GameP: {fileID: 212736798}
-  ListOfMoves: {fileID: 816551626}
+  ListOfMoves: {fileID: 952877265}
   Queen_White: {fileID: 21300000, guid: ec65c4664c32fa647b774ea6bc250c10, type: 3}
   Rook_White: {fileID: 21300000, guid: 1e4a1396ebb154e469e516c8d7aed979, type: 3}
   Bishop_White: {fileID: 21300000, guid: 22d31bb9e2b1420439b5270abce84239, type: 3}
@@ -9965,7 +10023,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GameP: {fileID: 212736798}
-  ListOfMoves: {fileID: 816551626}
+  ListOfMoves: {fileID: 952877265}
   Queen_White: {fileID: 21300000, guid: ec65c4664c32fa647b774ea6bc250c10, type: 3}
   Rook_White: {fileID: 21300000, guid: 1e4a1396ebb154e469e516c8d7aed979, type: 3}
   Bishop_White: {fileID: 21300000, guid: 22d31bb9e2b1420439b5270abce84239, type: 3}
@@ -10183,7 +10241,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GameP: {fileID: 212736798}
-  ListOfMoves: {fileID: 816551626}
+  ListOfMoves: {fileID: 952877265}
   Queen_White: {fileID: 21300000, guid: ec65c4664c32fa647b774ea6bc250c10, type: 3}
   Rook_White: {fileID: 21300000, guid: 1e4a1396ebb154e469e516c8d7aed979, type: 3}
   Bishop_White: {fileID: 21300000, guid: 22d31bb9e2b1420439b5270abce84239, type: 3}
@@ -10409,7 +10467,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GameP: {fileID: 212736798}
-  ListOfMoves: {fileID: 816551626}
+  ListOfMoves: {fileID: 952877265}
   Queen_White: {fileID: 21300000, guid: ec65c4664c32fa647b774ea6bc250c10, type: 3}
   Rook_White: {fileID: 21300000, guid: 1e4a1396ebb154e469e516c8d7aed979, type: 3}
   Bishop_White: {fileID: 21300000, guid: 22d31bb9e2b1420439b5270abce84239, type: 3}
@@ -10636,7 +10694,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GameP: {fileID: 212736798}
-  ListOfMoves: {fileID: 816551626}
+  ListOfMoves: {fileID: 952877265}
   Queen_White: {fileID: 21300000, guid: ec65c4664c32fa647b774ea6bc250c10, type: 3}
   Rook_White: {fileID: 21300000, guid: 1e4a1396ebb154e469e516c8d7aed979, type: 3}
   Bishop_White: {fileID: 21300000, guid: 22d31bb9e2b1420439b5270abce84239, type: 3}
@@ -10778,7 +10836,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GameP: {fileID: 212736798}
-  ListOfMoves: {fileID: 816551626}
+  ListOfMoves: {fileID: 952877265}
   Queen_White: {fileID: 21300000, guid: ec65c4664c32fa647b774ea6bc250c10, type: 3}
   Rook_White: {fileID: 21300000, guid: 1e4a1396ebb154e469e516c8d7aed979, type: 3}
   Bishop_White: {fileID: 21300000, guid: 22d31bb9e2b1420439b5270abce84239, type: 3}
@@ -10920,7 +10978,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GameP: {fileID: 212736798}
-  ListOfMoves: {fileID: 816551626}
+  ListOfMoves: {fileID: 952877265}
   Queen_White: {fileID: 21300000, guid: ec65c4664c32fa647b774ea6bc250c10, type: 3}
   Rook_White: {fileID: 21300000, guid: 1e4a1396ebb154e469e516c8d7aed979, type: 3}
   Bishop_White: {fileID: 21300000, guid: 22d31bb9e2b1420439b5270abce84239, type: 3}
@@ -11062,7 +11120,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GameP: {fileID: 212736798}
-  ListOfMoves: {fileID: 816551626}
+  ListOfMoves: {fileID: 952877265}
   Queen_White: {fileID: 21300000, guid: ec65c4664c32fa647b774ea6bc250c10, type: 3}
   Rook_White: {fileID: 21300000, guid: 1e4a1396ebb154e469e516c8d7aed979, type: 3}
   Bishop_White: {fileID: 21300000, guid: 22d31bb9e2b1420439b5270abce84239, type: 3}
@@ -11441,7 +11499,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GameP: {fileID: 212736798}
-  ListOfMoves: {fileID: 816551626}
+  ListOfMoves: {fileID: 952877265}
   Queen_White: {fileID: 21300000, guid: ec65c4664c32fa647b774ea6bc250c10, type: 3}
   Rook_White: {fileID: 21300000, guid: 1e4a1396ebb154e469e516c8d7aed979, type: 3}
   Bishop_White: {fileID: 21300000, guid: 22d31bb9e2b1420439b5270abce84239, type: 3}
@@ -11583,7 +11641,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GameP: {fileID: 212736798}
-  ListOfMoves: {fileID: 816551626}
+  ListOfMoves: {fileID: 952877265}
   Queen_White: {fileID: 21300000, guid: ec65c4664c32fa647b774ea6bc250c10, type: 3}
   Rook_White: {fileID: 21300000, guid: 1e4a1396ebb154e469e516c8d7aed979, type: 3}
   Bishop_White: {fileID: 21300000, guid: 22d31bb9e2b1420439b5270abce84239, type: 3}
@@ -11877,7 +11935,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GameP: {fileID: 212736798}
-  ListOfMoves: {fileID: 816551626}
+  ListOfMoves: {fileID: 952877265}
   Queen_White: {fileID: 21300000, guid: ec65c4664c32fa647b774ea6bc250c10, type: 3}
   Rook_White: {fileID: 21300000, guid: 1e4a1396ebb154e469e516c8d7aed979, type: 3}
   Bishop_White: {fileID: 21300000, guid: 22d31bb9e2b1420439b5270abce84239, type: 3}
@@ -12019,7 +12077,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GameP: {fileID: 212736798}
-  ListOfMoves: {fileID: 816551626}
+  ListOfMoves: {fileID: 952877265}
   Queen_White: {fileID: 21300000, guid: ec65c4664c32fa647b774ea6bc250c10, type: 3}
   Rook_White: {fileID: 21300000, guid: 1e4a1396ebb154e469e516c8d7aed979, type: 3}
   Bishop_White: {fileID: 21300000, guid: 22d31bb9e2b1420439b5270abce84239, type: 3}
@@ -12161,7 +12219,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GameP: {fileID: 212736798}
-  ListOfMoves: {fileID: 816551626}
+  ListOfMoves: {fileID: 952877265}
   Queen_White: {fileID: 21300000, guid: ec65c4664c32fa647b774ea6bc250c10, type: 3}
   Rook_White: {fileID: 21300000, guid: 1e4a1396ebb154e469e516c8d7aed979, type: 3}
   Bishop_White: {fileID: 21300000, guid: 22d31bb9e2b1420439b5270abce84239, type: 3}
@@ -12303,7 +12361,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GameP: {fileID: 212736798}
-  ListOfMoves: {fileID: 816551626}
+  ListOfMoves: {fileID: 952877265}
   Queen_White: {fileID: 21300000, guid: ec65c4664c32fa647b774ea6bc250c10, type: 3}
   Rook_White: {fileID: 21300000, guid: 1e4a1396ebb154e469e516c8d7aed979, type: 3}
   Bishop_White: {fileID: 21300000, guid: 22d31bb9e2b1420439b5270abce84239, type: 3}
@@ -12446,7 +12504,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GameP: {fileID: 212736798}
-  ListOfMoves: {fileID: 816551626}
+  ListOfMoves: {fileID: 952877265}
   Queen_White: {fileID: 21300000, guid: ec65c4664c32fa647b774ea6bc250c10, type: 3}
   Rook_White: {fileID: 21300000, guid: 1e4a1396ebb154e469e516c8d7aed979, type: 3}
   Bishop_White: {fileID: 21300000, guid: 22d31bb9e2b1420439b5270abce84239, type: 3}
@@ -13218,7 +13276,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GameP: {fileID: 212736798}
-  ListOfMoves: {fileID: 816551626}
+  ListOfMoves: {fileID: 952877265}
   Queen_White: {fileID: 21300000, guid: ec65c4664c32fa647b774ea6bc250c10, type: 3}
   Rook_White: {fileID: 21300000, guid: 1e4a1396ebb154e469e516c8d7aed979, type: 3}
   Bishop_White: {fileID: 21300000, guid: 22d31bb9e2b1420439b5270abce84239, type: 3}
@@ -13360,7 +13418,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GameP: {fileID: 212736798}
-  ListOfMoves: {fileID: 816551626}
+  ListOfMoves: {fileID: 952877265}
   Queen_White: {fileID: 21300000, guid: ec65c4664c32fa647b774ea6bc250c10, type: 3}
   Rook_White: {fileID: 21300000, guid: 1e4a1396ebb154e469e516c8d7aed979, type: 3}
   Bishop_White: {fileID: 21300000, guid: 22d31bb9e2b1420439b5270abce84239, type: 3}
@@ -13579,7 +13637,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GameP: {fileID: 212736798}
-  ListOfMoves: {fileID: 816551626}
+  ListOfMoves: {fileID: 952877265}
   Queen_White: {fileID: 21300000, guid: ec65c4664c32fa647b774ea6bc250c10, type: 3}
   Rook_White: {fileID: 21300000, guid: 1e4a1396ebb154e469e516c8d7aed979, type: 3}
   Bishop_White: {fileID: 21300000, guid: 22d31bb9e2b1420439b5270abce84239, type: 3}
@@ -13797,7 +13855,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GameP: {fileID: 212736798}
-  ListOfMoves: {fileID: 816551626}
+  ListOfMoves: {fileID: 952877265}
   Queen_White: {fileID: 21300000, guid: ec65c4664c32fa647b774ea6bc250c10, type: 3}
   Rook_White: {fileID: 21300000, guid: 1e4a1396ebb154e469e516c8d7aed979, type: 3}
   Bishop_White: {fileID: 21300000, guid: 22d31bb9e2b1420439b5270abce84239, type: 3}
@@ -13940,7 +13998,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GameP: {fileID: 212736798}
-  ListOfMoves: {fileID: 816551626}
+  ListOfMoves: {fileID: 952877265}
   Queen_White: {fileID: 21300000, guid: ec65c4664c32fa647b774ea6bc250c10, type: 3}
   Rook_White: {fileID: 21300000, guid: 1e4a1396ebb154e469e516c8d7aed979, type: 3}
   Bishop_White: {fileID: 21300000, guid: 22d31bb9e2b1420439b5270abce84239, type: 3}
@@ -14083,7 +14141,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GameP: {fileID: 212736798}
-  ListOfMoves: {fileID: 816551626}
+  ListOfMoves: {fileID: 952877265}
   Queen_White: {fileID: 21300000, guid: ec65c4664c32fa647b774ea6bc250c10, type: 3}
   Rook_White: {fileID: 21300000, guid: 1e4a1396ebb154e469e516c8d7aed979, type: 3}
   Bishop_White: {fileID: 21300000, guid: 22d31bb9e2b1420439b5270abce84239, type: 3}
@@ -14744,7 +14802,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GameP: {fileID: 212736798}
-  ListOfMoves: {fileID: 816551626}
+  ListOfMoves: {fileID: 952877265}
   Queen_White: {fileID: 21300000, guid: ec65c4664c32fa647b774ea6bc250c10, type: 3}
   Rook_White: {fileID: 21300000, guid: 1e4a1396ebb154e469e516c8d7aed979, type: 3}
   Bishop_White: {fileID: 21300000, guid: 22d31bb9e2b1420439b5270abce84239, type: 3}
@@ -15072,7 +15130,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GameP: {fileID: 212736798}
-  ListOfMoves: {fileID: 816551626}
+  ListOfMoves: {fileID: 952877265}
   Queen_White: {fileID: 21300000, guid: ec65c4664c32fa647b774ea6bc250c10, type: 3}
   Rook_White: {fileID: 21300000, guid: 1e4a1396ebb154e469e516c8d7aed979, type: 3}
   Bishop_White: {fileID: 21300000, guid: 22d31bb9e2b1420439b5270abce84239, type: 3}
@@ -15330,7 +15388,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GameP: {fileID: 212736798}
-  ListOfMoves: {fileID: 816551626}
+  ListOfMoves: {fileID: 952877265}
   Queen_White: {fileID: 21300000, guid: ec65c4664c32fa647b774ea6bc250c10, type: 3}
   Rook_White: {fileID: 21300000, guid: 1e4a1396ebb154e469e516c8d7aed979, type: 3}
   Bishop_White: {fileID: 21300000, guid: 22d31bb9e2b1420439b5270abce84239, type: 3}
@@ -15473,7 +15531,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GameP: {fileID: 212736798}
-  ListOfMoves: {fileID: 816551626}
+  ListOfMoves: {fileID: 952877265}
   Queen_White: {fileID: 21300000, guid: ec65c4664c32fa647b774ea6bc250c10, type: 3}
   Rook_White: {fileID: 21300000, guid: 1e4a1396ebb154e469e516c8d7aed979, type: 3}
   Bishop_White: {fileID: 21300000, guid: 22d31bb9e2b1420439b5270abce84239, type: 3}
@@ -15615,7 +15673,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GameP: {fileID: 212736798}
-  ListOfMoves: {fileID: 816551626}
+  ListOfMoves: {fileID: 952877265}
   Queen_White: {fileID: 21300000, guid: ec65c4664c32fa647b774ea6bc250c10, type: 3}
   Rook_White: {fileID: 21300000, guid: 1e4a1396ebb154e469e516c8d7aed979, type: 3}
   Bishop_White: {fileID: 21300000, guid: 22d31bb9e2b1420439b5270abce84239, type: 3}
@@ -15833,7 +15891,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GameP: {fileID: 212736798}
-  ListOfMoves: {fileID: 816551626}
+  ListOfMoves: {fileID: 952877265}
   Queen_White: {fileID: 21300000, guid: ec65c4664c32fa647b774ea6bc250c10, type: 3}
   Rook_White: {fileID: 21300000, guid: 1e4a1396ebb154e469e516c8d7aed979, type: 3}
   Bishop_White: {fileID: 21300000, guid: 22d31bb9e2b1420439b5270abce84239, type: 3}
@@ -16150,7 +16208,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GameP: {fileID: 212736798}
-  ListOfMoves: {fileID: 816551626}
+  ListOfMoves: {fileID: 952877265}
   Queen_White: {fileID: 21300000, guid: ec65c4664c32fa647b774ea6bc250c10, type: 3}
   Rook_White: {fileID: 21300000, guid: 1e4a1396ebb154e469e516c8d7aed979, type: 3}
   Bishop_White: {fileID: 21300000, guid: 22d31bb9e2b1420439b5270abce84239, type: 3}
@@ -16444,7 +16502,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GameP: {fileID: 212736798}
-  ListOfMoves: {fileID: 816551626}
+  ListOfMoves: {fileID: 952877265}
   Queen_White: {fileID: 21300000, guid: ec65c4664c32fa647b774ea6bc250c10, type: 3}
   Rook_White: {fileID: 21300000, guid: 1e4a1396ebb154e469e516c8d7aed979, type: 3}
   Bishop_White: {fileID: 21300000, guid: 22d31bb9e2b1420439b5270abce84239, type: 3}
@@ -16586,7 +16644,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GameP: {fileID: 212736798}
-  ListOfMoves: {fileID: 816551626}
+  ListOfMoves: {fileID: 952877265}
   Queen_White: {fileID: 21300000, guid: ec65c4664c32fa647b774ea6bc250c10, type: 3}
   Rook_White: {fileID: 21300000, guid: 1e4a1396ebb154e469e516c8d7aed979, type: 3}
   Bishop_White: {fileID: 21300000, guid: 22d31bb9e2b1420439b5270abce84239, type: 3}
@@ -16728,7 +16786,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GameP: {fileID: 212736798}
-  ListOfMoves: {fileID: 816551626}
+  ListOfMoves: {fileID: 952877265}
   Queen_White: {fileID: 21300000, guid: ec65c4664c32fa647b774ea6bc250c10, type: 3}
   Rook_White: {fileID: 21300000, guid: 1e4a1396ebb154e469e516c8d7aed979, type: 3}
   Bishop_White: {fileID: 21300000, guid: 22d31bb9e2b1420439b5270abce84239, type: 3}
@@ -16947,7 +17005,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GameP: {fileID: 212736798}
-  ListOfMoves: {fileID: 816551626}
+  ListOfMoves: {fileID: 952877265}
   Queen_White: {fileID: 21300000, guid: ec65c4664c32fa647b774ea6bc250c10, type: 3}
   Rook_White: {fileID: 21300000, guid: 1e4a1396ebb154e469e516c8d7aed979, type: 3}
   Bishop_White: {fileID: 21300000, guid: 22d31bb9e2b1420439b5270abce84239, type: 3}
@@ -17090,7 +17148,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GameP: {fileID: 212736798}
-  ListOfMoves: {fileID: 816551626}
+  ListOfMoves: {fileID: 952877265}
   Queen_White: {fileID: 21300000, guid: ec65c4664c32fa647b774ea6bc250c10, type: 3}
   Rook_White: {fileID: 21300000, guid: 1e4a1396ebb154e469e516c8d7aed979, type: 3}
   Bishop_White: {fileID: 21300000, guid: 22d31bb9e2b1420439b5270abce84239, type: 3}
@@ -17233,7 +17291,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GameP: {fileID: 212736798}
-  ListOfMoves: {fileID: 816551626}
+  ListOfMoves: {fileID: 952877265}
   Queen_White: {fileID: 21300000, guid: ec65c4664c32fa647b774ea6bc250c10, type: 3}
   Rook_White: {fileID: 21300000, guid: 1e4a1396ebb154e469e516c8d7aed979, type: 3}
   Bishop_White: {fileID: 21300000, guid: 22d31bb9e2b1420439b5270abce84239, type: 3}
@@ -17376,7 +17434,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GameP: {fileID: 212736798}
-  ListOfMoves: {fileID: 816551626}
+  ListOfMoves: {fileID: 952877265}
   Queen_White: {fileID: 21300000, guid: ec65c4664c32fa647b774ea6bc250c10, type: 3}
   Rook_White: {fileID: 21300000, guid: 1e4a1396ebb154e469e516c8d7aed979, type: 3}
   Bishop_White: {fileID: 21300000, guid: 22d31bb9e2b1420439b5270abce84239, type: 3}

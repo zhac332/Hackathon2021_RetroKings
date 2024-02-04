@@ -8,16 +8,20 @@ public class HistoryOfMovesPUN : MonoBehaviour
 {
     [SerializeField] private GameObject LinePrefab;
     [SerializeField] private Vector3 StartPos;
-    private ScrollRect scroll;
-    private RectTransform contentRectTransform;
+    [SerializeField] private ScrollRect scroll;
+    [SerializeField] private RectTransform contentRectTransform;
+    [SerializeField] private PhotonView pv;
+
     private List<Tuple<string, string>> moves;
-    private PhotonView pv;
 
     private void Start()
     {
-        pv = GetComponent<PhotonView>();
-        scroll = GetComponent<ScrollRect>();
-        contentRectTransform = scroll.content.GetComponent<RectTransform>();
+        moves = new List<Tuple<string, string>>();
+    }
+
+    public void Initialize()
+    {
+        Debug.Log("Hello");
         moves = new List<Tuple<string, string>>
         {
             new Tuple<string, string>("", "")

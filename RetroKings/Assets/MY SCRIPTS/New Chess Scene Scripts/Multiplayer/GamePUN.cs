@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class GamePUN : MonoBehaviour
 {
+    [SerializeField] private HistoryOfMovesPUN historyOfMovesPUN;
+
     [SerializeField] private Text WhitePointsText;
     [SerializeField] private Text BlackPointsText;
 
@@ -34,6 +36,7 @@ public class GamePUN : MonoBehaviour
         myTurn = (c == 0);
         whiteImmuneString = blackImmuneString = "";
         pv = GetComponent<PhotonView>();
+        historyOfMovesPUN.Initialize();
     }
 
     public void SendRPC_SwitchTurn()
