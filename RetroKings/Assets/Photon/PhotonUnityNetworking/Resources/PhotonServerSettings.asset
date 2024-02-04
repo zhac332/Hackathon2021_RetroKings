@@ -43,6 +43,12 @@ MonoBehaviour:
   - SetColor
   - AddNewData
   - AddNewLine
+  - AddCaptureMove
+  - AddCastlesMove
+  - AddDestroyUse
+  - AddImmunityMove
+  - AddNormalMove
+  - AddPromotionMove
   DisableAutoOpenWizard: 1
   ShowSettings: 0
   DevRegionSetOnce: 1

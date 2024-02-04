@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using Photon.Pun;
+using System.Runtime.CompilerServices;
 
 public class HistoryOfMovesPUN : MonoBehaviour
 {
@@ -21,37 +22,43 @@ public class HistoryOfMovesPUN : MonoBehaviour
 
     public void Initialize()
     {
-        Debug.Log("Hello");
         moves = new List<Tuple<string, string>>
         {
             new Tuple<string, string>("", "")
         };
-        pv.RPC("AddNewLine", RpcTarget.All, 1);
+        AddNewLine(1);
     }
 
-    public void AddCaptureMove(string cell1, string cell2)
+    [PunRPC]
+    public void AddCaptureMove(string cell1, string cell2, bool rpced)
     {
         cell1 = char.ToLower(cell1[0]) + cell1[1..];
         cell2 = char.ToLower(cell2[0]) + cell2[1..];
-        pv.RPC("AddNewData", RpcTarget.All, cell1 + "x" + cell2);
+        AddNewData(cell1 + "x" + cell2);
+        if (!rpced) pv.RPC("AddCaptureMove", RpcTarget.Others, cell1, cell2, true);
     }
 
-    public void AddNormalMove(string cell1, string cell2)
+    [PunRPC]
+    public void AddNormalMove(string cell1, string cell2, bool rpced)
     {
         cell1 = char.ToLower(cell1[0]) + cell1[1..];
         cell2 = char.ToLower(cell2[0]) + cell2[1..];
-        pv.RPC("AddNewData", RpcTarget.All, cell1 + "-" + cell2);
+        AddNewData(cell1 + "-" + cell2);
+        if (!rpced) pv.RPC("AddNormalMove", RpcTarget.Others, cell1, cell2, true);
     }
 
-    public void AddCastlesMove(string cell1, string cell2, bool isLong)
+    [PunRPC]
+    public void AddCastlesMove(string cell1, string cell2, bool isLong, bool rpced)
     {
         cell1 = char.ToLower(cell1[0]) + cell1[1..];
         cell2 = char.ToLower(cell2[0]) + cell2[1..];
         string symbol = (isLong ? "-OO-" : "-O-");
-        pv.RPC("AddNewData", RpcTarget.All, cell1 + symbol + cell2);
+        AddNewData(cell1 + symbol + cell2);
+        if (!rpced) pv.RPC("AddCastlesMove", RpcTarget.Others, cell1, cell2, isLong, true);
     }
 
-    public void AddPromotionMove(string cell1, string cell2, Piece p)
+    [PunRPC]
+    public void AddPromotionMove(string cell1, string cell2, Piece p, bool rpced)
     {
         cell1 = char.ToLower(cell1[0]) + cell1[1..];
         cell2 = char.ToLower(cell2[0]) + cell2[1..];
@@ -62,23 +69,27 @@ public class HistoryOfMovesPUN : MonoBehaviour
         if (p == Piece.Rook) pieceIcon = "R";
         if (p == Piece.Queen) pieceIcon = "Q";
 
-        pv.RPC("AddNewData", RpcTarget.All, cell1 + "-" + cell2 + "^" + pieceIcon);
-    }
-
-    public void AddDestroyUse(string cell)
-    {
-        cell = char.ToLower(cell[0]) + cell[1..];
-        pv.RPC("AddNewData", RpcTarget.All, "D-" + cell);
-    }
-
-    public void AddImmunityMove(string cell)
-    {
-        cell = char.ToLower(cell[0]) + cell[1..];
-        pv.RPC("AddNewData", RpcTarget.All, "S-" + cell);
+        AddNewData(cell1 + "-" + cell2 + "^" + pieceIcon);
+        if (!rpced) pv.RPC("AddPromotionMove", RpcTarget.Others, cell1, cell2, p, true);
     }
 
     [PunRPC]
-    public void AddNewData(string data)
+    public void AddDestroyUse(string cell, bool rpced)
+    {
+        cell = char.ToLower(cell[0]) + cell[1..];
+        AddNewData("D-" + cell);
+        if (!rpced) pv.RPC("AddDestroyUse", RpcTarget.Others, cell, true);
+    }
+
+    [PunRPC]
+    public void AddImmunityMove(string cell, bool rpced)
+    {
+        cell = char.ToLower(cell[0]) + cell[1..];
+        AddNewData("S-" + cell);
+        if (!rpced) pv.RPC("AddImmunityMove", RpcTarget.Others, cell, true);
+    }
+
+    private void AddNewData(string data)
     {
         if (moves[moves.Count - 1].Item1 == "")
         {
@@ -90,7 +101,7 @@ public class HistoryOfMovesPUN : MonoBehaviour
             moves[moves.Count - 1] = new Tuple<string, string>(moves[moves.Count - 1].Item1, data);
             UpdateLastLine(data);
             moves.Add(new Tuple<string, string>("", ""));
-            pv.RPC("AddNewLine", RpcTarget.All, moves.Count);
+            AddNewLine(moves.Count);
         }
     }
 
@@ -120,8 +131,7 @@ public class HistoryOfMovesPUN : MonoBehaviour
         StartPos = new Vector3(StartPos.x, StartPos.y + 15f, 0f);
     }
 
-    [PunRPC]
-    public void AddNewLine(int count)
+    private void AddNewLine(int count)
     {
         var go = Instantiate(LinePrefab, scroll.content.transform);
         RectTransform rt = go.GetComponent<RectTransform>();

@@ -271,20 +271,20 @@ public class CellPUN_Script : MonoBehaviour
 
             if (IsLongCastling(cell1, cell2, piece.Item1))
             {
-                ListOfMoves.AddCastlesMove(cell1, cell2, true);
+                ListOfMoves.AddCastlesMove(cell1, cell2, true, false);
             }
             else if (IsShortCastling(cell1, cell2, piece.Item1))
             {
-                ListOfMoves.AddCastlesMove(cell1, cell2, false);
+                ListOfMoves.AddCastlesMove(cell1, cell2, false, false);
             }
             else if (isPromotional)
             {
-                ListOfMoves.AddPromotionMove(cell1, cell2, piece.Item1);
+                ListOfMoves.AddPromotionMove(cell1, cell2, piece.Item1, false);
             }
             else
             {
-                if (!capture) ListOfMoves.AddNormalMove(cell1, cell2);
-                else ListOfMoves.AddCaptureMove(cell1, cell2);
+                if (!capture) ListOfMoves.AddNormalMove(cell1, cell2, false);
+                else ListOfMoves.AddCaptureMove(cell1, cell2, false);
             }
 
             GameP.SendRPC_SwitchTurn();
@@ -301,7 +301,7 @@ public class CellPUN_Script : MonoBehaviour
         UpdatePieceDisplay(p, piece);
         Destroy(p);
 
-        ListOfMoves.AddDestroyUse(name);
+        ListOfMoves.AddDestroyUse(name, false);
 
         GameP.PieceCaptured(p.name);
         GameP.DestroyUsed(piece);
@@ -316,7 +316,7 @@ public class CellPUN_Script : MonoBehaviour
         if (GameP.IsMyTurn()) MarkShieldedCell_White();
         else MarkShieldedCell_Black();
 
-        ListOfMoves.AddImmunityMove(name);
+        ListOfMoves.AddImmunityMove(name, false);
 
         GameP.ImmunityUsed(name);
 
