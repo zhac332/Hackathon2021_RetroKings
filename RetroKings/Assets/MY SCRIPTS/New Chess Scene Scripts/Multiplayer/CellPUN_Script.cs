@@ -1,11 +1,14 @@
 using System;
 using UnityEngine;
+using Photon.Pun;
 
 public class CellPUN_Script : MonoBehaviour
 {
     [SerializeField] private GamePUN GameP;
 
     [SerializeField] private HistoryOfMovesPUN ListOfMoves;
+
+    [SerializeField] private PhotonView moveUpdater;
 
     [Header("Sprites for pieces")]
     [SerializeField] private Sprite Queen_White;
@@ -268,7 +271,6 @@ public class CellPUN_Script : MonoBehaviour
         MoveCheckerPUN.UnmarkAll();
         if (switchTurn)
         {
-
             if (IsLongCastling(cell1, cell2, piece.Item1))
             {
                 ListOfMoves.AddCastlesMove(cell1, cell2, true, false);
@@ -291,6 +293,7 @@ public class CellPUN_Script : MonoBehaviour
         }
         MoveCheckerPUN.UpdateCastlingPossibilities(piece, cell1);
 
+        moveUpdater.RPC("ExecutedMove", RpcTarget.Others, cell1, cell2, piece.Item1.ToString(), piece.Item2.ToString());
     }
 
     private void ExecuteMove_DestroyFeature()
@@ -309,6 +312,8 @@ public class CellPUN_Script : MonoBehaviour
         MoveCheckerPUN.UnmarkAll();
         GameP.SendRPC_SwitchTurn();
         MoveCheckerPUN.UpdateCastlingPossibilities(piece, name);
+
+        moveUpdater.RPC("ExecutedMove_DestroyFeature", RpcTarget.Others, name);
     }
 
     private void ExecuteMove_ImmunityFeature()
@@ -323,6 +328,8 @@ public class CellPUN_Script : MonoBehaviour
         Move.ResetMove();
         MoveCheckerPUN.UnmarkAll();
         GameP.SendRPC_SwitchTurn();
+
+        moveUpdater.RPC("ExecutedMove_ImmunityFeature", RpcTarget.Others, name);
     }
 
     private void Update()
