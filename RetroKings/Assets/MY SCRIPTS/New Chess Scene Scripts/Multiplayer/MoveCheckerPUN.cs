@@ -33,6 +33,8 @@ public static class MoveCheckerPUN
 
     public static void MarkDestroyableCells(int pointsNumber, bool myTurn)
     {
+        if (!myTurn) return;
+
         UnmarkAll();
 
         destroyPowerup_Toggle = !destroyPowerup_Toggle;
@@ -45,7 +47,7 @@ public static class MoveCheckerPUN
             for (int i = 0; i < cells.Count; i++)
                 if (PieceChecker.HasAPiece(cells[i]))
                 {
-                    if (myTurn)
+                    if (GameP.AmWhite())
                     {
                         if (PieceChecker.IsBlackPiece(cells[i]) && PieceChecker.IsPieceValueLowerThan(cells[i], pointsNumber) && !PieceChecker.IsPieceKing(cells[i]))
                         {
@@ -56,7 +58,7 @@ public static class MoveCheckerPUN
                             }
                         }
                     }
-                    else
+                    else if (GameP.AmBlack())
                     {
                         if (PieceChecker.IsWhitePiece(cells[i]) && PieceChecker.IsPieceValueLowerThan(cells[i], pointsNumber) && !PieceChecker.IsPieceKing(cells[i]))
                         {
@@ -741,8 +743,6 @@ public static class MoveCheckerPUN
 
         string whiteImmuneCell = GameP.GetWhiteImmuneCell();
         string blackImmuneCell = GameP.GetBlackImmuneCell();
-
-        Debug.LogError("Unmarking. Here are the immune cells: " + whiteImmuneCell + " " + blackImmuneCell);
 
         for (int i = 0; i < cells.Count; i++)
             if (cells[i].name != whiteImmuneCell && cells[i].name != blackImmuneCell)

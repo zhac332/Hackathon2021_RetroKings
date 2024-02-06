@@ -95,8 +95,33 @@ public class GamePUN : MonoBehaviour
         else White_Points += value;
     }
 
+    public void SendRPC_DestroyUsed(Tuple<Piece, PieceColor> piece)
+    {
+        pv.RPC("DestroyUsed", RpcTarget.Others, piece.Item1.ToString(), piece.Item2.ToString());
+    }
+
     public void DestroyUsed(Tuple<Piece, PieceColor> piece)
     {
+        int value = 0;
+
+        if (piece.Item1 == Piece.Pawn) value = Pawn_Value;
+        if (piece.Item1 == Piece.Bishop) value = Bishop_Value;
+        if (piece.Item1 == Piece.Knight) value = Knight_Value;
+        if (piece.Item1 == Piece.Rook) value = Rook_Value;
+        if (piece.Item1 == Piece.Queen) value = Queen_Value;
+
+        if (myTurn) White_Points -= value;
+        else Black_Points -= value;
+
+        MoveCheckerPUN.ResetPowerupToggles();
+    }
+
+    /// A duplicate of the original DestroyUsed method simply because PunRPC doesn't like when putting a Tuple as parameter.
+    [PunRPC]
+    public void DestroyUsed(string pi, string pC)
+    {
+        Tuple<Piece, PieceColor> piece = new Tuple<Piece, PieceColor>(EnumParser.ParsePiece(pi), EnumParser.ParsePieceColor(pC));
+
         int value = 0;
 
         if (piece.Item1 == Piece.Pawn) value = Pawn_Value;
@@ -161,7 +186,7 @@ public class GamePUN : MonoBehaviour
         return gameOver;
     }
 
-    public void PieceCaptured(string pieceName)
+    public void PieceCaptured(string pieceName, bool addPoints)
     {
         PieceColor color = (pieceName.Contains("W") ? PieceColor.White : PieceColor.Black);
         Piece piece = Piece.NULL;
@@ -169,27 +194,27 @@ public class GamePUN : MonoBehaviour
         if (pieceName.Contains("Pawn"))
         {
             piece = Piece.Pawn;
-            AddPoints(Pawn_Value, color);
+            if (addPoints) AddPoints(Pawn_Value, color);
         }
         else if (pieceName.Contains("Bishop"))
         {
             piece = Piece.Bishop;
-            AddPoints(Bishop_Value, color);
+            if (addPoints) AddPoints(Bishop_Value, color);
         }
         else if (pieceName.Contains("Rook"))
         {
             piece = Piece.Rook;
-            AddPoints(Rook_Value, color);
+            if (addPoints) AddPoints(Rook_Value, color);
         }
         else if (pieceName.Contains("Knight"))
         {
             piece = Piece.Knight;
-            AddPoints(Knight_Value, color);
+            if (addPoints) AddPoints(Knight_Value, color);
         }
         else if (pieceName.Contains("Queen"))
         {
             piece = Piece.Queen;
-            AddPoints(Queen_Value, color);
+            if (addPoints) AddPoints(Queen_Value, color);
         }
         else if (pieceName.Contains("King"))
         {

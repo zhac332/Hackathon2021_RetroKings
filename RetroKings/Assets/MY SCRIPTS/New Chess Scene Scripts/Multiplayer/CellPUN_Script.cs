@@ -261,7 +261,7 @@ public class CellPUN_Script : MonoBehaviour
         {
             capture = true;
             GameObject go = c2.transform.GetChild(0).gameObject;
-            GameP.PieceCaptured(go.name);
+            GameP.PieceCaptured(go.name, true);
             Destroy(go);
         }
 
@@ -310,10 +310,10 @@ public class CellPUN_Script : MonoBehaviour
 
         ListOfMoves.AddDestroyUse(name, false);
 
-        GameP.PieceCaptured(p.name);
+        GameP.PieceCaptured(p.name, false);
         GameP.DestroyUsed(piece);
+        GameP.SendRPC_DestroyUsed(piece);
         Move.ResetMove();
-        MoveCheckerPUN.UnmarkAll();
         GameP.SendRPC_SwitchTurn();
         MoveCheckerPUN.UpdateCastlingPossibilities(piece, name);
 

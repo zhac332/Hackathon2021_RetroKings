@@ -79,37 +79,13 @@ public class MoveUpdaterPUN : MonoBehaviour
         }
     }
 
-    private Piece ParsePiece(string value)
-    {
-        if (Enum.TryParse(value, out Piece result))
-        {
-            return result;
-        }
-        else
-        {
-            throw new ArgumentException($"Invalid Piece value: {value}");
-        }
-    }
-    private PieceColor ParsePieceColor(string value)
-    {
-        if (Enum.TryParse(value, out PieceColor result))
-        {
-            return result;
-        }
-        else
-        {
-            throw new ArgumentException($"Invalid Piece value: {value}");
-        }
-    }
-
-
     [PunRPC]
     public void ExecutedMove(string cell1, string cell2, string pi, string pC)
     {
         // I need to hold the child piece from cell1,
         // I need to remove the child piece from cell2, if there is one
         // and put the piece from cell1 to cell2
-        Tuple<Piece, PieceColor> piece = new Tuple<Piece, PieceColor>(ParsePiece(pi), ParsePieceColor(pC));
+        Tuple<Piece, PieceColor> piece = new Tuple<Piece, PieceColor>(EnumParser.ParsePiece(pi), EnumParser.ParsePieceColor(pC));
         GameObject c1 = GameObject.Find(cell1);
         GameObject c2 = GameObject.Find(cell2);
         GameObject p = c1.transform.GetChild(0).gameObject;
@@ -121,7 +97,7 @@ public class MoveUpdaterPUN : MonoBehaviour
         if (c2.transform.childCount != 0)
         {
             GameObject go = c2.transform.GetChild(0).gameObject;
-            GameP.PieceCaptured(go.name);
+            GameP.PieceCaptured(go.name, true);
             Destroy(go);
         }
 
@@ -146,7 +122,7 @@ public class MoveUpdaterPUN : MonoBehaviour
         UpdatePieceDisplay(p, piece);
         Destroy(p);
 
-        GameP.PieceCaptured(p.name);
+        GameP.PieceCaptured(p.name, false);
         Move.ResetMove();
         MoveCheckerPUN.UnmarkAll();
         MoveCheckerPUN.UpdateCastlingPossibilities(piece, name);
