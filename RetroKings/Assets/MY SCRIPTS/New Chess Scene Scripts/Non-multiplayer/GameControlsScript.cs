@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Photon.Pun;
 
 public class GameControlsScript : MonoBehaviour
 {
@@ -19,10 +20,16 @@ public class GameControlsScript : MonoBehaviour
     [SerializeField] private List<Sprite> WhitePieces;
     [SerializeField] private List<Sprite> BlackPieces;
 
+    [Header("Only if in multiplayer")]
+    [SerializeField] private GamePUN GameP;   
+
     private void Start()
     {
         MoveChecker.SetUpdatePromotionalPiecesFunction((white) => UpdateImages(white));
         Game.SetGameOverTrigger(SetGameOver);
+
+        if (PhotonNetwork.IsConnected) MoveCheckerPUN.AcquireAllCells();
+        else MoveChecker.AcquireAllCells();
     }
 
     public void SetDisplay(bool white)
@@ -37,12 +44,14 @@ public class GameControlsScript : MonoBehaviour
 
     public void DestroyButton_OnClick()
     {
-        MoveChecker.MarkDestroyableCells(Game.GetPoints(), Game.IsMyTurn());
+        if (PhotonNetwork.IsConnected) MoveCheckerPUN.MarkDestroyableCells(GameP.GetPoints(), GameP.IsMyTurn());
+        else MoveChecker.MarkDestroyableCells(Game.GetPoints(), Game.IsMyTurn());
     }
 
     public void ImmunityButton_OnClick()
     {
-        MoveChecker.MarkShieldableCells(Game.GetPoints(), Game.IsMyTurn());
+        if (PhotonNetwork.IsConnected) MoveCheckerPUN.MarkShieldableCells(GameP.GetPoints(), GameP.IsMyTurn());
+        else MoveChecker.MarkShieldableCells(Game.GetPoints(), Game.IsMyTurn());
     }
 
     public void UpdateImages(bool isWhite)

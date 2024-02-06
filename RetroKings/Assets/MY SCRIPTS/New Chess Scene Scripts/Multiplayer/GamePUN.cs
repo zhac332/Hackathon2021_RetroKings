@@ -28,7 +28,9 @@ public class GamePUN : MonoBehaviour
     private int color;
 
     private string whiteImmuneString = "";
+    private bool whiteSkip = false;
     private string blackImmuneString = "";
+    private bool blackSkip = false;
 
     public void SetMyTurn(int c)
     {
@@ -52,16 +54,17 @@ public class GamePUN : MonoBehaviour
         WhitePointsText.text = "White points: " + White_Points;
         BlackPointsText.text = "Black points: " + Black_Points;
 
-        if (!myTurn)
+        if (blackSkip)
         {
-            // white turns black
-            blackImmuneString = "";
+            blackSkip = false;
         }
-        else
+        else blackImmuneString = "";
+
+        if (whiteSkip)
         {
-            // black turns white
-            whiteImmuneString = "";
+            whiteSkip = false;
         }
+        else whiteImmuneString = "";
 
         MoveCheckerPUN.UnmarkAll();
     }
@@ -108,17 +111,46 @@ public class GamePUN : MonoBehaviour
         MoveCheckerPUN.ResetPowerupToggles();
     }
 
-    public void ImmunityUsed(string cell)
+    public void SendRPC_ImmunityUsed(string cell)
     {
-        if (myTurn)
+        pv.RPC("ImmunityUsed", RpcTarget.Others, cell, true);
+    }
+
+    [PunRPC]
+    public void ImmunityUsed(string cell, bool rpced)
+    {
+        // if it is rpced, that means I didn't use it.
+        if (rpced)
         {
-            White_Points -= 4;
-            whiteImmuneString = cell;
+            // the opponent used it.
+            if (color == 0)
+            {
+                Black_Points -= 4;
+                blackImmuneString = cell;
+                blackSkip = true;
+            }
+            else
+            {
+                White_Points -= 4;
+                whiteImmuneString = cell;
+                whiteSkip = true;
+            }
         }
         else
         {
-            Black_Points -= 4;
-            blackImmuneString = cell;
+            // I used it.
+            if (color == 0)
+            {
+                White_Points -= 4;
+                whiteImmuneString = cell;
+                whiteSkip = true;
+            }
+            else
+            {
+                Black_Points -= 4;
+                blackImmuneString = cell;
+                blackSkip = true;
+            }
         }
 
         MoveCheckerPUN.ResetPowerupToggles();
@@ -173,6 +205,16 @@ public class GamePUN : MonoBehaviour
     public bool IsMyTurn()
     {
         return myTurn;
+    }
+
+    public bool AmBlack()
+    {
+        return color == 1;
+    }
+
+    public bool AmWhite()
+    {
+        return color == 0;
     }
 
     public bool IsMyPiece(string end)

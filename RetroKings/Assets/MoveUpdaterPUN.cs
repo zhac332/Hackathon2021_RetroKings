@@ -156,11 +156,10 @@ public class MoveUpdaterPUN : MonoBehaviour
     public void ExecutedMove_ImmunityFeature(string cell)
     {
         GameObject go = GameObject.Find(cell);
-        if (!GameP.IsMyTurn()) MarkShieldedCell_White(go.GetComponent<SpriteRenderer>());
+        if (GameP.AmWhite()) MarkShieldedCell_White(go.GetComponent<SpriteRenderer>());
         else MarkShieldedCell_Black(go.GetComponent<SpriteRenderer>());
 
         Move.ResetMove();
-        MoveCheckerPUN.UnmarkAll();
     }
 
     private void MarkShieldedCell_White(SpriteRenderer sr)

@@ -52,6 +52,7 @@ MonoBehaviour:
   - ExecutedMove
   - ExecutedMove_DestroyFeature
   - ExecutedMove_ImmunityFeature
+  - ImmunityUsed
   DisableAutoOpenWizard: 1
   ShowSettings: 0
   DevRegionSetOnce: 1

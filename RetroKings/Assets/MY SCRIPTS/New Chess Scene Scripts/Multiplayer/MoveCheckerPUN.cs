@@ -1,9 +1,11 @@
+using Photon.Pun;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
 
 public static class MoveCheckerPUN
 {
+    private static GamePUN GameP;
     private static List<GameObject> cells;
     private static GameObject PromotionalPanel;
     private static Piece currentPiece;
@@ -26,6 +28,7 @@ public static class MoveCheckerPUN
     public static void AcquireAllCells()
     {
         cells = GameObject.Find("Chess Board").GetComponent<PieceDisplayScript>().GetCells();
+        GameP = GameObject.Find("GamePUN").GetComponent<GamePUN>();
     }
 
     public static void MarkDestroyableCells(int pointsNumber, bool myTurn)
@@ -46,7 +49,7 @@ public static class MoveCheckerPUN
                     {
                         if (PieceChecker.IsBlackPiece(cells[i]) && PieceChecker.IsPieceValueLowerThan(cells[i], pointsNumber) && !PieceChecker.IsPieceKing(cells[i]))
                         {
-                            if (Game.GetBlackImmuneCell() != cells[i].name)
+                            if ((string)PhotonNetwork.CurrentRoom.CustomProperties["blackImmuneString"] != cells[i].name)
                             {
                                 cells[i].GetComponent<CellPUN_Script>().MarkForDestroyableCells();
                                 markedCells.Add(cells[i].name);
@@ -59,7 +62,7 @@ public static class MoveCheckerPUN
                         {
                             if (!IsCellImmune(cells[i]))
                             {
-                                if (Game.GetWhiteImmuneCell() != cells[i].name)
+                                if ((string)PhotonNetwork.CurrentRoom.CustomProperties["whiteImmuneString"] != cells[i].name)
                                 {
                                     cells[i].GetComponent<CellPUN_Script>().MarkForDestroyableCells();
                                     markedCells.Add(cells[i].name);
@@ -86,16 +89,15 @@ public static class MoveCheckerPUN
             for (int i = 0; i < cells.Count; i++)
                 if (PieceChecker.HasAPiece(cells[i]))
                 {
-                    if (myTurn)
+                    if (GameP.AmWhite())
                     {
                         if (PieceChecker.IsWhitePiece(cells[i]) && pointsNumber >= 4 && !PieceChecker.IsPieceKing(cells[i]))
                         {
                             cells[i].GetComponent<CellPUN_Script>().MarkForShieldableCells();
                             markedCells.Add(cells[i].name);
                         }
-
                     }
-                    else
+                    else if (GameP.AmBlack())
                     {
                         if (PieceChecker.IsBlackPiece(cells[i]) && pointsNumber >= 4 && !PieceChecker.IsPieceKing(cells[i]))
                         {
@@ -727,16 +729,20 @@ public static class MoveCheckerPUN
 
     private static bool IsCellImmune(GameObject go)
     {
-        string whiteImmuneCell = Game.GetWhiteImmuneCell();
-        string blackImmuneCell = Game.GetBlackImmuneCell();
+        string whiteImmuneCell = GameP.GetWhiteImmuneCell();
+        string blackImmuneCell = GameP.GetBlackImmuneCell();
 
         return ((whiteImmuneCell == go.name) || (blackImmuneCell == go.name));
     }
 
     public static void UnmarkAll()
     {
-        string whiteImmuneCell = Game.GetWhiteImmuneCell();
-        string blackImmuneCell = Game.GetBlackImmuneCell();
+        AcquireAllCells();
+
+        string whiteImmuneCell = GameP.GetWhiteImmuneCell();
+        string blackImmuneCell = GameP.GetBlackImmuneCell();
+
+        Debug.LogError("Unmarking. Here are the immune cells: " + whiteImmuneCell + " " + blackImmuneCell);
 
         for (int i = 0; i < cells.Count; i++)
             if (cells[i].name != whiteImmuneCell && cells[i].name != blackImmuneCell)

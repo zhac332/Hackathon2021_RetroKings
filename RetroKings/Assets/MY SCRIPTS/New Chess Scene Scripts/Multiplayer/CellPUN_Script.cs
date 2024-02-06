@@ -160,11 +160,15 @@ public class CellPUN_Script : MonoBehaviour
     public void MarkShieldedCell_White()
     {
         sr.color = White_ShieldedCell_Color;
+        GameP.ImmunityUsed(name, false);
+        GameP.SendRPC_ImmunityUsed(name);
     }
 
     public void MarkShieldedCell_Black()
     {
         sr.color = Black_ShieldedCell_Color;
+        GameP.ImmunityUsed(name, false);
+        GameP.SendRPC_ImmunityUsed(name);
     }
 
     private void UpdatePieceDisplay(GameObject piece, Tuple<Piece, PieceColor> pieceData)
@@ -318,18 +322,15 @@ public class CellPUN_Script : MonoBehaviour
 
     private void ExecuteMove_ImmunityFeature()
     {
-        if (GameP.IsMyTurn()) MarkShieldedCell_White();
+        if (GameP.AmWhite()) MarkShieldedCell_White();
         else MarkShieldedCell_Black();
 
         ListOfMoves.AddImmunityMove(name, false);
 
-        GameP.ImmunityUsed(name);
-
         Move.ResetMove();
-        MoveCheckerPUN.UnmarkAll();
-        GameP.SendRPC_SwitchTurn();
 
         moveUpdater.RPC("ExecutedMove_ImmunityFeature", RpcTarget.Others, name);
+        GameP.SendRPC_SwitchTurn();
     }
 
     private void Update()
