@@ -25,11 +25,18 @@ public class GameControlsScript : MonoBehaviour
 
     private void Start()
     {
-        MoveChecker.SetUpdatePromotionalPiecesFunction((white) => UpdateImages(white));
-        Game.SetGameOverTrigger(SetGameOver);
+        if (PhotonNetwork.IsConnected)
+        {
+            MoveCheckerPUN.SetUpdatePromotionalPiecesFunction((white) => UpdateImages(white));
+            MoveCheckerPUN.AcquireAllCells();
+        }
+        else
+        {
+            MoveChecker.SetUpdatePromotionalPiecesFunction((white) => UpdateImages(white));
+            MoveChecker.AcquireAllCells();
+        }
 
-        if (PhotonNetwork.IsConnected) MoveCheckerPUN.AcquireAllCells();
-        else MoveChecker.AcquireAllCells();
+        Game.SetGameOverTrigger(SetGameOver);
     }
 
     public void SetDisplay(bool white)

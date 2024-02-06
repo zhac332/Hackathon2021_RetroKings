@@ -29,6 +29,7 @@ public static class MoveCheckerPUN
     {
         cells = GameObject.Find("Chess Board").GetComponent<PieceDisplayScript>().GetCells();
         GameP = GameObject.Find("GamePUN").GetComponent<GamePUN>();
+        PromotionalPanel = GameObject.Find("MAIN CANVAS/Promotion Panel");
     }
 
     public static void MarkDestroyableCells(int pointsNumber, bool myTurn)

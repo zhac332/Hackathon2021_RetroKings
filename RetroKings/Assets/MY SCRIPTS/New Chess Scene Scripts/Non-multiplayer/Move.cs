@@ -1,6 +1,6 @@
 using System;
-using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
 public static class Move
 {
@@ -103,7 +103,8 @@ public static class Move
     {
         currentPiece = new Tuple<Piece, PieceColor>(p, currentPiece.Item2);
         method_ExecuteMove(firstCell, lastCell, currentPiece, true);
-        MoveChecker.DisablePromotionalPanel();
+        if (PhotonNetwork.IsConnected) MoveCheckerPUN.DisablePromotionalPanel();
+        else MoveChecker.DisablePromotionalPanel();
     }
 
     public static void ResetMove()
