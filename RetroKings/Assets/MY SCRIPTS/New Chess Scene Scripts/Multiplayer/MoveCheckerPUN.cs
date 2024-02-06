@@ -52,7 +52,7 @@ public static class MoveCheckerPUN
                     {
                         if (PieceChecker.IsBlackPiece(cells[i]) && PieceChecker.IsPieceValueLowerThan(cells[i], pointsNumber) && !PieceChecker.IsPieceKing(cells[i]))
                         {
-                            if ((string)PhotonNetwork.CurrentRoom.CustomProperties["blackImmuneString"] != cells[i].name)
+                            if (GameP.GetBlackImmuneCell() != cells[i].name)
                             {
                                 cells[i].GetComponent<CellPUN_Script>().MarkForDestroyableCells();
                                 markedCells.Add(cells[i].name);
@@ -65,7 +65,7 @@ public static class MoveCheckerPUN
                         {
                             if (!IsCellImmune(cells[i]))
                             {
-                                if ((string)PhotonNetwork.CurrentRoom.CustomProperties["whiteImmuneString"] != cells[i].name)
+                                if (GameP.GetWhiteImmuneCell() != cells[i].name)
                                 {
                                     cells[i].GetComponent<CellPUN_Script>().MarkForDestroyableCells();
                                     markedCells.Add(cells[i].name);
@@ -80,6 +80,8 @@ public static class MoveCheckerPUN
 
     public static void MarkShieldableCells(int pointsNumber, bool myTurn)
     {
+        if (!myTurn) return;
+
         UnmarkAll();
 
         immunityPowerup_Toggle = !immunityPowerup_Toggle;
