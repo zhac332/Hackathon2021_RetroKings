@@ -15,6 +15,8 @@ public class GamePUN : MonoBehaviour
 
     [SerializeField] private GameObject GameOverText;
 
+    [SerializeField] private Text TurnText;
+
     private bool myTurn = true;
     private int White_Points = 10;
     private int Black_Points = 10;
@@ -36,6 +38,7 @@ public class GamePUN : MonoBehaviour
     {
         color = c; // 0 = white, 1 = black
         myTurn = (c == 0);
+        TurnText.text = (myTurn ? "Your turn!" : "Waiting on your opponent.");
         whiteImmuneString = blackImmuneString = "";
         pv = GetComponent<PhotonView>();
         historyOfMovesPUN.Initialize();
@@ -53,6 +56,8 @@ public class GamePUN : MonoBehaviour
 
         WhitePointsText.text = "White points: " + White_Points;
         BlackPointsText.text = "Black points: " + Black_Points;
+
+        TurnText.text = (myTurn ? "Your turn!" : "Waiting on your opponent.");
 
         if (blackSkip)
         {
