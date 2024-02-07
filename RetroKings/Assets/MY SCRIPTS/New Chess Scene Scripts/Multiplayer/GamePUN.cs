@@ -98,6 +98,9 @@ public class GamePUN : MonoBehaviour
     {
         if (color == PieceColor.White) Black_Points += value;
         else White_Points += value;
+
+        WhitePointsText.text = "White points: " + White_Points;
+        BlackPointsText.text = "Black points: " + Black_Points;
     }
 
     public void SendRPC_DestroyUsed(Tuple<Piece, PieceColor> piece)

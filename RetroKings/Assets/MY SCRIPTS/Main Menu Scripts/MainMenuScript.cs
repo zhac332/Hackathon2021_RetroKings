@@ -5,6 +5,11 @@ public class MainMenuScript : MonoBehaviour
 {
     [SerializeField] private string HowToPlay_String = "";
 
+    private void Start()
+    {
+        Application.targetFrameRate = 60;
+    }
+
     public void LocalButton_OnClick()
     {
         SceneManager.LoadScene(1);
