@@ -31,6 +31,9 @@ public class CellPUN_Script : MonoBehaviour
     [SerializeField] private Color Default_Color;
     private SpriteRenderer sr;
 
+    [Header("Prefabs")]
+    [SerializeField] private GameObject BombPrefab; 
+
     private void Start()
     {
         sr = GetComponent<SpriteRenderer>();
@@ -304,6 +307,8 @@ public class CellPUN_Script : MonoBehaviour
     {
         GameObject p = transform.GetChild(0).gameObject;
         Tuple<Piece, PieceColor> piece = PieceChecker.TransformGoInTuple(p);
+
+        Instantiate(BombPrefab, transform.position, Quaternion.identity);
 
         UpdatePieceDisplay(p, piece);
         Destroy(p);
