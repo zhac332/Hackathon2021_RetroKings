@@ -32,7 +32,8 @@ public class CellPUN_Script : MonoBehaviour
     private SpriteRenderer sr;
 
     [Header("Prefabs")]
-    [SerializeField] private GameObject BombPrefab; 
+    [SerializeField] private GameObject BombPrefab;
+    [SerializeField] private GameObject ShieldPrefab;
 
     private void Start()
     {
@@ -327,6 +328,8 @@ public class CellPUN_Script : MonoBehaviour
 
     private void ExecuteMove_ImmunityFeature()
     {
+        Instantiate(ShieldPrefab, transform.position, Quaternion.identity);
+
         if (GameP.AmWhite()) MarkShieldedCell_White();
         else MarkShieldedCell_Black();
 

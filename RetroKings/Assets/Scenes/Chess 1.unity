@@ -348,6 +348,8 @@ MonoBehaviour:
   Default_Color: {r: 0.8627451, g: 0.85882354, b: 0.8627451, a: 1}
   BombPrefab: {fileID: 8437206992516960534, guid: 4629a7c91c5158a46a5c21ae6db0be36,
     type: 3}
+  ShieldPrefab: {fileID: 134331116098176868, guid: 7609c09491273e7418fda97766c77e1a,
+    type: 3}
 --- !u!1 &38867679
 GameObject:
   m_ObjectHideFlags: 0
@@ -1065,6 +1067,8 @@ MonoBehaviour:
   Default_Color: {r: 0.8627451, g: 0.85882354, b: 0.8627451, a: 1}
   BombPrefab: {fileID: 8437206992516960534, guid: 4629a7c91c5158a46a5c21ae6db0be36,
     type: 3}
+  ShieldPrefab: {fileID: 134331116098176868, guid: 7609c09491273e7418fda97766c77e1a,
+    type: 3}
 --- !u!1 &154356674
 GameObject:
   m_ObjectHideFlags: 0
@@ -1345,6 +1349,8 @@ MonoBehaviour:
   Default_Color: {r: 0.3647059, g: 0.36078432, b: 0.3647059, a: 1}
   BombPrefab: {fileID: 8437206992516960534, guid: 4629a7c91c5158a46a5c21ae6db0be36,
     type: 3}
+  ShieldPrefab: {fileID: 134331116098176868, guid: 7609c09491273e7418fda97766c77e1a,
+    type: 3}
 --- !u!1 &189225261
 GameObject:
   m_ObjectHideFlags: 0
@@ -1573,6 +1579,8 @@ MonoBehaviour:
   Selected_Color: {r: 0.25882354, g: 0.67058825, b: 0, a: 1}
   Default_Color: {r: 0.8627451, g: 0.85882354, b: 0.8627451, a: 1}
   BombPrefab: {fileID: 8437206992516960534, guid: 4629a7c91c5158a46a5c21ae6db0be36,
+    type: 3}
+  ShieldPrefab: {fileID: 134331116098176868, guid: 7609c09491273e7418fda97766c77e1a,
     type: 3}
 --- !u!1 &209887976
 GameObject:
@@ -2103,6 +2111,8 @@ MonoBehaviour:
   Default_Color: {r: 0.8627451, g: 0.85882354, b: 0.8627451, a: 1}
   BombPrefab: {fileID: 8437206992516960534, guid: 4629a7c91c5158a46a5c21ae6db0be36,
     type: 3}
+  ShieldPrefab: {fileID: 134331116098176868, guid: 7609c09491273e7418fda97766c77e1a,
+    type: 3}
 --- !u!1 &244067856
 GameObject:
   m_ObjectHideFlags: 0
@@ -2577,6 +2587,8 @@ MonoBehaviour:
   Default_Color: {r: 0.8627451, g: 0.85882354, b: 0.8627451, a: 1}
   BombPrefab: {fileID: 8437206992516960534, guid: 4629a7c91c5158a46a5c21ae6db0be36,
     type: 3}
+  ShieldPrefab: {fileID: 134331116098176868, guid: 7609c09491273e7418fda97766c77e1a,
+    type: 3}
 --- !u!1 &368074612
 GameObject:
   m_ObjectHideFlags: 0
@@ -2827,6 +2839,8 @@ MonoBehaviour:
   Default_Color: {r: 0.3647059, g: 0.36078432, b: 0.3647059, a: 1}
   BombPrefab: {fileID: 8437206992516960534, guid: 4629a7c91c5158a46a5c21ae6db0be36,
     type: 3}
+  ShieldPrefab: {fileID: 134331116098176868, guid: 7609c09491273e7418fda97766c77e1a,
+    type: 3}
 --- !u!1 &400096525
 GameObject:
   m_ObjectHideFlags: 0
@@ -2971,6 +2985,8 @@ MonoBehaviour:
   Selected_Color: {r: 0.25882354, g: 0.67058825, b: 0, a: 1}
   Default_Color: {r: 0.8627451, g: 0.85882354, b: 0.8627451, a: 1}
   BombPrefab: {fileID: 8437206992516960534, guid: 4629a7c91c5158a46a5c21ae6db0be36,
+    type: 3}
+  ShieldPrefab: {fileID: 134331116098176868, guid: 7609c09491273e7418fda97766c77e1a,
     type: 3}
 --- !u!1 &402881331
 GameObject:
@@ -3445,6 +3461,8 @@ MonoBehaviour:
   Selected_Color: {r: 0.25882354, g: 0.67058825, b: 0, a: 1}
   Default_Color: {r: 0.8627451, g: 0.85882354, b: 0.8627451, a: 1}
   BombPrefab: {fileID: 8437206992516960534, guid: 4629a7c91c5158a46a5c21ae6db0be36,
+    type: 3}
+  ShieldPrefab: {fileID: 134331116098176868, guid: 7609c09491273e7418fda97766c77e1a,
     type: 3}
 --- !u!1 &457450561
 GameObject:
@@ -4176,6 +4194,8 @@ MonoBehaviour:
   Default_Color: {r: 0.3647059, g: 0.36078432, b: 0.3647059, a: 1}
   BombPrefab: {fileID: 8437206992516960534, guid: 4629a7c91c5158a46a5c21ae6db0be36,
     type: 3}
+  ShieldPrefab: {fileID: 134331116098176868, guid: 7609c09491273e7418fda97766c77e1a,
+    type: 3}
 --- !u!1 &574485580
 GameObject:
   m_ObjectHideFlags: 0
@@ -4569,6 +4589,8 @@ MonoBehaviour:
   Default_Color: {r: 0.3647059, g: 0.36078432, b: 0.3647059, a: 1}
   BombPrefab: {fileID: 8437206992516960534, guid: 4629a7c91c5158a46a5c21ae6db0be36,
     type: 3}
+  ShieldPrefab: {fileID: 134331116098176868, guid: 7609c09491273e7418fda97766c77e1a,
+    type: 3}
 --- !u!1 &617589917
 GameObject:
   m_ObjectHideFlags: 0
@@ -4933,6 +4955,8 @@ MonoBehaviour:
   Default_Color: {r: 0.3647059, g: 0.36078432, b: 0.3647059, a: 1}
   BombPrefab: {fileID: 8437206992516960534, guid: 4629a7c91c5158a46a5c21ae6db0be36,
     type: 3}
+  ShieldPrefab: {fileID: 134331116098176868, guid: 7609c09491273e7418fda97766c77e1a,
+    type: 3}
 --- !u!1 &657946281
 GameObject:
   m_ObjectHideFlags: 0
@@ -5244,6 +5268,8 @@ MonoBehaviour:
   Selected_Color: {r: 0.25882354, g: 0.67058825, b: 0, a: 1}
   Default_Color: {r: 0.8627451, g: 0.85882354, b: 0.8627451, a: 1}
   BombPrefab: {fileID: 8437206992516960534, guid: 4629a7c91c5158a46a5c21ae6db0be36,
+    type: 3}
+  ShieldPrefab: {fileID: 134331116098176868, guid: 7609c09491273e7418fda97766c77e1a,
     type: 3}
 --- !u!1 &705041803
 GameObject:
@@ -5824,6 +5850,8 @@ MonoBehaviour:
   Default_Color: {r: 0.3647059, g: 0.36078432, b: 0.3647059, a: 1}
   BombPrefab: {fileID: 8437206992516960534, guid: 4629a7c91c5158a46a5c21ae6db0be36,
     type: 3}
+  ShieldPrefab: {fileID: 134331116098176868, guid: 7609c09491273e7418fda97766c77e1a,
+    type: 3}
 --- !u!1 &747761144
 GameObject:
   m_ObjectHideFlags: 0
@@ -6046,6 +6074,8 @@ MonoBehaviour:
   Default_Color: {r: 0.3647059, g: 0.36078432, b: 0.3647059, a: 1}
   BombPrefab: {fileID: 8437206992516960534, guid: 4629a7c91c5158a46a5c21ae6db0be36,
     type: 3}
+  ShieldPrefab: {fileID: 134331116098176868, guid: 7609c09491273e7418fda97766c77e1a,
+    type: 3}
 --- !u!1 &771401641
 GameObject:
   m_ObjectHideFlags: 0
@@ -6191,6 +6221,8 @@ MonoBehaviour:
   Selected_Color: {r: 0.25882354, g: 0.67058825, b: 0, a: 1}
   Default_Color: {r: 0.8627451, g: 0.85882354, b: 0.8627451, a: 1}
   BombPrefab: {fileID: 8437206992516960534, guid: 4629a7c91c5158a46a5c21ae6db0be36,
+    type: 3}
+  ShieldPrefab: {fileID: 134331116098176868, guid: 7609c09491273e7418fda97766c77e1a,
     type: 3}
 --- !u!1 &775664254
 GameObject:
@@ -6440,6 +6472,8 @@ MonoBehaviour:
   Selected_Color: {r: 0.25882354, g: 0.67058825, b: 0, a: 1}
   Default_Color: {r: 0.8627451, g: 0.85882354, b: 0.8627451, a: 1}
   BombPrefab: {fileID: 8437206992516960534, guid: 4629a7c91c5158a46a5c21ae6db0be36,
+    type: 3}
+  ShieldPrefab: {fileID: 134331116098176868, guid: 7609c09491273e7418fda97766c77e1a,
     type: 3}
 --- !u!1 &790410523
 GameObject:
@@ -6860,6 +6894,8 @@ MonoBehaviour:
   Default_Color: {r: 0.3647059, g: 0.36078432, b: 0.3647059, a: 1}
   BombPrefab: {fileID: 8437206992516960534, guid: 4629a7c91c5158a46a5c21ae6db0be36,
     type: 3}
+  ShieldPrefab: {fileID: 134331116098176868, guid: 7609c09491273e7418fda97766c77e1a,
+    type: 3}
 --- !u!1 &858073046
 GameObject:
   m_ObjectHideFlags: 0
@@ -7005,6 +7041,8 @@ MonoBehaviour:
   Selected_Color: {r: 0.25882354, g: 0.67058825, b: 0, a: 1}
   Default_Color: {r: 0.8627451, g: 0.85882354, b: 0.8627451, a: 1}
   BombPrefab: {fileID: 8437206992516960534, guid: 4629a7c91c5158a46a5c21ae6db0be36,
+    type: 3}
+  ShieldPrefab: {fileID: 134331116098176868, guid: 7609c09491273e7418fda97766c77e1a,
     type: 3}
 --- !u!1 &860497962
 GameObject:
@@ -7311,6 +7349,8 @@ MonoBehaviour:
   Selected_Color: {r: 0.25882354, g: 0.67058825, b: 0, a: 1}
   Default_Color: {r: 0.3647059, g: 0.36078432, b: 0.3647059, a: 1}
   BombPrefab: {fileID: 8437206992516960534, guid: 4629a7c91c5158a46a5c21ae6db0be36,
+    type: 3}
+  ShieldPrefab: {fileID: 134331116098176868, guid: 7609c09491273e7418fda97766c77e1a,
     type: 3}
 --- !u!1 &910527139
 GameObject:
@@ -7639,6 +7679,8 @@ MonoBehaviour:
   Selected_Color: {r: 0.25882354, g: 0.67058825, b: 0, a: 1}
   Default_Color: {r: 0.3647059, g: 0.36078432, b: 0.3647059, a: 1}
   BombPrefab: {fileID: 8437206992516960534, guid: 4629a7c91c5158a46a5c21ae6db0be36,
+    type: 3}
+  ShieldPrefab: {fileID: 134331116098176868, guid: 7609c09491273e7418fda97766c77e1a,
     type: 3}
 --- !u!1 &952877264
 GameObject:
@@ -8303,6 +8345,8 @@ MonoBehaviour:
   Default_Color: {r: 0.8627451, g: 0.85882354, b: 0.8627451, a: 1}
   BombPrefab: {fileID: 8437206992516960534, guid: 4629a7c91c5158a46a5c21ae6db0be36,
     type: 3}
+  ShieldPrefab: {fileID: 134331116098176868, guid: 7609c09491273e7418fda97766c77e1a,
+    type: 3}
 --- !u!1 &1018340106
 GameObject:
   m_ObjectHideFlags: 0
@@ -8525,6 +8569,8 @@ MonoBehaviour:
   Default_Color: {r: 0.8627451, g: 0.85882354, b: 0.8627451, a: 1}
   BombPrefab: {fileID: 8437206992516960534, guid: 4629a7c91c5158a46a5c21ae6db0be36,
     type: 3}
+  ShieldPrefab: {fileID: 134331116098176868, guid: 7609c09491273e7418fda97766c77e1a,
+    type: 3}
 --- !u!1 &1024570701
 GameObject:
   m_ObjectHideFlags: 0
@@ -8669,6 +8715,8 @@ MonoBehaviour:
   Selected_Color: {r: 0.25882354, g: 0.67058825, b: 0, a: 1}
   Default_Color: {r: 0.3647059, g: 0.36078432, b: 0.3647059, a: 1}
   BombPrefab: {fileID: 8437206992516960534, guid: 4629a7c91c5158a46a5c21ae6db0be36,
+    type: 3}
+  ShieldPrefab: {fileID: 134331116098176868, guid: 7609c09491273e7418fda97766c77e1a,
     type: 3}
 --- !u!1 &1032107656
 GameObject:
@@ -8816,6 +8864,8 @@ MonoBehaviour:
   Default_Color: {r: 0.8627451, g: 0.85882354, b: 0.8627451, a: 1}
   BombPrefab: {fileID: 8437206992516960534, guid: 4629a7c91c5158a46a5c21ae6db0be36,
     type: 3}
+  ShieldPrefab: {fileID: 134331116098176868, guid: 7609c09491273e7418fda97766c77e1a,
+    type: 3}
 --- !u!1 &1038670887
 GameObject:
   m_ObjectHideFlags: 0
@@ -8962,6 +9012,8 @@ MonoBehaviour:
   Default_Color: {r: 0.3647059, g: 0.36078432, b: 0.3647059, a: 1}
   BombPrefab: {fileID: 8437206992516960534, guid: 4629a7c91c5158a46a5c21ae6db0be36,
     type: 3}
+  ShieldPrefab: {fileID: 134331116098176868, guid: 7609c09491273e7418fda97766c77e1a,
+    type: 3}
 --- !u!1 &1052029520
 GameObject:
   m_ObjectHideFlags: 0
@@ -9106,6 +9158,8 @@ MonoBehaviour:
   Selected_Color: {r: 0.25882354, g: 0.67058825, b: 0, a: 1}
   Default_Color: {r: 0.3647059, g: 0.36078432, b: 0.3647059, a: 1}
   BombPrefab: {fileID: 8437206992516960534, guid: 4629a7c91c5158a46a5c21ae6db0be36,
+    type: 3}
+  ShieldPrefab: {fileID: 134331116098176868, guid: 7609c09491273e7418fda97766c77e1a,
     type: 3}
 --- !u!1 &1054957578
 GameObject:
@@ -9405,6 +9459,8 @@ MonoBehaviour:
   Default_Color: {r: 0.3647059, g: 0.36078432, b: 0.3647059, a: 1}
   BombPrefab: {fileID: 8437206992516960534, guid: 4629a7c91c5158a46a5c21ae6db0be36,
     type: 3}
+  ShieldPrefab: {fileID: 134331116098176868, guid: 7609c09491273e7418fda97766c77e1a,
+    type: 3}
 --- !u!1 &1116064294
 GameObject:
   m_ObjectHideFlags: 0
@@ -9551,6 +9607,8 @@ MonoBehaviour:
   Default_Color: {r: 0.3647059, g: 0.36078432, b: 0.3647059, a: 1}
   BombPrefab: {fileID: 8437206992516960534, guid: 4629a7c91c5158a46a5c21ae6db0be36,
     type: 3}
+  ShieldPrefab: {fileID: 134331116098176868, guid: 7609c09491273e7418fda97766c77e1a,
+    type: 3}
 --- !u!1 &1116282421
 GameObject:
   m_ObjectHideFlags: 0
@@ -9695,6 +9753,8 @@ MonoBehaviour:
   Selected_Color: {r: 0.25882354, g: 0.67058825, b: 0, a: 1}
   Default_Color: {r: 0.3647059, g: 0.36078432, b: 0.3647059, a: 1}
   BombPrefab: {fileID: 8437206992516960534, guid: 4629a7c91c5158a46a5c21ae6db0be36,
+    type: 3}
+  ShieldPrefab: {fileID: 134331116098176868, guid: 7609c09491273e7418fda97766c77e1a,
     type: 3}
 --- !u!1 &1125510079
 GameObject:
@@ -10213,6 +10273,8 @@ MonoBehaviour:
   Default_Color: {r: 0.3647059, g: 0.36078432, b: 0.3647059, a: 1}
   BombPrefab: {fileID: 8437206992516960534, guid: 4629a7c91c5158a46a5c21ae6db0be36,
     type: 3}
+  ShieldPrefab: {fileID: 134331116098176868, guid: 7609c09491273e7418fda97766c77e1a,
+    type: 3}
 --- !u!1 &1275204618
 GameObject:
   m_ObjectHideFlags: 0
@@ -10433,6 +10495,8 @@ MonoBehaviour:
   Selected_Color: {r: 0.25882354, g: 0.67058825, b: 0, a: 1}
   Default_Color: {r: 0.8627451, g: 0.85882354, b: 0.8627451, a: 1}
   BombPrefab: {fileID: 8437206992516960534, guid: 4629a7c91c5158a46a5c21ae6db0be36,
+    type: 3}
+  ShieldPrefab: {fileID: 134331116098176868, guid: 7609c09491273e7418fda97766c77e1a,
     type: 3}
 --- !u!1 &1306024456
 GameObject:
@@ -10662,6 +10726,8 @@ MonoBehaviour:
   Selected_Color: {r: 0.25882354, g: 0.67058825, b: 0, a: 1}
   Default_Color: {r: 0.8627451, g: 0.85882354, b: 0.8627451, a: 1}
   BombPrefab: {fileID: 8437206992516960534, guid: 4629a7c91c5158a46a5c21ae6db0be36,
+    type: 3}
+  ShieldPrefab: {fileID: 134331116098176868, guid: 7609c09491273e7418fda97766c77e1a,
     type: 3}
 --- !u!1 &1328434542
 GameObject:
@@ -10893,6 +10959,8 @@ MonoBehaviour:
   Default_Color: {r: 0.3647059, g: 0.36078432, b: 0.3647059, a: 1}
   BombPrefab: {fileID: 8437206992516960534, guid: 4629a7c91c5158a46a5c21ae6db0be36,
     type: 3}
+  ShieldPrefab: {fileID: 134331116098176868, guid: 7609c09491273e7418fda97766c77e1a,
+    type: 3}
 --- !u!1 &1344637365
 GameObject:
   m_ObjectHideFlags: 0
@@ -11037,6 +11105,8 @@ MonoBehaviour:
   Selected_Color: {r: 0.25882354, g: 0.67058825, b: 0, a: 1}
   Default_Color: {r: 0.8627451, g: 0.85882354, b: 0.8627451, a: 1}
   BombPrefab: {fileID: 8437206992516960534, guid: 4629a7c91c5158a46a5c21ae6db0be36,
+    type: 3}
+  ShieldPrefab: {fileID: 134331116098176868, guid: 7609c09491273e7418fda97766c77e1a,
     type: 3}
 --- !u!1 &1360075434
 GameObject:
@@ -11183,6 +11253,8 @@ MonoBehaviour:
   Default_Color: {r: 0.3647059, g: 0.36078432, b: 0.3647059, a: 1}
   BombPrefab: {fileID: 8437206992516960534, guid: 4629a7c91c5158a46a5c21ae6db0be36,
     type: 3}
+  ShieldPrefab: {fileID: 134331116098176868, guid: 7609c09491273e7418fda97766c77e1a,
+    type: 3}
 --- !u!1 &1374830779
 GameObject:
   m_ObjectHideFlags: 0
@@ -11327,6 +11399,8 @@ MonoBehaviour:
   Selected_Color: {r: 0.25882354, g: 0.67058825, b: 0, a: 1}
   Default_Color: {r: 0.8627451, g: 0.85882354, b: 0.8627451, a: 1}
   BombPrefab: {fileID: 8437206992516960534, guid: 4629a7c91c5158a46a5c21ae6db0be36,
+    type: 3}
+  ShieldPrefab: {fileID: 134331116098176868, guid: 7609c09491273e7418fda97766c77e1a,
     type: 3}
 --- !u!1 &1381369147
 GameObject:
@@ -11710,6 +11784,8 @@ MonoBehaviour:
   Default_Color: {r: 0.3647059, g: 0.36078432, b: 0.3647059, a: 1}
   BombPrefab: {fileID: 8437206992516960534, guid: 4629a7c91c5158a46a5c21ae6db0be36,
     type: 3}
+  ShieldPrefab: {fileID: 134331116098176868, guid: 7609c09491273e7418fda97766c77e1a,
+    type: 3}
 --- !u!1 &1427447163
 GameObject:
   m_ObjectHideFlags: 0
@@ -11854,6 +11930,8 @@ MonoBehaviour:
   Selected_Color: {r: 0.25882354, g: 0.67058825, b: 0, a: 1}
   Default_Color: {r: 0.3647059, g: 0.36078432, b: 0.3647059, a: 1}
   BombPrefab: {fileID: 8437206992516960534, guid: 4629a7c91c5158a46a5c21ae6db0be36,
+    type: 3}
+  ShieldPrefab: {fileID: 134331116098176868, guid: 7609c09491273e7418fda97766c77e1a,
     type: 3}
 --- !u!1 &1440048164
 GameObject:
@@ -12152,6 +12230,8 @@ MonoBehaviour:
   Default_Color: {r: 0.3647059, g: 0.36078432, b: 0.3647059, a: 1}
   BombPrefab: {fileID: 8437206992516960534, guid: 4629a7c91c5158a46a5c21ae6db0be36,
     type: 3}
+  ShieldPrefab: {fileID: 134331116098176868, guid: 7609c09491273e7418fda97766c77e1a,
+    type: 3}
 --- !u!1 &1457051536
 GameObject:
   m_ObjectHideFlags: 0
@@ -12296,6 +12376,8 @@ MonoBehaviour:
   Selected_Color: {r: 0.25882354, g: 0.67058825, b: 0, a: 1}
   Default_Color: {r: 0.3647059, g: 0.36078432, b: 0.3647059, a: 1}
   BombPrefab: {fileID: 8437206992516960534, guid: 4629a7c91c5158a46a5c21ae6db0be36,
+    type: 3}
+  ShieldPrefab: {fileID: 134331116098176868, guid: 7609c09491273e7418fda97766c77e1a,
     type: 3}
 --- !u!1 &1482283386
 GameObject:
@@ -12442,6 +12524,8 @@ MonoBehaviour:
   Default_Color: {r: 0.8627451, g: 0.85882354, b: 0.8627451, a: 1}
   BombPrefab: {fileID: 8437206992516960534, guid: 4629a7c91c5158a46a5c21ae6db0be36,
     type: 3}
+  ShieldPrefab: {fileID: 134331116098176868, guid: 7609c09491273e7418fda97766c77e1a,
+    type: 3}
 --- !u!1 &1486524602
 GameObject:
   m_ObjectHideFlags: 0
@@ -12586,6 +12670,8 @@ MonoBehaviour:
   Selected_Color: {r: 0.25882354, g: 0.67058825, b: 0, a: 1}
   Default_Color: {r: 0.3647059, g: 0.36078432, b: 0.3647059, a: 1}
   BombPrefab: {fileID: 8437206992516960534, guid: 4629a7c91c5158a46a5c21ae6db0be36,
+    type: 3}
+  ShieldPrefab: {fileID: 134331116098176868, guid: 7609c09491273e7418fda97766c77e1a,
     type: 3}
 --- !u!1 &1490089695
 GameObject:
@@ -12732,6 +12818,8 @@ MonoBehaviour:
   Selected_Color: {r: 0.25882354, g: 0.67058825, b: 0, a: 1}
   Default_Color: {r: 0.3647059, g: 0.36078432, b: 0.3647059, a: 1}
   BombPrefab: {fileID: 8437206992516960534, guid: 4629a7c91c5158a46a5c21ae6db0be36,
+    type: 3}
+  ShieldPrefab: {fileID: 134331116098176868, guid: 7609c09491273e7418fda97766c77e1a,
     type: 3}
 --- !u!1 &1516037230
 GameObject:
@@ -13508,6 +13596,8 @@ MonoBehaviour:
   Default_Color: {r: 0.8627451, g: 0.85882354, b: 0.8627451, a: 1}
   BombPrefab: {fileID: 8437206992516960534, guid: 4629a7c91c5158a46a5c21ae6db0be36,
     type: 3}
+  ShieldPrefab: {fileID: 134331116098176868, guid: 7609c09491273e7418fda97766c77e1a,
+    type: 3}
 --- !u!1 &1588730812
 GameObject:
   m_ObjectHideFlags: 0
@@ -13652,6 +13742,8 @@ MonoBehaviour:
   Selected_Color: {r: 0.25882354, g: 0.67058825, b: 0, a: 1}
   Default_Color: {r: 0.3647059, g: 0.36078432, b: 0.3647059, a: 1}
   BombPrefab: {fileID: 8437206992516960534, guid: 4629a7c91c5158a46a5c21ae6db0be36,
+    type: 3}
+  ShieldPrefab: {fileID: 134331116098176868, guid: 7609c09491273e7418fda97766c77e1a,
     type: 3}
 --- !u!1 &1592179532
 GameObject:
@@ -13955,6 +14047,8 @@ MonoBehaviour:
   Default_Color: {r: 0.8627451, g: 0.85882354, b: 0.8627451, a: 1}
   BombPrefab: {fileID: 8437206992516960534, guid: 4629a7c91c5158a46a5c21ae6db0be36,
     type: 3}
+  ShieldPrefab: {fileID: 134331116098176868, guid: 7609c09491273e7418fda97766c77e1a,
+    type: 3}
 --- !u!1 &1708702192
 GameObject:
   m_ObjectHideFlags: 0
@@ -14176,6 +14270,8 @@ MonoBehaviour:
   Default_Color: {r: 0.3647059, g: 0.36078432, b: 0.3647059, a: 1}
   BombPrefab: {fileID: 8437206992516960534, guid: 4629a7c91c5158a46a5c21ae6db0be36,
     type: 3}
+  ShieldPrefab: {fileID: 134331116098176868, guid: 7609c09491273e7418fda97766c77e1a,
+    type: 3}
 --- !u!1 &1719650528
 GameObject:
   m_ObjectHideFlags: 0
@@ -14322,6 +14418,8 @@ MonoBehaviour:
   Default_Color: {r: 0.8627451, g: 0.85882354, b: 0.8627451, a: 1}
   BombPrefab: {fileID: 8437206992516960534, guid: 4629a7c91c5158a46a5c21ae6db0be36,
     type: 3}
+  ShieldPrefab: {fileID: 134331116098176868, guid: 7609c09491273e7418fda97766c77e1a,
+    type: 3}
 --- !u!1 &1731510363
 GameObject:
   m_ObjectHideFlags: 0
@@ -14467,6 +14565,8 @@ MonoBehaviour:
   Selected_Color: {r: 0.25882354, g: 0.67058825, b: 0, a: 1}
   Default_Color: {r: 0.8627451, g: 0.85882354, b: 0.8627451, a: 1}
   BombPrefab: {fileID: 8437206992516960534, guid: 4629a7c91c5158a46a5c21ae6db0be36,
+    type: 3}
+  ShieldPrefab: {fileID: 134331116098176868, guid: 7609c09491273e7418fda97766c77e1a,
     type: 3}
 --- !u!1 &1740788987
 GameObject:
@@ -15132,6 +15232,8 @@ MonoBehaviour:
   Default_Color: {r: 0.3647059, g: 0.36078432, b: 0.3647059, a: 1}
   BombPrefab: {fileID: 8437206992516960534, guid: 4629a7c91c5158a46a5c21ae6db0be36,
     type: 3}
+  ShieldPrefab: {fileID: 134331116098176868, guid: 7609c09491273e7418fda97766c77e1a,
+    type: 3}
 --- !u!1 &1837900006
 GameObject:
   m_ObjectHideFlags: 0
@@ -15463,6 +15565,8 @@ MonoBehaviour:
   Default_Color: {r: 0.8627451, g: 0.85882354, b: 0.8627451, a: 1}
   BombPrefab: {fileID: 8437206992516960534, guid: 4629a7c91c5158a46a5c21ae6db0be36,
     type: 3}
+  ShieldPrefab: {fileID: 134331116098176868, guid: 7609c09491273e7418fda97766c77e1a,
+    type: 3}
 --- !u!1 &1864299089
 GameObject:
   m_ObjectHideFlags: 0
@@ -15724,6 +15828,8 @@ MonoBehaviour:
   Default_Color: {r: 0.8627451, g: 0.85882354, b: 0.8627451, a: 1}
   BombPrefab: {fileID: 8437206992516960534, guid: 4629a7c91c5158a46a5c21ae6db0be36,
     type: 3}
+  ShieldPrefab: {fileID: 134331116098176868, guid: 7609c09491273e7418fda97766c77e1a,
+    type: 3}
 --- !u!1 &1922611627
 GameObject:
   m_ObjectHideFlags: 0
@@ -15870,6 +15976,8 @@ MonoBehaviour:
   Default_Color: {r: 0.8627451, g: 0.85882354, b: 0.8627451, a: 1}
   BombPrefab: {fileID: 8437206992516960534, guid: 4629a7c91c5158a46a5c21ae6db0be36,
     type: 3}
+  ShieldPrefab: {fileID: 134331116098176868, guid: 7609c09491273e7418fda97766c77e1a,
+    type: 3}
 --- !u!1 &1922852204
 GameObject:
   m_ObjectHideFlags: 0
@@ -16014,6 +16122,8 @@ MonoBehaviour:
   Selected_Color: {r: 0.25882354, g: 0.67058825, b: 0, a: 1}
   Default_Color: {r: 0.3647059, g: 0.36078432, b: 0.3647059, a: 1}
   BombPrefab: {fileID: 8437206992516960534, guid: 4629a7c91c5158a46a5c21ae6db0be36,
+    type: 3}
+  ShieldPrefab: {fileID: 134331116098176868, guid: 7609c09491273e7418fda97766c77e1a,
     type: 3}
 --- !u!1 &1933129886
 GameObject:
@@ -16235,6 +16345,8 @@ MonoBehaviour:
   Selected_Color: {r: 0.25882354, g: 0.67058825, b: 0, a: 1}
   Default_Color: {r: 0.8627451, g: 0.85882354, b: 0.8627451, a: 1}
   BombPrefab: {fileID: 8437206992516960534, guid: 4629a7c91c5158a46a5c21ae6db0be36,
+    type: 3}
+  ShieldPrefab: {fileID: 134331116098176868, guid: 7609c09491273e7418fda97766c77e1a,
     type: 3}
 --- !u!1 &1939486695
 GameObject:
@@ -16557,6 +16669,8 @@ MonoBehaviour:
   Default_Color: {r: 0.3647059, g: 0.36078432, b: 0.3647059, a: 1}
   BombPrefab: {fileID: 8437206992516960534, guid: 4629a7c91c5158a46a5c21ae6db0be36,
     type: 3}
+  ShieldPrefab: {fileID: 134331116098176868, guid: 7609c09491273e7418fda97766c77e1a,
+    type: 3}
 --- !u!1 &1969373271
 GameObject:
   m_ObjectHideFlags: 0
@@ -16854,6 +16968,8 @@ MonoBehaviour:
   Default_Color: {r: 0.8627451, g: 0.85882354, b: 0.8627451, a: 1}
   BombPrefab: {fileID: 8437206992516960534, guid: 4629a7c91c5158a46a5c21ae6db0be36,
     type: 3}
+  ShieldPrefab: {fileID: 134331116098176868, guid: 7609c09491273e7418fda97766c77e1a,
+    type: 3}
 --- !u!1 &2053211402
 GameObject:
   m_ObjectHideFlags: 0
@@ -16999,6 +17115,8 @@ MonoBehaviour:
   Default_Color: {r: 0.8627451, g: 0.85882354, b: 0.8627451, a: 1}
   BombPrefab: {fileID: 8437206992516960534, guid: 4629a7c91c5158a46a5c21ae6db0be36,
     type: 3}
+  ShieldPrefab: {fileID: 134331116098176868, guid: 7609c09491273e7418fda97766c77e1a,
+    type: 3}
 --- !u!1 &2077576920
 GameObject:
   m_ObjectHideFlags: 0
@@ -17143,6 +17261,8 @@ MonoBehaviour:
   Selected_Color: {r: 0.25882354, g: 0.67058825, b: 0, a: 1}
   Default_Color: {r: 0.8627451, g: 0.85882354, b: 0.8627451, a: 1}
   BombPrefab: {fileID: 8437206992516960534, guid: 4629a7c91c5158a46a5c21ae6db0be36,
+    type: 3}
+  ShieldPrefab: {fileID: 134331116098176868, guid: 7609c09491273e7418fda97766c77e1a,
     type: 3}
 --- !u!1 &2083451323
 GameObject:
@@ -17366,6 +17486,8 @@ MonoBehaviour:
   Default_Color: {r: 0.3647059, g: 0.36078432, b: 0.3647059, a: 1}
   BombPrefab: {fileID: 8437206992516960534, guid: 4629a7c91c5158a46a5c21ae6db0be36,
     type: 3}
+  ShieldPrefab: {fileID: 134331116098176868, guid: 7609c09491273e7418fda97766c77e1a,
+    type: 3}
 --- !u!1 &2099726454
 GameObject:
   m_ObjectHideFlags: 0
@@ -17511,6 +17633,8 @@ MonoBehaviour:
   Selected_Color: {r: 0.25882354, g: 0.67058825, b: 0, a: 1}
   Default_Color: {r: 0.8627451, g: 0.85882354, b: 0.8627451, a: 1}
   BombPrefab: {fileID: 8437206992516960534, guid: 4629a7c91c5158a46a5c21ae6db0be36,
+    type: 3}
+  ShieldPrefab: {fileID: 134331116098176868, guid: 7609c09491273e7418fda97766c77e1a,
     type: 3}
 --- !u!1 &2112076186
 GameObject:
@@ -17658,6 +17782,8 @@ MonoBehaviour:
   Default_Color: {r: 0.3647059, g: 0.36078432, b: 0.3647059, a: 1}
   BombPrefab: {fileID: 8437206992516960534, guid: 4629a7c91c5158a46a5c21ae6db0be36,
     type: 3}
+  ShieldPrefab: {fileID: 134331116098176868, guid: 7609c09491273e7418fda97766c77e1a,
+    type: 3}
 --- !u!1 &2147052633
 GameObject:
   m_ObjectHideFlags: 0
@@ -17803,4 +17929,6 @@ MonoBehaviour:
   Selected_Color: {r: 0.25882354, g: 0.67058825, b: 0, a: 1}
   Default_Color: {r: 0.8627451, g: 0.85882354, b: 0.8627451, a: 1}
   BombPrefab: {fileID: 8437206992516960534, guid: 4629a7c91c5158a46a5c21ae6db0be36,
+    type: 3}
+  ShieldPrefab: {fileID: 134331116098176868, guid: 7609c09491273e7418fda97766c77e1a,
     type: 3}
