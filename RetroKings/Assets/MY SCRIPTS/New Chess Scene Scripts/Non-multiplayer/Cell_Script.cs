@@ -26,6 +26,10 @@ public class Cell_Script : MonoBehaviour
     [SerializeField] private Color Default_Color;
     private SpriteRenderer sr;
 
+    [Header("Prefabs")]
+    [SerializeField] private GameObject BombPrefab;
+    [SerializeField] private GameObject ShieldPrefab;
+
     private void Start()
     {
         sr = GetComponent<SpriteRenderer>();
@@ -306,6 +310,8 @@ public class Cell_Script : MonoBehaviour
         GameObject p = transform.GetChild(0).gameObject;
         Tuple<Piece, PieceColor> piece = PieceChecker.TransformGoInTuple(p);
 
+        Instantiate(BombPrefab, transform.position, Quaternion.identity);
+
         UpdatePieceDisplay(p, piece);
         Destroy(p);
 
@@ -321,6 +327,8 @@ public class Cell_Script : MonoBehaviour
 
     private void ExecuteMove_ImmunityFeature()
     {
+        Instantiate(ShieldPrefab, transform.position, Quaternion.identity);
+
         if (Game.IsMyTurn()) MarkShieldedCell_White();
         else MarkShieldedCell_Black();
 
