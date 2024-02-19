@@ -16,6 +16,7 @@ public class GamePUN : MonoBehaviour
     [SerializeField] private GameObject GameOverText;
 
     [SerializeField] private Text TurnText;
+    [SerializeField] private GameObject CurrentEarned_Prefab;
 
     private bool myTurn = true;
     private int White_Points = 10;
@@ -94,10 +95,13 @@ public class GamePUN : MonoBehaviour
         return blackImmuneString;
     }
 
-    private void AddPoints(int value, PieceColor color)
+    private void AddPoints(int value, PieceColor color, Transform tr)
     {
         if (color == PieceColor.White) Black_Points += value;
         else White_Points += value;
+
+        GameObject go = Instantiate(CurrentEarned_Prefab, tr.position, Quaternion.identity);
+        go.GetComponent<CurrencyEarnedScript>().WhatCurrency(value);
 
         WhitePointsText.text = "White points: " + White_Points;
         BlackPointsText.text = "Black points: " + Black_Points;
@@ -194,7 +198,7 @@ public class GamePUN : MonoBehaviour
         return gameOver;
     }
 
-    public void PieceCaptured(string pieceName, bool addPoints)
+    public void PieceCaptured(string pieceName, bool addPoints, Transform tr)
     {
         PieceColor color = (pieceName.Contains("W") ? PieceColor.White : PieceColor.Black);
         Piece piece = Piece.NULL;
@@ -202,27 +206,27 @@ public class GamePUN : MonoBehaviour
         if (pieceName.Contains("Pawn"))
         {
             piece = Piece.Pawn;
-            if (addPoints) AddPoints(Pawn_Value, color);
+            if (addPoints) AddPoints(Pawn_Value, color, tr);
         }
         else if (pieceName.Contains("Bishop"))
         {
             piece = Piece.Bishop;
-            if (addPoints) AddPoints(Bishop_Value, color);
+            if (addPoints) AddPoints(Bishop_Value, color, tr);
         }
         else if (pieceName.Contains("Rook"))
         {
             piece = Piece.Rook;
-            if (addPoints) AddPoints(Rook_Value, color);
+            if (addPoints) AddPoints(Rook_Value, color, tr);
         }
         else if (pieceName.Contains("Knight"))
         {
             piece = Piece.Knight;
-            if (addPoints) AddPoints(Knight_Value, color);
+            if (addPoints) AddPoints(Knight_Value, color, tr);
         }
         else if (pieceName.Contains("Queen"))
         {
             piece = Piece.Queen;
-            if (addPoints) AddPoints(Queen_Value, color);
+            if (addPoints) AddPoints(Queen_Value, color, tr);
         }
         else if (pieceName.Contains("King"))
         {

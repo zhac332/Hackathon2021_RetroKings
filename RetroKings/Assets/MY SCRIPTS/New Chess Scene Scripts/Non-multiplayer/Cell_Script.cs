@@ -29,6 +29,7 @@ public class Cell_Script : MonoBehaviour
     [Header("Prefabs")]
     [SerializeField] private GameObject BombPrefab;
     [SerializeField] private GameObject ShieldPrefab;
+    [SerializeField] private GameObject CurrencyEarned_Prefab;
 
     private void Start()
     {
@@ -257,6 +258,7 @@ public class Cell_Script : MonoBehaviour
         GameObject c1 = GameObject.Find(cell1);
         GameObject c2 = GameObject.Find(cell2);
         GameObject p = c1.transform.GetChild(0).gameObject;
+        string pieceCaptured = "";
 
         UpdatePieceDisplay(p, piece);
 
@@ -265,9 +267,8 @@ public class Cell_Script : MonoBehaviour
         if (c2.transform.childCount != 0)
         {
             capture = true;
-            GameObject go = c2.transform.GetChild(0).gameObject;
-            Game.PieceCaptured(go.name);
-            Destroy(go);
+            pieceCaptured = c2.transform.GetChild(0).gameObject.name;
+            Destroy(c2.transform.GetChild(0).gameObject);
         }
 
         p.transform.SetParent(c2.transform);
@@ -275,6 +276,11 @@ public class Cell_Script : MonoBehaviour
         Debug.Log("Moved " + p.name + " from " + c1.name + " to " + c2.name);
 
         p.transform.localPosition = new Vector3(0f, 0f, 0f);
+
+        if (pieceCaptured != "")
+        {
+            Game.PieceCaptured(pieceCaptured, false, p.transform.position, gameObject);
+        }
 
         Move.ResetMove();
         MoveChecker.UnmarkAll();
@@ -317,12 +323,18 @@ public class Cell_Script : MonoBehaviour
 
         ListOfMoves.AddDestroyUse(name);
 
-        Game.PieceCaptured(p.name);
+        Game.PieceCaptured(p.name, true, new Vector3(0f, 0f, 0f), gameObject);
         Game.DestroyUsed(piece);
         Move.ResetMove();
         MoveChecker.UnmarkAll();
         Game.SwitchTurn();
         MoveChecker.UpdateCastlingPossibilities(piece, name);
+    }
+
+    public void InstantiateCurrencyEarned(int value, Vector3 position)
+    {
+        GameObject go = Instantiate(CurrencyEarned_Prefab, position + new Vector3(0.65f, 0.5f, 0f), Quaternion.identity);
+        go.GetComponent<CurrencyEarnedScript>().WhatCurrency(value);
     }
 
     private void ExecuteMove_ImmunityFeature()

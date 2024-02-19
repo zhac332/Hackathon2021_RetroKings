@@ -1,4 +1,5 @@
 using System;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -87,10 +88,12 @@ public static class Game
         return blackImmuneString;
     }
 
-    private static void AddPoints(int value, PieceColor color)
+    private static void AddPoints(int value, PieceColor color, Vector3 position, GameObject cell)
     {
         if (color == PieceColor.White) Black_Points += value;
         else White_Points += value;
+
+        cell.GetComponent<Cell_Script>().InstantiateCurrencyEarned(value, position);
     }
 
     public static void DestroyUsed(Tuple<Piece, PieceColor> piece)
@@ -130,7 +133,7 @@ public static class Game
         return gameOver;
     }
 
-    public static void PieceCaptured(string pieceName)
+    public static void PieceCaptured(string pieceName, bool destroyUsed, Vector3 position, GameObject cell)
     {
         PieceColor color = (pieceName.Contains("W") ? PieceColor.White : PieceColor.Black);
         Piece piece = Piece.NULL;
@@ -138,27 +141,27 @@ public static class Game
         if (pieceName.Contains("Pawn"))
         {
             piece = Piece.Pawn;
-            AddPoints(Pawn_Value, color);
+            if (!destroyUsed) AddPoints(Pawn_Value, color, position, cell);
         }
         else if (pieceName.Contains("Bishop"))
         {
             piece = Piece.Bishop;
-            AddPoints(Bishop_Value, color);
+            if (!destroyUsed) AddPoints(Bishop_Value, color, position, cell);
         }
         else if (pieceName.Contains("Rook"))
         {
             piece = Piece.Rook;
-            AddPoints(Rook_Value, color);
+            if (!destroyUsed) AddPoints(Rook_Value, color, position, cell);
         }
         else if (pieceName.Contains("Knight"))
         {
             piece = Piece.Knight;
-            AddPoints(Knight_Value, color);
+            if (!destroyUsed) AddPoints(Knight_Value, color, position, cell);
         }
         else if (pieceName.Contains("Queen"))
         {
             piece = Piece.Queen;
-            AddPoints(Queen_Value, color);
+            if (!destroyUsed) AddPoints(Queen_Value, color, position, cell);
         }
         else if (pieceName.Contains("King"))
         {

@@ -1703,6 +1703,8 @@ MonoBehaviour:
   blackPiecesCaptured: {fileID: 714368145}
   GameOverText: {fileID: 1792082242}
   TurnText: {fileID: 1605909560}
+  CurrentEarned_Prefab: {fileID: 2549403503068898785, guid: b14c37e57e0016f4b84a11ef5c10a9c5,
+    type: 3}
 --- !u!4 &212736799
 Transform:
   m_ObjectHideFlags: 0

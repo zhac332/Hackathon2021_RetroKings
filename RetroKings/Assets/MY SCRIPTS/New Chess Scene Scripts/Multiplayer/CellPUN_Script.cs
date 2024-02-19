@@ -265,7 +265,7 @@ public class CellPUN_Script : MonoBehaviour
         {
             capture = true;
             GameObject go = c2.transform.GetChild(0).gameObject;
-            GameP.PieceCaptured(go.name, true);
+            GameP.PieceCaptured(go.name, true, transform);
             Destroy(go);
         }
 
@@ -316,7 +316,7 @@ public class CellPUN_Script : MonoBehaviour
 
         ListOfMoves.AddDestroyUse(name, false);
 
-        GameP.PieceCaptured(p.name, false);
+        GameP.PieceCaptured(p.name, false, transform);
         GameP.DestroyUsed(piece);
         GameP.SendRPC_DestroyUsed(piece);
         Move.ResetMove();
