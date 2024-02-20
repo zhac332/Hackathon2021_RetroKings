@@ -6,6 +6,7 @@ using System.Collections.Generic;
 
 public class CellPUN_Script : MonoBehaviour
 {
+    [SerializeField] private SoundPlayerScript SoundPlayer;
     [SerializeField] private GamePUN GameP;
 
     [SerializeField] private HistoryOfMovesPUN ListOfMoves;
@@ -67,6 +68,7 @@ public class CellPUN_Script : MonoBehaviour
 
         if (!GameP.IsMyTurn())
         {
+            SoundPlayer.PlayNoSound();
             Debug.LogError("not your turn!");
             return;
         }
@@ -76,12 +78,14 @@ public class CellPUN_Script : MonoBehaviour
         {
             if (!HasAPiece())
             {
+                SoundPlayer.PlayNoSound();
                 Debug.Log("Select a cell with a piece. If there is no piece, how do I know what move to make?");
                 return;
             }
 
             if (!GameP.IsMyPiece(transform.GetChild(0).name))
             {
+                SoundPlayer.PlayNoSound();
                 Debug.LogError("Not your piece...");
                 return;
             }
@@ -90,6 +94,7 @@ public class CellPUN_Script : MonoBehaviour
             piece = transform.GetChild(0).gameObject;
 
             SelectCell();
+            SoundPlayer.PlayPieceSelectSound();
 
             Move.SelectPiece(name, piece.name);
             MoveCheckerPUN.SetFirstPiece(piece.name);
@@ -103,6 +108,7 @@ public class CellPUN_Script : MonoBehaviour
                 DeselectCell();
                 Move.SelectPiece();
                 MoveCheckerPUN.UnmarkAll();
+                SoundPlayer.PlayPieceDeselectSound();
             }
             else if (!Move.IsSecondCellSelected())
             {
@@ -113,6 +119,7 @@ public class CellPUN_Script : MonoBehaviour
                     {
                         MoveCheckerPUN.ShowPromotionalPanel();
                         Move.SelectCell_Promote(name, (cell1, cell2, piece, switchTurn) => ExecuteMove(cell1, cell2, piece, switchTurn));
+                        SoundPlayer.PlayPromotionSound();
                     }
                     else
                     {
@@ -258,6 +265,7 @@ public class CellPUN_Script : MonoBehaviour
         GameObject c1 = GameObject.Find(cell1);
         GameObject c2 = GameObject.Find(cell2);
         GameObject p = c1.transform.GetChild(0).gameObject;
+        bool isCapture = false;
 
         UpdatePieceDisplay(p, piece);
 
@@ -267,9 +275,13 @@ public class CellPUN_Script : MonoBehaviour
         {
             capture = true;
             GameObject go = c2.transform.GetChild(0).gameObject;
-            GameP.PieceCaptured(go.name, true, transform);
+            GameP.PieceCaptured(go.name, true, transform, true);
+            isCapture = true;
             Destroy(go);
         }
+
+        if (isCapture) SoundPlayer.PlayPieceCaptureSound();
+        else SoundPlayer.PlayPieceMoveSound();
 
         p.transform.SetParent(c2.transform);
 
@@ -318,7 +330,9 @@ public class CellPUN_Script : MonoBehaviour
 
         ListOfMoves.AddDestroyUse(name, false);
 
-        GameP.PieceCaptured(p.name, false, transform);
+        SoundPlayer.PlayDestroySound();
+
+        GameP.PieceCaptured(p.name, false, transform, true);
         GameP.DestroyUsed(piece);
         GameP.SendRPC_DestroyUsed(piece);
         Move.ResetMove();
@@ -336,6 +350,8 @@ public class CellPUN_Script : MonoBehaviour
         else MarkShieldedCell_Black();
 
         ListOfMoves.AddImmunityMove(name, false);
+
+        SoundPlayer.PlayShieldSound();
 
         Move.ResetMove();
 

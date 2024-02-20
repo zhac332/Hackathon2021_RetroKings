@@ -4,6 +4,7 @@ using System;
 
 public class MoveUpdaterPUN : MonoBehaviour
 {
+    [SerializeField] private SoundPlayerScript SoundPlayer;
     [SerializeField] private GamePUN GameP;
 
     [Header("Sprites for pieces")]
@@ -89,6 +90,7 @@ public class MoveUpdaterPUN : MonoBehaviour
         GameObject c1 = GameObject.Find(cell1);
         GameObject c2 = GameObject.Find(cell2);
         GameObject p = c1.transform.GetChild(0).gameObject;
+        bool isCaptured = false;
 
         UpdatePieceDisplay(p, piece);
 
@@ -97,9 +99,13 @@ public class MoveUpdaterPUN : MonoBehaviour
         if (c2.transform.childCount != 0)
         {
             GameObject go = c2.transform.GetChild(0).gameObject;
-            GameP.PieceCaptured(go.name, true, null);
+            GameP.PieceCaptured(go.name, true, null, false);
             Destroy(go);
+            isCaptured = true;
         }
+
+        if (isCaptured) SoundPlayer.PlayPieceCaptureSound();
+        else SoundPlayer.PlayPieceMoveSound();
 
         p.transform.SetParent(c2.transform);
 
@@ -122,7 +128,9 @@ public class MoveUpdaterPUN : MonoBehaviour
         UpdatePieceDisplay(p, piece);
         Destroy(p);
 
-        GameP.PieceCaptured(p.name, false, null);
+        SoundPlayer.PlayDestroySound();
+
+        GameP.PieceCaptured(p.name, false, null, false);
         Move.ResetMove();
         MoveCheckerPUN.UnmarkAll();
         MoveCheckerPUN.UpdateCastlingPossibilities(piece, name);
@@ -134,6 +142,8 @@ public class MoveUpdaterPUN : MonoBehaviour
         GameObject go = GameObject.Find(cell);
         if (GameP.AmWhite()) MarkShieldedCell_White(go.GetComponent<SpriteRenderer>());
         else MarkShieldedCell_Black(go.GetComponent<SpriteRenderer>());
+
+        SoundPlayer.PlayShieldSound();
 
         Move.ResetMove();
     }
