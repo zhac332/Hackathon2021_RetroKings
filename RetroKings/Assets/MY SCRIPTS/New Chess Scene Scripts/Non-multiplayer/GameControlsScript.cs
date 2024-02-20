@@ -5,6 +5,7 @@ using Photon.Pun;
 
 public class GameControlsScript : MonoBehaviour
 {
+    [SerializeField] private AreYouSurePanel AreYouSure;
     [SerializeField] private PieceDisplayScript PieceDisplay;
 
     [Header("For turns")]
@@ -67,6 +68,46 @@ public class GameControlsScript : MonoBehaviour
         RookButton_Image.sprite = (isWhite) ? WhitePieces[1] : BlackPieces[1];
         BishopButton_Image.sprite = (isWhite) ? WhitePieces[2] : BlackPieces[2];
         KnightButton_Image.sprite = (isWhite) ? WhitePieces[3] : BlackPieces[3];
+    }
+
+    public void ResignButton_OnClick()
+    {
+        AreYouSure.NewQuestion("Are you sure you want to resign?", ResignYes, ResignNo);
+    }
+
+    public void ResignYes()
+    {
+
+    }
+
+    public void ResignNo()
+    {
+
+    }
+
+    public void DrawButton_OnClick()
+    {
+        AreYouSure.NewQuestion("Are you sure you want to draw?", DrawYes, DrawNo);
+    }
+
+    public void DrawYes()
+    {
+
+    }
+
+    public void DrawNo()
+    {
+
+    }
+
+    public void DrawAccepted()
+    {
+
+    }
+
+    public void DrawDeclined()
+    {
+
     }
 
     public void QueenButton_OnClick()

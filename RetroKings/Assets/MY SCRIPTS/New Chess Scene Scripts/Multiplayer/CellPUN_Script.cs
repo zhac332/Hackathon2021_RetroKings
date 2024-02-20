@@ -1,6 +1,8 @@
 using System;
 using UnityEngine;
 using Photon.Pun;
+using UnityEngine.EventSystems;
+using System.Collections.Generic;
 
 public class CellPUN_Script : MonoBehaviour
 {
@@ -345,6 +347,21 @@ public class CellPUN_Script : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
+            // Get all the raycast hits at the current mouse position
+            PointerEventData pointerData = new PointerEventData(EventSystem.current);
+            pointerData.position = Input.mousePosition;
+
+            // Check if the first hit is a UI element
+            List<RaycastResult> results = new List<RaycastResult>(1);
+            EventSystem.current.RaycastAll(pointerData, results);
+
+            if (results.Count > 0 && results[0].gameObject.layer == LayerMask.NameToLayer("UI"))
+            {
+                // The first hit is a UI element, do not proceed with Cell_OnClick()
+                return;
+            }
+
+            // If not a UI element, perform your original raycast
             Vector2 raycastPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             RaycastHit2D hit = Physics2D.Raycast(raycastPosition, Vector2.zero);
 
