@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class Cell_Script : MonoBehaviour
 {
+    [SerializeField] private SoundPlayerScript SoundPlayer; 
     [SerializeField] private HistoryMovesScript ListOfMoves;
     
     [Header("Sprites for pieces")]
@@ -45,6 +46,7 @@ public class Cell_Script : MonoBehaviour
         {
             if (MoveChecker.CheckMove(name))
             {
+                SoundPlayer.PlayDestroySound();
                 ExecuteMove_DestroyFeature();
                 return;
             }
@@ -54,6 +56,7 @@ public class Cell_Script : MonoBehaviour
         {
             if (MoveChecker.CheckMove(name))
             {
+                SoundPlayer.PlayShieldSound();
                 ExecuteMove_ImmunityFeature();
                 return;
             }
@@ -64,6 +67,7 @@ public class Cell_Script : MonoBehaviour
         {
             if (!HasAPiece())
             {
+                SoundPlayer.PlayNoSound();
                 Debug.Log("Select a cell with a piece. If there is no piece, how do I know what move to make?");
                 return;
             }
@@ -72,6 +76,7 @@ public class Cell_Script : MonoBehaviour
             {
                 if (!IsPieceWhite())
                 {
+                    SoundPlayer.PlayNoSound();
                     Debug.LogError("Not your piece.");
                     return; 
                 }
@@ -80,6 +85,7 @@ public class Cell_Script : MonoBehaviour
             {
                 if (IsPieceWhite())
                 {
+                    SoundPlayer.PlayNoSound();
                     Debug.LogError("Not your piece.");
                     return;
                 }
@@ -87,6 +93,7 @@ public class Cell_Script : MonoBehaviour
 
             // if (HasAPiece())....
             piece = transform.GetChild(0).gameObject;
+            SoundPlayer.PlayPieceSelectSound();
 
             SelectCell();
 
@@ -99,6 +106,7 @@ public class Cell_Script : MonoBehaviour
         {
             if (Move.IsCellIdenticalWithFirst(name))
             {
+                SoundPlayer.PlayPieceDeselectSound();
                 DeselectCell();
                 Move.SelectPiece();
                 MoveChecker.UnmarkAll();
@@ -110,6 +118,7 @@ public class Cell_Script : MonoBehaviour
                     // this is where I should check if the end cell makes the pawn be promoted
                     if (MoveChecker.IsPromotionalMove(name))
                     {
+                        SoundPlayer.PlayPromotionSound();
                         MoveChecker.ShowPromotionalPanel();
                         Move.SelectCell_Promote(name, (cell1, cell2, piece, switchTurn) => ExecuteMove(cell1, cell2, piece, switchTurn));
                     }
@@ -280,7 +289,9 @@ public class Cell_Script : MonoBehaviour
         if (pieceCaptured != "")
         {
             Game.PieceCaptured(pieceCaptured, false, p.transform.position, gameObject);
+            SoundPlayer.PlayPieceCaptureSound();
         }
+        else SoundPlayer.PlayPieceMoveSound();
 
         Move.ResetMove();
         MoveChecker.UnmarkAll();

@@ -106,9 +106,9 @@ public class CellPUN_Script : MonoBehaviour
             if (Move.IsCellIdenticalWithFirst(name))
             {
                 DeselectCell();
+                SoundPlayer.PlayPieceDeselectSound();
                 Move.SelectPiece();
                 MoveCheckerPUN.UnmarkAll();
-                SoundPlayer.PlayPieceDeselectSound();
             }
             else if (!Move.IsSecondCellSelected())
             {

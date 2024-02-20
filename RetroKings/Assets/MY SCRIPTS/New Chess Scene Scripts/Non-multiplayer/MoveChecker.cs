@@ -26,6 +26,7 @@ public static class MoveChecker
     public static void AcquireAllCells()
     {
         cells = GameObject.Find("Chess Board").GetComponent<PieceDisplayScript>().GetCells();
+        PromotionalPanel = GameObject.Find("MAIN CANVAS/Promotion Panel");
     }
 
     public static void MarkDestroyableCells(int pointsNumber, bool myTurn)
