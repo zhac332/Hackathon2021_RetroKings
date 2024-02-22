@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 public class MainMenuScript : MonoBehaviour
 {
     [SerializeField] private string HowToPlay_String = "";
+    [SerializeField] private string Logo_String = "";
 
     private void Start()
     {
@@ -18,5 +19,10 @@ public class MainMenuScript : MonoBehaviour
     public void RulesButton_OnClick()
     {
         Application.OpenURL(HowToPlay_String);
+    }
+
+    public void LogoButton_OnClick()
+    {
+        Application.OpenURL(Logo_String);
     }
 }

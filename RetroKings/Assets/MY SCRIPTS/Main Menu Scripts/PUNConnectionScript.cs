@@ -63,6 +63,11 @@ public class PUNConnectionScript : MonoBehaviourPunCallbacks
         LoadingPanel.SetActive(false);
     }
 
+    public void Disconnect()
+    {
+        PhotonNetwork.Disconnect();
+    }
+
     public override void OnDisconnected(DisconnectCause cause)
     {
         HostPanel.SetActive(false);
