@@ -31,6 +31,7 @@ public static class MoveChecker
 
     public static void MarkDestroyableCells(int pointsNumber, bool myTurn)
     {
+        if (Game.IsGameOver()) return;
         UnmarkAll();
 
         destroyPowerup_Toggle = !destroyPowerup_Toggle;
@@ -75,6 +76,7 @@ public static class MoveChecker
 
     public static void MarkShieldableCells(int pointsNumber, bool myTurn)
     {
+        if (Game.IsGameOver()) return;
         UnmarkAll();
 
         immunityPowerup_Toggle = !immunityPowerup_Toggle;

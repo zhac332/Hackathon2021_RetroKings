@@ -35,6 +35,7 @@ public static class MoveCheckerPUN
     public static void MarkDestroyableCells(int pointsNumber, bool myTurn)
     {
         if (!myTurn) return;
+        if (GameP.IsGameOver()) return;
 
         UnmarkAll();
 
@@ -80,6 +81,7 @@ public static class MoveCheckerPUN
 
     public static void MarkShieldableCells(int pointsNumber, bool myTurn)
     {
+        if (GameP.IsGameOver()) return;
         if (!myTurn) return;
 
         UnmarkAll();
