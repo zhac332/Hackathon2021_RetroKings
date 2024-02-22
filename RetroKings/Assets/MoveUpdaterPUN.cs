@@ -4,6 +4,9 @@ using System;
 
 public class MoveUpdaterPUN : MonoBehaviour
 {
+    [SerializeField] private GameObject BombPrefab;
+    [SerializeField] private GameObject ShieldPrefab;
+
     [SerializeField] private SoundPlayerScript SoundPlayer;
     [SerializeField] private GamePUN GameP;
 
@@ -125,6 +128,8 @@ public class MoveUpdaterPUN : MonoBehaviour
         GameObject p = c.transform.GetChild(0).gameObject;
         Tuple<Piece, PieceColor> piece = PieceChecker.TransformGoInTuple(p);
 
+        Instantiate(BombPrefab, p.transform.position, Quaternion.identity);
+
         UpdatePieceDisplay(p, piece);
         Destroy(p);
 
@@ -143,6 +148,7 @@ public class MoveUpdaterPUN : MonoBehaviour
         if (GameP.AmWhite()) MarkShieldedCell_White(go.GetComponent<SpriteRenderer>());
         else MarkShieldedCell_Black(go.GetComponent<SpriteRenderer>());
 
+        Instantiate(ShieldPrefab, go.transform.position, Quaternion.identity);
         SoundPlayer.PlayShieldSound();
 
         Move.ResetMove();

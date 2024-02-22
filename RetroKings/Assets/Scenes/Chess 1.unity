@@ -10145,6 +10145,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54b87faf58ec390429f9385f93656e1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  BombPrefab: {fileID: 8437206992516960534, guid: 4629a7c91c5158a46a5c21ae6db0be36,
+    type: 3}
+  ShieldPrefab: {fileID: 134331116098176868, guid: 7609c09491273e7418fda97766c77e1a,
+    type: 3}
   SoundPlayer: {fileID: 100603816}
   GameP: {fileID: 212736798}
   Queen_White: {fileID: 21300000, guid: ec65c4664c32fa647b774ea6bc250c10, type: 3}
