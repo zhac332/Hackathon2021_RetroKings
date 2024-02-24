@@ -32,6 +32,11 @@ public class GamePunControls : MonoBehaviourPunCallbacks
         PhotonNetwork.LoadLevel(0);
     }
 
+    public void ExitButton_OnClick()
+    {
+        PhotonNetwork.Disconnect();
+    }
+
     private void Setup()
     {
         if (PhotonNetwork.CurrentRoom.PlayerCount == 2)

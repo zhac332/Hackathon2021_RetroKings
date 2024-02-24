@@ -97,6 +97,7 @@ public class GamePUN : MonoBehaviour
 
     private void AddPoints(int value, PieceColor color, Transform tr, bool showPoints)
     {
+        Debug.Log("Added points " + value);
         if (color == PieceColor.White) Black_Points += value;
         else White_Points += value;
 
@@ -125,8 +126,8 @@ public class GamePUN : MonoBehaviour
         if (piece.Item1 == Piece.Rook) value = Rook_Value;
         if (piece.Item1 == Piece.Queen) value = Queen_Value;
 
-        if (myTurn) White_Points -= value;
-        else Black_Points -= value;
+        if (piece.Item2 == PieceColor.Black) White_Points -= value;
+        else if (piece.Item2 == PieceColor.White) Black_Points -= value;
 
         MoveCheckerPUN.ResetPowerupToggles();
     }
@@ -145,8 +146,8 @@ public class GamePUN : MonoBehaviour
         if (piece.Item1 == Piece.Rook) value = Rook_Value;
         if (piece.Item1 == Piece.Queen) value = Queen_Value;
 
-        if (myTurn) White_Points -= value;
-        else Black_Points -= value;
+        if (piece.Item2 == PieceColor.Black) White_Points -= value;
+        else if (piece.Item2 == PieceColor.White) Black_Points -= value;
 
         MoveCheckerPUN.ResetPowerupToggles();
     }
